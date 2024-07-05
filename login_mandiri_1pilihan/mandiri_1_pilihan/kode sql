@@ -1,0 +1,9 @@
+ALTER TABLE tb_konversi ADD kodematkul_16 varchar (50);
+ALTER TABLE tb_konversi ADD namamatkul_16 varchar (50);
+ALTER TABLE tb_konversi ADD sks_16 varchar (50);
+ALTER TABLE tb_konversi ADD nilai_16 varchar (50);
+
+ALTER TABLE tb_konversi ADD kodematkul_16 varchar (50);
+ALTER TABLE tb_konversi ADD namamatkul_16 varchar (50);
+ALTER TABLE tb_konversi ADD sks_16 varchar (50);
+ALTER TABLE tb_konversi ADD nilai_16 varchar (50);

@@ -1,0 +1,137 @@
+<html>
+ <head>
+  <title>Import Kelulusan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+  body
+  {
+   margin:0;
+   padding:0;
+   background-color: #0cb313b3;
+  }
+  .box
+  {
+   width:700px;
+   border:1px solid #ccc;
+   background-color:#fff;
+   border-radius:5px;
+   margin-top:100px;
+  }
+  input[type="file"]{
+    border:1px solid gray;
+  }
+  
+  </style>
+ </head>
+ <body>
+  <div class="container box">
+   <form method="post" enctype="multipart/form-data">
+    <div class="container-fluid">
+      <h3 align="center" class="text-success" style="font-weight:600;">Import Data Calon Mahasiswa Jalur Mandiri 1 Pilihan 2022</h3><br />
+      <a class="btn-link" href="index.php">Kembali</a>
+      <div class="row" style="margin-bottom:20px">
+        <div class="col-md-4 col-xs-4 col-sm-4"></div>  <!-- Blank Div -->
+        
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <label>Pilih File Excel*</label>
+        </div>
+        <div class="col-xs-6 col-md-5 col-sm-6 col-lg-5">
+            <input type="file" name="excel" />
+        </div>
+        <div class="col-xs-7 col-md-7 col-sm-6 col-lg-7">
+            <input type="submit" name="import" class="btn btn-info" value="Import" style="padding:2px 20px;"/>
+            <a href="format import kelulusan 1 pilihan.xlsx" class="btn btn-primary btn-sm"><i class="fa da-download"></i> Download Format</a>
+        </div>
+        
+      </div>
+  </div>
+   </form>
+   <br />
+   <br />
+   <?php
+
+$kon = mysqli_connect("localhost", "root", "", "db_sipenmaru_2022_2");
+$output = '';
+if(isset($_POST["import"]))
+{
+    $fileex=$_FILES['excel']['name'];
+ $exten = explode(".",$fileex); // For getting Extension of selected file
+ $extension=end($exten);
+ $allowed_extension = array("xls", "xlsx", "csv"); //allowed extension
+ if(in_array($extension, $allowed_extension)) //check selected file extension is present in allowed extension array
+ {
+  $file = $_FILES["excel"]["tmp_name"]; // getting temporary source of excel file
+
+  include("PHPExcel/IOFactory.php"); // Add PHPExcel Library in this code
+  $objPHPExcel = PHPExcel_IOFactory::load($file); // create object of PHPExcel library by using load() method and in load method define path of selected file
+
+  foreach ($objPHPExcel->getWorksheetIterator() as $worksheet)
+  {
+    $no=1;
+   $highestRow = $worksheet->getHighestRow();
+   for($row=2; $row<=$highestRow; $row++)
+   {
+    $username = mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(0, $row)->getValue());
+    $nama = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(1, $row)->getValue())," ");
+    $prodi_lulus = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(2, $row)->getValue())," ");
+    $status_pmdp = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(3, $row)->getValue())," ");
+
+
+    if(!empty($username)) // if none of the data are empty
+    {
+      $getmhs=mysqli_fetch_array(mysqli_query($kon,"select * from tb_formulir5 where username='$username'"));
+      if(!empty($getmhs['username']))
+      {
+        mysqli_query($kon,"update tb_formulir5 set status_pmdp='$status_pmdp', prodi_lulus='$prodi_lulus' where username='$username'");  
+        ?>
+        <div class="alert alert-success">Status Jalur Mandiri berhasil diubah untuk 
+          username : <?php echo $username.' 
+          Nama : '.$nama.' 
+          Prodi Lulus : '.$prodi_lulus.'
+          dengan status <b>'.$status_pmdp.'</b>';?>
+        </div>
+        <?php
+      }
+      else
+      {
+        ?>
+        <div class="alert alert-danger">Status Jalur Mandiri gagal diubah untuk 
+          username : <?php echo $username.' 
+          Nama : '.$nama.' 
+          dengan status <b>'.$status_pmdp.'</b>. Data tidak ditemukan';?>
+        </div>
+        <?php
+      }
+      
+    }
+    $no++;
+
+   }
+
+  }
+
+ }
+ else
+ {
+  $output = '<label class="text-danger">Invalid File</label>'; //if non excel file then
+ }
+}
+?>
+
+
+   <?php
+      echo @$fileUploadMsg;
+      echo "<hr/>
+			<p style='float:left'>* Supported Formats: .xls | .xlsx | .csv</p>";
+      mysqli_close($kon);
+   ?>
+  </div>
+ </body>
+</html>
+
+

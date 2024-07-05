@@ -1,0 +1,81 @@
+<?php
+			include"../config/koneksi.php";
+	
+				if(isset($_POST['submit']))
+				{
+						$query=mysqli_query($kon,"insert into tb_konversi(
+											kodematkul_1, namamatkul_1, sks_1, nilai_1,
+											kodematkul_2, namamatkul_2, sks_2, nilai_2,
+											kodematkul_3, namamatkul_3, sks_3, nilai_3,
+											kodematkul_4, namamatkul_4, sks_4, nilai_4,
+											kodematkul_5, namamatkul_5, sks_5, nilai_5,
+											kodematkul_6, namamatkul_6, sks_6, nilai_6,
+											kodematkul_7, namamatkul_7, sks_7, nilai_7,
+											kodematkul_8, namamatkul_8, sks_8, nilai_8,
+											kodematkul_9, namamatkul_9, sks_9, nilai_9,
+											kodematkul_10, namamatkul_10, sks_10, nilai_10,
+											kodematkul_11, namamatkul_11, sks_11, nilai_11,
+											kodematkul_12, namamatkul_12, sks_12, nilai_12,
+											kodematkul_13, namamatkul_13, sks_13, nilai_13,
+											kodematkul_14, namamatkul_14, sks_14, nilai_14,
+											kodematkul_15, namamatkul_15, sks_15, nilai_15,
+											kodematkul_16, namamatkul_16, sks_16, nilai_16,
+											kodematkul_17, namamatkul_17, sks_17, nilai_17,
+											kodematkul_18, namamatkul_18, sks_18, nilai_18,
+											kodematkul_19, namamatkul_19, sks_19, nilai_19,
+											kodematkul_20, namamatkul_20, sks_20, nilai_20,
+											kodematkul_21, namamatkul_21, sks_21, nilai_21,
+											kodematkul_22, namamatkul_22, sks_22, nilai_22,
+											kodematkul_23, namamatkul_23, sks_23, nilai_23,
+											kodematkul_24, namamatkul_24, sks_24, nilai_24,
+											kodematkul_25, namamatkul_25, sks_25, nilai_25,
+											kodematkul_26, namamatkul_26, sks_26, nilai_26,
+											kodematkul_27, namamatkul_27, sks_27, nilai_27,
+											kodematkul_28, namamatkul_28, sks_28, nilai_28,
+											kodematkul_29, namamatkul_29, sks_29, nilai_29,
+											kodematkul_30, namamatkul_30, sks_30, nilai_30,
+
+							
+							username)
+							values('$_POST[kodematkul_1]','$_POST[namamatkul_1]','$_POST[sks_1]','$_POST[nilai_1]',
+									'$_POST[kodematkul_2]','$_POST[namamatkul_2]','$_POST[sks_2]','$_POST[nilai_2]',
+									'$_POST[kodematkul_3]','$_POST[namamatkul_3]','$_POST[sks_3]','$_POST[nilai_3]',
+									'$_POST[kodematkul_4]','$_POST[namamatkul_4]','$_POST[sks_4]','$_POST[nilai_4]',
+									'$_POST[kodematkul_5]','$_POST[namamatkul_5]','$_POST[sks_5]','$_POST[nilai_5]',
+									'$_POST[kodematkul_6]','$_POST[namamatkul_6]','$_POST[sks_6]','$_POST[nilai_6]',
+									'$_POST[kodematkul_7]','$_POST[namamatkul_7]','$_POST[sks_7]','$_POST[nilai_7]',
+									'$_POST[kodematkul_8]','$_POST[namamatkul_8]','$_POST[sks_8]','$_POST[nilai_8]',
+									'$_POST[kodematkul_9]','$_POST[namamatkul_9]','$_POST[sks_9]','$_POST[nilai_9]',
+									'$_POST[kodematkul_10]','$_POST[namamatkul_10]','$_POST[sks_10]','$_POST[nilai_10]',
+									'$_POST[kodematkul_11]','$_POST[namamatkul_11]','$_POST[sks_11]','$_POST[nilai_11]',
+									'$_POST[kodematkul_12]','$_POST[namamatkul_12]','$_POST[sks_12]','$_POST[nilai_12]',
+									'$_POST[kodematkul_13]','$_POST[namamatkul_13]','$_POST[sks_13]','$_POST[nilai_13]',
+									'$_POST[kodematkul_14]','$_POST[namamatkul_14]','$_POST[sks_14]','$_POST[nilai_14]',
+									'$_POST[kodematkul_15]','$_POST[namamatkul_15]','$_POST[sks_15]','$_POST[nilai_15]',
+									'$_POST[kodematkul_16]','$_POST[namamatkul_16]','$_POST[sks_16]','$_POST[nilai_16]',
+									'$_POST[kodematkul_17]','$_POST[namamatkul_17]','$_POST[sks_17]','$_POST[nilai_17]',
+									'$_POST[kodematkul_18]','$_POST[namamatkul_18]','$_POST[sks_18]','$_POST[nilai_18]',
+									'$_POST[kodematkul_19]','$_POST[namamatkul_19]','$_POST[sks_19]','$_POST[nilai_19]',
+									'$_POST[kodematkul_20]','$_POST[namamatkul_20]','$_POST[sks_20]','$_POST[nilai_20]',
+									'$_POST[kodematkul_21]','$_POST[namamatkul_21]','$_POST[sks_21]','$_POST[nilai_21]',
+									'$_POST[kodematkul_22]','$_POST[namamatkul_22]','$_POST[sks_22]','$_POST[nilai_22]',
+									'$_POST[kodematkul_23]','$_POST[namamatkul_23]','$_POST[sks_23]','$_POST[nilai_23]',
+									'$_POST[kodematkul_24]','$_POST[namamatkul_24]','$_POST[sks_24]','$_POST[nilai_24]',
+									'$_POST[kodematkul_25]','$_POST[namamatkul_25]','$_POST[sks_25]','$_POST[nilai_25]',
+									'$_POST[kodematkul_26]','$_POST[namamatkul_26]','$_POST[sks_26]','$_POST[nilai_26]',
+									'$_POST[kodematkul_27]','$_POST[namamatkul_27]','$_POST[sks_27]','$_POST[nilai_27]',
+									'$_POST[kodematkul_28]','$_POST[namamatkul_28]','$_POST[sks_28]','$_POST[nilai_28]',
+									'$_POST[kodematkul_29]','$_POST[namamatkul_29]','$_POST[sks_29]','$_POST[nilai_29]',
+									'$_POST[kodematkul_30]','$_POST[namamatkul_30]','$_POST[sks_30]','$_POST[nilai_30]',
+									'$_SESSION[username]')");
+						if($query)
+							{
+								echo"<script>alert('Data Berhasil di Simpan');window.location='02_lihat_nilai.php'</script>";
+							}
+
+						else
+							{
+								echo"<script>alert('Data Gagal di Simpan');window.location='02_lihat_nilai.php'</script>";
+							}
+				}				
+		?>
