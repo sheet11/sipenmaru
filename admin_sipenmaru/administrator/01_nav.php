@@ -228,15 +228,16 @@
                                 </a>
                                 <ul class="treeview-menu">
                                     <li><a href="01_laporan_2pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Umum</a></li>
-                                     <li><a href="01_laporan_tingkatpoltekkes_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Poltekkes</a></li>
+                                    <li><a href="01_laporan_tingkatpoltekkes_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Poltekkes</a></li>
                                     <li><a href="01_tingkat_prodi_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Prodi</a></li>
                                     <li><a href="01_jenis_kelamin_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
                                     <li><a href="01_laporan_asal_sekolah_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Asal Sekolah</a></li>
                                     <li><a href="01_laporan_keterangan_sekolah_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Keterangan Sekolah</a></li>
+                                    <li><a href="cetak_lulus_tahap2.php"><i class="fa fa-circle-o"></i>Cetak Excel kelulusan tahap II</a></li>
 
-                                     <li><a href="importmandiri2pilihan.php"><i class="fa fa-upload"></i> Import Tahap 1</a></li>
+                                    <li><a href="importmandiri2pilihan.php"><i class="fa fa-upload"></i> Import Tahap 1</a></li>
 
-                                     <li><a href="importmandiri_2pilihan_tahap2.php"><i class="fa fa-upload"></i> Import Tahap 2</a></li>
+                                    <li><a href="importmandiri_2pilihan_tahap2.php"><i class="fa fa-upload"></i> Import Tahap 2</a></li>
                                     
                                 </ul>
                     </li>

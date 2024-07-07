@@ -50,7 +50,13 @@
 ini_set('display_errors', 0);
                                                                     $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where status='Sudah Membayar' and level='MANDIRI 2 PILIHAN GEL III' ");
                                                                     $jumlah = mysqli_num_rows ($query); ?>
-                                                                    <?php echo $jumlah; ?> </a></td>
+                                                                    <?php echo $jumlah; ?> </a>
+                <button class="btn btn-default" type="submit" name="isi"><i class="fa fa-arrow">Masukkan Jadwal</i></button>
+                <?php
+                    if(isset($_POST['submit'])){ 
+                $inp = mysqli_query($kon,"update tb_formulir4 set sesi_ujian='Sesi 1 Pukul 14.00 - 15.30 WIB', tempat_ujian='Kampus A Poltekkes Bengkulu', tanggal_ujian = '2024-07-08',ruang_ujian = 'Laboratorium Komputer'  where status = 'Sudah Membayar' and level= 'MANDIRI 2 PILIHAN GEL III'");
+                 } ?>    
+                </td>
                 <td>
                     <?php
                     if(isset($_POST['submit']))
