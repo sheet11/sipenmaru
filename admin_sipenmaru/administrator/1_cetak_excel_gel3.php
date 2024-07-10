@@ -55,10 +55,12 @@
                 <th>Ruang Ujian</th>
                 <th>Sesi Ujian</th>
                 <th>Status</th>
+                <th>Status Lulus</th>
+                <th>Prodi Lulus</th>
 		</tr>
         <?php           
             $i=1; 
-            $query=mysqli_query($kon,"select * from tb_formulir4 where status='Terdaftar' and level='MANDIRI 2 PILIHAN GEL III'");       
+            $query=mysqli_query($kon,"select * from tb_formulir4 where status='Sudah Membayar' and level='MANDIRI 2 PILIHAN GEL III'");       
             while ($a=mysqli_fetch_array($query)) { 
             ?>
            <tr>
@@ -82,7 +84,9 @@
                <td><?=$a['tempat_ujian']?></td>
                <td><?=$a['ruang_ujian']?></td>
                <td><?=$a['sesi_ujian']?></td>
-               <td><?=$a['status']?></td>        
+               <td><?=$a['status']?></td>
+               <td><?=$a['status_lulus']?></td>
+               <td><?=$a['prodi_lulus']?></td>
            </tr>
            <?php } ?>
 	</table>

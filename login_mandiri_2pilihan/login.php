@@ -15,7 +15,7 @@ $date = date("Y-m-d");
 $date=date('Y-m-d', strtotime($date));
 //echo $paymentDate; // echos today! 
 $tanggalbuka = date('Y-m-d', strtotime("2024-05-31"));
-$tanggaltutup = date('Y-m-d', strtotime("2024-07-30"));
+$tanggaltutup = date('Y-m-d', strtotime("2024-07-07"));
 if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
   <body><!--/  Form Login -->
   <div class="center"><h1>Sistem Informasi Pendaftaran Mahasiswa Baru Jalur Mandiri 2 Pilihan</h1></div>

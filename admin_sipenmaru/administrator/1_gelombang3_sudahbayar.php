@@ -103,6 +103,9 @@ ini_set('display_errors', 0);
                 <th>Ruang Ujian</th>
                 <th>Sesi Ujian</th>
                 <th>Status</th>
+                <th>Tahap I</th>
+                <th>Tahap II</th>
+                <th>Prodi lulus</th>
                 <th width="150">Aksi</th>
             </tr>
             <?php 
@@ -130,7 +133,10 @@ ini_set('display_errors', 0);
                     <td>$a[tempat_ujian]</td>
                     <td>$a[ruang_ujian]</td>
                     <td>$a[sesi_ujian]</td>
-                    <td>$a[status]</td>         
+                    <td>$a[status]</td>   
+                    <td>$a[status_lulus]</td>  
+                    <td>$a[status_kelulusan_2]</td>  
+                    <td>$a[prodi_lulus]</td>
                     <td>
                         <a href='081_cetak_kartu_ujian.php?username=$a[username]' class='btn btn-primary btn-xs' target='_blank'>
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
@@ -179,7 +185,10 @@ ini_set('display_errors', 0);
                     <td>$a[tempat_ujian]</td>
                     <td>$a[ruang_ujian]</td>  
                     <td>$a[sesi_ujian]</td> 
-                    <td>$a[status]</td>                   
+                    <td>$a[status]</td> 
+                    <td>$a[status_lulus]</td>  
+                    <td>$a[status_kelulusan_2]</td>
+                    <td>$a[prodi_lulus]</td>
                     <td>
                         <a href='081_cetak_kartu_ujian.php?username=$a[username]' class='btn btn-primary btn-xs' target='_blank'>
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
@@ -235,7 +244,10 @@ ini_set('display_errors', 0);
                     <td>$a[tempat_ujian]</td>
                     <td>$a[ruang_ujian]</td>
                     <td>$a[sesi_ujian]</td>
-                    <td>$a[status]</td>       
+                    <td>$a[status]</td>   
+                    <td>$a[status_lulus]</td>  
+                    <td>$a[status_kelulusan_2]</td>
+                    <td>$a[prodi_lulus]</td>
                     <td>
                         <a href='081_cetak_kartu_ujian.php?username=$a[username]' class='btn btn-primary btn-xs' target='_blank'>
                             <span class='glyphicon glyphicon-print'  aria-hidden='true'></span>

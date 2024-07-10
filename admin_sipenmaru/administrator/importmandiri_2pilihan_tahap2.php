@@ -95,7 +95,7 @@ if(isset($_POST["import"]))
       else
       {
         ?>
-        <div class="alert alert-danger">Status Mandiri gagal diubah untuk username : <?php echo $username.' Nama : '.$nama.' dengan status <b>'.$status_pmdp.'</b>. Data tidak ditemukan';?>
+        <div class="alert alert-danger">Status Mandiri gagal diubah untuk username : <?php echo $username.' Nama : '.$nama.' dengan status <b>'.$status_lulus_tahap2.'</b>. Data tidak ditemukan';?>
         </div>
         <?php
       }

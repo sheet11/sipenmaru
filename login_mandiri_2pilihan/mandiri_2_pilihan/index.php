@@ -16,10 +16,9 @@ include "../config/koneksi.php";
                         $data = mysqli_query($kon,"SELECT * FROM tb_formulir4 WHERE username='$_SESSION[username]'");
                         $a = mysqli_fetch_array($data);
                         
-                        if($a['status_kelulusan_2'] == 'Lulus'){
-                        ?>
-                        <h1><a href="cetak_pengumuman.php">Lihat Kelulusan</a></h1>
-                        <?php }elseif($a['status_lulus'] == 'LULUS' AND $a['status_kelulusan_2'] == null){ ?> 
+                        if($a['status_kelulusan_2'] == 'Lulus' || $a['status_kelulusan_2'] == 'Tidak Lulus'){ ?>
+                        <h1><a href="cetak_pengumuman_tahap2.php">Lihat Kelulusan</a></h1>
+                        <?php }elseif($a['status_lulus'] == 'Lulus' || $a['status_lulus'] == 'Tidak Lulus'){ ?> 
                         <h1><a href="cetak_pengumuman.php">Lihat Kelulusan</a></h1>
                         <?php }else{} ?>
                     </div>
@@ -28,7 +27,7 @@ include "../config/koneksi.php";
         
              </div>
              <div>
-                 <a href="cetak_pengumuman.php">Lihat Kelulusan</a>
+                 <!--<a href="cetak_pengumuman.php">Lihat Kelulusan</a>-->
              </div>
              </div>
             </div>   

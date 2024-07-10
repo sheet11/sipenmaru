@@ -1,4 +1,3 @@
-<!--Sedang Tahap Pengumuman-->
 <!DOCTYPE html>
 <html >
   <head>
@@ -10,7 +9,7 @@
     <script src="js/prefixfree.min.js"></script>
     
   </head>
-  <body><!--/  Form Login-->
+  <body><!--/  Form Login -->
   <div class="center"><h1>Sistem Informasi Pendaftaran Mahasiswa Baru Jalur Mandiri 2 Pilihan</h1></div>
         <div class="login">
           <h1>Sipenmaru Online </h1>

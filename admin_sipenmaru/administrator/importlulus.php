@@ -55,7 +55,7 @@
    <br />
    <?php
 
-$kon = mysqli_connect("localhost", "root", "", "db_sipenmaru_2023");
+$kon = mysqli_connect("localhost", "u128202965_sipenmaru", "Bengkulu2024$", "u128202965_sipenmaru");
 $output = '';
 if(isset($_POST["import"]))
 {

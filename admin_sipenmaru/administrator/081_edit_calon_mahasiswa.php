@@ -220,19 +220,13 @@
 					</tr>
 
 					<tr>
-						<td>Status Kelulusan</td>
+						<td>Status Kelulusan I</td>
 						<td>:</td>
-						<td><select name='status_pmdp' class='form-control' >";
-				        	<option value="<?php echo $a['status_pmdp']; ?>"><?php echo $a['status_pmdp']; ?></option>
-				            <?php include "../config/koneksi.php";
-				        	$query = mysqli_query($kon,"SELECT * FROM tb_status_pmdp");
-				        	while ($row = mysqli_fetch_array($query)) {
-				       		 echo"
-				        	<option value='$row[status_pmdp]'>$row[status_pmdp]</option>
-				        	";
-				       		 }
-				        	?>
-				        	echo"</select></td>
+						<td><select name='status_lulus' class='form-control' >";
+				        	<option value="<?php echo $a['status_lulus']; ?>"><?php echo $a['status_lulus']; ?></option>
+				            <option value="Lulus">Lulus</option>
+				            <option value="Tidak Lulus">Tidak Lulus</option>
+				            </select></td>
 					</tr>
 
 					<td>Tanggal Ujian</td>
