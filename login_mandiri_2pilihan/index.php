@@ -11,7 +11,7 @@
     
   </head>
   <body><!--/  Form Login-->
-  <div class="center"><h1>Sistem Informasi Pendaftaran Mahasiswa Baru Jalur Mandiri 2 Pilihan</h1></div>
+  <div><h1>Sistem Informasi Pendaftaran Mahasiswa Baru Jalur Mandiri 2 Pilihan</h1></div>
         <div class="login">
           <h1>Sipenmaru Online </h1>
               <form class="form" action="proseslogin.php" method="post" enctype="multipart/form-data">

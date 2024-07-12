@@ -39,7 +39,7 @@
           <tr>
             <td valign="top">Jalur</td>
             <td valign="top">:</td>
-            <td><?php echo $a['level']; ?></td>
+            <td>MANDIRI 2 PILIHAN GEL II</td>
           </tr>
 
           <tr>
@@ -73,12 +73,12 @@
 <table align="center">
     <tr>
         <td>
-            <h3>&emsp;&emsp;&emsp;&emsp;Selamat anda dinyatakan:</h3>
+            <h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Selamat anda dinyatakan:</h3>
         </td>
     </tr>
     <tr>
         <td>
-            <h1>LULUS SIMAMI TAHAP II</h1>
+            <h1>LULUS SIMAMI GELOMBANG II TAHAP II</h1>
         </td>
     </tr>
 </table>
@@ -572,7 +572,7 @@ DIRI</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="
   window.print();
 </script>
 <?php } elseif ($a['status_kelulusan_2'] == 'Tidak Lulus' || $a['status_kelulusan_2'] == null) { 
-echo "<br><br><br><h1>Maaf Anda Belum Lulus SIMAMI tahap II <br><br>Silahkan coba lagi di periode selanjutnya </h1><br><a href='index.php'>Kembali </a>";
+echo "<br><br><br><h1>Maaf Anda Belum Lulus LULUS SIMAMI GELOMBANG II TAHAP II<br><br>Silakan Coba Tahun Depan...</h1><br><a href='index.php'>Kembali </a>";
  }else{
  header("location:../index.php");
  }

@@ -228,6 +228,16 @@
 				            <option value="Tidak Lulus">Tidak Lulus</option>
 				            </select></td>
 					</tr>
+					
+					<tr>
+						<td>Status Kelulusan II</td>
+						<td>:</td>
+						<td><select name='status_kelulusan_2' class='form-control' >";
+				        	<option value="<?php echo $a['status_Kelulusan_2']; ?>"><?php echo $a['status_kelulusan_2']; ?></option>
+				            <option value="Lulus">Lulus</option>
+				            <option value="Tidak Lulus">Tidak Lulus</option>
+				            </select></td>
+					</tr>
 
 					<td>Tanggal Ujian</td>
                     <td>:</td>

@@ -50,6 +50,7 @@ if($_POST['halaman'] == 0)
 		tahun_prestasi_nonakademik = '$_POST[tahun_prestasi_nonakademik]',
 		nilai_nonakademik = '$_POST[nilai_nonakademik]',
 		status_lulus = '$_POST[status_lulus]',
+		status_kelulusan_2 = '$_POST[status_kelulusan_2]',
 		status = '$_POST[status]'																								
 		  where id_formulir= '$_POST[id_formulir]'");
 		if($qr)
@@ -101,7 +102,8 @@ if($_POST['halaman'] == 0)
 					tahun_prestasi_nonakademik = '$_POST[tahun_prestasi_nonakademik]',
 					nilai_nonakademik = '$_POST[nilai_nonakademik]',
 					status_lulus = '$_POST[status_lulus]',
-					status = '$_POST[status]',						
+					status = '$_POST[status]',	
+					status_kelulusan_2 = '$_POST[status_kelulusan_2]',
 					nama_foto = '$nama_file'						
 					  where id_formulir= '$_POST[id_formulir]'");
 					if($qr)
@@ -176,6 +178,7 @@ else
 		tahun_prestasi_nonakademik = '$_POST[tahun_prestasi_nonakademik]',
 		nilai_nonakademik = '$_POST[nilai_nonakademik]',
 		status_lulus = '$_POST[status_lulus]',
+		status_kelulusan_2 = '$_POST[status_kelulusan_2]',
 		status = '$_POST[status]'
 													
 			  where id_formulir= '$_POST[id_formulir]'");
@@ -228,6 +231,7 @@ else
 					tahun_prestasi_nonakademik = '$_POST[tahun_prestasi_nonakademik]',
 					nilai_nonakademik = '$_POST[nilai_nonakademik]',
 					status_lulus = '$_POST[status_lulus]',
+					status_kelulusan_2 = '$_POST[status_kelulusan_2]',
 					status = '$_POST[status]',										
 					nama_foto = '$nama_file'										
 					  where id_formulir= '$_POST[id_formulir]'");
