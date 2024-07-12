@@ -82,8 +82,7 @@
         </td>
     </tr>
 </table>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+<br>
 <p class="MsoNormal" align="center" style="margin-bottom:6.0pt;text-align:center;
 line-height:150%"><b style="mso-bidi-font-weight:normal"><u><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">INFORMASI
 PERSYARATAN REGISTRASI SIMAMI POLTEKKES BENGKULU<o:p></o:p></span></u></b></p>
