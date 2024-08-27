@@ -38,7 +38,8 @@
                 <th>ID </th>
                 <th>Password</th>
                 <th>Nama</th>
-                <th>Prodi</th>
+                <th>Tempat Lahir</th>
+                <th>Tanggal lahir</th>
                 <th>Agama</th>
                 <th>Jenis Kelamin</th>
                 <th>Asal Sekolah</th>
@@ -55,6 +56,8 @@
                 <th>Ruang Ujian</th>
                 <th>Sesi Ujian</th>
                 <th>Status</th>
+                <th>Status tahap 1</th>
+                <th>Status tahap 2</th>
 		</tr>
         <tr>
         <?php           
@@ -67,6 +70,8 @@
                <td><?=$a['username']?></td>
                <td><?=$a['password']?></td>
                <td><?=$a['nama_lengkap']?></td>
+               <td><?=$a['tempat_lahir']?></td>
+               <td><?=$a['tanggal_lahir']?></td>
                <td><?=$a['pilihan_prodi']?></td>
                <td><?=$a['agama']?></td>
                <td><?=$a['jenis_kelamin']?></td>
@@ -82,7 +87,9 @@
                <td><?=$a['tempat_ujian']?></td>
                <td><?=$a['ruang_ujian']?></td>
                <td><?=$a['sesi_ujian']?></td>
-               <td><?=$a['status']?></td>        
+               <td><?=$a['status']?></td> 
+               <td><?=$a['status_lulus']?></td>
+               <td><?=$a['status_kelulusan_simami_tahap2']?></td> 
            </tr>
            <?php } ?>
 	</table>
