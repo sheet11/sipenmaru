@@ -36,8 +36,8 @@
 $date = date("Y-m-d"); 
 $date=date('Y-m-d', strtotime($date));
 //echo $paymentDate; // echos today! 
-$tanggalbuka = date('Y-m-d', strtotime("2024-05-31"));
-$tanggaltutup = date('Y-m-d', strtotime("2024-06-23"));
+$tanggalbuka = date('Y-m-d', strtotime("2024-11-04"));
+$tanggaltutup = date('Y-m-d', strtotime("2024-11-30"));
 if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
 <div id="page-wrapper">
   <div id="page-inner">
