@@ -63,7 +63,7 @@ $mhs = mysqli_fetch_array($query);
 					</tr>
                     <tr>
 						<td>
-							<ul><li><b>Via Livin/ Mobile Banking Mandiri</b><br>1.Pilih menu Pembayaran/bayar <br>2.Menu Pendidikan <br>3.Cari poltekkes kemenkes BKL <br>4.Masukkan Identitas diri/ID kemudian bayar <br>Simpan bukti pembayaran</li>
+							<ul><li><b>Via Livin/ Mobile Banking Mandiri</b><br>1.Pilih menu Pembayaran/bayar <br>2.Menu Pendidikan <br>3.Cari poltekkes kemenkes BKL <br>4.Masukkan Identitas diri/ID kemudian bayar jangan lupa catat Passwordnya<br>Simpan bukti pembayaran dan jangan lupa catat Passwordnya</li>
 								<br/><li><b>Via Teller Mandiri</b> <br/>Mengisi Slip Setor (Sertakan Nama Pendaftar, id Peserta, Pilihan Prodi dan Jumlah Pembayaran) -> <b>yang perlu diperhatikan No ID Peserta dijadikan sebagai No Rekening</b>
                                 <b>Pastikan Anda Mendapatkan Password Pada Saat Pembayaran Ke Bank Mandiri</b></li> <br>
 								<li><b>Setelah Anda Membayar Silahkan Login https://sipenmaru-polkeslu.cloud/login_mandiri_1pilihan/ <br>dengan memasukkan Identitas Diri/ID dan Password yang didapat saat Pembayaran</li>					
