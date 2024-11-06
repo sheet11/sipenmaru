@@ -25,7 +25,7 @@ include "../config/koneksi.php";
                                 <h3 class="text-danger">*<?php echo $_SESSION['nama_lengkap']?> belum mengisi form asesmen, dimohon untuk mengisi form asesmen </h3>
                             <?php }?> -->
                             <br>
-                            <h1><a href="cetak_pengumuman.php">Lihat Kelulusan</a></h1>
+                            <!-- <h1><a href="cetak_pengumuman.php">Lihat Kelulusan</a></h1> -->
                     </div>
                 </div> 
                              
