@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Sistem Penerimaan Mahasiswa Baru Jalur Mandiri Program Profesi/Alih Jenjang (1 Pilihan)</a> 
+                <a class="navbar-brand" href="index.php">Sistem Penerimaan Mahasiswa Baru Jalur Mandiri Program Profesi/Alih Jenjang (1 Pilihan)<br>*Pendaftaran diperpanjang sampai dengan tanggal 30 November 2024</a> 
             </div>
             <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">Poltekkes Kemenkes Bengkulu  </div>
         </nav>   
@@ -37,7 +37,7 @@ $date = date("Y-m-d");
 $date=date('Y-m-d', strtotime($date));
 //echo $paymentDate; // echos today! 
 $tanggalbuka = date('Y-m-d', strtotime("2024-11-04"));
-$tanggaltutup = date('Y-m-d', strtotime("2024-11-21"));
+$tanggaltutup = date('Y-m-d', strtotime("2024-11-30"));
 if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
 <div id="page-wrapper">
   <div id="page-inner">

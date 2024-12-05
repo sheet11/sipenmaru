@@ -7,7 +7,7 @@
 
 <div id="page-wrapper">
     <div class="container-fluid" style="margin:30px;">
-    	<h5>Catatan : <br>*Mohon mengisi data yang mirip dengan mata kuliah perguruan asal calon sesuai kolom yang sudah tertera, sesudah lengkap baru kemudian calon menyimpan data menggunakan tombol simpan di bawah</h5>
+    	<h5>Catatan : <br>*Mohon mengisi data yang mirip dengan mata kuliah perguruan asal calon sesuai kolom yang sudah tertera, sesudah lengkap silahkan menyimpan data menggunakan tombol simpan di bawah. Mata Kuliah yang tidak ada boleh di kosongkan saja</h5>
 		<form method="post" action="" enctype="multipart/form-data">	
 			<table width="100%" class="table table-bordered">
 				<tr>

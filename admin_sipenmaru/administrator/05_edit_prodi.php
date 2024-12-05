@@ -20,11 +20,15 @@
 			<input type="hidden" name="id_prodi" value="<?php echo "$a[id_prodi]"; ?>">
 		<tr>
 			<td align="left" colspan="3"><b><h4>
-			 EDIT DATA AGAMA</b></h4></td> 
+			 EDIT DATA PRODI</b></h4></td> 
 		</tr>
 	
    		<tr>
-			<td colspan="3"><input type="text" placeholder="Nama Prodi" name="nama_prodi" value="<?php echo "$a[nama_prodi]"; ?>"class="form-control" ></td>
+			<td colspan="3">Nama Prodi <br><input type="text" placeholder="Nama Prodi" name="nama_prodi" value="<?php echo "$a[nama_prodi]"; ?>"class="form-control" ></td>
+			
+		</tr>
+		<tr>
+			<td colspan="3">Status Aktif<input type="text" placeholder="Aktif" name="aktif" value="<?php echo "$a[aktif]"; ?>"class="form-control" ></td>
 			
 		</tr>
 		<tr>
@@ -34,6 +38,7 @@
 			</td>
 		</tr>
 		</table>
+		<p>*catatan <br>Aktif 1 = <br>Aktif 2 = <br>Aktif 3 = SIMAMI 1 Pilihan</p>
 	</form>
 	</div>
 </div>

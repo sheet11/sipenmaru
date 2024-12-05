@@ -181,12 +181,12 @@
 					</tr>
 
 					<tr>
-						<td>Nama Sekolah</td>
+						<td>Nama PT</td>
 						<td>:</td>
 						<td><input type="text" name="nama_sekolah" value="<?php echo $a['nama_sekolah']; ?>" class="form-control" required></td>
 					</tr>
 					<tr>
-						<td>Akreditasi Sekolah</td>
+						<td>Akreditasi PT</td>
 						<td>:</td>
 						<td><select name="akreditasi" class="form-control" required>
 							<option value="0"<?php if($a['akreditasi']=='0'){echo "selected";} ?>>Tidak Terakreditasi</option>
@@ -197,12 +197,12 @@
 					</tr>
 		    
 				    <tr>
-						<td>Asal Sekolah</td>
+						<td>Asal PT</td>
 						<td>:</td>
 						<td><select name='asal_sekolah' class='form-control' required>";
 				        	<option value="<?php echo $a['asal_sekolah']; ?>"><?php echo $a['asal_sekolah']; ?></option>
 				            <?php include "../config/koneksi.php";
-				        	$query = mysqli_query($kon,"SELECT * FROM tb_asal_sekolah");
+				        	$query = mysqli_query($kon,"SELECT * FROM tb_asal_sekolah WHERE status_sekolah='1'");
 				        	while ($row = mysqli_fetch_array($query)) {
 				       		 echo"
 				        	<option value='$row[asal_sekolah]'>$row[asal_sekolah]</option>
@@ -213,7 +213,7 @@
 					</tr>
 
 					<tr>
-						<td>Keterangan Sekolah</td>
+						<td>Keterangan PT</td>
 						<td>:</td>
 						<td><select name='keterangan_sekolah' class='form-control' required>";
 				        	<option value="<?php echo $a['keterangan_sekolah']; ?>"><?php echo $a['keterangan_sekolah']; ?></option>

@@ -26,6 +26,8 @@ include "../config/koneksi.php";
                             <?php }?> -->
                             <br>
                             <!-- <h1><a href="cetak_pengumuman.php">Lihat Kelulusan</a></h1> -->
+                        <h2>Pengumuman Ujian</h2>
+                        <h4>- Jadwal Ujian Tertulis akan dilaksanakan pada tanggal 10 Desember 2024<br><br>- Jadwal Uji Kesehatan Tanggal 11 Desember 2024</h4>
                     </div>
                 </div> 
                              

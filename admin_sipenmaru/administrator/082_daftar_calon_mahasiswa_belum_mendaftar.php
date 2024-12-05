@@ -227,7 +227,7 @@
     $jmldata = mysqli_num_rows(mysqli_query($kon,"SELECT * FROM tb_formulir5 where status='Belum Lengkap'"));
       
     $jmlhalaman  = $p->jumlahHalaman($jmldata, $batas);
-    $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
+    $linkHalaman = $p->navHalaman($_GET['halaman'], $jmlhalaman);
 
     echo "</table><div class=\"paginationw\">$linkHalaman</div>";
     }
