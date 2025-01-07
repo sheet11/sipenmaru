@@ -9,7 +9,7 @@
     <script src="js/prefixfree.min.js"></script>
   </head>
 
-  <body><!--/  Form Login -->
+  <body>
         <div class="login">
           <h1>Sipenmaru Online </h1>
               <form class="form" action="proseslogin.php" method="post" enctype="multipart/form-data">
@@ -24,7 +24,7 @@
                   </p>
                 <p class="submit"><input type="submit" name="sent" value="Login"></p>
               </form>
-        </div> <!--/ Login-->
+        </div> 
 <div class="copyright">
     <p>Sistem Informasi Pendaftaran Mahasiswa Baru Jalur Mandiri Alih Jenjang dan Profesi </a></p>
     <p>Copyright &copy; 2024.Poltekkes Kemenkes Bengkulu </a></p>

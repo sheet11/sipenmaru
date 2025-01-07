@@ -73,6 +73,7 @@
                 <th>Sesi Ujian</th>
                 <th>Status</th>
                 <th>Status Lulus</th>
+                <th>Status Lulus tahap 2</th>
                 <th width="150">Aksi</th>
             </tr>
             <?php 
@@ -98,7 +99,8 @@
                     <td>$a[ruang_ujian]</td>
                     <td>$a[sesi_ujian]</td>
                     <td>$a[status]</td>        
-                    <td>$a[status_lulus]</td>        
+                    <td>$a[status_lulus]</td>    
+                    <td>$a[status_lulus_2]</td>  
                     <td>
                         <a href='082_cetak_kartu_ujian.php?username=$a[username]' class='btn btn-primary btn-xs' target='_blank'>
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
@@ -146,7 +148,8 @@
                     <td>$a[ruang_ujian]</td>
                     <td>$a[sesi_ujian]</td>
                     <td>$a[status]</td>                 
-                    <td>$a[status_lulus]</td>        
+                    <td>$a[status_lulus]</td>
+                    <td>$a[status_lulus_2]</td>
                     <td>
                     <a href='082_cetak_kartu_ujian.php?username=$a[username]' class='btn btn-primary btn-xs' target='_blank'>
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
@@ -200,7 +203,8 @@
                     <td>$a[ruang_ujian]</td>
                     <td>$a[sesi_ujian]</td>
                     <td>$a[status]</td>       
-                    <td>$a[status_lulus]</td>        
+                    <td>$a[status_lulus]</td>
+                    <td>$a[status_lulus_2]</td>
                     <td>
                     <a href='082_cetak_kartu_ujian.php?username=$a[username]' class='btn btn-primary btn-xs' target='_blank'>
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>

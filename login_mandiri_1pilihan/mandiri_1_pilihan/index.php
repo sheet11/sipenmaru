@@ -26,8 +26,14 @@ include "../config/koneksi.php";
                             <?php }?> -->
                             <br>
                             <!-- <h1><a href="cetak_pengumuman.php">Lihat Kelulusan</a></h1> -->
-                        <h2>Pengumuman Ujian</h2>
-                        <h4>- Jadwal Ujian Tertulis akan dilaksanakan pada tanggal 10 Desember 2024<br><br>- Jadwal Uji Kesehatan Tanggal 11 Desember 2024</h4>
+                            <h2>Pengumuman Hasil Tes Kesehatan dan Wawancara</h2>
+                            <h3>Klik Untuk melihat kelulusan > <a href="cetak_pengumuman_tahap2.php">Lihat Kelulusan</a> <</h3>
+                        <!--<h2>Pengumuman Ujian</h2>-->
+                        <!--<h4>- Jadwal Ujian Tertulis akan dilaksanakan pada tanggal 10 Desember 2024<br><br>- Jadwal Uji Kesehatan Tanggal 11 Desember 2024</h4>-->
+                        <!--<br>-->
+                        <!--<h2>Briefing Ujian SIMAMI</h2>-->
+                        <!--<h4>Briefing untuk ujian akan di lanksanakan daring melalui zoom pada tanggal 9 Desember, senin jam 14.00 wib<br>silahkan bergabung di link berikut ini  <a href="https://us06web.zoom.us/j/88482562886?pwd=tlctQwgIB2H2qjRmXnHntLimQbBgTW.1">> Link <</a></h4>-->
+                        <!--<h4></h4>-->
                     </div>
                 </div> 
                              
