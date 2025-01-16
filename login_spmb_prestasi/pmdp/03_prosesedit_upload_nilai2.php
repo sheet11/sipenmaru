@@ -10,9 +10,10 @@
 		$ukuran_file = $_FILES['gambar']['size'];
 		$tipe_file = $_FILES['gambar']['type'];
 		$tmp_file = $_FILES['gambar']['tmp_name'];
+		$nama = $_SESSION['username'];
 		
 		// Folder tempat menyimpan gambarnya
-		$path = "../assets/img/$date-".$nama_file;
+		$path = "../assets/img/$nama-".$nama_file;
 	
 	if(empty($nama_file))
 	{
@@ -36,7 +37,7 @@
 				if(move_uploaded_file($tmp_file, $path))
 				{
 					$qr = mysqli_query($kon,"update tb_formulir3 set 						
-													photo2 = '$date-$nama_file'		
+													photo2 = '$nama-$nama_file'		
 												  	where id_formulir= '$_POST[id_formulir]'");
 					if($qr)
 					{

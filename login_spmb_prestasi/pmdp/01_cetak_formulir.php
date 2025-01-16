@@ -17,9 +17,8 @@
 
 		  <table width="100%" border="0"  align="center">
 		  <tr>
-			<td width="101" height="102"><img src="../assets/img_app/logo-kemenkes.png" width="150" height="100"/></td>
-			<td width="601" align="center"><strong><h4>Seleksi Penerimaan Mahasiswa Baru (SIPENMARU)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun 2024/2025</h4></strong></td>
-			<td width="109" align="center"><img src="../assets/img_app/logo.png" width="100" height="100"/></td>
+			<td><img src="../assets/img_app/logo3.png" width="180" height="100"/></td>
+			<td width="601" align="center"><strong><h4>Seleksi Penerimaan Mahasiswa Baru (SPMB) Jalur Prestasi</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun 2025/2026</h4></strong></td>
 		  </tr>
 		  <tr>
 			<td colspan="3"><hr></hr></td>
@@ -35,7 +34,7 @@
           <tr>
             <td valign="top">Jalur</td>
             <td valign="top">:</td>
-            <td><?php echo $a['level']; ?></td>
+            <td>SPMB Prestasi</td>
           </tr>
 
           <tr>

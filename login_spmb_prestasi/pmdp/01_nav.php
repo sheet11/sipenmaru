@@ -49,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Sipenmaru</a> 
+                <a class="navbar-brand" href="index.html">SPMB</a> 
             </div>
 
             <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"> Poltekkes Kemenkes Bengkulu <a href="logout.php" class="btn btn-danger square-btn-adjust">Logout</a> </div>
@@ -59,7 +59,7 @@
                     <div class="sidebar-collapse">
                         <ul class="nav" id="main-menu">
                             <li class="text-center">
-                                <img src="../assets/img_app/logo.png" class="user-image img-responsive"/>
+                                <img src="../assets/img_app/ptk-bkl.png" class="user-image img-responsive"/>
                             </li>              
                             
                             <li>

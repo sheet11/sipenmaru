@@ -10,9 +10,10 @@
 		$ukuran_file = $_FILES['gambar']['size'];
 		$tipe_file = $_FILES['gambar']['type'];
 		$tmp_file = $_FILES['gambar']['tmp_name'];
+		$nama = $_SESSION['username'];
 		
 		// Folder tempat menyimpan gambarnya
-		$path = "../assets/img/".$nama_file;
+		$path = "../assets/img/$nama-".$nama_file;
 	
 	if(empty($nama_file))
 	{
@@ -78,7 +79,7 @@
 													tanggal_login = '$date',
 													status = 'Sudah Membayar',
 													pilihan_prodi = '$_POST[pilihan_prodi]',						
-													nama_foto = '$nama_file'		
+													nama_foto = '$nama-$nama_file'		
 												  	where id_formulir= '$_POST[id_formulir]'");
 					if($qr)
 					{

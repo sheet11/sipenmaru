@@ -11,7 +11,7 @@
 
   <body>
         <div class="login">
-          <h1>Sipenmaru Online </h1>
+          <h1>SPMB Online </h1>
               <form class="form" action="proseslogin.php" method="post" enctype="multipart/form-data">
                   <p class="field">
                     <input type="text" name="username" placeholder="ID " required/>
@@ -27,7 +27,7 @@
         </div> 
 <div class="copyright">
     <p>Sistem Informasi Pendaftaran Mahasiswa Baru Jalur Mandiri Alih Jenjang dan Profesi </a></p>
-    <p>Copyright &copy; 2024.Poltekkes Kemenkes Bengkulu </a></p>
+    <p>Copyright &copy; 2025.Poltekkes Kemenkes Bengkulu </a></p>
 </div>
       
   </body>

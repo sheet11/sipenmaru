@@ -11,7 +11,7 @@
 
   <body><!--/  Form Login -->
         <div class="login">
-          <h1>Sipenmaru Online </h1>
+          <h1>SPMB Online </h1>
               <form class="form" action="proseslogin.php" method="post" enctype="multipart/form-data">
                   <p class="field">
                     <input type="text" name="username" placeholder="Username" required/>

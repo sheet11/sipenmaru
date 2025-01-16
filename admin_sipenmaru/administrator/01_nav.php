@@ -38,7 +38,7 @@
         <header class="header">
             <a href="index.php" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                Sipenmaru
+                SPMB
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -56,7 +56,7 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">                                
-                                <span>Sistem Pendaftaran Mahasiswa Baru Poltekkes Kemenkes Bengkulu</span>
+                                <span>Seleksi Pendaftaran Mahasiswa Baru Poltekkes Kemenkes Bengkulu</span>
                             </a>
                             
                             </ul>
@@ -73,7 +73,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <li class="image-center">
-                        <img src="../assets/img/logo.png" class="user-image img-responsive" />
+                        <img src="../assets/img/ptk-bkl.png" class="user-image img-responsive" />
                     </li>
                         
                     </div>
@@ -98,7 +98,7 @@
 				            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
 				          </a>
 				          <ul class="treeview-menu">
-				            <li class="treeview"><a href="09_daftar_calon_mahasiswa_pmdp.php"><i class="fa fa-circle-o"></i>PMDP<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+				            <li class="treeview"><a href="09_daftar_calon_mahasiswa_pmdp.php"><i class="fa fa-circle-o"></i>SPMB Prestasi<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                                 </a>
                                 <ul class="treeview-menu">
                                     <li><a href="09_daftar_calon_mahasiswa_pmdp.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
@@ -131,7 +131,7 @@
 				          <ul class="treeview-menu">
 
 				            <li class="treeview">
-                                <a href="01_laporan_pmdp.php"><i class="fa fa-circle-o"></i>Laporan PMDP<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                <a href="01_laporan_pmdp.php"><i class="fa fa-circle-o"></i>Laporan SPMB Prestasi<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                                 <ul class="treeview-menu">
                                     <li><a href="09_laporan_pmdp.php"><i class="fa fa-circle-o"></i>Umum</a></li>
 
