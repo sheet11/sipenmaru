@@ -31,3 +31,7 @@ readme.html
 .png
 .pdf
 .zip
+.htaccess
+.htaccess.bk
+.htaccess_original
+default.php
