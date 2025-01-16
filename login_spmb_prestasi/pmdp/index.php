@@ -10,7 +10,7 @@ include "../config/koneksi.php";
                 <div class="row">
                     <div class="col-md-12">
                      <h2>Poltekkes Kemenkes Bengkulu</h2>   
-                        <h5>Selamat Datang <b><?php echo $_SESSION['nama_lengkap'];?> </b> Di Halaman Sistem Informasi Pendaftaran Mahasiswa Baru Online Jalur <b><?php echo $_SESSION['level'];?></b></h5>
+                        <h5>Selamat Datang <b><?php echo $_SESSION['nama_lengkap'];?> </b> Di Halaman Seleksi Pendaftaran Mahasiswa Baru Online Jalur <b>Prestasi</b></h5>
                     </div>
                 </div> 
                              

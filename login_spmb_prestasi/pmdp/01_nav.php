@@ -63,7 +63,7 @@
                             </li>              
                             
                             <li>
-                                <a class="active-menu"  href="index.php"><i class="fa fa-dashboard fa-2x"></i> Beranda</a>
+                                <a href="index.php"><i class="fa fa-dashboard fa-2x"></i> Beranda</a>
                             </li>
                             
                             
@@ -80,8 +80,15 @@
                                 <a  href="03_upload_nilai.php"><i class="fa fa-desktop fa-2x"></i> Upload Nilai </a>
                             </li>
                             <li>
+                                <a  href="06_upload_rekomendasi.php"><i class="fa fa-trophy fa-2x"></i> Surat Rekomendasi Sekolah </a>
+                            </li>
+                            <li>
+                                <a  href="07_upload_akreditasi.php"><i class="fa fa-trophy fa-2x"></i> Sertifikat Akreditas Sekolah </a>
+                            </li>
+                            <li>
                                 <a  href="04_upload_prestasi.php"><i class="fa fa-trophy fa-2x"></i> Upload Prestasi </a>
                             </li>
+
 							<li>
                                 <a  href="05_status.php"><i class="fa fa-desktop fa-2x"></i> Cetak Kartu  </a>
                             </li>
