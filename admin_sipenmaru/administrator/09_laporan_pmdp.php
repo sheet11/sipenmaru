@@ -125,7 +125,14 @@
                         <tr>
                             <td> Jumlah Pendaftar Prodi Sarjana Terapan Keperawatan dan Ners</td> <td> :</td> <td><?php
                                                          require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Ners' and status='Sudah Membayar' ");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' and status='Sudah Membayar' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+                        </tr>
+                        <tr>
+                            <td> Jumlah Pendaftar Prodi Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)</td> <td> :</td> <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)' and status='Sudah Membayar' ");
                                                          $jumlah= mysqli_num_rows ($query);
                                                          ?><?php echo $jumlah; ?></td>
                         </tr>
@@ -221,16 +228,25 @@
                         </tr>
 
                         <tr>
-                            <td>Jenis Kelamin Laki-laki Prodi Sarjana Terapan Keperawatan dan Ners </td> 
+                            <td>Jenis Kelamin Laki-laki Prodi Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners </td> 
                             <td>:</td> 
                             <td><?php
                                                          require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Ners' and jenis_kelamin='Laki-Laki' and status='Sudah Membayar' ");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' and jenis_kelamin='Laki-Laki' and status='Sudah Membayar' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Jenis Kelamin Laki-laki Prodi Sarjana Terapan Keperawatan dan Ners  (Kelas Internasional) </td> 
+                            <td>:</td> 
+                            <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)' and jenis_kelamin='Laki-Laki' and status='Sudah Membayar' ");
                                                          $jumlah= mysqli_num_rows ($query);
                                                          ?><?php echo $jumlah; ?></td>
                         </tr>
 
-                        
 
                         <tr>
                             <td>Perempuan </td> <td> :</td> <td><?php
@@ -335,16 +351,26 @@
                         </tr>
 
                         <tr>
-                            <td>Jenis Kelamin Perempuan Prodi Sarjana Terapan Keperawatan dan Ners </td> 
+                            <td>Jenis Kelamin Perempuan Prodi Sarjana Terapan Keperawatan dan Profesi Ners </td> 
                             <td>:</td> 
                             <td><?php
                                                          require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Ners' and jenis_kelamin='Perempuan' and status='Sudah Membayar' ");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' and jenis_kelamin='Perempuan' and status='Sudah Membayar' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Jenis Kelamin Perempuan Prodi Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional) </td> 
+                            <td>:</td> 
+                            <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)' and jenis_kelamin='Perempuan' and status='Sudah Membayar' ");
                                                          $jumlah= mysqli_num_rows ($query);
                                                          ?><?php echo $jumlah; ?></td>
                         </tr>
 
-
+                    
             </div>   
 
            

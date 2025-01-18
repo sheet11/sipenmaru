@@ -31,7 +31,7 @@
 	}
 	else
 	{
-		if($tipe_file == "image/jpeg" || $tipe_file == "image/png" || $tipe_file == "image/jpg")
+		if($tipe_file == "image/jpeg" || $tipe_file == "image/png" || $tipe_file == "image/jpg" || $tipe_file="application/pdf")
 		{
 			if($ukuran_file <= 500000)
 			{
@@ -60,7 +60,7 @@
 		}
 		else
 		{
-			echo "<script>alert('Mohon maaf, type gambar yang diperbolehkan .jpg , .jpeg , .png');window.location='03_upload_nilai.php'</script>";
+			echo "<script>alert('Mohon maaf, type gambar yang diperbolehkan .jpg , .jpeg , .png , .pdf');window.location='03_upload_nilai.php'</script>";
 		}
 	}
 ?>	

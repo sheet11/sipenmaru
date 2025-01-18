@@ -30,7 +30,7 @@
                     if($a['rekomendasi_sekolah'] == null){ ?>
                         <a class='btn btn-sm btn-danger'><b>Belum Lengkap</b></a>
                     <?php }else{ ?>
-                        <a href="../assets/img/<?=$a['rekomendasi_sekolah'] ?>" alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
+                        <a href="surat/<?=$a['rekomendasi_sekolah'] ?>" alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
                     <?php } ?></td>
 					<td><a href='06_edituploadrekomendasi.php?id_formulir=<?=$a["id_formulir"]?>' class='btn btn-info'><b>Upload</b></a></td>
 					</tr>

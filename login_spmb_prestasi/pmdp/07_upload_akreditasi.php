@@ -30,7 +30,7 @@
                     if($a['sertifikat_akreditasi'] == null){ ?>
                         <a class='btn btn-sm btn-danger'><b>Belum Lengkap</b></a>
                     <?php }else{ ?>
-                        <a href="../assets/img/<?=$a['sertifikat_akreditasi'] ?>" alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
+                        <a href="surat/<?=$a['sertifikat_akreditasi'] ?>" alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
                     <?php } ?></td>
 					<td><a href='07_edituploadakreditasi.php?id_formulir=<?=$a['id_formulir']?>' class='btn btn-info'><b>Upload</b></a></td>
 					</tr>
