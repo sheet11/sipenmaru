@@ -25,9 +25,10 @@
 					
 
 					<tr>
-						<td>Foto</td>
+						<td>File</td>
 						<td>: </td>
-						<td><input type="file" name="gambar" class="form-control"></td>
+						<td><input type="file" name="gambar" class="form-control">
+						<small class="text-danger">Ukuran Gambar tidak boleh melebihi 500kb dan Format file ( .jpg / .png / .jpeg / .pdf)</small></td>
 					</tr>
 
 					<tr>

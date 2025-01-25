@@ -34,19 +34,19 @@
 		
           <tr>
               <td rowspan=14 width=164 valign="top"><a href="../assets/img/<?php echo $a['photo1'];?>" class="fancy">
-              <img src="../assets/img/<?php echo $a['photo1'];?>" alt="" width=150 height=175 border="0" /></td>
+              <a href="../assets/img/<?php echo $a['photo1'];?>" alt="" width=150 height=175 border="0">Klik disini</a> </td>
 			  
 			  <td rowspan=14 width=164 valign="top"><a href="../assets/img/<?php echo $a['photo2'];?>" class="fancy">
-              <img src="../assets/img/<?php echo $a['photo2'];?>" alt="" width=150 height=175 border="0" /></td>
+              <a href="../assets/img/<?php echo $a['photo2'];?>" alt="" width=150 height=175 border="0">Klik disini</a></td>
 			  
 			  <td rowspan=14 width=164 valign="top"><a href="../assets/img/<?php echo $a['photo3'];?>" class="fancy">
-              <img src="../assets/img/<?php echo $a['photo3'];?>" alt="" width=150 height=175 border="0" /></td>
+              <a href="../assets/img/<?php echo $a['photo3'];?>" alt="" width=150 height=175 border="0">Klik disini</a></td>
 			  
 			  <td rowspan=14 width=164 valign="top"><a href="../assets/img/<?php echo $a['photo4'];?>" class="fancy">
-              <img src="../assets/img/<?php echo $a['photo4'];?>" alt="" width=150 height=175 border="0" /></td>
+              <a href="../assets/img/<?php echo $a['photo4'];?>" alt="" width=150 height=175 border="0">Klik disini</a></td>
 			  
 			  <td rowspan=14 width=164 valign="top"><a href="../assets/img/<?php echo $a['photo5'];?>" class="fancy">
-              <img src="../assets/img/<?php echo $a['photo5'];?>" alt="" width=150 height=175 border="0" /></td>
+              <a href="../assets/img/<?php echo $a['photo5'];?>" alt="" width=150 height=175 border="0">Klik disini</a></td>
           </tr>
 
          

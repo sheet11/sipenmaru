@@ -49,17 +49,17 @@
 				}
 				else
 				{
-					echo "<script>alert('Mohon maaf, Gambar gagal diupload.');window.location='03_upload_nilai.php'</script>";
+					echo "<script>alert('Mohon maaf, file gagal diupload.');window.location='03_upload_nilai.php'</script>";
 				}
 			}
 			else
 			{
-				echo "<script>alert('Mohon maaf, Gambar tidak boleh melebihi 500 kb.');window.location='03_upload_nilai.php'</script>";
+				echo "<script>alert('Mohon maaf, file tidak boleh melebihi 500 kb.');window.location='03_upload_nilai.php'</script>";
 			}
 		}
 		else
 		{
-			echo "<script>alert('Mohon maaf, type gambar yang diperbolehkan .jpg , .jpeg , .png , .pdf');window.location='03_upload_nilai.php'</script>";
+			echo "<script>alert('Mohon maaf, type file yang diperbolehkan .jpg , .jpeg , .png , .pdf');window.location='03_upload_nilai.php'</script>";
 		}
 	}
 ?>	

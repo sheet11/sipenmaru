@@ -11,6 +11,7 @@
 		$tipe_file = $_FILES['gambar']['type'];
 		$tmp_file = $_FILES['gambar']['tmp_name'];
 		$nama = $_SESSION['username'];
+		$nama_ortu = addslashes($_POST["nama_orang_tua"]);
 		
 		// Folder tempat menyimpan gambarnya
 		$path = "../assets/img/$nama-".$nama_file;
@@ -27,7 +28,7 @@
 													tinggi_badan = '$_POST[tinggi_badan]',
 													golongan_darah = '$_POST[golongan_darah]',
 													nik = '$_POST[nik]',
-													nama_orang_tua = '$_POST[nama_orang_tua]',
+													nama_orang_tua = '$nama_ortu',
 													pekerjaan_orang_tua = '$_POST[pekerjaan_orang_tua]',
 													penghasilan_orang_tua = '$_POST[penghasilan_orang_tua]',
 													kartu_bpjs = '$_POST[kartu_bpjs]',
@@ -67,7 +68,7 @@
 													tinggi_badan = '$_POST[tinggi_badan]',
 													golongan_darah = '$_POST[golongan_darah]',
 													nik = '$_POST[nik]',
-													nama_orang_tua = '$_POST[nama_orang_tua]',
+													nama_orang_tua = '$nama_ortu',
 													pekerjaan_orang_tua = '$_POST[pekerjaan_orang_tua]',
 													penghasilan_orang_tua = '$_POST[penghasilan_orang_tua]',
 													kartu_bpjs = '$_POST[kartu_bpjs]',

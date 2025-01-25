@@ -35,7 +35,7 @@
 					<div class="form-group col-md-6">
 						<label>Bukti Prestasi</label>
 						<input type="file" name="bukti" class="form-control" accept="image/*" required>
-						<small class="text-danger">Format gambar ( .jpg / .png / .jpeg)</small>
+						<small class="text-danger">Ukuran Gambar tidak boleh melebihi 500kb dan Format gambar ( .jpg / .png / .jpeg)</small>
 					</div>
 					<div class="form-group col-md-6">
 						<label>Tanggal Sertifikat</label>

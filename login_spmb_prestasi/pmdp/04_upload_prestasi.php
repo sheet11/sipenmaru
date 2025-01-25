@@ -11,15 +11,15 @@
 		<div>
 			<hr>
 			<div class="table-responsive">
-				<?php 
-				$jqt=mysqli_num_rows(mysqli_query($kon,"select * from tb_prestasi where username='$_SESSION[username]' order by tingkat asc"));
-				if($jqt==0)
-				{
-					?>
+				 <?php 
+				// $jqt=mysqli_num_rows(mysqli_query($kon,"select * from tb_prestasi where username='$_SESSION[username]' order by tingkat asc"));
+				// if($jqt==0)
+				// {
+				// 	?>
 					<a class="btn btn-success btn-sm" href="04_input_prestasi.php"><i class="fa fa-plus"></i> Tambah Prestasi</a>
-					<?php
-				}
-				?>
+				 	<?php
+				// }
+				// ?>
 				
 				<table class="table table-bordered table-hover table-striped">
 					<thead>

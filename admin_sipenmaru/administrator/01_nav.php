@@ -133,6 +133,8 @@
 				            <li class="treeview">
                                 <a href="01_laporan_pmdp.php"><i class="fa fa-circle-o"></i>Laporan SPMB Prestasi<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                                 <ul class="treeview-menu">
+                                    <li><a href="09_laporan_pmdp_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a></li>
+                                    
                                     <li><a href="09_laporan_pmdp.php"><i class="fa fa-circle-o"></i>Umum</a></li>
 
                                     <li><a href="09_laporan_tingkatpoltekkes.php"><i class="fa fa-circle-o"></i>Tingkat Poltekkes</a></li>
