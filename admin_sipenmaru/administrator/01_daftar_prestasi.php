@@ -44,7 +44,7 @@
             <tr>
                 <td><a class="btn btn-info" > Jumlah PMDP: <?php
                                                                     require_once("../config/koneksi.php");
-                                                                    $query = mysqli_query ($kon,"SELECT * from tb_formulir3 where status='Sudah Membayar' ");
+                                                                    $query = mysqli_query ($kon,"SELECT * from tb_prestasi' ");
                                                                     $jumlah = mysqli_num_rows ($query); ?>
                                                                     <?php echo $jumlah; ?> </a></td>
 
@@ -64,16 +64,12 @@
             <tr class="info">
                 <th>No.</th>
                 <th>ID </th>
-                <th>Password</th>
                 <th>Nama</th>
-                <th>Prodi</th>
-                <th>No HP</th>
-                <th>Tanggal Daftar</th>
-                <th>Tanggal Login</th>
-                <th>Nama Sekolah</th>
-                <th>Status</th>
-                <th>Pekerjaan</th>
-                <th>Penghasilan</th>
+                <th>Keterangan</th>
+                <th>Tingkat</th>
+                <th>bukti gambar</th>
+                <th>Tanggal prestasi</th>
+                <th>Tanggal entri</th>
                 <th width="150">Aksi</th>
             </tr>
             <?php 
@@ -81,23 +77,19 @@
                 if(isset($_POST['submit'])){
                     $cariid = $_POST['cariid'];
                     $cari = $_POST['cari'];
-                    $query=mysqli_query($kon,"select * from tb_formulir3 where status='Sudah Membayar' and  $cariid = '$cari' or $cariid = '0' "); 
+                    $query=mysqli_query($kon,"select * from tb_prestasi' and  $cariid = '$cari' or $cariid = '0' "); 
                     $i = $posisi+1;      
                 while($a=mysqli_fetch_array($query)){
             echo"
                 <tr>
                     <td>$i</td>
                     <td>$a[username]</td>
-                    <td>$a[password]</td>
-                    <td>$a[nama_lengkap]</td>
-                    <td>$a[pilihan_prodi]</td>
-                    <td>$a[no_hp]</td>
-                    <td>$a[tanggal_daftar]</td>
-                    <td>$a[tanggal_login]</td>
-                    <td>$a[nama_sekolah]</td>
-                    <td>$a[status]</td>   
-                    <td>$a[pekerjaan_orang_tua]</td>    
-                    <td>$a[penghasilan_orang_tua]</td>   
+                    <td>$a[nama]</td>
+                    <td>$a[ket]</td>
+                    <td>$a[tingkat]</td>
+                    <td>$a[bukti_n]</td>
+                    <td>$a[tgl]</td>
+                    <td>$a[entri]</td>
                     <td>
                         <a href='09_cetak_calon_mahasiswa_pmdp.php?username=$a[username]' class='btn btn-success btn-xs' >
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
@@ -106,7 +98,7 @@
                         <a href='09_cetak_raport_calon_mahasiswa_pmdp.php?username=$a[username]' class='btn btn-warning btn-xs' >
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
                         </a>
-                        <a href='09_lihat_nilai_input.php?username=$a[username]' class='btn btn-warning btn-xs' >
+                        <a href='09_lihat_nilai_input.php.php?username=$a[username]' class='btn btn-warning btn-xs' >
                         <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
                         </a>
                         <a href='09_edit_calon_mahasiswa_pmdp.php?username=$a[username]' class='btn btn-info btn-xs'>
@@ -128,16 +120,12 @@
                 <tr>    
                     <td>$i</td>
                     <td>$a[username]</td>
-                    <td>$a[password]</td>
-                    <td>$a[nama_lengkap]</td>
-                    <td>$a[pilihan_prodi]</td>
-                    <td>$a[no_hp]</td>
-                    <td>$a[tanggal_daftar]</td>
-                    <td>$a[tanggal_login]</td>
-                    <td>$a[nama_sekolah]</td>  
-                    <td>$a[status]</td>   
-                    <td>$a[pekerjaan_orang_tua]</td>    
-                    <td>$a[penghasilan_orang_tua]</td>                  
+                    <td>$a[nama]</td>
+                    <td>$a[ket]</td>
+                    <td>$a[tingkat]</td>
+                    <td>$a[bukti_n]</td>
+                    <td>$a[tgl]</td>
+                    <td>$a[entri]</td>               
                     <td>
                         <a href='09_cetak_calon_mahasiswa_pmdp.php?username=$a[username]' class='btn btn-success btn-xs'>
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
@@ -167,7 +155,7 @@
                     $p      = new Paging;
                     $batas  = 10;
                     $posisi = $p->cariPosisi($batas);               
-                    $query=mysqli_query($kon,"select * from tb_formulir3 where status='Sudah Membayar' order by username asc  LIMIT $posisi,$batas");
+                    $query=mysqli_query($kon,"select * from tb_prestasi' order by username asc  LIMIT $posisi,$batas");
                 
                     $i = $posisi+1;     
                 while($a=mysqli_fetch_array($query)){
@@ -176,16 +164,12 @@
                 <tr>
                     <td>$i</td>
                     <td>$a[username]</td>
-                    <td>$a[password]</td>
-                    <td>$a[nama_lengkap]</td>
-                    <td>$a[pilihan_prodi]</td> 
-                    <td>$a[no_hp]</td>
-                    <td>$a[tanggal_daftar]</td>
-                    <td>$a[tanggal_login]</td>
-                    <td>$a[nama_sekolah]</td> 
-                    <td>$a[status]</td>
-                    <td>$a[pekerjaan_orang_tua]</td>    
-                    <td>$a[penghasilan_orang_tua]</td>         
+                    <td>$a[nama]</td>
+                    <td>$a[ket]</td>
+                    <td>$a[tingkat]</td>
+                    <td>$a[bukti_n]</td>
+                    <td>$a[tgl]</td>
+                    <td>$a[entri]</td>        
                     <td>
                         <a href='09_cetak_calon_mahasiswa_pmdp.php?username=$a[username]&halaman=$_GET[halaman]' class='btn btn-success btn-xs'>
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
@@ -210,7 +194,7 @@
             }
             
 
-    $jmldata = mysqli_num_rows(mysqli_query($kon,"SELECT * FROM tb_formulir3  where status='Sudah Membayar' " ));
+    $jmldata = mysqli_num_rows(mysqli_query($kon,"SELECT * FROM tb_prestasi " ));
       
     $jmlhalaman  = $p->jumlahHalaman($jmldata, $batas);
     $linkHalaman = $p->navHalaman($_GET['halaman'], $jmlhalaman);

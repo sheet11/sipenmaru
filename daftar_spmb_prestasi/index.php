@@ -37,7 +37,7 @@ $date = date("Y-m-d");
 $date=date('Y-m-d', strtotime($date));
 //echo $paymentDate; // echos today! 
 $tanggalbuka = date('Y-m-d', strtotime("2025-01-13"));
-$tanggaltutup = date('Y-m-d', strtotime("2025-02-18"));
+$tanggaltutup = date('Y-m-d', strtotime("2025-02-28"));
 if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
 <div id="page-wrapper">
   <div id="page-inner">
@@ -103,7 +103,7 @@ if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
   </div>
 </div>
 <?php }else{ ?>
-	<h1>Pendaftaran di mulai tanggal 13 Januari 2025</h1>
+	<h1>Pendaftaran di tutup</h1>
 <?php } ?>
 
 <?php
