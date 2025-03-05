@@ -35,26 +35,26 @@
         <table align="center">
           <tr>
               <td rowspan=14 width=164 valign="top">
-                <a href="../../login_pmdp/assets/img/<?php echo $a['nama_foto'];?>" class="fancy">
-              <img src="../../login_pmdp/assets/img/<?php echo $a['nama_foto'];?>" alt="" width=150 height=175 border="0" /> </a></td>
+                <a href="../../login_spmb_prestasi/assets/img/<?php echo $a['nama_foto'];?>" class="fancy">
+              <img src="../../login_spmb_prestasi/assets/img/<?php echo $a['nama_foto'];?>" alt="" width=150 height=175 border="0" /> </a></td>
 
               <td rowspan=14 width=164 valign="top">
-              <a href="../../login_pmdp/assets/img/<?php echo $a['photo1'];?>" class="fancy">
-              <img src="../../login_pmdp/assets/img/<?php echo $a['photo1'];?>" alt="" width=150 height=175 border="0" /></a></td>
+              <a href="../../login_spmb_prestasi/assets/img/<?php echo $a['photo1'];?>" class="fancy">
+              <img src="../../login_spmb_prestasi/assets/img/<?php echo $a['photo1'];?>" alt="" width=150 height=175 border="0" /></a></td>
 
               <td rowspan=14 width=164 valign="top">
-                <a href="../../login_pmdp/assets/img/<?php echo $a['photo2'];?>" class="fancy">
-              <img src="../../login_pmdp/assets/img/<?php echo $a['photo2'];?>" alt="" width=150 height=175 border="0" /></a></td>
+                <a href="../../login_spmb_prestasi/assets/img/<?php echo $a['photo2'];?>" class="fancy">
+              <img src="../../login_spmb_prestasi/assets/img/<?php echo $a['photo2'];?>" alt="" width=150 height=175 border="0" /></a></td>
 
               <td rowspan=14 width=164 valign="top">
-                <a href="../../login_pmdp/assets/img/<?php echo $a['photo3'];?>" class="fancy">
-              <img src="../../login_pmdp/assets/img/<?php echo $a['photo3'];?>" alt="" width=150 height=175 border="0" /></a></td>
+                <a href="../../login_spmb_prestasi/assets/img/<?php echo $a['photo3'];?>" class="fancy">
+              <img src="../../login_spmb_prestasi/assets/img/<?php echo $a['photo3'];?>" alt="" width=150 height=175 border="0" /></a></td>
 
-              <td rowspan=14 width=164 valign="top"><a href="../../login_pmdp/assets/img/<?php echo $a['photo4'];?>" class="fancy">
-              <img src="../../login_pmdp/assets/img/<?php echo $a['photo4'];?>" alt="" width=150 height=175 border="0" /></a></td>
+              <td rowspan=14 width=164 valign="top"><a href="../../login_spmb_prestasi/assets/img/<?php echo $a['photo4'];?>" class="fancy">
+              <img src="../../login_spmb_prestasi/assets/img/<?php echo $a['photo4'];?>" alt="" width=150 height=175 border="0" /></a></td>
 
-              <td rowspan=14 width=164 valign="top"><a href="../../login_pmdp/assets/img/<?php echo $a['photo5'];?>" class="fancy">
-              <img src="../../login_pmdp/assets/img/<?php echo $a['photo5'];?>" alt="" width=150 height=175 border="0" /></a></td>
+              <td rowspan=14 width=164 valign="top"><a href="../../login_spmb_prestasi/assets/img/<?php echo $a['photo5'];?>" class="fancy">
+              <img src="../../login_spmb_prestasi/assets/img/<?php echo $a['photo5'];?>" alt="" width=150 height=175 border="0" /></a></td>
           </tr>
         </table>
 </body>

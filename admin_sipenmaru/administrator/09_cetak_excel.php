@@ -60,6 +60,11 @@
                 <th>Golongan Darah</th>
                 <th>Rekomendasi Sekolah</th>
                 <th>Sertifikat Akreditasi</th>
+                <th>Semester 1</th>
+                <th>Semester 2</th>
+                <th>Semester 3</th>
+                <th>Semester 4</th>
+                <th>Semester 5</th>
                 <th>Tgl Daftar</th>
                 <th>Tgl Login</th>
                 <th>Status</th>
@@ -97,6 +102,11 @@
                <td><?=$a['golongan_darah']?></td>
                <td><?=$a['rekomendasi_sekolah']?></td>
                <td><?=$a['sertifikat_akreditasi']?></td>
+               <td><a href="https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo1']?>">Semester 1</a></td>
+               <td><a href="https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo2']?>">Semester 2</a></td>
+               <td><a href="https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo3']?>">Semester 3</a></td>
+               <td><a href="https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo4']?>">Semester 4</a></td>
+               <td><a href="https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo5']?>">Semester 5</a></td>
                <td><?=$a['tanggal_daftar']?></td>
                <td><?=$a['tanggal_login']?></td>
                <td><?=$a['status']?></td>        

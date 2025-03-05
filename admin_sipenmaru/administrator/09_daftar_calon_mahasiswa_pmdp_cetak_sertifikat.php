@@ -55,7 +55,7 @@
                         $cariid = $_POST['cariid'];
                         $cari = $_POST['cari'];
                     ?>
-                        <a class="btn btn-success" href="09_cetak_excel_calon_mahasiswa_pmdp2.php?cariid=<?php echo $cariid; ?>&cari=<?php echo $cari; ?>">Cetak Excel</a>
+                        <a class="btn btn-success" href="09_cetak_excel_prestasi.php">Cetak Excel</a>
                     <?php
                     }
                     elseif(!empty($_GET['username']))
