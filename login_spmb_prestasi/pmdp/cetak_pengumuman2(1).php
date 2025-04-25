@@ -15,7 +15,8 @@
     date_default_timezone_set('Asia/Jakarta'); // Zona Waktu indonesia
     // echo date('h:i:s a'); // menampilkan jam sekarang
     // echo date('l, d-m-Y  H:i:s'); //kombinasi jam dan tanggal
-    if($a['status_pmdp'] == "LULUS") {
+    
+    if($a['status_pmdp_2'] == "Lulus") {
 ?>
 <?php ?>
 <html>
@@ -57,6 +58,11 @@
             <td valign="top">:</td>
             <td><?php echo $a['pilihan_prodi']; ?></td>
           </tr>
+          <tr>
+            <td valign="top">Di cetak pada tanggal</td>
+            <td valign="top">:</td>
+            <td><?php echo $a['cetak2']; ?></td>
+          </tr>
           
           <tr>
             <td colspan="4"><?php echo bar128 (stripslashes($a['username'])); ?></td>
@@ -71,7 +77,7 @@
 <table align="center">
     <tr>
         <td>
-            <h3>&emsp;&emsp;Selamat anda dinyatakan:</h3>
+            <h3 align="center">Selamat anda dinyatakan:</h3>
         </td>
     </tr>
     <tr>
@@ -658,6 +664,6 @@ p {text-align: center;}
 div {text-align: center;}
 </style>
 
-<?php } elseif ($a['status_pmdp'] == "TIDAK LULUS") { 
+<?php } elseif ($a['status_pmdp_2'] == "Tidak Lulus") { 
 header("location:pmdp/index.php");
  } ?>

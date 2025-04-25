@@ -2,6 +2,7 @@
 include"01_nav.php";
 error_reporting(0);
 include "../config/koneksi.php"; 
+include("fucnt_tgl.php");
 ?>
 
 <body>
@@ -66,8 +67,17 @@ include "../config/koneksi.php";
             ?>
            
             </table>
-        
-     
+            <?php
+            date_default_timezone_set('Asia/Jakarta');
+            $d = tgl_indo(date('l, d-m-Y  H:i:s'));
+            $q = mysqli_query($kon,"select * from tb_formulir3 WHERE username=$_SESSION[username]");
+            $row = mysqli_fetch_array($q);
+            if ($_SESSION['kelulusan'] === 'tahap1' and $row['status_pmdp'] != ""){ ?>
+            <h2>Klik untuk melihat -> <a href="cetak_pengumuman1.php" class='btn btn-success'>Kelulusan Tahap 1 </a></h2>
+            <?php }elseif ($_SESSION['kelulusan'] === 'tahap2' and $row['status_pmdp_2'] != "") {?>
+            <h1><h1>Klik untuk melihat -> <a href="cetak_pengumuman2.php" class='btn btn-success'>Kelulusan Tahap 2 </a></h1></h1>
+            <?php }else{} 
+             ?>
     </div>
              </div>
              </div>

@@ -30,7 +30,7 @@
   <div class="container box">
    <form method="post" enctype="multipart/form-data">
     <div class="container-fluid">
-      <h3 align="center" class="text-success" style="font-weight:600;">Import Siswa Lulus PMDP Tahap 2 Tahun 2023</h3><br />
+      <h3 align="center" class="text-success" style="font-weight:600;">Import Siswa Lulus PMDP Tahap 2 Tahun <? echo date(Y); ?></h3><br />
       <a class="btn-link" href="index.php">Kembali</a>
       <div class="row" style="margin-bottom:20px">
         <div class="col-md-4 col-xs-4 col-sm-4"></div>  <!-- Blank Div -->
@@ -55,7 +55,7 @@
    <br />
    <?php
 
-$kon = mysqli_connect("localhost", "root", "", "db_sipenmaru_2023");
+$kon = mysqli_connect("localhost", "u128202965_sipenmaru", "Bengkulu2024$", "u128202965_sipenmaru");
 $output = '';
 if(isset($_POST["import"]))
 {
@@ -87,14 +87,14 @@ if(isset($_POST["import"]))
       {
         mysqli_query($kon,"update tb_formulir3 set status_pmdp_2='$status_pmdp2' where username='$username'");  
         ?>
-        <div class="alert alert-success">Status PMDP berhasil diubah untuk username : <?php echo $username.' Nama : '.$nama.' dengan status <b>'.$status_pmdp2.'</b>';?>
+        <div class="alert alert-success">Status SPMB Prestasi berhasil diubah untuk username : <?php echo $username.' Nama : '.$nama.' dengan status <b>'.$status_pmdp2.'</b>';?>
         </div>
         <?php
       }
       else
       {
         ?>
-        <div class="alert alert-danger">Status PMDP gagal diubah untuk username : <?php echo $username.' Nama : '.$nama.' dengan status <b>'.$status_pmdp2.'</b>. Data tidak ditemukan';?>
+        <div class="alert alert-danger">Status SPMB Prestasi gagal diubah untuk username : <?php echo $username.' Nama : '.$nama.' dengan status <b>'.$status_pmdp2.'</b>. Data tidak ditemukan';?>
         </div>
         <?php
       }

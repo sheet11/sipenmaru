@@ -11,8 +11,9 @@
 
   <body><!--/  Form Login -->
         <div class="login">
-          <h1>Sipenmaru Online </h1>
-              <form class="form" action="prosesloginkelulusan.php" method="post" enctype="multipart/form-data">
+          <h1>SPMB Online </h1>
+          <h2 align="center">Pengumuman Tahap 1</h2>
+              <form class="form" action="prosesloginkelulusan1.php" method="post" enctype="multipart/form-data">
                   <p class="field">
                     <input type="text" name="username" placeholder="ID " required/>
                     <i class="fa fa-user"></i>
@@ -27,7 +28,7 @@
         </div> <!--/ Login-->
 
 <div class="copyright">
-    <p>Sistem Informasi Pendaftaran Mahasiswa Baru Jalur PMDP </a></p>
+    <p>Seleksi Pendaftaran Mahasiswa Baru Jalur Prestasi </a></p>
     <p>Copyright &copy; Poltekkes Kemenkes Bengkulu </a></p>
 </div>
       

@@ -19,7 +19,7 @@
                             <select name="cariid" class="form-control">
                                 <option value="username">ID </option>
                                 <option value="nama_lengkap">Nama Lengkap</option>
-                                <option value="status">Status</option>
+                                <option value="status_lulus">Status</option>
                                 <option value="pilihan_prodi">Prodi</option>
                                 <option value="no_hp">No HP</option>
                             </select>
@@ -70,8 +70,8 @@
                 <th>No HP</th>
                 <th>Tanggal Daftar</th>
                 <th>Tanggal Login</th>
-                <th>Nama Sekolah</th>
-                <th>Status</th>
+                <th>Status Lulus 1</th>
+                <th>Status Lulus 2</th>
                 <th>Pekerjaan</th>
                 <th>Penghasilan</th>
                 <th width="150">Aksi</th>
@@ -94,8 +94,8 @@
                     <td>$a[no_hp]</td>
                     <td>$a[tanggal_daftar]</td>
                     <td>$a[tanggal_login]</td>
-                    <td>$a[nama_sekolah]</td>
-                    <td>$a[status]</td>   
+                    <td>$a[status_pmdp]</td>   
+                    <td>$a[status_pmdp_2]</td>
                     <td>$a[pekerjaan_orang_tua]</td>    
                     <td>$a[penghasilan_orang_tua]</td>   
                     <td>
@@ -134,8 +134,8 @@
                     <td>$a[no_hp]</td>
                     <td>$a[tanggal_daftar]</td>
                     <td>$a[tanggal_login]</td>
-                    <td>$a[nama_sekolah]</td>  
-                    <td>$a[status]</td>   
+                    <td>$a[status_pmdp]</td>   
+                    <td>$a[status_pmdp_2]</td>  
                     <td>$a[pekerjaan_orang_tua]</td>    
                     <td>$a[penghasilan_orang_tua]</td>                  
                     <td>
@@ -182,8 +182,8 @@
                     <td>$a[no_hp]</td>
                     <td>$a[tanggal_daftar]</td>
                     <td>$a[tanggal_login]</td>
-                    <td>$a[nama_sekolah]</td> 
-                    <td>$a[status]</td>
+                    <td>$a[status_pmdp]</td>
+                    <td>$a[status_pmdp_2]</td> 
                     <td>$a[pekerjaan_orang_tua]</td>    
                     <td>$a[penghasilan_orang_tua]</td>         
                     <td>
