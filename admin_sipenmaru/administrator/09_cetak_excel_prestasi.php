@@ -1,4 +1,7 @@
-<?php include "../config/koneksi.php"; ?>
+<?php 
+	include "../config/koneksi.php";
+	include "09_daftar_prestasi.php";
+ ?>
 <body>
 	<style type="text/css">
 	body{
@@ -31,38 +34,34 @@
 	<center>
 		<h1>Data Calon Mahasiswa Jalur PMDP</h1>
 	</center>
- 
-	<table border="1">
-		<tr>
-                <th>No.</th>
-                <th>Username </th>
-                <th>Nama Prestasi</th>
-                <th>Keterrangan Prestasi</th>
-                <th>Tingkat Prestasi</th>
-                <th>Bukti Prestasi</th>
-                <th>Tanggal Prestasi</th>
-                <th>Tanggal Entri</th>
+ <?php
+	echo "<table border='1'>
+    <tr>
+        <th>Username</th>
+        <th>nama lengkap</th>
+        <th>pilihan prodi</th>
+        <th>Nama Prestasi</th>
+        <th>Keterangan Juara</th>
+        <th>Tingkat Kejuaraan</th>
+        <th>Tanggal Prestasi</th>
+        <th>Tanggal Entri Prestasi</th>
+        <th>Bukti</th>
+    </tr>";
 
-		</tr>
-        <tr>
-        <?php           
-            $i=1; 
-            $query=mysqli_query($kon,"SELECT * FROM tb_prestasi WHERE username BETWEEN 25100001 AND 25103500");       
-            if (!$query) {
-    trigger_error(mysqli_error($kon), E_USER_ERROR);
-}   
-            while ($a=mysqli_fetch_array($query)) { 
-            ?>
-           <tr>
-               <td><?= $i++ ?></td>
-               <td><?=$a['username']?></td>
-               <td><?=$a['nama']?></td>
-               <td><?=$a['ket']?></td>
-               <td><?=$a['tingkat']?></td>
-               <td><a href="https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/<?=$a['bukti_n']?>">bukti</a></td>
-               <td><?=$a['tgl']?></td>
-               <td><?=$a['entri']?></td>
-    
-           </tr>
-           <?php } ?>
-	</table>
+foreach ($data as $username => $prestasi_list) {
+    foreach ($prestasi_list as $prestasi) {
+    echo "<tr>";
+    echo "<td>$username</td>";
+    echo "<td>{$prestasi['nama_lengkap']}</td>";
+    echo "<td>{$prestasi['pilihan_prodi']}</td>";
+    echo "<td>{$prestasi['nama_prestasi']}</td>";
+    echo "<td>{$prestasi['keterangan_juara']}</td>";
+    echo "<td>{$prestasi['tingkat_kejuaraan']}</td>";
+    echo "<td>{$prestasi['tanggal_prestasi']}</td>";
+    echo "<td>{$prestasi['tanggal_entri_prestasi']}</td>";
+    echo "<td><a href='https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/{$prestasi['bukti']}' target='_blank'></a><img src='https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/{$prestasi['bukti']}' alt='Bukti' width='100'></td>";
+    echo "</tr>";
+    }
+}
+
+echo "</table>"; ?>

@@ -345,7 +345,18 @@
 				       		
 				       </li>
 
-
+                 <li class="treeview">
+                      <a href="periode.php">
+                      <i class="fa fa-calendar"></i>
+                      <span>Periode Pendaftaran</span>
+                      <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                      </a>
+                      <ul class="treeview-menu">
+                      <li><a href="periode.php"><i class="fa fa-list"></i> Daftar Periode</a></li>
+                      </ul>
+                 </li>
 
                 </section>
                 <!-- /.sidebar -->

@@ -1,129 +1,117 @@
-<?php 
-	include"01_nav.php";
-	error_reporting(0);
+<?php
+include "01_nav.php";
+error_reporting(0);
 ?>
 
-
-
-<?php
-// BACK OFFICE
-
-
-// super user
-if($_SESSION['level'] == "administrator"){ ?>
 <aside class="right-side">
-    <section class="content-header">
-        <div class="container-fluid" style="margin:10px;">  
-        <table style="width:100%;">
-    	<tr class="info">
-			<td align="left" colspan="6"><b><h4>DAFTAR AGAMA</b></h4></td> 
-		</tr>
-		<tr>
-			<td width="20%"><label>Pencarian Berdasarkan</label></td>				
-			<form method="post" action="" enctype="multipart/form-data">					
-			<td width="25%">
-							<select name="cariid" class="form-control">
-								<option value="id_agama">ID Agama</option>
-								<option value="agama">Nama Agama</option>
-								
-							</select>
-			</td>
-			<td width="15%"></td>
-			<td>
-				<div class="form-group input-group" style="margin-top:15px;">
-				<span class="input-group-btn">
-								<input type="text" name="cari" placeholder="Input ID/Scanner Barcode" class="form-control">
-								<button class="btn btn-default" type="submit" name="submit"><i class="fa fa-search"></i></button>
-							</span>
-							</div>	
-						</td>
-						<td width="5%">
-						</td>	
-					</form>
-				
-				<td>
-					<a href="03_daftar_agama.php" class="btn btn-primary">ALL</a>
-				</td>					
-			</tr>
-			
-			<tr>
-				<td><a href="03_formulir_agama.php" class="btn btn-primary">Tambah Data + </a></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-			</tr>
-		</table>
+	<section class="content-header">
+		<div class="container-fluid" style="margin:10px;">
+			<h4><b>DAFTAR AGAMA</b></h4>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Tambah Data +</button>
+			<br><br>
 
-		<table style="width:100%;" class="table table-bordered">	
-		  	<tr class="info">
-				<th width="10">No.</th><th>Nama Agama</th><th width="150">Aksi</th>
-			</tr>
-			<?php 
-				if(isset($_POST['submit'])){
-					$cariid = $_POST['cariid'];
-					$cari = $_POST['cari'];
-					$query=mysqli_query($kon,"select * from tb_agama where $cariid = '$cari' 
-																								   or $cariid = '0'");
-																								   $i = $posisi+1;		
-				while($a=mysqli_fetch_array($query)){
-			echo"
-				<tr>
-					<td>$i</td>
-				
-					<td>$a[nama_agama]</td>
-					<td>
-						<a href='03_edit_agama.php?id_agama=$a[id_agama]'>
-							<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>
-						</a> 
-						<a href='03_delete_agama.php?id_agama=$a[id_agama]' onclick='return confirm(\"Anda yakin akan menghapus $a[agama] ?\")'>
-							<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
-						</a>
-					</td>
-				</tr>";
-				$i++;
-			}
-				}else{
-					$p      = new Paging;
-					$batas  = 10;
-					$posisi = $p->cariPosisi($batas);				
-					$query=mysqli_query($kon,"select * from tb_agama order by id_agama asc LIMIT $posisi,$batas");
-				
-					$i = $posisi+1;		
-				while($a=mysqli_fetch_array($query)){
+			<table class="table table-bordered">
+				<thead class="thead-light">
+					<tr>
+						<th width="10">No.</th>
+						<th>Nama Agama</th>
+						<th width="150">Aksi</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					$query = mysqli_query($kon, "SELECT * FROM tb_agama ORDER BY id_agama ASC");
+					$i = 1;
+					while ($row = mysqli_fetch_array($query)) {
+					?>
+						<tr>
+							<td><?php echo $i; ?></td>
+							<td><?php echo $row['nama_agama']; ?></td>
+							<td>
+								<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal<?php echo $row['id_agama']; ?>">Edit</button>
+								<a href="03_delete_agama.php?id_agama=<?php echo $row['id_agama']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus <?php echo $row['nama_agama']; ?> ?')">Hapus</a>
+							</td>
+						</tr>
 
-				echo"
-				<tr>
-					<td>$i</td>
-			
-					<td>$a[nama_agama]</td>
-					<td>
-						<a href='03_edit_agama.php?id_agama=$a[id_agama]'>
-							<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>
-						</a> 
-						<a href='03_delete_agama.php?id_agama=$a[id_agama]' onclick='return confirm(\"Anda yakin akan menghapus $a[agama] ?\")'>
-							<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
-						</a>
-					</td>
-				</tr>";
-				$i++;
-			}
-			
+						<!-- Edit Modal -->
+						<div class="modal fade" id="editModal<?php echo $row['id_agama']; ?>" tabindex="-1" role="dialog">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Edit Agama</h5>
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+									</div>
+									<form method="post" action="">
+										<div class="modal-body">
+											<input type="hidden" name="id_agama" value="<?php echo $row['id_agama']; ?>">
+											<div class="form-group">
+												<label>Nama Agama</label>
+												<input type="text" name="nama_agama" class="form-control" value="<?php echo $row['nama_agama']; ?>" required>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="submit" name="update<?php echo $row['id_agama']; ?>" class="btn btn-primary">Simpan</button>
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
 
-    $jmldata = mysqli_num_rows(mysqli_query($kon,"SELECT * FROM tb_agama"));
-      
-    $jmlhalaman  = $p->jumlahHalaman($jmldata, $batas);
-    $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
+						<?php
+						if (isset($_POST['update' . $row['id_agama']])) {
+							$id_agama = $_POST['id_agama'];
+							$nama_agama = mysqli_real_escape_string($kon, $_POST['nama_agama']);
+							$query = "UPDATE tb_agama SET nama_agama='$nama_agama' WHERE id_agama='$id_agama'";
+							if (mysqli_query($kon, $query)) {
+								echo "<script>alert('Data berhasil diperbarui!'); window.location.href='03_daftar_agama.php';</script>";
+							} else {
+								echo "<script>alert('Data gagal diperbarui!');</script>";
+							}
+						}
+						?>
+					<?php
+						$i++;
+					}
+					?>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</aside>
 
-echo "</table><div class=\"paginationw\">$linkHalaman</div>";
-}
-			?>
-		
-	 
+<!-- Add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Tambah Agama</h5>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<form method="post" action="">
+				<div class="modal-body">
+					<div class="form-group">
+						<label>Nama Agama</label>
+						<input type="text" name="nama_agama" class="form-control" required>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+				</div>
+			</form>
+		</div>
 	</div>
-</div>			
+</div>
+
 <?php
+if (isset($_POST['submit'])) {
+	$nama_agama = mysqli_real_escape_string($kon, $_POST['nama_agama']);
+	$query = "INSERT INTO tb_agama (nama_agama) VALUES ('$nama_agama')";
+	if (mysqli_query($kon, $query)) {
+		echo "<script>alert('Data berhasil disimpan!'); window.location.href='03_daftar_agama.php';</script>";
+	} else {
+		echo "<script>alert('Data gagal disimpan!');</script>";
+	}
 }
-
-
-
-
+?>

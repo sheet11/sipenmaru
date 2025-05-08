@@ -36,9 +36,18 @@
 $date = date("Y-m-d"); 
 $date=date('Y-m-d', strtotime($date));
 //echo $paymentDate; // echos today! 
-$tanggalbuka = date('Y-m-d', strtotime("2024-11-04"));
-$tanggaltutup = date('Y-m-d', strtotime("2024-11-30"));
-if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
+$query = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='SPMB 1 Pilihan'");
+
+	if($query){
+		$a = mysqli_fetch_array($query);
+	}
+		$id_periode = $a['id_periode'];
+		$nama_periode = $a['nama_periode'];
+		$buka = $a['tanggal_buka'];
+		$tutup = $a['tanggal_tutup'];
+		$status = $a['status_periode'];
+if($status == "Buka") {
+if(($date >= $buka) && ($date <= $tutup)) { ?>
 <div id="page-wrapper">
   <div id="page-inner">
       <div class="container-fluid" style="margin:30px;">
@@ -102,7 +111,9 @@ if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
     </div>
   </div>
 </div>
-<?php }else{ ?>
+<?php }else{ 
+	echo "<h1>Maaf pendaftaran sudah di tutup, silahkan mendaftar di periode selanjutnya</h1>";
+	}}else{ ?>
 	<h1>Maaf pendaftaran sudah di tutup, silahkan mendaftar di periode selanjutnya</h1>
 <?php } ?>
 

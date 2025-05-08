@@ -6,7 +6,21 @@ if ($kon->connect_error) {
 }
 
 // Query untuk mengambil data
-$sql = "SELECT * from tb_prestasi WHERE username BETWEEN '25100001' AND '25103500' ORDER BY username";
+$sql = "SELECT 
+    f.username,
+    f.nama_lengkap,
+    f.pilihan_prodi,
+    p.nama,
+    p.ket,
+    p.tingkat,
+    p.tgl,
+    p.bukti_n
+    p.entri+
+FROM tb_formulir3 f
+JOIN tb_prestasi p ON f.username = p.username
+WHERE f.username BETWEEN '25100001' AND '25103500'
+ORDER BY f.username;";
+//$sql = "SELECT * from tb_prestasi WHERE username BETWEEN '25100001' AND '25103500' ORDER BY username";
 
 $result = $kon->query($sql);
 
@@ -49,15 +63,29 @@ if ($result->num_rows > 0) {
 
 $kon->close();
 
+echo "<table border='1'>
+    <tr>
+        <th>Username</th>
+        <th>Nama Prestasi</th>
+        <th>Keterangan Juara</th>
+        <th>Tingkat Kejuaraan</th>
+        <th>Tanggal Prestasi</th>
+        <th>Tanggal Entri Prestasi</th>
+        <th>Bukti</th>
+    </tr>";
+
 foreach ($data as $username => $prestasi_list) {
-    echo "<h3>Username: $username</h3>";
-    echo "<ul>";
     foreach ($prestasi_list as $prestasi) {
-        echo "<li>";
-        echo "{$prestasi['nama_prestasi']} - {$prestasi['keterangan_juara']} ({$prestasi['tingkat_kejuaraan']}), ";
-        echo "Prestasi: {$prestasi['tanggal_prestasi']}, Entri: {$prestasi['tanggal_entri_prestasi']}, ";
-        echo "Bukti: <a href='https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/{$prestasi['bukti']}' target='_blank'>Bukti</a>";
-        echo "</li>";
+    echo "<tr>";
+    echo "<td>$username</td>";
+    echo "<td>{$prestasi['nama_prestasi']}</td>";
+    echo "<td>{$prestasi['keterangan_juara']}</td>";
+    echo "<td>{$prestasi['tingkat_kejuaraan']}</td>";
+    echo "<td>{$prestasi['tanggal_prestasi']}</td>";
+    echo "<td>{$prestasi['tanggal_entri_prestasi']}</td>";
+    echo "<td><a href='https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/{$prestasi['bukti']}' target='_blank'></a><img src='https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/{$prestasi['bukti']}' alt='Bukti' width='100'></td>";
+    echo "</tr>";
     }
-    echo "</ul>";
 }
+
+echo "</table>";

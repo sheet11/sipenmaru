@@ -38,7 +38,7 @@
 			</td>
 		</tr>
 		</table>
-		<p>*catatan <br>Aktif 1 = <br>Aktif 2 = <br>Aktif 3 = SIMAMI 1 Pilihan</p>
+		<p>*catatan <br>Aktif 1 = SPMB Prestasi <br>Aktif 2 = SPMB Mandiri 2 Pilihan <br>Aktif 3 = SPMB Mandiri 1 Pilihan</p>
 	</form>
 	</div>
 </div>
