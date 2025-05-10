@@ -20,7 +20,7 @@
 			<input type="hidden" name="id_prodi" value="<?php echo "$a[id_prodi]"; ?>">
 		<tr>
 			<td align="left" colspan="3"><b><h4>
-			 EDIT DATA PRODI</b></h4></td> 
+			 Edit Data Prodi</b></h4></td> 
 		</tr>
 	
    		<tr>

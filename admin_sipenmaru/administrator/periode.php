@@ -18,18 +18,34 @@ $result = mysqli_query($kon, $query);
     <br>
     <!-- Modal for adding data -->
     <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['nama_periode'])) {
-        // Retrieve form data
-        $nama_periode = mysqli_real_escape_string($kon, $_POST['nama_periode']);
-        $tanggal_buka = mysqli_real_escape_string($kon, $_POST['tanggal_buka']);
-        $tanggal_tutup = mysqli_real_escape_string($kon, $_POST['tanggal_tutup']);
-
-        // Insert data into the 'periode' table
-        $query = "INSERT INTO periode (nama_periode, tanggal_buka, tanggal_tutup) VALUES ('$nama_periode', '$tanggal_buka', '$tanggal_tutup')";
-        if (mysqli_query($kon, $query)) {
-            echo "<script>alert('Data berhasil ditambahkan!'); window.location.href='periode.php';</script>";
-        } else {
-            echo "<script>alert('Gagal menambahkan data!'); window.location.href='periode.php';</script>";
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_POST['form_type'])) {
+            if ($_POST['form_type'] == 'add_periode') {
+                // Handle adding new periode
+                $nama_periode = mysqli_real_escape_string($kon, $_POST['nama_periode']);
+                $tanggal_buka = mysqli_real_escape_string($kon, $_POST['tanggal_buka']);
+                $tanggal_tutup = mysqli_real_escape_string($kon, $_POST['tanggal_tutup']);
+    
+                $query = "INSERT INTO periode (nama_periode, tanggal_buka, tanggal_tutup) VALUES ('$nama_periode', '$tanggal_buka', '$tanggal_tutup')";
+                if (mysqli_query($kon, $query)) {
+                    echo "<script>alert('Data berhasil ditambahkan!'); window.location.href='periode.php';</script>";
+                } else {
+                    echo "<script>alert('Gagal menambahkan data!'); window.location.href='periode.php';</script>";
+                }
+            } elseif ($_POST['form_type'] == 'edit_periode') {
+                // Handle editing periode
+                $id_periode = mysqli_real_escape_string($kon, $_POST['id']);
+                $nama_periode = mysqli_real_escape_string($kon, $_POST['nama_periode']);
+                $tanggal_buka = mysqli_real_escape_string($kon, $_POST['tanggal_buka']);
+                $tanggal_tutup = mysqli_real_escape_string($kon, $_POST['tanggal_tutup']);
+    
+                $query = "UPDATE periode SET nama_periode = '$nama_periode', tanggal_buka = '$tanggal_buka', tanggal_tutup = '$tanggal_tutup' WHERE id_periode = '$id_periode'";
+                if (mysqli_query($kon, $query)) {
+                    echo "<script>alert('Data berhasil diperbarui!'); window.location.href='periode.php';</script>";
+                } else {
+                    echo "<script>alert('Gagal memperbarui data!'); window.location.href='periode.php';</script>";
+                }
+            }
         }
     }
     ?>
@@ -37,6 +53,7 @@ $result = mysqli_query($kon, $query);
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form action="" method="POST">
+                <input type="hidden" name="form_type" value="add_periode">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addPeriodeModalLabel">Tambah Data Periode</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -89,27 +106,11 @@ $result = mysqli_query($kon, $query);
                             <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editPeriodeModal<?php echo $row['id_periode']; ?>">Edit</button>
 
                             <!-- Modal for editing data -->
-                            <?php
-                            if (isset($_POST['edit'])) {
-                                // Retrieve form data
-                                $id_periode = mysqli_real_escape_string($kon, $_POST['id']);
-                                $nama_periode = mysqli_real_escape_string($kon, $_POST['nama_periode']);
-                                $tanggal_buka = mysqli_real_escape_string($kon, $_POST['tanggal_buka']);
-                                $tanggal_tutup = mysqli_real_escape_string($kon, $_POST['tanggal_tutup']);
-
-                                // Update data in the 'periode' table
-                                $query = "UPDATE periode SET nama_periode = '$nama_periode', tanggal_buka = '$tanggal_buka', tanggal_tutup = '$tanggal_tutup' WHERE id_periode = '$id_periode'";
-                                if (mysqli_query($kon, $query)) {
-                                    echo "<script>alert('Data berhasil diperbarui!'); window.location.href='periode.php';</script>";
-                                } else {
-                                    echo "<script>alert('Gagal memperbarui data!'); window.location.href='periode.php';</script>";
-                                }
-                            }
-                            ?>
                             <div class="modal fade" id="editPeriodeModal<?php echo $row['id_periode']; ?>" tabindex="-1" role="dialog" aria-labelledby="editPeriodeModalLabel<?php echo $row['id']; ?>" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <form action="" method="POST">
+                                        <input type="hidden" name="form_type" value="edit_periode">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="editPeriodeModalLabel<?php echo $row['id_periode']; ?>">Edit Data Periode</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -133,7 +134,7 @@ $result = mysqli_query($kon, $query);
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                <button type="edit" name="edit" class="btn btn-primary">Simpan Perubahan</button>
+                                                <button type="submit" name="edit" class="btn btn-primary">Simpan Perubahan</button>
                                             </div>
                                         </form>
                                     </div>

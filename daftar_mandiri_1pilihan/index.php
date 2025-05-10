@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Sistem Penerimaan Mahasiswa Baru Jalur Mandiri Program Profesi/Alih Jenjang (1 Pilihan)<br>*Pendaftaran diperpanjang sampai dengan tanggal 30 November 2024</a> 
+                <a class="navbar-brand" href="index.php">Sistem Penerimaan Mahasiswa Baru Jalur Mandiri Program Profesi/Alih Jenjang (1 Pilihan)</a> 
             </div>
             <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">Poltekkes Kemenkes Bengkulu  </div>
         </nav>   

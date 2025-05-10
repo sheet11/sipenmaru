@@ -36,8 +36,8 @@
 $date = date("Y-m-d"); 
 $date=date('Y-m-d', strtotime($date));
 //echo $paymentDate; // echos today! 
-$tanggalbuka = date('Y-m-d', strtotime("2024-06-29"));
-$tanggaltutup = date('Y-m-d', strtotime("2024-07-07"));
+$tanggalbuka = date('Y-m-d', strtotime("2025-05-09"));
+$tanggaltutup = date('Y-m-d', strtotime("2025-07-07"));
 if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
 <div id="page-wrapper">
   <div id="page-inner">
@@ -74,7 +74,7 @@ if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
 							<select name='pilihan_prodi' class='form-control' required>";
 				        	<option value=""></option>
 				            <?php include "koneksi.php";
-					        	$query = mysqli_query($kon,"SELECT * FROM tb_prodi where aktif=4 order by nama_prodi desc");
+					        	$query = mysqli_query($kon,"SELECT * FROM tb_prodi where aktif=2 order by nama_prodi desc");
 					        	while ($row = mysqli_fetch_array($query)) {
 					       		 echo"<option value='$row[nama_prodi]'>$row[nama_prodi]</option>";
 					       		 }
@@ -87,7 +87,7 @@ if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
 							<select name='pilihan_prodi2' class='form-control' required>";
 				        	<option value=""></option>
 				            <?php include "koneksi.php";
-					        	$query = mysqli_query($kon,"SELECT * FROM tb_prodi where aktif=4 order by nama_prodi desc");
+					        	$query = mysqli_query($kon,"SELECT * FROM tb_prodi where aktif=2 order by nama_prodi desc");
 					        	while ($row = mysqli_fetch_array($query)) {
 					       		 echo"<option value='$row[nama_prodi]'>$row[nama_prodi]</option>";
 					       		 }
@@ -137,7 +137,6 @@ if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
 														no_hp = '$_POST[no_hp]',
 														pilihan_prodi = '$_POST[pilihan_prodi]',
 														pilihan_prodi2 = '$_POST[pilihan_prodi2]',
-														level = 'MANDIRI 2 PILIHAN GEL III',
 														tanggal_daftar = '$date',
 														status='Terdaftar' 
 													WHERE id_formulir='$_POST[id]'");
