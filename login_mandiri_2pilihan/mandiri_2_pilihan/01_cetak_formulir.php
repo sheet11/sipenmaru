@@ -20,7 +20,7 @@
 		  <table width="100%" border="0"  align="center">
 		  <tr>
 			<td width="101" height="102"><img src="../assets/img_kop/logo-kemenkes.png" width="150" height="100"/></td>
-			<td width="601" align="center"><strong><h4>Seleksi Penerimaan Mahasiswa Baru (SIPENMARU)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun 2024/2025</h4></strong></td>
+			<td width="601" align="center"><strong><h4>Seleksi Penerimaan Mahasiswa Baru (SPMB)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun 2025/2026</h4></strong></td>
 			<td width="109" align="center"><img src="../assets/img_kop/logo.png" width="100" height="100"/></td>
 		  </tr>
 		  <tr>

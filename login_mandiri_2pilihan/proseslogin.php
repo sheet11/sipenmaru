@@ -12,7 +12,7 @@ $password = ($_POST['password']); // variable password, dan nilainya sesuai yang
 $perintah = "select * from tb_formulir4 WHERE username = '$username' AND password = '$password'";
 $hasil = mysqli_query($kon,$perintah);
 $row = mysqli_fetch_array($hasil);
-if($row && $row['level'] == "MANDIRI 2 PILIHAN" || $row['level'] == "MANDIRI 2 PILIHAN GEL III")
+if($row && $row['level'] == "MANDIRI 2 PILIHAN")
 	{
 		session_start(); // memulai fungsi session
 		$_SESSION['username'] = $username;

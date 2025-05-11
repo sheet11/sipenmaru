@@ -1,9 +1,12 @@
+<?php
+	$page = "Formulir";
+?>
 <?php 
-	include"01_nav.php";
+	include "01_nav.php";
 	error_reporting(0);
 	include "../config/koneksi.php"; 
-?>
 
+?>
 <div id="page-wrapper">
 	<div id="page-inner">
 		<h2>Selamat Datang</h2>   
