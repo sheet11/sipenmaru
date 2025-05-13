@@ -1,5 +1,6 @@
 
 <?php 
+    $page = "calon pmdp";
     include"01_nav.php";
     error_reporting(0);
 ?>

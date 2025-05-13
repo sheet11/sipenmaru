@@ -85,18 +85,20 @@
                                 </li>   
                                 <?php }else{ ?>
                                 <?php 
-                                if($_SESSION['prodi'] == "Sarjana Terapan Kebidanan Alih Jenjang"){ ?>
+                                if($_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (kelas bengkulu)"){ ?>
                                 <li>
                                     <a  href="02_lihat_nilai.php"><i class="fa fa-desktop fa-2x"></i> From Asesmen </a>
                                 </li>
-                              <?php }elseif($_SESSION['prodi'] == "Sarjana Terapan Keperawatan Alih Jenjang") { ?>  
+                              <?php }elseif($_SESSION['prodi'] == "RPL Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Bengkulu)") { ?>  
                                 <li>
                                     <a  href="02_lihat_nilai2.php"><i class="fa fa-desktop fa-2x"></i> From Asesmen </a>
                                 </li>
                                     <?php } ?>
                             <?php }?>
 
-                           
+                            <!-- <li>
+                                <a  href="06_status.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
+                            </li> -->
                         </ul>                          
                     </div>
         </nav>  

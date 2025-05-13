@@ -1,6 +1,8 @@
 <?php
-include"01_nav.php";
-
+	$page = "Home";
+?>
+<?php
+include "01_nav.php";
 ?>
 
 <aside class="right-side">
