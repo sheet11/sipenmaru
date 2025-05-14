@@ -9,7 +9,7 @@
 		<h2>Cetak Kartu Pendaftaran</h2>   
 	    
 		<hr></hr>
-		<div>
+		<div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <thead>			
 		  			<tr class="info">

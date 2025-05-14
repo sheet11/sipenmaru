@@ -221,7 +221,7 @@
 						<td><select name='asal_sekolah' class='form-control' required>";
 				        	<option value="<?php echo $a['asal_sekolah']; ?>"><?php echo $a['asal_sekolah']; ?></option>
 				            <?php include "../config/koneksi.php";
-				        	$query = mysqli_query($kon,"SELECT * FROM tb_asal_sekolah");
+				        	$query = mysqli_query($kon,"SELECT * FROM tb_asal_sekolah where status_sekolah='1' order by asal_sekolah desc");
 				        	while ($row = mysqli_fetch_array($query)) {
 				       		 echo"
 				        	<option value='$row[asal_sekolah]'>$row[asal_sekolah]</option>

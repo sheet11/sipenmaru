@@ -9,7 +9,7 @@
 		<h2>Form Upload Berkas</h2>   
 	    <h5>Detail Berkas Yang perlu di isi</h5>
 		<hr></hr>
-		<div>
+		<div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <thead>			
 		  			<tr class="info">

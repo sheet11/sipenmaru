@@ -19,6 +19,7 @@
 					Surat Pernyataan <a href="../media/SURAT PERNYATAAN CAMABA AJ-RPL.docx" download><button src="../media/SURAT PERNYATAAN CAMABA AJ-RPL.docx" class="btn btn-sm btn-primary float-right" style="float: right;">Unduh Berkas <i class="fa fa-download"></i></button></a></div> <br>
 				</div>
 			</div>
+			<div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <thead>			
 		  			<tr class="info">
@@ -76,7 +77,7 @@
 				</td>
 			</tr>
 			</table>
-		
+		</div>
 	 
 	</div>
 </div>

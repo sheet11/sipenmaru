@@ -7,12 +7,12 @@
 <div id="page-wrapper">
 	<div id="page-inner">
 		<h2>Selamat Datang</h2>   
-	    <h5>Di Halaman Sistem Informasi Pendaftaran Mahasiswa Baru Online</h5>
+		<h5>Di Halaman Sistem Informasi Pendaftaran Mahasiswa Baru Online</h5>
 		<hr></hr>
-		<div>
-            <table class="table table-bordered table-striped">
-                <thead>			
-		  			<tr class="info">
+		<div class="table-responsive">
+			<table class="table table-bordered table-striped">
+				<thead>			
+					<tr class="info">
 						<th width="5%">No.</th><th>ID </th><th>Nama Lengkap </th><th>Prodi</th>
 						<th>Tgl Ujian</th><th>Tempat </th><th>Ruang</th><th>Sesi</th><th width="25%">Aksi</th>
 					</tr>
@@ -59,11 +59,7 @@
 				</td>
 			</tr>
 			</table>
-		
+		</div>
 	 
 	</div>
 </div>
-
-
-
-

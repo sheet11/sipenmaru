@@ -21,6 +21,7 @@
                     <br>
                 </div>
 			</div>
+			<div class="table-responsive"> 
             <table class="table table-bordered table-striped">
                 <thead>			
 		  			<tr class="info">
@@ -76,7 +77,7 @@
 				2. Silahkan diisi dengan sebenar-benarnya, kemudian di upload kembali<br></td>
 			</tr>
 			</table>
-		
+		</div>
 	 
 	</div>
 </div>

@@ -71,6 +71,7 @@
                     <br>
                 </div>
 			</div>
+			<div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <thead>			
 		  			<tr class="info">
@@ -126,7 +127,7 @@
 				2. Silahkan input Mata Kuliah pada Perguruan Tinggi sebelummnya di bagian kiri kemudian upload kembali<br></td>
 			</tr>
 			</table>
-		
+		</div>
 	 
 	</div>
 </div>
