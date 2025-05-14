@@ -30,7 +30,7 @@
 	}
 	else
 	{
-		if($tipe_file == "application/msword" || $tipe_file == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+		if($tipe_file == "application/pdf")
 		{
 			if($ukuran_file <= 1000000)
 			{
@@ -60,7 +60,7 @@
 		else
 		{
 			// var_dump($tipe_file);
-			echo "<script>alert('Mohon maaf, type file yang diperbolehkan hanya .docx atau .doc');window.location='08_upload.php'</script>";
+			echo "<script>alert('Mohon maaf, type file yang diperbolehkan hanya .pdf');window.location='08_upload.php'</script>";
 		}
 	}
 ?>		
@@ -93,7 +93,7 @@
 	}
 	else
 	{
-		if($tipe_file == "application/msword" || $tipe_file == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+		if($tipe_file == "application/pdf")
 		{
 			if($ukuran_file <= 1000000)
 			{
@@ -123,7 +123,7 @@
 		else
 		{
 			// var_dump($tipe_file);
-			echo "<script>alert('Mohon maaf, type file yang diperbolehkan hanya .docx atau .doc' );window.location='08_upload.php'</script>";
+			echo "<script>alert('Mohon maaf, type file yang diperbolehkan hanya .pdf' );window.location='08_upload.php'</script>";
 		}
 	}
 ?>	

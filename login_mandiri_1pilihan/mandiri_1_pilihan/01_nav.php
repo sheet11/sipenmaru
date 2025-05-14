@@ -99,7 +99,7 @@
 
                             <!-- form asesmen dan evaluasi -->
                                 <?php 
-                                if ($_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)" && $_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (Khusus TPMB)" && $_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (kelas bengkulu)") { ?>
+                                if ($_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)" || $_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (Khusus TPMB)" || $_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (kelas bengkulu)") { ?>
                                     <li>
                                         <a href="07_asesmen.php"><i class="fa fa-check-square fa-2x"></i> Asesmen</a>
                                     </li>

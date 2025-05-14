@@ -18,7 +18,7 @@
 		<div class="card-body">
 			<input type="hidden" name="id_formulir" value="<?php echo "$a[id_formulir]"; ?>">
 			<div class="">
-				<label class="card-title">Upload Form Rekomendasi (.docx) <h8 class="text-danger">(File harus di bawah 1 mb)</h8></label>
+				<label class="card-title">Upload Form Rekomendasi (.pdf) <h8 class="text-danger">(File harus di bawah 1 mb)</h8></label>
 				<input type="file" name="rekomendasi" class="form-control">
 			</div>
 			<br>
