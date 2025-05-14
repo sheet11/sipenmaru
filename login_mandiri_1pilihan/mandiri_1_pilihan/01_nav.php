@@ -69,11 +69,12 @@
                             <li>
                                 <a  href="01_formulir.php"><i class="fa fa-desktop fa-2x"></i> Formulir </a>
                             </li>
+
                             <li>
-                                <a  href="03_upload_berkas.php"><i class="fa fa-desktop fa-2x"></i> Upload Berkas </a>
+                                <a href="03_upload_berkas.php"><i class="fa fa-upload fa-2x"></i> Upload Berkas </a>
                             </li>
                             <li>
-                                <a  href="05_download.php"><i class="fa fa-desktop fa-2x"></i> Surat Pernyataan </a>
+                                <a  href="05_download.php"><i class="fa fa-file-text fa-2x"></i> Pernyataan </a>
                             </li>
                            <?php
                             include "../config/koneksi.php";
@@ -85,7 +86,7 @@
                                 </li>   
                                 <?php }else{ ?>
                                 <?php 
-                                if($_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (kelas bengkulu)"){ ?>
+                                if($_SESSION['prodi'] == "a"){ ?>
                                 <li>
                                     <a  href="02_lihat_nilai.php"><i class="fa fa-desktop fa-2x"></i> From Asesmen </a>
                                 </li>
@@ -96,9 +97,69 @@
                                     <?php } ?>
                             <?php }?>
 
-                            <!-- <li>
+                            <!-- form asesmen dan evaluasi -->
+                                <?php 
+                                if ($_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)" && $_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (Khusus TPMB)" && $_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (kelas bengkulu)") { ?>
+                                    <li>
+                                        <a href="07_asesmen.php"><i class="fa fa-check-square fa-2x"></i> Asesmen</a>
+                                    </li>
+                                    <li>
+                                        <a href="08_pendaftaran.php"><i class="fa fa-edit fa-2x"></i> Form Evaluasi</a>
+                                    </li>
+                                <?php } ?>
+                                
+                                <?php 
+                                if ($_SESSION['prodi'] == "RPL Gizi dan Dietetik Sarjana Terapan") { ?>
+                                    <li>
+                                        <a href="07_asesmen.php"><i class="fa fa-check-square fa-2x"></i> Asesmen</a>
+                                    </li>
+                                    <li>
+                                        <a href="11_pendaftaran_gizi.php"><i class="fa fa-edit fa-2x"></i> Form pendaftaran</a>
+                                    </li>
+                                <?php } ?>
+                                
+                            <!-- form rekomendasi -->
+                                <?php if ($_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (Khusus TPMB)" || $_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)") { ?>
+                                    <li>
+                                        <a href="09_rekomendasi.php"><i class="fa fa-thumbs-up fa-2x"></i> Rekomendasi</a>
+                                    </li>
+                                <?php } ?>
+
+                            <!-- upload rekap -->
+                             <?php if ( $_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)") { ?>
+                             <li>
+                                <a  href="10_rekap_pelayanan.php"><i class="fa fa-table fa-2x"></i> Rekap Pelayanan</a>
+                            </li>
+                            <?php } ?>
+                                <!-- cetak kartu -->
+                            <?php if ($_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (Khusus TPMB)") { ?>
+                            <li>
                                 <a  href="06_status.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
-                            </li> -->
+                            </li>
+                            <?php }elseif($_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (kelas bengkulu)"){ ?>                      
+
+                            <li>
+                                <a  href="06_status_rpl.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
+                            </li>
+                            <?php }elseif($_SESSION['prodi'] == "RPL sarjana terapan keperawatan dan Pendidikan profesi ners (kelas Bengkulu)"){ ?>
+                            <li>
+                                <a  href="06_status_reguler.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
+                            </li>
+                            <?php }elseif($_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)"){ ?>
+                            <li>
+                                <a  href="06_status_bidan.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
+                            </li>
+                            <?php }elseif($_SESSION['prodi'] == "RPL Gizi dan Dietetik Sarjana Terapan"){ ?>
+                            <li>
+                                <a  href="06_status_gizi.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
+                            </li>
+                            <?php }else{?>
+                            <li>
+                                <a  href="06_status_profesi.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
+                            </li>
+                            <?php } ?>
+
+                            
                         </ul>                          
                     </div>
         </nav>  

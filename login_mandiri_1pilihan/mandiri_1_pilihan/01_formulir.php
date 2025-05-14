@@ -1,5 +1,5 @@
 <?php 
-	include"01_nav.php";
+	include "01_nav.php";
 	error_reporting(0);
 	include "../config/koneksi.php"; 
 ?>

@@ -1,4 +1,5 @@
 <?php
+$page = "Home";
 include "01_nav.php";
 error_reporting(0);
 include "../config/koneksi.php"; 
@@ -12,9 +13,9 @@ include "../config/koneksi.php";
                      <h2>Poltekkes Kemenkes Bengkulu</h2>   
                         <h5>Selamat Datang <b><?php echo $_SESSION['nama_lengkap'];?> </b> Di Halaman Sistem Informasi Pendaftaran Mahasiswa Baru Online Jalur <b><?php echo $_SESSION['level'];?></b></h5>
                         <br>
-                        <h5>*Untuk Program Alih Jenjang/RPL wajib Mengisi Form asesmen alih jenjang/Rekognisi Pembelajaran Lampau, daftar riwayat hidup dan surat pernyataan pada website</h3>
-                        <h5>*untuk Program Profesi Wajib mengupload akreditasi prodi, transkrip nilai, dan ijazah</h3>
-                         <?php
+                        <!-- <h5>*Untuk Program Alih Jenjang/RPL wajib Mengisi Form asesmen alih jenjang/Rekognisi Pembelajaran Lampau, daftar riwayat hidup dan surat pernyataan pada website</h3> -->
+                        <!-- <h5>*untuk Program Profesi Wajib mengupload akreditasi prodi, transkrip nilai, dan ijazah</h3> -->
+                         <!-- <?php
                             include "../config/koneksi.php";
                                 $query = mysqli_query($kon,"Select * from tb_rpl");
                                 $cek= mysqli_fetch_array($query);
@@ -23,7 +24,7 @@ include "../config/koneksi.php";
                                 <h3>sudah mengisi tabel asesmen</h3>
                             <?php }else{ ?>
                                 <h3 class="text-danger">*<?php echo $_SESSION['nama_lengkap']?> belum mengisi form asesmen, dimohon untuk mengisi form asesmen </h3>
-                            <?php }?>
+                            <?php }?> -->
                             <br>
                             <!-- <h1><a href="cetak_pengumuman.php">Lihat Kelulusan</a></h1> -->
                             <!-- <h2>Pengumuman Hasil Tes Kesehatan dan Wawancara</h2>

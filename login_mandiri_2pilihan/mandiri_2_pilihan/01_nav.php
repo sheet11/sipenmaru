@@ -63,11 +63,11 @@
                             </li>              
                             
                             <li>
-                                <a <?php if($page == "Home") echo "class='active-menu'";?>  href="index.php"><i class="fa fa-dashboard fa-2x"></i> Beranda</a>
+                                <a href="index.php"><i class="fa fa-dashboard fa-2x"></i> Beranda</a>
                             </li>                        
                             
                             <li>
-                                <a <?php if($page == "Formulir") echo "class='active-menu'";?> href="01_formulir.php"><i class="fa fa-desktop fa-2x"></i> Formulir </a>
+                                <a href="01_formulir.php"><i class="fa fa-desktop fa-2x"></i> Formulir </a>
                             </li>
                          
                         </ul>                          

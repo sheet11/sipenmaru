@@ -17,10 +17,7 @@
                         <th>Nama Lengkap </th>
                         <th>Prodi</th>
                         <th>formulir</th>
-                        <th>Pernyataan</th>
-                        <th>Asesmen</th>
-                        <th>Evaluasi</th>
-                        <th>Rekomendasi</th>
+                        <th>Upload Berkas</th>
                         <th width="25%">Aksi</th>
 					</tr>
 				</thead>
@@ -42,35 +39,14 @@
                     <?php } ?>
                     </td>
                     <td><?php 
-                    if($a['photo5'] == null || $a['photo4'] == null){ ?>
+                    if($a['photo1'] == null || $a['photo2'] == null || $a['photo3'] == null){ ?>
                         <a class='btn btn-sm btn-danger'><b>Belum Lengkap</b></a>
                     <?php }else{ ?>
                         <a alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
                     <?php } ?>
                     </td>
-                    <td><?php 
-                    if($a['file_1'] == null || $a['file_2'] == null){ ?>
-                        <a class='btn btn-sm btn-danger'><b>Belum Lengkap</b></a>
-                    <?php }else{ ?>
-                        <a alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
-                    <?php } ?>                        
-                    </td>
-                    <td><?php 
-                    if($a['file_3'] == null || $a['file_4'] == null){ ?>
-                        <a class='btn btn-sm btn-danger'><b>Belum Lengkap</b></a>
-                    <?php }else{ ?>
-                        <a alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
-                    <?php } ?>
-                    </td>
-                    <td><?php 
-                    if($a['file_5'] == null){ ?>
-                        <a class='btn btn-sm btn-danger'><b>Belum Lengkap</b></a>
-                    <?php }else{ ?>
-                        <a alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
-                    <?php } ?>
-                </td>
 					<td>
-						<?php if($a['nama_foto'] == null || $a['photo5'] == null || $a['photo4'] == null || $a['file_1'] == null || $a['file_2'] == null || $a['file_3'] == null || $a['file_4'] == null || $a['file_5'] == null){?>
+						<?php if($a['nama_foto'] == null || $a['photo1'] == null || $a['photo2'] == null || $a['photo3	'] == null){?>
                             <a class='btn btn-sm btn-danger'><b>Lengkapi Berkas untuk mencetak Kartu</b></a>
                         <?php }else{ ?>                                
                             <a href='01_cetak_formulir.php?id_formulir=<?=$a["id_formulir"]?>' class='btn btn-info'><b>Cetak</b></a> 
