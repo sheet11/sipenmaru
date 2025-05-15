@@ -78,32 +78,51 @@ if(($date >= $buka) && ($date <= $tutup)) { ?>
 		            	<td colspan="2"><input type="number" name="no_hp" class="form-control" required=""> </td>
 		          	</tr> 
 
-		      <tr>
-						<td colspan="2"><b>Pilihan Prodi 1</b>
-							<select name='pilihan_prodi' class='form-control' required>";
-				        	<option value=""></option>
-				            <?php include "koneksi.php";
-					        	$query = mysqli_query($kon,"SELECT * FROM tb_prodi where aktif=2 order by nama_prodi desc");
-					        	while ($row = mysqli_fetch_array($query)) {
-					       		 echo"<option value='$row[nama_prodi]'>$row[nama_prodi]</option>";
-					       		 }
-				        	?>
-				        	echo"</select></td>
-					</tr>
+			<tr>
+				<td colspan="2"><b>Pilihan Prodi 1</b>
+					<select name='pilihan_prodi' id='pilihan_prodi' class='form-control' required>
+						<option value=""></option>
+						<?php include "koneksi.php";
+							$query = mysqli_query($kon, "SELECT * FROM tb_prodi WHERE aktif=2 ORDER BY nama_prodi DESC");
+							while ($row = mysqli_fetch_array($query)) {
+								echo "<option value='$row[nama_prodi]'>$row[nama_prodi]</option>";
+							}
+						?>
+					</select>
+				</td>
+			</tr>
 
-					<tr>
-						<td colspan="2"><b>Pilihan Prodi 2</b>
-							<select name='pilihan_prodi2' class='form-control' required>";
-				        	<option value=""></option>
-				            <?php include "koneksi.php";
-					        	$query = mysqli_query($kon,"SELECT * FROM tb_prodi where aktif=2 order by nama_prodi desc");
-					        	while ($row = mysqli_fetch_array($query)) {
-					       		 echo"<option value='$row[nama_prodi]'>$row[nama_prodi]</option>";
-					       		 }
-				        	?>
-				        	echo"</select></td>
-					</tr>
-		      
+			<tr>
+				<td colspan="2"><b>Pilihan Prodi 2</b>
+					<select name='pilihan_prodi2' id='pilihan_prodi2' class='form-control' required>
+						<option value=""></option>
+						<?php include "koneksi.php";
+							$query = mysqli_query($kon, "SELECT * FROM tb_prodi WHERE aktif=2 ORDER BY nama_prodi DESC");
+							while ($row = mysqli_fetch_array($query)) {
+								echo "<option value='$row[nama_prodi]'>$row[nama_prodi]</option>";
+							}
+						?>
+					</select>
+				</td>
+			</tr>
+
+			<script>
+				document.getElementById('pilihan_prodi').addEventListener('change', function () {
+					const pilihanProdi1 = this.value;
+					const pilihanProdi2 = document.getElementById('pilihan_prodi2');
+					for (let option of pilihanProdi2.options) {
+						option.disabled = option.value === pilihanProdi1 && pilihanProdi1 !== "";
+					}
+				});
+
+				document.getElementById('pilihan_prodi2').addEventListener('change', function () {
+					const pilihanProdi2 = this.value;
+					const pilihanProdi1 = document.getElementById('pilihan_prodi');
+					for (let option of pilihanProdi1.options) {
+						option.disabled = option.value === pilihanProdi2 && pilihanProdi2 !== "";
+					}
+				});
+			</script>    
           <tr>  
             <td colspan="4">
               <small>NB: <br>
