@@ -75,10 +75,10 @@ if ($jumlah1 < 100) {
 $data = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE id_formulir='$_POST[id_formulir]'");
 $a = mysqli_fetch_array($data);
 if ($a['sesi_ujian'] == null) {
-	$sesi_ujian = '$sesi';
-	$tanggal_ujian = '$tgl_ujian';
-	$tempat_ujian = '$tempat_ujian';
-	$ruang_ujian = '$ruang_ujian';
+	$sesi_ujian = $sesi;
+	$tanggal_ujian = $tgl_ujian;
+	$tempat_ujian = $tempat_ujian;
+	$ruang_ujian = $ruang_ujian;
 } else {
 	$sesi_ujian = '';
 	$tanggal_ujian = '';
@@ -110,10 +110,6 @@ if (empty($nama_file)) {
 													pilihan_prodi = '$_POST[pilihan_prodi]',
 													pilihan_prodi2 = '$_POST[pilihan_prodi2]',
 													tanggal_login = '$date',
-													tanggal_ujian = '$tanggal_ujian',
-													sesi_ujian = '$sesi_ujian',
-													tempat_ujian = '$tempat_ujian',
-													ruang_ujian = '$ruang_ujian',
 													status = 'Sudah Membayar'									
 												  	where id_formulir= '$_POST[id_formulir]'");
 	if ($qr) {
