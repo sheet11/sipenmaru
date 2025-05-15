@@ -1,91 +1,42 @@
-<?php 
-	include"01_nav.php";
-	error_reporting(0);
-	include "../config/koneksi.php"; 
+<?php
+include "01_nav.php";
+error_reporting(0);
+include "../config/koneksi.php";
 ?>
 
 <div id="page-wrapper">
 	<div id="page-inner">
-		<h2>Upload Berkas</h2>   
-	    <h5>Di Halaman Sistem Informasi Pendaftaran Mahasiswa Baru Online</h5>
-		<hr></hr>
+		<h2>Upload Berkas</h2>
+		<h5>Di Halaman Sistem Informasi Pendaftaran Mahasiswa Baru Online</h5>
+		<hr>
+		</hr>
 		<form method="post" action="03_proses_upload.php" enctype="multipart/form-data">
-		<?php 
-		$query=mysqli_query($kon,"select * from tb_formulir5 where username='$_SESSION[username]' "); 
-		$a=mysqli_fetch_array($query);
-		?>
-		<div class="card">
-		<div class="card-body">
-			<input type="hidden" name="id_formulir" value="<?php echo "$a[id_formulir]"; ?>">
-			<div class="">
-				<label class="card-title">Upload Akreditasi Prodi</label>
-				<input type="file" name="akreditasi" class="form-control">
-			</div>
-			<br>
-			<div class="">
-				<label>Upload Ijazah</label>
-				<input type="file" name="ijazah" class="form-control">
-			</div>
-			<br>
-			<div class="">
-				<label>Upload Transrip Nilai</label>
-				<input type="file" name="transkrip" class="form-control">
-			</div>
-			<br>
-
-			<input type="submit" name="submit" value="Simpan" class="btn btn-danger">
-			<input type="reset" name="submit" value="Hapus" class="btn btn-success">
-		</div>
-          <!--   <table class="table table-bordered table-striped">
-                <thead>			
-		  			<tr class="info">
-						<th width="5%">No.</th><th>ID </th><th>Nama Lengkap </th><th>Prodi</th><th>Semester </th><th width="10%">Aksi</th>
-					</tr>
-				</thead>
-			<?php 
-					$query=mysqli_query($kon,"select * from tb_formulir5 where username='$_SESSION[username]' ");
-				
-					$i =  +1;		
-				while($a=mysqli_fetch_array($query)){
-				echo"
-				<tr>
-					<td>$i</td>
-					<td>$a[username]</td>
-					<td>$a[nama_lengkap]</td>
-					<td>$a[pilihan_prodi]</td>
-					<td>";
-						echo "
-						<a href='03_edit_upload_nilai1.php?id_formulir=$a[id_formulir]' class='btn btn-warning'><b>Semester 1</b></a>
-						<a href='03_edit_upload_nilai2.php?id_formulir=$a[id_formulir]' class='btn btn-warning'><b>Semester 2</b></a></br>
-						<a href='03_edit_upload_nilai3.php?id_formulir=$a[id_formulir]' class='btn btn-primary'><b>Semester 3</b></a>
-						<a href='03_edit_upload_nilai4.php?id_formulir=$a[id_formulir]' class='btn btn-primary'><b>Semester 4</b></a></br>
-						<a href='03_edit_upload_nilai5.php?id_formulir=$a[id_formulir]' class='btn btn-success'><b>Semester 5</b></a>
-						
-						 ";
-						echo"</td>
-				
-					<td>";
-						echo "					
-						<a href='03_lihat_upload_nilai.php?id_formulir=$a[id_formulir]' class='btn btn-info'><b>Lihat</b></a> 
-						 ";
-				echo"	</td>
-				
-
-					</tr>
-					</table>";
-
-
-				$i++;
-			}
+			<?php
+			$query = mysqli_query($kon, "select * from tb_formulir5 where username='$_SESSION[username]' ");
+			$a = mysqli_fetch_array($query);
 			?>
-			<tr>
-				<td><b>Catatan</b><br>
-				1. Klik Tombol Semester Untuk Melengkapi Data</br>
-				</td>
-			</tr>
-			</table>
-		 -->
-	 
+			<div class="card">
+				<div class="card-body">
+					<input type="hidden" name="id_formulir" value="<?php echo "$a[id_formulir]"; ?>">
+					<div class="">
+						<label class="card-title">Upload Akreditasi Prodi (.pdf) <h8 class="text-danger">(File harus di bawah 1 mb)</h8></label>
+						<input type="file" name="akreditasi" class="form-control">
+					</div>
+					<br>
+					<div class="">
+						<label>Upload Ijazah (.pdf) <h8 class="text-danger">(File harus di bawah 1 mb)</h8></label>
+						<input type="file" name="ijazah" class="form-control">
+					</div>
+					<br>
+					<div class="">
+						<label>Upload Transrip Nilai (.pdf) <h8 class="text-danger">(File harus di bawah 1 mb)</h8></label>
+						<input type="file" name="transkrip" class="form-control">
+					</div>
+					<br>
+
+					<input type="submit" name="submit" value="Simpan" class="btn btn-danger">
+					<input type="reset" name="submit" value="Hapus" class="btn btn-success">
+				</div>
+			</div>
+		</form>
 	</div>
-	</form>
-</div>
