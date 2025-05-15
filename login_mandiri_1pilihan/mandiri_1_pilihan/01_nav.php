@@ -131,6 +131,14 @@
                                 <a  href="10_rekap_pelayanan.php"><i class="fa fa-table fa-2x"></i> Rekap Pelayanan</a>
                             </li>
                             <?php } ?>
+
+                            <!-- link google -->
+                            <?php if ( $_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)" || $_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (Khusus TPMB)") { ?>
+                             <li>
+                                <a  href="12_tpmb.php"><i class="fa fa-table fa-2x"></i> Form Link</a>
+                            </li>
+                            <?php } ?>
+
                                 <!-- cetak kartu -->
                             <?php if ($_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (Khusus TPMB)") { ?>
                             <li>
