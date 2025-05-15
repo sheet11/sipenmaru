@@ -73,7 +73,7 @@
                <td><?=$a['asal_sekolah']?></td>
                <td><?=$a['nama_sekolah']?></td>
                <td><?=$a['keterangan_sekolah']?></td>
-               <td><?=$a['no_hp']?></td>
+               <td>'<?=$a['no_hp']?></td>
                <td><?=$a['penghasilan_orang_tua']?></td>
                <td><?=$a['pekerjaan_orang_tua']?></td>
                <td><?=$a['tanggal_daftar']?></td>
