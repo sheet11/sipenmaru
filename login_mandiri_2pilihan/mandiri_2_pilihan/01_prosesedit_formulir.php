@@ -80,10 +80,6 @@ if ($a['sesi_ujian'] == null) {
 	$tempat_ujian = $tempat_ujian;
 	$ruang_ujian = $ruang_ujian;
 } else {
-	$sesi_ujian = '';
-	$tanggal_ujian = '';
-	$tempat_ujian = '';
-	$ruang_ujian = '';
 }
 
 if (empty($nama_file)) {

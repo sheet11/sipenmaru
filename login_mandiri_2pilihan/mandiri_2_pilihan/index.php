@@ -14,7 +14,7 @@ include "../config/koneksi.php";
                      <h2>Poltekkes Kemenkes Bengkulu</h2>   
                         <h5>Selamat Datang <b><?php echo $_SESSION['nama_lengkap'];?> </b> Di Halaman Seleksi Penerimaan Mahasiswa Baru <b><?php echo $_SESSION['level'];?></b></h5>
                         <br>
-                        <?php 
+                        <!-- <?php 
                         $data = mysqli_query($kon,"SELECT * FROM tb_formulir4 WHERE username='$_SESSION[username]'");
                         $a = mysqli_fetch_array($data);
                         
@@ -22,7 +22,7 @@ include "../config/koneksi.php";
                         <h1><a href="cetak_pengumuman_tahap2.php">Lihat Kelulusan</a></h1>
                         <?php }elseif($a['status_lulus'] == 'Lulus' || $a['status_lulus'] == 'Tidak Lulus'){ ?> 
                         <h1><a href="cetak_pengumuman.php">Lihat Kelulusan</a></h1>
-                        <?php }else{} ?>
+                        <?php }else{} ?> -->
                     </div>
                 </div> 
                              
