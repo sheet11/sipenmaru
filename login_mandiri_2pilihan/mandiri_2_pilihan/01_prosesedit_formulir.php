@@ -34,17 +34,17 @@ $jumlah7 = mysqli_num_rows($query7);
 $jumlah8 = mysqli_num_rows($query8);
 $jumlah9 = mysqli_num_rows($query9);
 
-if ($jumlah1 < 100) {
+if ($jumlah1 < 91) {
 	$sesi = 'Sesi 1 Pukul 08.00 - 09.30 WIB';
 	$tgl_ujian = '2025-06-17';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah2 < 100) {
+} elseif ($jumlah2 < 91) {
 	$sesi = 'Sesi 2 Pukul 10.00 - 11.30 WIB';
 	$tgl_ujian = '2025-06-17';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah3 < 100) {
+} elseif ($jumlah3 < 91) {
 	$sesi = 'Sesi 3 Pukul 13.00 - 14.30 WIB';
 	$tgl_ujian = '2025-06-17';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
@@ -74,12 +74,16 @@ if ($jumlah1 < 100) {
 
 $data = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE id_formulir='$_POST[id_formulir]'");
 $a = mysqli_fetch_array($data);
-if ($a['sesi_ujian'] == null) {
+if (empty($a['sesi_ujian'])) {
 	$sesi_ujian = $sesi;
 	$tanggal_ujian = $tgl_ujian;
 	$tempat_ujian = $tempat_ujian;
 	$ruang_ujian = $ruang_ujian;
 } else {
+	$sesi_ujian = $a['sesi_ujian'];
+	$tanggal_ujian = $a['tanggal_ujian'];
+	$tempat_ujian = $a['tempat_ujian'];
+	$ruang_ujian = $a['ruang_ujian'];
 }
 
 if (empty($nama_file)) {
@@ -104,7 +108,10 @@ if (empty($nama_file)) {
 													akreditasi='$_POST[akreditasi]',
 													daerah_asal = '$_POST[daerah_asal]',
 													pilihan_prodi = '$_POST[pilihan_prodi]',
-													pilihan_prodi2 = '$_POST[pilihan_prodi2]',
+													pilihan_prodi2 = '$_POST[pilihan_prodi2]',																										tanggal_ujian = '$tanggal_ujian',
+													sesi_ujian = '$sesi_ujian',
+													tempat_ujian = '$tempat_ujian',
+													ruang_ujian = '$ruang_ujian',
 													tanggal_login = '$date',
 													status = 'Sudah Membayar'									
 												  	where id_formulir= '$_POST[id_formulir]'");
