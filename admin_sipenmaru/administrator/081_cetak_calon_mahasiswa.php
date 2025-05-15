@@ -65,7 +65,7 @@
 
           <tr>
             <td valign="top">No Handphone</td>
-            <td valign="top">:</td><td><?php echo $a['no_hp']; ?></td>
+            <td valign="top">:</td><td>'<?php echo $a['no_hp']; ?></td>
           </tr>
 
           <tr>
