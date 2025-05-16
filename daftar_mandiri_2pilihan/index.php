@@ -26,7 +26,7 @@
     				<span class="icon-bar"></span>
     				<span class="icon-bar"></span>
     			</button>
-    			<a class="navbar-brand" href="index.php">Sistem Penerimaan Mahasiswa Baru Jalur Mandiri 2 Pilihan<br><i style="color: red;">Khusus pendidikan minimal SMA/SMK</i></a>
+    			<a class="navbar-brand" href="index.php">Sistem Penerimaan Mahasiswa Baru Jalur Mandiri 2 Pilihan<br><i style="color: red;">Minimal lulusan SMA/MA/SMK/Sederajat</i></a>
     		</div>
     		<div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">Poltekkes Kemenkes Bengkulu </div>
     	</nav>

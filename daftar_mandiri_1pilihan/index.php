@@ -26,7 +26,7 @@
     				<span class="icon-bar"></span>
     				<span class="icon-bar"></span>
     			</button>
-    			<a class="navbar-brand" href="index.php">Seleksi Penerimaan Mahasiswa Baru Jalur Mandiri Program Profesi/Alih Jenjang (1 Pilihan) <br><i style="color: red;">Khusus pendidikan minimal D3/D4/S1</i></a>
+    			<a class="navbar-brand" href="index.php">Seleksi Penerimaan Mahasiswa Baru Jalur Mandiri Program Profesi/Alih Jenjang (1 Pilihan) <br><i style="color: red;">Minimal lulusan D3/D4/S1</i></a>
     		</div>
     		<div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">Poltekkes Kemenkes Bengkulu </div>
     	</nav>
