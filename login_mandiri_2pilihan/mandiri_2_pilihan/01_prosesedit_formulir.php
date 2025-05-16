@@ -106,9 +106,7 @@ if (empty($nama_file)) {
 													asal_sekolah = '$_POST[asal_sekolah]',
 													keterangan_sekolah = '$_POST[keterangan_sekolah]',
 													akreditasi='$_POST[akreditasi]',
-													daerah_asal = '$_POST[daerah_asal]',
-													pilihan_prodi = '$_POST[pilihan_prodi]',
-													pilihan_prodi2 = '$_POST[pilihan_prodi2]',																										tanggal_ujian = '$tanggal_ujian',
+													daerah_asal = '$_POST[daerah_asal]',																									tanggal_ujian = '$tanggal_ujian',
 													sesi_ujian = '$sesi_ujian',
 													tempat_ujian = '$tempat_ujian',
 													ruang_ujian = '$ruang_ujian',
@@ -148,9 +146,7 @@ if (empty($nama_file)) {
 													tanggal_ujian = '$tanggal_ujian',
 													sesi_ujian = '$sesi_ujian',
 													tempat_ujian = '$tempat_ujian',
-													ruang_ujian = '$ruang_ujian',
-													pilihan_prodi = '$_POST[pilihan_prodi]',	
-													pilihan_prodi2 = '$_POST[pilihan_prodi2]',					
+													ruang_ujian = '$ruang_ujian',				
 													nama_foto = '$nama-$nama_file'		
 												  	where id_formulir= '$_POST[id_formulir]'");
 				if ($qr) {
