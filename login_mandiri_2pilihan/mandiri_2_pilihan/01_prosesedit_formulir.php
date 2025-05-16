@@ -49,17 +49,17 @@ if ($jumlah1 < 91) {
 	$tgl_ujian = '2025-06-17';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah4 < 100) {
+} elseif ($jumlah4 < 91) {
 	$sesi = 'Sesi 4 Pukul 08.00 - 09.30 WIB';
 	$tgl_ujian = '2025-06-18';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah5 < 100) {
+} elseif ($jumlah5 < 91) {
 	$sesi = 'Sesi 5 Pukul 10.00 - 11.30 WIB';
 	$tgl_ujian = '2025-06-18';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah7 < 100) {
+} elseif ($jumlah7 < 91) {
 	$sesi = 'Sesi 6 Pukul 13.00 - 14.30 WIB';
 	$tgl_ujian = '2025-06-18';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
