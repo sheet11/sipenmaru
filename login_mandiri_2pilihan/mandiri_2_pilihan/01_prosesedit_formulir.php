@@ -15,57 +15,93 @@ $nama = $_SESSION['username'];
 // Folder tempat menyimpan gambarnya
 $path = "../assets/img/$nama-" . $nama_file;
 
-$query1 = mysqli_query($kon, "SELECT * from tb_formulir4 where sesi_ujian='Sesi 1 Pukul 08.00 - 09.30 WIB' ");
-$query2 = mysqli_query($kon, "SELECT * from tb_formulir4 where sesi_ujian='Sesi 2 Pukul 10.00 - 11.30 WIB' ");
-$query3 = mysqli_query($kon, "SELECT * from tb_formulir4 where sesi_ujian='Sesi 3 Pukul 13.00 - 14.30 WIB' ");
-$query4 = mysqli_query($kon, "SELECT * from tb_formulir4 where sesi_ujian='Sesi 4 Pukul 08.00 - 09.30 WIB' ");
-$query5 = mysqli_query($kon, "SELECT * from tb_formulir4 where sesi_ujian='Sesi 5 Pukul 10.00 - 11.30 WIB' ");
-$query6 = mysqli_query($kon, "SELECT * from tb_formulir4 where sesi_ujian='Sesi 6 Pukul 13.00 - 14.30 WIB' ");
-$query7 = mysqli_query($kon, "SELECT * from tb_formulir4 where sesi_ujian='Sesi 7 Pukul 08.00 - 09.30 WIB' ");
-$query8 = mysqli_query($kon, "SELECT * from tb_formulir4 where sesi_ujian='Sesi 8 Pukul 10.00 - 11.30 WIB' ");
-$query9 = mysqli_query($kon, "SELECT * from tb_formulir4 where sesi_ujian='Sesi 9 Pukul 13.00 - 14.30 WIB' ");
-$jumlah1 = mysqli_num_rows($query1);
-$jumlah2 = mysqli_num_rows($query2);
-$jumlah3 = mysqli_num_rows($query3);
-$jumlah4 = mysqli_num_rows($query4);
-$jumlah5 = mysqli_num_rows($query5);
-$jumlah6 = mysqli_num_rows($query6);
-$jumlah7 = mysqli_num_rows($query7);
-$jumlah8 = mysqli_num_rows($query8);
-$jumlah9 = mysqli_num_rows($query9);
+$query1_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 1 Pukul 08.00 - 09.30 WIB'");
+$query1_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 1 Pukul 08.00 - 09.30 WIB'");
+$jumlah1 = mysqli_num_rows($query1_4) + mysqli_num_rows($query1_5);
 
-if ($jumlah1 < 91) {
+// Sesi 2
+$query2_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 2 Pukul 10.00 - 11.30 WIB'");
+$query2_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 2 Pukul 10.00 - 11.30 WIB'");
+$jumlah2 = mysqli_num_rows($query2_4) + mysqli_num_rows($query2_5);
+
+// Sesi 3
+$query3_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 3 Pukul 13.00 - 14.30 WIB'");
+$query3_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 3 Pukul 13.00 - 14.30 WIB'");
+$jumlah3 = mysqli_num_rows($query3_4) + mysqli_num_rows($query3_5);
+
+// Sesi 4
+$query4_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 4 Pukul 08.00 - 09.30 WIB'");
+$query4_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 4 Pukul 08.00 - 09.30 WIB'");
+$jumlah4 = mysqli_num_rows($query4_4) + mysqli_num_rows($query4_5);
+
+// Sesi 5
+$query5_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 5 Pukul 10.00 - 11.30 WIB'");
+$query5_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 5 Pukul 10.00 - 11.30 WIB'");
+$jumlah5 = mysqli_num_rows($query5_4) + mysqli_num_rows($query5_5);
+
+// Sesi 6
+$query6_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 6 Pukul 13.00 - 14.30 WIB'");
+$query6_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 6 Pukul 13.00 - 14.30 WIB'");
+$jumlah6 = mysqli_num_rows($query6_4) + mysqli_num_rows($query6_5);
+
+// Sesi 7
+$query7_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 7 Pukul 08.00 - 09.30 WIB'");
+$query7_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 7 Pukul 08.00 - 09.30 WIB'");
+$jumlah7 = mysqli_num_rows($query7_4) + mysqli_num_rows($query7_5);
+
+// Sesi 8
+$query8_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 8 Pukul 10.00 - 11.30 WIB'");
+$query8_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 8 Pukul 10.00 - 11.30 WIB'");
+$jumlah8 = mysqli_num_rows($query8_4) + mysqli_num_rows($query8_5);
+
+// Sesi 9
+$query9_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 9 Pukul 13.00 - 14.30 WIB'");
+$query9_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 9 Pukul 13.00 - 14.30 WIB'");
+$jumlah9 = mysqli_num_rows($query9_4) + mysqli_num_rows($query9_5);
+
+
+if ($jumlah1 < 100) {
 	$sesi = 'Sesi 1 Pukul 08.00 - 09.30 WIB';
 	$tgl_ujian = '2025-06-17';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah2 < 91) {
+} elseif ($jumlah2 < 100) {
 	$sesi = 'Sesi 2 Pukul 10.00 - 11.30 WIB';
 	$tgl_ujian = '2025-06-17';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah3 < 91) {
+} elseif ($jumlah3 < 100) {
 	$sesi = 'Sesi 3 Pukul 13.00 - 14.30 WIB';
 	$tgl_ujian = '2025-06-17';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah4 < 91) {
+} elseif ($jumlah4 < 100) {
 	$sesi = 'Sesi 4 Pukul 08.00 - 09.30 WIB';
 	$tgl_ujian = '2025-06-18';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah5 < 91) {
+} elseif ($jumlah5 < 100) {
 	$sesi = 'Sesi 5 Pukul 10.00 - 11.30 WIB';
 	$tgl_ujian = '2025-06-18';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah7 < 91) {
+} elseif ($jumlah6 < 100) {
 	$sesi = 'Sesi 6 Pukul 13.00 - 14.30 WIB';
 	$tgl_ujian = '2025-06-18';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah8 < 100) {
+} elseif ($jumlah7 < 100) {
 	$sesi = 'Sesi 7 Pukul 08.00 - 09.30 WIB';
+	$tgl_ujian = '2025-06-19';
+	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
+	$ruang_ujian = 'Laboratorium Komputer';
+} elseif ($jumlah8 < 100) {
+	$sesi = 'Sesi 8 Pukul 10.00 - 11.30 WIB';
+	$tgl_ujian = '2025-06-19';
+	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
+	$ruang_ujian = 'Laboratorium Komputer';
+} elseif ($jumlah9 < 100) {
+	$sesi = 'Sesi 9 Pukul 13.00 - 14.30 WIB';
 	$tgl_ujian = '2025-06-19';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
@@ -107,6 +143,7 @@ if (empty($nama_file)) {
 													keterangan_sekolah = '$_POST[keterangan_sekolah]',
 													akreditasi='$_POST[akreditasi]',
 													daerah_asal = '$_POST[daerah_asal]',																									tanggal_ujian = '$tanggal_ujian',
+													tanggal_ujian = '$tanggal_ujian',
 													sesi_ujian = '$sesi_ujian',
 													tempat_ujian = '$tempat_ujian',
 													ruang_ujian = '$ruang_ujian',

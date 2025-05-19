@@ -75,95 +75,42 @@
             </tr>
         </table>
 
-        <a href="081_cetak_sesi.php?sesi=Sesi 1 Pukul 08.00 - 09.30 WIB&tab=tb_formulir4" class="btn btn-info" > Sesi 1: <?php
-                    require_once("../config/koneksi.php");
-                    error_reporting(E_ALL);
-                    ini_set('display_errors', 0);
-                    $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where sesi_ujian='Sesi 1 Pukul 08.00 - 09.30 WIB' ");
-                    $jumlah = mysqli_num_rows ($query); ?>
-                    <?php echo $jumlah; ?> 
-        </a>
-                    
-        <a href="081_cetak_sesi.php?sesi=Sesi 2 Pukul 10.00 - 11.30 WIB&tab=tb_formulir4" class="btn btn-info" > Sesi 2: <?php
-                    require_once("../config/koneksi.php");
-                    error_reporting(E_ALL);
-                    ini_set('display_errors', 0);
-                    $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where sesi_ujian='Sesi 2 Pukul 10.00 - 11.30 WIB' ");
-                    $jumlah = mysqli_num_rows ($query); ?>
-                    <?php echo $jumlah; ?> 
-        </a>
-                                                                    
-        <a href="081_cetak_sesi.php?sesi=Sesi 3 Pukul 13.00 - 14.30 WIB&tab=tb_formulir4" class="btn btn-info" > Sesi 3: <?php
-                    require_once("../config/koneksi.php");
-                    error_reporting(E_ALL);
-                    ini_set('display_errors', 0);
-                    $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where sesi_ujian='Sesi 3 Pukul 13.00 - 14.30 WIB' ");
-                    $jumlah = mysqli_num_rows ($query); ?>
-                    <?php echo $jumlah; ?> 
-        </a>
-        
-        <a href="081_cetak_sesi.php?sesi=Sesi 4 Pukul 08.00 - 09.30 WIB&tab=tb_formulir4" class="btn btn-info" > Sesi 4: <?php
-                    require_once("../config/koneksi.php");
-                    error_reporting(E_ALL);
-                    ini_set('display_errors', 0);
-                    $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where sesi_ujian='Sesi 4 Pukul 08.00 - 09.30 WIB' ");
-                    $jumlah = mysqli_num_rows ($query); ?>
-                    <?php echo $jumlah; ?> 
-        </a>
-        
-        <a href="081_cetak_sesi.php?sesi=Sesi 5 Pukul 10.00 - 11.30 WIB&tab=tb_formulir4" class="btn btn-info" > Sesi 5: <?php
-                    require_once("../config/koneksi.php");
-                    error_reporting(E_ALL);
-                    ini_set('display_errors', 0);
-                    $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where sesi_ujian='Sesi 5 Pukul 10.00 - 11.30 WIB' ");
-                    $jumlah = mysqli_num_rows ($query); ?>
-                    <?php echo $jumlah; ?> 
-        </a>
-        
-        <a href="081_cetak_sesi.php?sesi=Sesi 6 Pukul 13.00 - 14.30 WIB&tab=tb_formulir5" class="btn btn-info" > Sesi 6: <?php
-                    require_once("../config/koneksi.php");
-                    error_reporting(E_ALL);
-                    ini_set('display_errors', 0);
-                    $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where sesi_ujian='Sesi 6 Pukul 13.00 - 14.30 WIB' ");
-                    $query2 = mysqli_query ($kon,"SELECT * from tb_formulir5 where sesi_ujian='Sesi 6 Pukul 13.00 - 14.30 WIB' ");
-                    $jumlah = mysqli_num_rows ($query);
-                    $jumlah2 = mysqli_num_rows ($query2);
-                    $jumtot = $jumlah + $jumlah2; ?>
-                    <?php echo $jumtot; ?> 
-        </a>
-        <a href="081_cetak_sesi.php?sesi=Sesi 7 Pukul 08.00 - 09.30 WIB&tab=tb_formulir4" class="btn btn-info" > Sesi 7: <?php
-                    require_once("../config/koneksi.php");
-                    error_reporting(E_ALL);
-                    ini_set('display_errors', 0);
-                    $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where sesi_ujian='Sesi 7 Pukul 08.00 - 09.30 WIB' ");
-                    $query2 = mysqli_query ($kon,"SELECT * from tb_formulir5 where sesi_ujian='Sesi 7 Pukul 08.00 - 09.30 WIB' ");
-                    $jumlah = mysqli_num_rows ($query);
-                    $jumlah2 = mysqli_num_rows ($query2);
-                    $jumtot = $jumlah + $jumlah2; ?>
-                    <?php echo $jumtot; ?> 
-        </a>
-        <a href="081_cetak_sesi.php?sesi=Sesi 8 Pukul 10.00 - 11.30 WIB&tab=tb_formulir4" class="btn btn-info" > Sesi 8: <?php
-                    require_once("../config/koneksi.php");
-                    error_reporting(E_ALL);
-                    ini_set('display_errors', 0);
-                    $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where sesi_ujian='Sesi 8 Pukul 10.00 - 11.30 WIB' ");
-                    $query2 = mysqli_query ($kon,"SELECT * from tb_formulir5 where sesi_ujian='Sesi 8 Pukul 10.00 - 11.30 WIB' ");
-                    $jumlah = mysqli_num_rows ($query);
-                    $jumlah2 = mysqli_num_rows ($query2);
-                    $jumtot = $jumlah + $jumlah2; ?>
-                    <?php echo $jumtot; ?> 
-        </a>
-        <a href="081_cetak_sesi.php?sesi=Sesi 9 Pukul 13.00 - 14.30 WIB&tab=tb_formulir5" class="btn btn-info" > Sesi 9: <?php
-                    require_once("../config/koneksi.php");
-                    error_reporting(E_ALL);
-                    ini_set('display_errors', 0);
-                    $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where sesi_ujian='Sesi 9 Pukul 13.00 - 14.30 WIB' ");
-                    $query2 = mysqli_query ($kon,"SELECT * from tb_formulir5 where sesi_ujian='Sesi 9 Pukul 13.00 - 14.30 WIB' ");
-                    $jumlah = mysqli_num_rows ($query);
-                    $jumlah2 = mysqli_num_rows ($query2);
-                    $jumtot = $jumlah + $jumlah2; ?>
-                    <?php echo $jumtot; ?> 
-        </a>
+        <?php
+        // Daftar sesi ujian
+        $sesi_list = [
+            'Sesi 1 Pukul 08.00 - 09.30 WIB',
+            'Sesi 2 Pukul 10.00 - 11.30 WIB',
+            'Sesi 3 Pukul 13.00 - 14.30 WIB',
+            'Sesi 4 Pukul 08.00 - 09.30 WIB',
+            'Sesi 5 Pukul 10.00 - 11.30 WIB',
+            'Sesi 6 Pukul 13.00 - 14.30 WIB',
+            'Sesi 7 Pukul 08.00 - 09.30 WIB',
+            'Sesi 8 Pukul 10.00 - 11.30 WIB',
+            'Sesi 9 Pukul 13.00 - 14.30 WIB',
+        ];
+
+        require_once("../config/koneksi.php");
+        error_reporting(E_ALL);
+        ini_set('display_errors', 0);
+
+        foreach ($sesi_list as $label) {
+            // Hitung jumlah di tb_formulir4
+            $query4 = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir4 WHERE sesi_ujian='$label'");
+            $row4 = mysqli_fetch_assoc($query4);
+            $jumlah4 = $row4['jumlah'];
+
+            // Hitung jumlah di tb_formulir5
+            $query5 = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE sesi_ujian='$label'");
+            $row5 = mysqli_fetch_assoc($query5);
+            $jumlah5 = $row5['jumlah'];
+
+            $jumtot = $jumlah4 + $jumlah5;
+
+            echo '<a href="081_cetak_sesi.php?sesi='.urlencode($label).'&tab=tb_formulir4" class="btn btn-info" style="margin-bottom:5px;">'
+                . htmlspecialchars($label) . ': ' . $jumtot .
+                '</a> ';
+        }
+        ?>
         
         <br>
         <table style="width:100%;" class="table table-bordered">    
