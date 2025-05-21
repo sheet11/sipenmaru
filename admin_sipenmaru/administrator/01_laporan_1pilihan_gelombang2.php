@@ -1,185 +1,77 @@
 <?php
-    include"01_nav.php";
-    error_reporting(0); 
+    include "01_nav.php";
+    error_reporting(0);
+    require_once("../config/koneksi.php");
 ?>
 
 <aside class="right-side">
     <section class="content-header">
-        <div class="container-fluid" style="margin:10px;">  
+        <div class="container-fluid" style="margin:10px;">
             <div class="row">
                 <div class="col-md-12">
-                    <h2> Laporan 1 Pilihan Jalur Mandiri</h2>   
-                        <h5>Welcome <?php echo $_SESSION['nama_lengkap'];?></h5>
+                    <h2>Laporan 1 Pilihan Jalur Mandiri</h2>
+                    <h5>Welcome <?php echo $_SESSION['nama_lengkap']; ?></h5>
                 </div>
-            </div>              
-                 <!-- /. ROW  -->
-                  <hr />
+            </div>
+            <hr />
 
-                  <table class="table table-bordered">
-                        <tr>
-                            <td><b>Jumlah Pendaftar</b></td> <td> :</td> <td></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jumlah Pendaftar</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where status='Sudah Membayar' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="3"><b> Pilihan Prodi</b></td>
-                        </tr>
-
-                       <tr>
-                            <td> Jumlah Pendaftar Prodi Pendidikan Profesi Bidan</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Pendidikan Profesi Bidan' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jumlah Pendaftar Prodi Pendidikan Profesi Ners</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Pendidikan Profesi Ners' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jumlah Pendaftar Prodi Sarjana Terapan Keperawatan Alih Jenjang</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Sarjana Terapan Keperawatan Alih Jenjang' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-                        
-                        <tr>
-                            <td> Jumlah Pendaftar Prodi Sarjana Terapan Kebidanan Alih Jenjang Kelas Bengkulu</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Sarjana Terapan Kebidanan Alih Jenjang Kelas Bengkulu' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jumlah Pendaftar Prodi Sarjana Terapan Kebidanan Alih Jenjang Kelas Curup</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Sarjana Terapan Kebidanan Alih Jenjang Kelas Curup' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        
-
-                        <tr>
-                            <td><b>Jenis Kelamin</b></td> <td> :</td> <td></td>
-                        </tr>
-
-                        <tr>
-                            <td> Laki- Laki </td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where jenis_kelamin='Laki-Laki' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jenis Kelamin Laki-laki Prodi Pendidikan Profesi Bidan</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Pendidikan Profesi Bidan' and jenis_kelamin='Laki-Laki' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jenis Kelamin Laki-laki Prodi Pendidikan Profesi Ners</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Pendidikan Profesi Ners' and jenis_kelamin='Laki-Laki' and status='Sudah Membayar' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jenis Kelamin Laki-laki Prodi Sarjana Terapan Keperawatan Alih Jenjang Kelas Bengkulu </td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Sarjana Terapan Keperawatan Alih Jenjang' and jenis_kelamin='Laki-Laki' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-                        
-                        <tr>
-                            <td> Jenis Kelamin Laki-laki Prodi Sarjana Terapan Kebidanan Alih Jenjang Kelas Bengkulu </td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Sarjana Terapan Kebidanan Alih Jenjang Kelas Bengkulu' and jenis_kelamin='Laki-Laki' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jenis Kelamin Laki-laki Prodi Sarjana Terapan Kebidanan Alih Jenjang Kelas Curup</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Sarjana Terapan Kebidanan Alih Jenjang Kelas Curup' and jenis_kelamin='Laki-Laki' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        
-
-                        <tr>
-                            <td>Perempuan </td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where jenis_kelamin='Perempuan' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jenis Kelamin Perempuan Prodi Pendidikan Profesi Bidan</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Pendidikan Profesi Bidan' and jenis_kelamin='Perempuan' and status='Sudah Membayar' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jenis Kelamin Perempuan Prodi Pendidikan Profesi Ners</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Pendidikan Profesi Ners' and jenis_kelamin='Perempuan' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jenis Kelamin Perempuan Prodi Sarjana Terapan Keperawatan Alih Jenjang</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Sarjana Terapan Keperawatan Alih Jenjang' and jenis_kelamin='Perempuan' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-                        
-                        <tr>
-                            <td> Jenis Kelamin Perempuan Prodi Sarjana Terapan Kebidanan Alih Jenjang Kelas Bengkulu</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Sarjana Terapan Kebidanan Alih Jenjang Kelas Bengkulu' and jenis_kelamin='Perempuan' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td> Jenis Kelamin Perempuan Prodi Sarjana Terapan Kebidanan Alih Jenjang Kelas Curup</td> <td> :</td> <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir5 where pilihan_prodi='Sarjana Terapan Kebidanan Alih Jenjang Kelas Curup' and jenis_kelamin='Perempuan' and status='Sudah Membayar'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        
-
-                        
-                  </table>
-            </div>   
-
-           
+            <table class="table table-bordered">
+                <tr>
+                    <td><b>Jumlah Pendaftar</b></td> <td> :</td> <td></td>
+                </tr>
+                <tr>
+                    <td>Jumlah Pendaftar</td> <td> :</td>
+                    <td>
+                        <?php
+                        $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE status='Sudah Membayar'");
+                        $jumlah = mysqli_fetch_assoc($query)['jumlah'];
+                        echo $jumlah;
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"><b>Pilihan Prodi</b></td>
+                </tr>
+                <?php
+                // Ambil daftar prodi aktif=3 dari tb_prodi
+                $prodis = [];
+                $query_prodi = mysqli_query($kon, "SELECT nama_prodi FROM tb_prodi WHERE aktif='3'");
+                while ($row = mysqli_fetch_assoc($query_prodi)) {
+                    $prodis[] = $row['nama_prodi'];
+                }
+                foreach ($prodis as $prodi) {
+                    $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE pilihan_prodi='$prodi' AND status='Sudah Membayar'");
+                    $jumlah = mysqli_fetch_assoc($query)['jumlah'];
+                    echo "<tr>
+                        <td>Jumlah Pendaftar Prodi $prodi</td> <td> :</td> <td>$jumlah</td>
+                    </tr>";
+                }
+                ?>
+                <tr>
+                    <td><b>Jenis Kelamin</b></td> <td> :</td> <td></td>
+                </tr>
+                <?php
+                $genders = ["Laki-Laki", "Perempuan"];
+                // Total per gender
+                foreach ($genders as $gender) {
+                    $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE jenis_kelamin='$gender' AND status='Sudah Membayar'");
+                    $jumlah = mysqli_fetch_assoc($query)['jumlah'];
+                    echo "<tr>
+                        <td>$gender</td> <td> :</td> <td>$jumlah</td>
+                    </tr>";
+                }
+                // Per prodi per gender
+                foreach ($genders as $gender) {
+                    foreach ($prodis as $prodi) {
+                        $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE pilihan_prodi='$prodi' AND jenis_kelamin='$gender' AND status='Sudah Membayar'");
+                        $jumlah = mysqli_fetch_assoc($query)['jumlah'];
+                        echo "<tr>
+                            <td>Jenis Kelamin $gender Prodi $prodi</td> <td> :</td> <td>$jumlah</td>
+                        </tr>";
+                    }
+                }
+                ?>
+            </table>
+        </div>
+    </section>
+</aside>
