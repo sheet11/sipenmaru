@@ -56,6 +56,7 @@
 			<tr>
 				<td><b>Catatan</b><br>
 				1. Klik Tombol Edit Untuk Melengkapi Data</br>
+				2. Tanggal Ujian, Tempat Ujian, Ruang Ujian, dan Sesi Ujian akan muncul setelah mengisi biodata</br>
 				</td>
 			</tr>
 			</table>
