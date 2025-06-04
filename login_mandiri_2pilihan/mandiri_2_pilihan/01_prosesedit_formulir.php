@@ -60,47 +60,47 @@ $query9_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Ses
 $jumlah9 = mysqli_num_rows($query9_4) + mysqli_num_rows($query9_5);
 
 
-if ($jumlah1 < 100) {
+if ($jumlah1 < 120) {
 	$sesi = 'Sesi 1 Pukul 08.00 - 09.30 WIB';
 	$tgl_ujian = '2025-06-17';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah2 < 100) {
+} elseif ($jumlah2 < 120) {
 	$sesi = 'Sesi 2 Pukul 10.00 - 11.30 WIB';
 	$tgl_ujian = '2025-06-17';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah3 < 100) {
+} elseif ($jumlah3 < 120) {
 	$sesi = 'Sesi 3 Pukul 13.00 - 14.30 WIB';
 	$tgl_ujian = '2025-06-17';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah4 < 100) {
+} elseif ($jumlah4 < 120) {
 	$sesi = 'Sesi 4 Pukul 08.00 - 09.30 WIB';
 	$tgl_ujian = '2025-06-18';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah5 < 100) {
+} elseif ($jumlah5 < 120) {
 	$sesi = 'Sesi 5 Pukul 10.00 - 11.30 WIB';
 	$tgl_ujian = '2025-06-18';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah6 < 100) {
+} elseif ($jumlah6 < 120) {
 	$sesi = 'Sesi 6 Pukul 13.00 - 14.30 WIB';
 	$tgl_ujian = '2025-06-18';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah7 < 100) {
+} elseif ($jumlah7 < 120) {
 	$sesi = 'Sesi 7 Pukul 08.00 - 09.30 WIB';
 	$tgl_ujian = '2025-06-19';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah8 < 100) {
+} elseif ($jumlah8 < 120) {
 	$sesi = 'Sesi 8 Pukul 10.00 - 11.30 WIB';
 	$tgl_ujian = '2025-06-19';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
-} elseif ($jumlah9 < 100) {
+} elseif ($jumlah9 < 120) {
 	$sesi = 'Sesi 9 Pukul 13.00 - 14.30 WIB';
 	$tgl_ujian = '2025-06-19';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
