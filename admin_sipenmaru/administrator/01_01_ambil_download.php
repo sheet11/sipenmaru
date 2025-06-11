@@ -120,7 +120,7 @@ if (isset($_POST['download_all_file2'])) {
 echo "<table border='1' cellpadding='5' cellspacing='0'>";
 echo "<tr>
         <th>No</th>
-        th>Username</th>
+        <th>Username</th>
         <th>Nama</th>
         <th>File 1</th>
         <th>File 2</th>
@@ -131,6 +131,7 @@ $no = 1;
 while ($data = mysqli_fetch_assoc($query)) {
     echo "<tr>";
     echo "<td>".$no++."</td>";
+    echo "<td>".htmlspecialchars($data['username'])."</td>";
     echo "<td>".htmlspecialchars($data['nama_lengkap'])."</td>";
 
     // Tombol download file_1
