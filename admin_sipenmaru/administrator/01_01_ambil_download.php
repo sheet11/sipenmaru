@@ -28,7 +28,7 @@ echo '</select>';
 echo '</form>';
 
 // Query semua peserta dengan prodi tersebut
-$query = mysqli_query($kon, "SELECT id_formulir, username, nama_lengkap, file_1, file_2 FROM tb_formulir5 WHERE pilihan_prodi='$prodi'");
+$query = mysqli_query($kon, "SELECT id_formulir, username, nama_lengkap, file_1, file_2 FROM tb_formulir5 WHERE pilihan_prodi='$prodi' and status='Sudah Membayar'");
 // Output form only if not downloading
 if (!isset($_POST['download_all_file1'])) {
     echo '<form method="post">';
