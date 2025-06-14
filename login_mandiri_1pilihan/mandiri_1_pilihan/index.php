@@ -13,6 +13,10 @@ include "../config/koneksi.php";
                      <h2>Poltekkes Kemenkes Bengkulu</h2>   
                         <h5>Selamat Datang <b><?php echo $_SESSION['nama_lengkap'];?> </b> Di Halaman Sistem Informasi Pendaftaran Mahasiswa Baru Online Jalur <b><?php echo $_SESSION['level'];?></b></h5>
                         <br>
+                        <div style="margin-top: 20px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;">
+                        <strong>📢 Pengumuman:</strong>
+                            <p>Tanggal Ujian Sudah Dekat, Dimohon untuk peserta segera mencetak Kartu Ujian sebagai persyaratan ujian nanti.</p>
+                        </div>
                         <!-- <h5>*Untuk Program Alih Jenjang/RPL wajib Mengisi Form asesmen alih jenjang/Rekognisi Pembelajaran Lampau, daftar riwayat hidup dan surat pernyataan pada website</h3> -->
                         <!-- <h5>*untuk Program Profesi Wajib mengupload akreditasi prodi, transkrip nilai, dan ijazah</h3> -->
                          <!-- <?php

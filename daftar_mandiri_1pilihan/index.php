@@ -63,6 +63,10 @@
     									<td colspan="2"><input type="hidden" name="username" value="<?php echo $ambil['username']; ?>" class="form-control" disabled> </td>
     								</tr>
 
+									<tr>
+										<td colspan="" style="color: red;">Pendaftaran dan Pembayaran akan di tutup hari ini jam 00.00 WIB 14-06-2025</td>
+									</tr>
+									
     								<tr>
     									<td colspan="2"><b>Nama Lengkap</b></td>
     								</tr>
