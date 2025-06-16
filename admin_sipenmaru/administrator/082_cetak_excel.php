@@ -38,9 +38,9 @@
                 <th>ID </th>
                 <th>Password</th>
                 <th>Nama</th>
+                <th>Prodi</th>
                 <th>Tempat Lahir</th>
                 <th>Tanggal lahir</th>
-                <th>Prodi</th>
                 <th>Agama</th>
                 <th>Jenis Kelamin</th>
                 <th>Asal Sekolah</th>
@@ -68,9 +68,9 @@
                <td><?=$a['username']?></td>
                <td><?=$a['password']?></td>
                <td><?=$a['nama_lengkap']?></td>
+               <td><?=$a['pilihan_prodi']?></td>
                <td><?=$a['tempat_lahir']?></td>
                <td><?=$a['tanggal_lahir']?></td>
-               <td><?=$a['pilihan_prodi']?></td>
                <td><?=$a['agama']?></td>
                <td><?=$a['jenis_kelamin']?></td>
                <td><?=$a['asal_sekolah']?></td>
