@@ -40,6 +40,7 @@
                 <th>Nama</th>
                 <th>Tempat Lahir</th>
                 <th>Tanggal lahir</th>
+                <th>Prodi</th>
                 <th>Agama</th>
                 <th>Jenis Kelamin</th>
                 <th>Asal Sekolah</th>
@@ -48,7 +49,6 @@
                 <th>No HP</th>
                 <th>Penghasilan Orang Tua</th>
                 <th>Pekerjaan Orang Tua</th>
-                <th>Prodi</th>
                 <th>Tgl Daftar</th>
                 <th>Tgl Login</th>
                 <th>Tgl Ujian</th>
@@ -59,7 +59,6 @@
                 <th>Status tahap 1</th>
                 <th>Status tahap 2</th>
 		</tr>
-        <tr>
         <?php           
             $i=1; 
             $query=mysqli_query($kon,"select * from tb_formulir5 where status='Sudah Membayar'");       
