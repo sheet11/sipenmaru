@@ -9,7 +9,7 @@
 	include("fucnt_tgl.php");
 	
 		
-	$query=mysqli_query($kon,"select * from tb_formulir4 where username='$_SESSION[username]' ");
+	$query=mysqli_query($kon,"select * from tb_formulir4 where username='$_GET[username]' ");
 	$a=mysqli_fetch_array($query);
 	$tanggal = tgl_indo($a['tanggal_lahir']);
   $tanggalujian = tgl_indo($a['tanggal_ujian']);
@@ -19,9 +19,9 @@
 
 		  <table width="100%" border="0"  align="center">
 		  <tr>
-			<td width="101" height="102"><img src="../assets/img_kop/logo-kemenkes.png" width="150" height="100"/></td>
+			<td width="101" height="102"><img src="../../login_mandiri_2pilihan/assets/img_kop/logo-kemenkes.png" width="150" height="100"/></td>
 			<td width="601" align="center"><strong><h4>Seleksi Penerimaan Mahasiswa Baru (SPMB)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun 2025/2026</h4></strong></td>
-			<td width="109" align="center"><img src="../assets/img_kop/logo.png" width="100" height="100"/></td>
+			<td width="109" align="center"><img src="../../login_mandiri_2pilihan/assets/img_kop/logo.png" width="100" height="100"/></td>
 		  </tr>
 		  <tr>
 			<td colspan="3"><hr></hr></td>
@@ -30,8 +30,8 @@
 
         <table >
           <tr>
-              <td rowspan=18 width=164 valign="top"><a href="../assets/img/<?php echo $a['nama_foto'];?>" class="fancy">
-              <img src="../assets/img/<?php echo $a['nama_foto'];?>" alt="" width=150 height=175 border="0" /></td>
+              <td rowspan=18 width=164 valign="top"><a href="../../login_mandiri_2pilihan/assets/img/<?php echo $a['nama_foto'];?>" class="fancy">
+              <img src="../../login_mandiri_2pilihan/assets/img/<?php echo $a['nama_foto'];?>" alt="" width=150 height=175 border="0" /></td>
           </tr>
 
           <tr>
