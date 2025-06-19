@@ -136,10 +136,10 @@ if (isset($_POST['download_all_photo1'])) {
         mysqli_data_seek($query, 0);
         $fileAdded = false;
         while ($row = mysqli_fetch_assoc($query)) {
-            if (!empty($row['photo_1'])) {
-                $filePath = $folder . $row['photo_1'];
+            if (!empty($row['photo1'])) {
+                $filePath = $folder . $row['photo1'];
                 if (file_exists($filePath)) {
-                    $zip->addFile($filePath, basename($row['photo_1']));
+                    $zip->addFile($filePath, basename($row['photo1']));
                     $fileAdded = true;
                 }
             }
@@ -179,10 +179,10 @@ if (isset($_POST['download_all_photo2'])) {
         mysqli_data_seek($query, 0);
         $fileAdded = false;
         while ($row = mysqli_fetch_assoc($query)) {
-            if (!empty($row['photo_2'])) {
-                $filePath = $folder . $row['photo_2'];
+            if (!empty($row['photo2'])) {
+                $filePath = $folder . $row['photo2'];
                 if (file_exists($filePath)) {
-                    $zip->addFile($filePath, basename($row['photo_2']));
+                    $zip->addFile($filePath, basename($row['photo2']));
                     $fileAdded = true;
                 }
             }
@@ -222,10 +222,10 @@ if (isset($_POST['download_all_photo3'])) {
         mysqli_data_seek($query, 0);
         $fileAdded = false;
         while ($row = mysqli_fetch_assoc($query)) {
-            if (!empty($row['photo_3'])) {
-                $filePath = $folder . $row['photo_3'];
+            if (!empty($row['photo3'])) {
+                $filePath = $folder . $row['photo3'];
                 if (file_exists($filePath)) {
-                    $zip->addFile($filePath, basename($row['photo_3']));
+                    $zip->addFile($filePath, basename($row['photo3']));
                     $fileAdded = true;
                 }
             }
@@ -283,22 +283,22 @@ while ($data = mysqli_fetch_assoc($query)) {
     }
 
     // Tombol download photo_1
-    if (!empty($data['photo_1']) && file_exists($folder . $data['photo_1'])) {
-        echo '<td><a href="'.$folder.$data['photo_1'].'" class="btn btn-info" download>Download Photo 1</a></td>';
+    if (!empty($data['photo_1']) && file_exists($folder . $data['photo1'])) {
+        echo '<td><a href="'.$folder.$data['photo1'].'" class="btn btn-info" download>Download Photo 1</a></td>';
     } else {
         echo '<td><span class="btn btn-secondary disabled">Tidak Ada</span></td>';
     }
 
     // Tombol download photo_2
-    if (!empty($data['photo_2']) && file_exists($folder . $data['photo_2'])) {
-        echo '<td><a href="'.$folder.$data['photo_2'].'" class="btn btn-info" download>Download Photo 2</a></td>';
+    if (!empty($data['photo_2']) && file_exists($folder . $data['photo2'])) {
+        echo '<td><a href="'.$folder.$data['photo2'].'" class="btn btn-info" download>Download Photo 2</a></td>';
     } else {
         echo '<td><span class="btn btn-secondary disabled">Tidak Ada</span></td>';
     }
 
     // Tombol download photo_3
-    if (!empty($data['photo_3']) && file_exists($folder . $data['photo_3'])) {
-        echo '<td><a href="'.$folder.$data['photo_3'].'" class="btn btn-info" download>Download Photo 3</a></td>';
+    if (!empty($data['photo_3']) && file_exists($folder . $data['photo3'])) {
+        echo '<td><a href="'.$folder.$data['photo3'].'" class="btn btn-info" download>Download Photo 3</a></td>';
     } else {
         echo '<td><span class="btn btn-secondary disabled">Tidak Ada</span></td>';
     }
