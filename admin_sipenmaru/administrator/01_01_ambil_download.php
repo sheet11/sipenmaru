@@ -119,6 +119,135 @@ if (isset($_POST['download_all_file2'])) {
         echo "<div style='color:red;'>Gagal membuat file ZIP.</div>";
     }
 }
+
+if (!isset($_POST['download_all_photo1'])) {
+    echo '<form method="post" style="margin-top:10px;">';
+    echo '<button type="submit" name="download_all_photo1" class="btn btn-primary">Download Semua Photo 1 (ZIP)</button>';
+    echo '</form>';
+}
+
+if (isset($_POST['download_all_photo1'])) {
+    if (!class_exists('ZipArchive')) {
+        die('ZipArchive class is not available. Please enable the zip extension in PHP.');
+    }
+    $zip = new ZipArchive();
+    $zipFile = tempnam(sys_get_temp_dir(), 'photo1_') . '.zip';
+    if ($zip->open($zipFile, ZipArchive::CREATE) === TRUE) {
+        mysqli_data_seek($query, 0);
+        $fileAdded = false;
+        while ($row = mysqli_fetch_assoc($query)) {
+            if (!empty($row['photo_1'])) {
+                $filePath = $folder . $row['photo_1'];
+                if (file_exists($filePath)) {
+                    $zip->addFile($filePath, basename($row['photo_1']));
+                    $fileAdded = true;
+                }
+            }
+        }
+        $zip->close();
+        if ($fileAdded && file_exists($zipFile)) {
+            if (ob_get_length()) ob_end_clean();
+            header('Content-Type: application/zip');
+            header('Content-Disposition: attachment; filename="semua_photo1.zip"');
+            header('Content-Length: ' . filesize($zipFile));
+            flush();
+            readfile($zipFile);
+            unlink($zipFile);
+            exit;
+        } else {
+            unlink($zipFile);
+            echo "<div style='color:red;'>Tidak ada file yang dapat di-zip.</div>";
+        }
+    } else {
+        echo "<div style='color:red;'>Gagal membuat file ZIP.</div>";
+    }
+}
+
+if (!isset($_POST['download_all_photo2'])) {
+    echo '<form method="post" style="margin-top:10px;">';
+    echo '<button type="submit" name="download_all_photo2" class="btn btn-primary">Download Semua Photo 2 (ZIP)</button>';
+    echo '</form>';
+}
+
+if (isset($_POST['download_all_photo2'])) {
+    if (!class_exists('ZipArchive')) {
+        die('ZipArchive class is not available. Please enable the zip extension in PHP.');
+    }
+    $zip = new ZipArchive();
+    $zipFile = tempnam(sys_get_temp_dir(), 'photo2_') . '.zip';
+    if ($zip->open($zipFile, ZipArchive::CREATE) === TRUE) {
+        mysqli_data_seek($query, 0);
+        $fileAdded = false;
+        while ($row = mysqli_fetch_assoc($query)) {
+            if (!empty($row['photo_2'])) {
+                $filePath = $folder . $row['photo_2'];
+                if (file_exists($filePath)) {
+                    $zip->addFile($filePath, basename($row['photo_2']));
+                    $fileAdded = true;
+                }
+            }
+        }
+        $zip->close();
+        if ($fileAdded && file_exists($zipFile)) {
+            if (ob_get_length()) ob_end_clean();
+            header('Content-Type: application/zip');
+            header('Content-Disposition: attachment; filename="semua_photo2.zip"');
+            header('Content-Length: ' . filesize($zipFile));
+            flush();
+            readfile($zipFile);
+            unlink($zipFile);
+            exit;
+        } else {
+            unlink($zipFile);
+            echo "<div style='color:red;'>Tidak ada file yang dapat di-zip.</div>";
+        }
+    } else {
+        echo "<div style='color:red;'>Gagal membuat file ZIP.</div>";
+    }
+}
+
+if (!isset($_POST['download_all_photo3'])) {
+    echo '<form method="post" style="margin-top:10px;">';
+    echo '<button type="submit" name="download_all_photo3" class="btn btn-primary">Download Semua Photo 3 (ZIP)</button>';
+    echo '</form>';
+}
+
+if (isset($_POST['download_all_photo3'])) {
+    if (!class_exists('ZipArchive')) {
+        die('ZipArchive class is not available. Please enable the zip extension in PHP.');
+    }
+    $zip = new ZipArchive();
+    $zipFile = tempnam(sys_get_temp_dir(), 'photo3_') . '.zip';
+    if ($zip->open($zipFile, ZipArchive::CREATE) === TRUE) {
+        mysqli_data_seek($query, 0);
+        $fileAdded = false;
+        while ($row = mysqli_fetch_assoc($query)) {
+            if (!empty($row['photo_3'])) {
+                $filePath = $folder . $row['photo_3'];
+                if (file_exists($filePath)) {
+                    $zip->addFile($filePath, basename($row['photo_3']));
+                    $fileAdded = true;
+                }
+            }
+        }
+        $zip->close();
+        if ($fileAdded && file_exists($zipFile)) {
+            if (ob_get_length()) ob_end_clean();
+            header('Content-Type: application/zip');
+            header('Content-Disposition: attachment; filename="semua_photo3.zip"');
+            header('Content-Length: ' . filesize($zipFile));
+            flush();
+            readfile($zipFile);
+            unlink($zipFile);
+            exit;
+        } else {
+            unlink($zipFile);
+            echo "<div style='color:red;'>Tidak ada file yang dapat di-zip.</div>";
+        }
+    } else {
+        echo "<div style='color:red;'>Gagal membuat file ZIP.</div>";
+    }
+}
 echo "<table border='1' cellpadding='5' cellspacing='0'>";
 echo "<tr>
         <th>No</th>
@@ -126,6 +255,9 @@ echo "<tr>
         <th>Nama</th>
         <th>File 1</th>
         <th>File 2</th>
+        <th>akre</th>
+        <th>ijazah</th>    
+        <th>transkrip</th>
       </tr>";
 
 $folder = "../../login_mandiri_1pilihan/assets/berkas/";
@@ -150,6 +282,27 @@ while ($data = mysqli_fetch_assoc($query)) {
         echo '<td><span class="btn btn-secondary disabled">Tidak Ada</span></td>';
     }
 
+    // Tombol download photo_1
+    if (!empty($data['photo_1']) && file_exists($folder . $data['photo_1'])) {
+        echo '<td><a href="'.$folder.$data['photo_1'].'" class="btn btn-info" download>Download Photo 1</a></td>';
+    } else {
+        echo '<td><span class="btn btn-secondary disabled">Tidak Ada</span></td>';
+    }
+
+    // Tombol download photo_2
+    if (!empty($data['photo_2']) && file_exists($folder . $data['photo_2'])) {
+        echo '<td><a href="'.$folder.$data['photo_2'].'" class="btn btn-info" download>Download Photo 2</a></td>';
+    } else {
+        echo '<td><span class="btn btn-secondary disabled">Tidak Ada</span></td>';
+    }
+
+    // Tombol download photo_3
+    if (!empty($data['photo_3']) && file_exists($folder . $data['photo_3'])) {
+        echo '<td><a href="'.$folder.$data['photo_3'].'" class="btn btn-info" download>Download Photo 3</a></td>';
+    } else {
+        echo '<td><span class="btn btn-secondary disabled">Tidak Ada</span></td>';
+    }
+    
     echo "</tr>";
 }
 echo "</table>";
