@@ -258,7 +258,7 @@ ini_set('display_errors', 0);
     $jmldata = mysqli_num_rows(mysqli_query($kon,"SELECT * FROM tb_formulir4 where status='Sudah Membayar'"));
       
     $jmlhalaman  = $p->jumlahHalaman($jmldata, $batas);
-    $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
+    $linkHalaman = $p->navHalaman($_GET['halaman'], $jmlhalaman);
 
     echo "</table><div class=\"paginationw\">$linkHalaman</div>";
     }

@@ -188,10 +188,10 @@ include "session.php";
                 </a>
                 <ul class="treeview-menu">
                   <li><a href="081_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
+                  <li><a href="081_daftar_calon_mahasiswa_data.php"><i class="fa fa-circle-o"></i>Data per prodi</a></li>
                   <li><a href="081_daftar_calon_mahasiswa_ambil_id.php"><i class="fa fa-circle-o"></i>Belum Membayar</a></li>
                   <li><a href="081_daftar_calon_mahasiswa_belum_mendaftar.php"><i class="fa fa-circle-o"></i>Belum Mendaftar</a></li>
                   <li><a href="081_sesi.php"><i class="fa fa-circle-o"></i>Sesi Ujian</a></li>
-                  <li><a href="82_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 1</a></li>
                   <li><a href="83_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 2</a></li>
                   <li><a href="84_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 3</a></li>
                   <li><a href="85_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 4</a></li>

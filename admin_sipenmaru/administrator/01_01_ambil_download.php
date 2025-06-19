@@ -1,6 +1,8 @@
 <?php
 // filepath: c:\xampp\htdocs\sipenmaru\admin_sipenmaru\administrator\download_berkas_prodi.php
 include "../config/koneksi.php";
+include "session.php";
+
 
 // Ganti dengan nama prodi yang diinginkan
 // Ambil daftar prodi aktif=3 dari tabel tb_prodi

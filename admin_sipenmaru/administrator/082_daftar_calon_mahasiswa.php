@@ -53,6 +53,7 @@ error_reporting(0);
 
                         <a class="btn btn-success" href="082_cetak_excel.php">Cetak Excel</a>
                         <a class="btn btn-success" href="082_export_excel_link.php" target="_blank">Cetak Excel Link</a>
+                        <a class="btn btn-primary" href="01_01_ambil_download.php">Download File</a>
                     </td>
                 </tr>
                 <tr>
