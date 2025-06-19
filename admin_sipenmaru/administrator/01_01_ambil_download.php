@@ -30,7 +30,7 @@ echo '</select>';
 echo '</form>';
 
 // Query semua peserta dengan prodi tersebut
-$query = mysqli_query($kon, "SELECT id_formulir, username, nama_lengkap, file_1, file_2 FROM tb_formulir5 WHERE pilihan_prodi='$prodi' and status='Sudah Membayar'");
+$query = mysqli_query($kon, "SELECT id_formulir, username, nama_lengkap, file_1, file_2, photo1, photo2, photo3 FROM tb_formulir5 WHERE pilihan_prodi='$prodi' and status='Sudah Membayar'");
 // Output form only if not downloading
 if (!isset($_POST['download_all_file1'])) {
     echo '<form method="post">';
@@ -283,21 +283,21 @@ while ($data = mysqli_fetch_assoc($query)) {
     }
 
     // Tombol download photo_1
-    if (!empty($data['photo_1']) && file_exists($folder . $data['photo1'])) {
+    if (!empty($data['photo1']) && file_exists($folder . $data['photo1'])) {
         echo '<td><a href="'.$folder.$data['photo1'].'" class="btn btn-info" download>Download Photo 1</a></td>';
     } else {
         echo '<td><span class="btn btn-secondary disabled">Tidak Ada</span></td>';
     }
 
     // Tombol download photo_2
-    if (!empty($data['photo_2']) && file_exists($folder . $data['photo2'])) {
+    if (!empty($data['photo2']) && file_exists($folder . $data['photo2'])) {
         echo '<td><a href="'.$folder.$data['photo2'].'" class="btn btn-info" download>Download Photo 2</a></td>';
     } else {
         echo '<td><span class="btn btn-secondary disabled">Tidak Ada</span></td>';
     }
 
     // Tombol download photo_3
-    if (!empty($data['photo_3']) && file_exists($folder . $data['photo3'])) {
+    if (!empty($data['photo3']) && file_exists($folder . $data['photo3'])) {
         echo '<td><a href="'.$folder.$data['photo3'].'" class="btn btn-info" download>Download Photo 3</a></td>';
     } else {
         echo '<td><span class="btn btn-secondary disabled">Tidak Ada</span></td>';
