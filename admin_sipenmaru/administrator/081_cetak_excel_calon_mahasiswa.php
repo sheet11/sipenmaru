@@ -55,6 +55,7 @@
                 <th>Ruang Ujian</th>
                 <th>Sesi Ujian</th>
                 <th>Status</th>
+                <th>Status lulus</th>
 		</tr>
         <?php           
             $i=1; 
@@ -83,6 +84,7 @@
                <td><?=$a['ruang_ujian']?></td>
                <td><?=$a['sesi_ujian']?></td>
                <td><?=$a['status']?></td>        
+               <td><?=$a['status_lulus']?></td>        
            </tr>
            <?php } ?>
 	</table>
