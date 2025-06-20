@@ -120,7 +120,7 @@
   window.print();
 </script>
 <?php } elseif ($a['status_lulus'] == 'Tidak Lulus') { 
-echo "<br><br><br><h1 style= text-align:center >Maaf Anda Belum Lulus SPMB Mandiri tahap I <br><br>Silahkan coba lagi di periode selanjutnya.....</a> </h1><br><a href='index.php'>Kembali </a>";
+echo "<br><br><br><h1 style= text-align:center >Maaf Anda Belum Lulus SPMB Mandiri tahap I </a> </h1><br><a href='index.php'>Kembali </a>";
  }else{
  header("location:../index.php");
  }
