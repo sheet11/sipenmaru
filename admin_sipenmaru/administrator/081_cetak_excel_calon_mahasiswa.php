@@ -56,6 +56,7 @@
                 <th>Sesi Ujian</th>
                 <th>Status</th>
                 <th>Status lulus</th>
+                <th>Prodi Lulus</th>
 		</tr>
         <?php           
             $i=1; 
@@ -85,6 +86,7 @@
                <td><?=$a['sesi_ujian']?></td>
                <td><?=$a['status']?></td>        
                <td><?=$a['status_lulus']?></td>        
+               <td><?=$a['prodi_lulus']?></td>        
            </tr>
            <?php } ?>
 	</table>
