@@ -30,7 +30,7 @@
   <div class="container box">
    <form method="post" enctype="multipart/form-data">
     <div class="container-fluid">
-      <h3 align="center" class="text-success" style="font-weight:600;">Import Calon Majasiswa Mandiri Tahap 1 Tahun 2023</h3><br />
+      <h3 align="center" class="text-success" style="font-weight:600;">Import Kelulusan Mahasiswa Mandiri Tahap I Tahun 2024</h3><br />
       <a class="btn-link" href="index.php">Kembali</a>
       <div class="row" style="margin-bottom:20px">
         <div class="col-md-4 col-xs-4 col-sm-4"></div>  <!-- Blank Div -->
@@ -45,7 +45,7 @@
         </div>
         <div class="col-xs-7 col-md-7 col-sm-6 col-lg-7">
             <input type="submit" name="import" class="btn btn-info" value="Import" style="padding:2px 20px;"/>
-            <a href="format import kelulusan.xlsx" class="btn btn-primary btn-sm"><i class="fa da-download"></i> Download Format</a>
+            <a href="format import kelulusan tahap 1 SIMAMI.xlsx" class="btn btn-primary btn-sm"><i class="fa da-download"></i> Download Format</a>
         </div>
         
       </div>
@@ -55,7 +55,7 @@
    <br />
    <?php
 
-$kon = mysqli_connect("localhost", "root", "", "db_sipenmaru_2023");
+$kon = mysqli_connect("localhost", "u128202965_sipenmaru", "Bengkulu2024$", "u128202965_sipenmaru");
 $output = '';
 if(isset($_POST["import"]))
 {
@@ -77,25 +77,24 @@ if(isset($_POST["import"]))
    for($row=2; $row<=$highestRow; $row++)
    {
     $username = mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(0, $row)->getValue());
-    $nama_lengkap = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(1, $row)->getValue())," ");
-    $prodi_lulus = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(2, $row)->getValue())," ");
-    $status_lulus = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(3, $row)->getValue())," ");
+    $nama = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(1, $row)->getValue())," ");
+    $status_lulus = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(2, $row)->getValue())," ");
 
     if(!empty($username)) // if none of the data are empty
     {
       $getmhs=mysqli_fetch_array(mysqli_query($kon,"select * from tb_formulir5 where username='$username'"));
       if(!empty($getmhs['username']))
       {
-        mysqli_query($kon,"update tb_formulir5 set prodi_lulus='$prodi_lulus', status_lulus='$status_lulus' where username='$username'");  
+        mysqli_query($kon,"update tb_formulir5 set status_lulus='$status_lulus' where username='$username'");  
         ?>
-        <div class="alert alert-success">Status Mandiri berhasil diubah untuk username : <?php echo $username.' Nama : '.$nama_lengkap.' dengan status <b>'.$status_lulus.'</b>';?>
+        <div class="alert alert-success">Status Mandiri berhasil diubah untuk username : <?php echo $username.' Nama : '.$nama.' dengan status <b>'.$status_lulus.'</b>';?>
         </div>
         <?php
       }
       else
       {
         ?>
-        <div class="alert alert-danger">Status Mandiri gagal diubah untuk username : <?php echo $username.' Nama : '.$nama.' dengan status <b>'.$status_pmdp.'</b>. Data tidak ditemukan';?>
+        <div class="alert alert-danger">Status Mandiri gagal diubah untuk username : <?php echo $username.' Nama : '.$nama.' dengan status <b>'.$status_lulus.'</b>. Data tidak ditemukan';?>
         </div>
         <?php
       }
