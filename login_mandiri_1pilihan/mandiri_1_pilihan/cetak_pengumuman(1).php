@@ -15,7 +15,7 @@ $tanggal = tgl_indo($a['tanggal_lahir']);
 date_default_timezone_set('Asia/Jakarta'); // Zona Waktu indonesia
 // echo date('h:i:s a'); // menampilkan jam sekarang
 // echo date('l, d-m-Y  H:i:s'); //kombinasi jam dan tanggal
-if ($a['status_pmdp'] == "LULUS") {
+if ($a['status_lulus'] == "Lulus") {
 ?>
   <?php ?>
   <html>
