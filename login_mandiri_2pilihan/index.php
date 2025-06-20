@@ -1,4 +1,4 @@
-<!--Sedang Tahap Pengumuman-->
+<!--Perbaikan Server-->
 <!DOCTYPE html>
 <html >
   <head>
@@ -10,7 +10,7 @@
     <script src="js/prefixfree.min.js"></script>
     
   </head>
-  <body><!--/  Form Login-->
+  <body>
   <div><h1>Seleksi Pendaftaran Mahasiswa Baru Jalur Mandiri 2 Pilihan</h1></div>
         <div class="login">
           <h1>SPMB Online </h1>
@@ -26,7 +26,7 @@
                   </p>
                 <p class="submit"><input type="submit" name="sent" value="Login"></p>
               </form>
-        </div> <!--/ Login-->
+        </div>
 
 
 <div class="copyright">

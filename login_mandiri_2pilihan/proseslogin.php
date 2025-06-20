@@ -19,7 +19,7 @@ if($row && $row['level'] == "MANDIRI 2 PILIHAN")
 		$_SESSION['nama_lengkap'] = $row['nama_lengkap'];
 		$_SESSION['level'] = $row['level'];
 
-		header("location:mandiri_2_pilihan/index.php"); // jika berhasil login, maka masuk ke file home.php
+		header("location:mandiri_2_pilihan/lulus.php"); // jika berhasil login, maka masuk ke file home.php
 	}else
 		{
 			echo "ID atau Pin salah, coba ulangi lagi...";

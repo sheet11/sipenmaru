@@ -20,7 +20,7 @@ if($row && $row['level'] == "MANDIRI 1 PILIHAN")
 		$_SESSION['level'] = $row['level'];
 		$_SESSION['prodi'] = $row['pilihan_prodi'];
 
-		header("location:mandiri_1_pilihan"); // jika berhasil login, maka masuk ke file home.php
+		header("location:mandiri_1_pilihan/lulus.php"); // jika berhasil login, maka masuk ke file home.php
 		
 	}
 	

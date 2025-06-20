@@ -10,18 +10,12 @@
     
   </head>
 
-<?php
-$date = date("Y-m-d"); 
-$date=date('Y-m-d', strtotime($date));
-//echo $paymentDate; // echos today! 
-$tanggalbuka = date('Y-m-d', strtotime("2024-05-31"));
-$tanggaltutup = date('Y-m-d', strtotime("2024-07-07"));
-if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
-  <body><!--/  Form Login -->
+
+  <body>
   <div class="center"><h1>Sistem Informasi Pendaftaran Mahasiswa Baru Jalur Mandiri 2 Pilihan</h1></div>
         <div class="login">
           <h1>Sipenmaru Online </h1>
-              <form class="form" action="proseslogin(1).php" method="post" enctype="multipart/form-data">
+              <form class="form" action="proseslogin.php" method="post" enctype="multipart/form-data">
                   <p class="field">
                     <input type="text" name="username" placeholder="ID " required/>
                     <i class="fa fa-user"></i>
@@ -33,7 +27,7 @@ if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
                   </p>
                 <p class="submit"><input type="submit" name="sent" value="Login"></p>
               </form>
-        </div> <!--/ Login-->
+        </div>
 
 
 <div class="copyright">
@@ -42,7 +36,4 @@ if(($date >= $tanggalbuka) && ($date <= $tanggaltutup)) { ?>
 </div>
       
   </body>
-  <?php }else{ ?>
-	<h1>Akses login di tutup, Silahkan Hubungi admin untuk info lebih lanjut!</h1>
-<?php } ?>
 </html>
