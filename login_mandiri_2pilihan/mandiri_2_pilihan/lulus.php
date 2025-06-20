@@ -73,7 +73,7 @@
 <table align="center">
     <tr>
         <td>
-            <h3>&emsp;Selamat anda dinyatakan:</h3>
+            <h3>Selamat anda dinyatakan:</h3>
         </td>
     </tr>
     <tr>
@@ -87,35 +87,8 @@
 </html>
 
 
-<p style="text-align: center;"><strong><span style="text-decoration: underline;">PENGUMUMAN</span></strong></p>
-<p><strong>&nbsp;</strong></p>
-<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;Peserta yang&nbsp; dinyatakan LULUS Seleksi Jalur Sipenmaru Mandiri (SIMAMI) Gelombang II Tahap I</strong><strong>&nbsp;diwajibkan mengikuti tahapan :</strong></p>
-<ol>
-<li><strong>Uji Kesehatan dan Wawancara </strong>dilaksanakan pada hari <strong>Rabu</strong>, tanggal <strong>10 Juli 2024 pukul 08.00 WIB- 12.00 WIB.</strong></li>
-</ol>
-<ol start="2">
-<li>Berkas yang dikumpulkan meliputi :
-<ol>
-<li>Bukti Kelulusan Tahap I Jalur Sipenmaru Mandiri (SIMAMI) Gelombang II</li>
-<li>Bukti Pembayaran Uji Kesehatan Rp 000 (Seratus Lima Puluh Ribu Rupiah)</li>
-<li>Foto Hitam Putih 3x4 1 (satu) buah</li>
-<li>Membawa Ijazah/Surat Keterangan Lulus (SKL)</li>
-</ol>
-</li>
-</ol>
-<ol start="3">
-<li>Peserta berpakaian sopan (celana berbahan dasar, kemeja berkancing depan), memakai sepatu dan rambut rapi (untuk yang laki-laki dan perempuan yang tidak mengenakan hijab).</li>
-</ol>
-<ol start="4">
-<li>Tempat pelaksanaan uji kesehatan dan wawancara di Klinik Hygea Poltekkes Kemenkes Bengkulu<em>.</em><strong>Biaya uji kesehatan </strong>sebesar <strong>Rp. 150.000,- (Seratus Lima Puluh Ribu Rupiah) </strong>dapat disetor ke Teller BANK MUAMALAT dengan No Rekening 4320666666 atas nama RPL 016 POLTEKKES UNTUK OPS yang tersedia di Poltekkes Kemenkes Bengkulu.</li>
-</ol>
-<ol start="5">
-<li><strong>Wawancara WAJIB </strong>dihadiri oleh calon mahasiswa yang didampingi oleh salah <strong>satu Orang Tua/Wali.</strong></li>
-</ol>
-<ol start="6">
-<li>Apabila sampai dengan tanggal <strong>10 Juli 2024 </strong>calon mahasiswa <strong>tidak mengikuti Uji Kesehatan dan Wawancara maka Peserta dinyatakan <u>GUGUR</u>.</strong></li>
-<li><strong>Pengumuman</strong><strong> KELULUSAN TAHAP II </strong>dapat dilihat di website <a href="https://poltekkesbengkulu.ac.id/">https://poltekkesbengkulu.ac.id/</a> pada tanggal <strong>11 Juli 2024.</strong></li>
-</ol>
+<img src="1.jpg" alt="Deskripsi Gambar" width="1100" height="auto">
+<img src="2.jpg" alt="Deskripsi Gambar" width="1100" height="auto">
 <script>
   window.print();
 </script>
