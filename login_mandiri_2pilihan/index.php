@@ -1,5 +1,5 @@
-<!--Perbaikan Server-->
-<!DOCTYPE html>
+Perbaikan Server
+<!-- <!DOCTYPE html>
 <html >
   <head>
     <meta charset="UTF-8">
@@ -35,4 +35,4 @@
 </div>
       
   </body>
-</html>
+</html> -->
