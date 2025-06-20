@@ -141,7 +141,7 @@ if ($a['status_lulus'] == "Lulus") {
             <td rowspan="6">1</td>
             <td rowspan="6">SENIN/23 JUNI 2025</td>
             <td>Program Studi Keperawatan Bengkulu Program Diploma Tiga</td>
-            <td>
+            <td rowspan="6">
               <strong>UJI KESEHATAN</strong><br>
               08.00 - 12.00 WIB<br>
               KLINIK HYGEA<br><br>
@@ -175,7 +175,7 @@ if ($a['status_lulus'] == "Lulus") {
             <td rowspan="10">2</td>
             <td rowspan="10">SELASA/24 JUNI 2025</td>
             <td>Program Studi Kebidanan dan Pendidikan Profesi Bidan Program Sarjana Terapan</td>
-            <td>
+            <td rowspan="10">
               <strong>UJI KESEHATAN</strong><br>
               08.00 - 12.00 WIB<br>
               KLINIK HYGEA<br><br>
@@ -225,7 +225,7 @@ if ($a['status_lulus'] == "Lulus") {
             <td rowspan="6">3</td>
             <td rowspan="6">RABU/25 JUNI 2025</td>
             <td>RPL Gizi dan Dietetika Sarjana Terapan</td>
-            <td>
+            <td rowspan="6">
               <strong>UJI KESEHATAN</strong><br>
               08.00 - 12.00 WIB<br>
               KLINIK HYGEA<br><br>
