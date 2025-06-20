@@ -73,7 +73,7 @@
 <table align="center">
     <tr>
         <td>
-            <h3>Selamat anda dinyatakan:</h3>
+            <h3 align="center">Selamat anda dinyatakan:</h3>
         </td>
     </tr>
     <tr>
