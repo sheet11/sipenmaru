@@ -298,6 +298,7 @@ echo "<tr>
         <th>Nama</th>
         <th>File 1</th>
         <th>File 2</th>
+        <th>File 3</th>
         <th>akre</th>
         <th>ijazah</th>    
         <th>transkrip</th>
