@@ -56,6 +56,7 @@
                 <th>Sesi Ujian</th>
                 <th>Status</th>
                 <th>Status lulus</th>
+                <th>Status lulus 2</th>
                 <th>Prodi Lulus</th>
 		</tr>
         <?php           
@@ -86,6 +87,7 @@
                <td><?=$a['sesi_ujian']?></td>
                <td><?=$a['status']?></td>        
                <td><?=$a['status_lulus']?></td>        
+               <td><?=$a['status_lulus_tahap2']?></td>        
                <td><?=$a['prodi_lulus']?></td>        
            </tr>
            <?php } ?>
