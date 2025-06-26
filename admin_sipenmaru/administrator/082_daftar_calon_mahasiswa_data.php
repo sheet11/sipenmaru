@@ -15,7 +15,7 @@ include "01_nav.php";
         <select name="filter_prodi" id="filter_prodi" class="form-control" onchange="this.form.submit()">
             <option value="">-- Semua Prodi --</option>
             <?php
-            $prodi_q = mysqli_query($kon, "SELECT DISTINCT pilihan_prodi FROM tb_formulir4 WHERE status='Sudah Membayar' ORDER BY pilihan_prodi ASC");
+            $prodi_q = mysqli_query($kon, "SELECT DISTINCT pilihan_prodi FROM tb_formulir5 WHERE status='Sudah Membayar' ORDER BY pilihan_prodi ASC");
             while($p = mysqli_fetch_assoc($prodi_q)) {
                 $selected = (isset($_GET['filter_prodi']) && $_GET['filter_prodi'] == $p['pilihan_prodi']) ? 'selected' : '';
                 echo "<option value=\"{$p['pilihan_prodi']}\" $selected>{$p['pilihan_prodi']}</option>";
