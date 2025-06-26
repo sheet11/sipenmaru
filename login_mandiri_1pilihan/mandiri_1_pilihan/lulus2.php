@@ -749,9 +749,9 @@ color:red'><o:p>&nbsp;</o:p></span></p>
     exit();
 
 }elseif ($a['status_lulus_2'] == null || $a['status_lulus_2'] == "Tidak Lulus") {
-  echo "<br><br><br><h1>Maaf Anda Belum Lulus SPMB Mandiri tahap 1</h1><br><a href='../index.php'>Kembali </a>";
+  echo "<br><br><br><h1>Maaf Anda Belum Lulus SPMB Mandiri tahap II</h1><br><a href='../index.php'>Kembali </a>";
 } else {
-  echo "<br><br><br><h1>Maaf Anda Belum Lulus SPMB Mandiri tahap 1</h1><br><a href='../index.php'>Kembali </a>";
+  header("location:../index.php");
 }
 ?>
 

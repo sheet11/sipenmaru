@@ -749,7 +749,7 @@ color:red'><o:p>&nbsp;</o:p></span></p>
      header("Location: ../index.php");
     exit();
 }elseif ($a['status_lulus_tahap2'] == null || $a['status_lulus_tahap2'] == 'Tidak Lulus') {
-  echo "<br><br><br><h1 style= text-align:center >Maaf Anda Belum Lulus SPMB Mandiri tahap I </a> </h1><br><a href='../index.php'>Kembali </a>";
+  echo "<br><br><br><h1 style= text-align:center >Maaf Anda Belum Lulus SPMB Mandiri tahap II </a> </h1><br><a href='../index.php'>Kembali </a>";
 } else {
   header("location:../index.php");
 }
