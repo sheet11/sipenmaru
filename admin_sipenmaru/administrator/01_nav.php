@@ -172,6 +172,7 @@ include "session.php";
                 </a>
                 <ul class="treeview-menu">
                   <li><a href="082_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
+                  <li><a href="082_daftar_calon_mahasiswa_data.php"><i class="fa fa-circle-o"></i>Data per prodi</a></li>
                   <li><a href="082_daftar_calon_mahasiswa_ambil_id.php"><i class="fa fa-circle-o"></i>Belum Membayar</a></li>
                   <li><a href="082_daftar_calon_mahasiswa_belum_mendaftar.php"><i class="fa fa-circle-o"></i>Belum Mendaftar</a></li>
                   <li><a href="09_daftar_nilai_assesment.php"><i class="fa fa-circle-o"></i>Daftar Nilai Assesment</a></li>

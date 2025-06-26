@@ -85,7 +85,7 @@ if(isset($_POST["import"]))
       $getmhs=mysqli_fetch_array(mysqli_query($kon,"select * from tb_formulir4 where username='$username'"));
       if(!empty($getmhs['username']))
       {
-        mysqli_query($kon,"update tb_formulir4 set status_kelulusan_2='$status_lulus_tahap2' where username='$username'");  
+        mysqli_query($kon,"update tb_formulir4 set status_lulus_tahap2='$status_lulus_tahap2' where username='$username'");  
         ?>
         <div class="alert alert-success">Status Mandiri berhasil diubah untuk username : <?php echo $username.' Nama : '.$nama_lengkap.' dengan status <b>'.$status_lulus_tahap2.'</b>';?>
         </div>

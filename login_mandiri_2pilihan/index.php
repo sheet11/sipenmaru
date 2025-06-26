@@ -1,5 +1,5 @@
-<!-- Perbaikan Server -->
-<!DOCTYPE html>
+Sedang Perbaikan, Mohon di tunggu
+<!-- <!DOCTYPE html>
 <html >
   <head>
     <meta charset="UTF-8">
@@ -35,4 +35,4 @@
 </div>
       
   </body>
-</html>
+</html> -->

@@ -9,7 +9,7 @@
     <script src="js/prefixfree.min.js"></script>
     
   </head>
-  <body><!--/  Form Login -->
+  <body>
   <div class="center"><h1>Sistem Informasi Pendaftaran Mahasiswa Baru Jalur Mandiri 2 Pilihan</h1></div>
         <div class="login">
           <h1>Sipenmaru Online </h1>
@@ -25,12 +25,12 @@
                   </p>
                 <p class="submit"><input type="submit" name="sent" value="Login"></p>
               </form>
-        </div> <!--/ Login-->
+        </div>
 
 
 <div class="copyright">
     <p>Sistem Informasi Pendaftaran Mahasiswa Baru Jalur Mandiri 2 Pilihan </a></p>
-    <p>Copyright &copy; 2024.Poltekkes Kemenkes Bengkulu </a></p>
+    <p>Copyright &copy; 2025.Poltekkes Kemenkes Bengkulu </a></p>
 </div>
       
   </body>

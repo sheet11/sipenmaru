@@ -55,7 +55,7 @@
    <br />
    <?php
 
-$kon = mysqli_connect("localhost", "root", "", "db_sipenmaru_2023");
+$kon=mysqli_connect("localhost","u128202965_sipenmaru","Bengkulu2024$","u128202965_sipenmaru");
 $output = '';
 if(isset($_POST["import"]))
 {
@@ -78,24 +78,23 @@ if(isset($_POST["import"]))
    {
     $username = mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(0, $row)->getValue());
     $nama_lengkap = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(1, $row)->getValue())," ");
-    $prodi_lulus_tahap2 = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(2, $row)->getValue())," ");
-    $status_lulus_tahap2 = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(3, $row)->getValue())," ");
+    $status_lulus_2 = trim(mysqli_real_escape_string($kon, $worksheet->getCellByColumnAndRow(2, $row)->getValue())," ");
 
     if(!empty($username)) // if none of the data are empty
     {
       $getmhs=mysqli_fetch_array(mysqli_query($kon,"select * from tb_formulir5 where username='$username'"));
       if(!empty($getmhs['username']))
       {
-        mysqli_query($kon,"update tb_formulir5 set prodi_lulus_tahap2='$prodi_lulus_tahap2', status_lulus_tahap2='$status_lulus_tahap2' where username='$username'");  
+        mysqli_query($kon,"update tb_formulir5 set status_lulus_2='$status_lulus_2' where username='$username'");  
         ?>
-        <div class="alert alert-success">Status Mandiri berhasil diubah untuk username : <?php echo $username.' Nama : '.$nama_lengkap.' dengan status <b>'.$status_lulus_tahap2.'</b>';?>
+        <div class="alert alert-success">Status Mandiri berhasil diubah untuk username : <?php echo $username.' Nama : '.$nama_lengkap.' dengan status <b>'.$status_lulus_2.'</b>';?>
         </div>
         <?php
       }
       else
       {
         ?>
-        <div class="alert alert-danger">Status Mandiri gagal diubah untuk username : <?php echo $username.' Nama : '.$nama_lengkap.' dengan status <b>'.$status_lulus_tahap2.'</b>. Data tidak ditemukan';?>
+        <div class="alert alert-danger">Status Mandiri gagal diubah untuk username : <?php echo $username.' Nama : '.$nama_lengkap.' dengan status <b>'.$status_lulus_2.'</b>. Data tidak ditemukan';?>
         </div>
         <?php
       }
