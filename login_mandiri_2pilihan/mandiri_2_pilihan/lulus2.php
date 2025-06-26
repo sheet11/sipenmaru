@@ -9,14 +9,14 @@ include("library.php");
 include("fucnt_tgl.php");
 
 
-$query = mysqli_query($kon, "select * from tb_formulir5 where username='$_SESSION[username]' ");
+$query = mysqli_query($kon, "select * from tb_formulir4 where username='$_SESSION[username]' ");
 $a = mysqli_fetch_array($query);
 $tanggal = tgl_indo($a['tanggal_lahir']);
 date_default_timezone_set('Asia/Jakarta'); // Zona Waktu indonesia
 // echo date('h:i:s a'); // menampilkan jam sekarang
 // echo date('l, d-m-Y  H:i:s'); //kombinasi jam dan tanggal
 
-if ($a['status_lulus_2'] == "Lulus") {
+if ($a['status_lulus_tahap2'] == "Lulus") {
 ?>
   <html>
 
@@ -40,7 +40,7 @@ if ($a['status_lulus_2'] == "Lulus") {
       <tr>
         <td valign="top">Jalur</td>
         <td valign="top">:</td>
-        <td><?php echo $a['level']; ?></td>
+        <td>MANDIRI 2 PILIHAN</td>
       </tr>
 
       <tr>
@@ -56,9 +56,9 @@ if ($a['status_lulus_2'] == "Lulus") {
       </tr>
 
       <tr>
-        <td valign="top">Prodi</td>
+        <td valign="top">Prodi lulus</td>
         <td valign="top">:</td>
-        <td><?php echo $a['pilihan_prodi']; ?></td>
+        <td><?php echo $a['prodi_lulus']; ?></td>
       </tr>
 
       <tr>
@@ -79,12 +79,13 @@ if ($a['status_lulus_2'] == "Lulus") {
       </tr>
       <tr>
         <td>
-          <h1>LULUS TAHAP I</h1>
+          <h1>LULUS SPMB MANDIRI TAHAP I</h1>
         </td>
       </tr>
     </table>
 
-<p>Peserta yang dinyatakan <strong>LULUS</strong> Seleksi Penerimaan Mahasiswa Baru (SPMB) Tahap II Jalur Mandiri diwajibkan untuk melakukan <strong>REGISTRASI</strong>:</p>
+
+    <p>Peserta yang dinyatakan <strong>LULUS</strong> Seleksi Penerimaan Mahasiswa Baru (SPMB) Tahap II Jalur Mandiri diwajibkan untuk melakukan <strong>REGISTRASI</strong>:</p>
 
 <p><strong>PEMBAYARAN</strong> pada tanggal <strong>30 Juni s.d 02 Juli 2025</strong> (boleh dilakukan via transfer)</p>
 
@@ -184,43 +185,9 @@ Direktorat Lantai I Gedung Al-Zahrawi Jalan Indragiri Nomor 03 Padang Harapan Be
   <script>
     window.print();
   </script>
-<?php } elseif ($a['status_lulus_2'] == null || $a['status_lulus_2'] == "Tidak Lulus") {
-  echo "<br><br><br><h1>Maaf Anda Belum Lulus SPMB Mandiri tahap 1</h1><br><a href='../index.php'>Kembali </a>";
+<?php } elseif ($a['status_lulus_tahap2'] == null || $a['status_lulus_tahap2'] == 'Tidak Lulus') {
+  echo "<br><br><br><h1 style= text-align:center >Maaf Anda Belum Lulus SPMB Mandiri tahap I </a> </h1><br><a href='../index.php'>Kembali </a>";
 } else {
-  echo "<br><br><br><h1>Maaf Anda Belum Lulus SPMB Mandiri tahap 1</h1><br><a href='../index.php'>Kembali </a>";
+  header("location:../index.php");
 }
 ?>
-
-<style>
-  h1 {
-    text-align: center;
-  }
-
-  body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 40px;
-    }
-    h1, h2 {
-      text-align: center;
-    }
-    .tables {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 20px;
-    }
-    .tables, .ths, .tds {
-      border: 1px solid black;
-    }
-    .ths, .tds {
-      padding: 8px;
-      text-align: center;
-    }
-    .bold {
-      font-weight: bold;
-    }
-    .highlight {
-      color: red;
-      font-weight: bold;
-    }
-</style>
