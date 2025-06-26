@@ -56,7 +56,7 @@ include "01_nav.php";
             $filter = mysqli_real_escape_string($kon, $_GET['filter_prodi']);
             $where .= " AND pilihan_prodi='$filter'";
         }
-        $query = mysqli_query($kon, "SELECT * FROM tb_formulir4 $where ORDER BY username ASC");
+        $query = mysqli_query($kon, "SELECT * FROM tb_formulir5 $where ORDER BY username ASC");
         $i = 1;
         while($a = mysqli_fetch_array($query)) {
         ?>
