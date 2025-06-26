@@ -1,5 +1,5 @@
-Sedang Perbaikan, Mohon di tunggu
-<!-- <!DOCTYPE html>
+<!-- Sedang Perbaikan, Mohon di tunggu -->
+<!DOCTYPE html>
 <html >
   <head>
     <meta charset="UTF-8">
@@ -35,4 +35,4 @@ Sedang Perbaikan, Mohon di tunggu
 </div>
       
   </body>
-</html> -->
+</html>
