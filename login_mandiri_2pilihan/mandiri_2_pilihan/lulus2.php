@@ -79,7 +79,7 @@ if ($a['status_lulus_tahap2'] == "Lulus") {
       </tr>
       <tr>
         <td>
-          <h1>LULUS SPMB MANDIRI TAHAP I</h1>
+          <h1>LULUS SPMB MANDIRI TAHAP II</h1>
         </td>
       </tr>
     </table>
@@ -185,7 +185,9 @@ Direktorat Lantai I Gedung Al-Zahrawi Jalan Indragiri Nomor 03 Padang Harapan Be
   <script>
     window.print();
   </script>
-<?php } elseif ($a['status_lulus_tahap2'] == null || $a['status_lulus_tahap2'] == 'Tidak Lulus') {
+<?php } elseif ($a['status_lulus'] == 'Tidak Lulus' || $a['status_lulus'] == null) {
+  echo "<br><br><br><h1 style= text-align:center >Maaf Anda Belum Lulus SPMB Mandiri tahap I </a> </h1><br><a href='../index.php'>Kembali </a>";
+}elseif ($a['status_lulus_tahap2'] == null || $a['status_lulus_tahap2'] == 'Tidak Lulus') {
   echo "<br><br><br><h1 style= text-align:center >Maaf Anda Belum Lulus SPMB Mandiri tahap I </a> </h1><br><a href='../index.php'>Kembali </a>";
 } else {
   header("location:../index.php");
