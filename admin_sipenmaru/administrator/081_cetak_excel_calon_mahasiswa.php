@@ -40,6 +40,8 @@
                 <th>Nama</th>
                 <th>Prodi 1</th>
                 <th>Prodi 2</th>
+                <th>Tempat lahir</th>
+                <th>Tanggal lahir</th>
                 <th>Agama</th>
                 <th>Jenis Kelamin</th>
                 <th>Asal Sekolah</th>
@@ -71,6 +73,8 @@
                <td><?=$a['nama_lengkap']?></td>
                <td><?=$a['pilihan_prodi']?></td>
                <td><?=$a['pilihan_prodi2']?></td>
+               <td><?=$a['tempat_lahir']?></td>
+               <td><?=$a['tanggal_lahir']?></td>
                <td><?=$a['agama']?></td>
                <td><?=$a['jenis_kelamin']?></td>
                <td><?=$a['asal_sekolah']?></td>
