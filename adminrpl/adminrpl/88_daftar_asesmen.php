@@ -28,7 +28,7 @@
                 <?php
                 $i=1;
                 include "../config/koneksi.php";
-                $query = mysqli_query($kon," SELECT * FROM tb_formulir5 WHERE status_lulus= 'LULUS' AND (pilihan_prodi='Sarjana Terapan Kebidanan Alih Jenjang Kelas Curup (PBM dimulai SMT Ganjil-Juli 2024)' OR pilihan_prodi='*Sarjana Terapan Keperawatan Alih Jenjang (PBM dimulai SMT Genap-Januari 2025)' OR pilihan_prodi='Sarjana Terapan Kebidanan Alih Jenjang Kelas Bengkulu (PBM dimulai SMT Ganjil-Juli 2024)')");
+                $query = mysqli_query($kon," SELECT * FROM tb_formulir5 '");
                 while($a = mysqli_fetch_array($query))
                 {
                 ?>
