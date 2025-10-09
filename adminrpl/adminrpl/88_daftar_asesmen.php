@@ -39,15 +39,15 @@
                     <td><?=$a['pilihan_prodi']?></td> 
                     <?php $total=mysqli_query($kon,"SELECT SUM(sks_asal) AS total_sks FROM tb_rpl WHERE username=$a[username]");
                     $t = mysqli_fetch_array($total); ?>
-                    <td><?=$t[total_sks]?></td>     
+                    <td><?=$t['total_sks']?></td>     
                     <td>
-                        <a href='88_edit_asesmen.php?username=<?=$a[username]?>' class='btn btn-primary btn-xs' target='_blank'>
+                        <a href='88_edit_asesmen.php?username=<?=$a["username"]?>' class='btn btn-primary btn-xs' target='_blank'>
                             <span class='glyphicon glyphicon-plus' aria-hidden='true'></span>
                         </a>
-                        <a href='88_cetak_asesmen.php?username=<?=$a[username]?>' class='btn btn-primary btn-xs' target='_blank'>
+                        <a href='88_cetak_asesmen.php?username=<?=$a["username"]?>' class='btn btn-primary btn-xs' target='_blank'>
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
                         </a>
-                        <a href='88_cetak_excel.php?username=<?=$a[username]?>' class='btn btn-primary btn-xs' target='_blank'>
+                        <a href='88_cetak_excel.php?username=<?=$a["username"]?>' class='btn btn-primary btn-xs' target='_blank'>
                             <span class='glyphicon glyphicon-print' aria-hidden='true'></span>
                         </a>
                     </td>

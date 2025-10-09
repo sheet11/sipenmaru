@@ -24,7 +24,7 @@
                 <?php
                 $i=1;
                 include "../config/koneksi.php";
-                $query = mysqli_query($kon," SELECT * FROM tb_formulir5 WHERE status= 'Sudah Membayar' AND (pilihan_prodi='Sarjana Terapan Kebidanan Alih Jenjang' OR pilihan_prodi='Sarjana Terapan Keperawatan Alih Jenjang')");
+                $query = mysqli_query($kon," SELECT * FROM tb_formulir5 WHERE status= 'Sudah Membayar'");
                 while($a = mysqli_fetch_array($query))
                 {
                 ?>
@@ -34,7 +34,7 @@
                     <td><?=$a['nama_lengkap']?></td>
                     <td><?=$a['pilihan_prodi']?></td>      
                     <td>
-                        <a href='88_edit_asesmen.php?username=<?=$a[username]?>' class='btn btn-primary btn-xs' target='_blank'>
+                        <a href='88_edit_asesmen.php?username=<?=$a["username"]?>' class='btn btn-primary btn-xs' target='_blank'>
                             <span class='glyphicon glyphicon-plus' aria-hidden='true'></span>
                         </a>
                     </td>
