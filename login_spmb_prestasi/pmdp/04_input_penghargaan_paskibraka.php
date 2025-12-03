@@ -17,15 +17,6 @@
 						<input type="text" name="nama" class="form-control" required>
 					</div>
 					<div class="form-group col-md-6">
-						<label>Keterangan</label>
-						<select class="form-control" name="ket" required>
-							<option value="">Pilih Juz</option>
-							<option value="Juara 1">Juara 1</option>
-							<option value="Juara 2">Juara 2</option>
-							<option value="Juara 3">Juara 3</option>
-						</select>
-					</div>
-					<div class="form-group col-md-6">
 						<label>Tingkat Prestasi</label>
 						<select class="form-control" name="tingkat" required>
 							<option value="">Tingkat Prestasi</option>

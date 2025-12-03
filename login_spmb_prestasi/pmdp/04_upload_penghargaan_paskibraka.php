@@ -28,7 +28,6 @@
 						<th>Tingkat</th>
 						<th>Bukti</th>
 						<th>Tanggal Sertifikat</th>
-						<th>Juz</th>
 						<th>Aksi</th>
 					</thead>
 					<?php 
