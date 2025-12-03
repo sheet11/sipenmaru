@@ -91,6 +91,9 @@
                             <li>
                                 <a  href="04_upload_penghargaan_tahfizh.php"><i class="fa fa-trophy fa-2x"></i> Upload Penghargaan Tahfizh </a>
                             </li>
+                             <li>
+                                <a  href="04_upload_penghargaan_tahfizh.php"><i class="fa fa-trophy fa-2x"></i> Upload Penghargaan Paskibraka </a>
+                            </li>
 
 							<li>
                                 <a  href="05_status.php"><i class="fa fa-desktop fa-2x"></i> Cetak Kartu  </a>
