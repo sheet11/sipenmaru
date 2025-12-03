@@ -16,7 +16,7 @@
 				// if($jqt==0)
 				// {
 				// 	?>
-					<a class="btn btn-success btn-sm" href="04_input_prestasi.php"><i class="fa fa-plus"></i> Tambah Prestasi</a>
+					<a class="btn btn-success btn-sm" href="04_input_penghargaan_tahfizh.php"><i class="fa fa-plus"></i> Tambah Prestasi</a>
 				 	<?php
 				// }
 				// ?>

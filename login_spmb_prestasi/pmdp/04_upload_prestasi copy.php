@@ -28,11 +28,12 @@
 						<th>Tingkat</th>
 						<th>Bukti</th>
 						<th>Tanggal Sertifikat</th>
+						<th>Keterangan</th>
 						<th>Aksi</th>
 					</thead>
 					<?php 
 					$no=1;
-					$qt=mysqli_query($kon,"select * from tb_prestasi where is not null and username='$_SESSION[username]' order by tingkat asc");
+					$qt=mysqli_query($kon,"select * from tb_prestasi where username='$_SESSION[username]' order by tingkat asc");
 					while($q=mysqli_fetch_array($qt))
 					{
 						?>
