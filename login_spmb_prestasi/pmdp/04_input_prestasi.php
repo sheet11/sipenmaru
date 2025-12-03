@@ -18,12 +18,17 @@
 					</div>
 					<div class="form-group col-md-6">
 						<label>Keterangan</label>
-						<input type="text" name="ket" class="form-control" required placeholder="Juara 1, Juara 2 dst...">
+						<select class="form-control" name="ket" required>
+							<option value="">Pilih Juara</option>
+							<option value="Juara 1">Juara 1</option>
+							<option value="Juara 2">Juara 2</option>
+							<option value="Juara 3">Juara 3</option>
+						</select>
 					</div>
 					<div class="form-group col-md-6">
 						<label>Tingkat Prestasi</label>
-						<select class="form-control" name="tingkat">
-							<option>Tingkat Prestasi</option>
+						<select class="form-control" name="tingkat" required>
+							<option value="">Tingkat Prestasi</option>
 							<option value="1">Internasional</option>
 							<option value="2">Nasional</option>
 							<option value="3">Regional</option>
