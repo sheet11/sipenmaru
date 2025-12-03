@@ -35,6 +35,7 @@
 							<option value="4">Provinsi</option>
 							<option value="5">Kabupaten</option>
 							<option value="6">Kecamatan</option>
+							<option value="4">Sekolah</option>
 						</select>
 					</div>
 					<div class="form-group col-md-6">
