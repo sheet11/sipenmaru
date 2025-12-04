@@ -21,9 +21,13 @@
           <p>Poltekkes Kemenkes Bengkulu</p>
           <div class="f1-steps">
             <div class="f1-progress">
-              <div class="f1-progress-line" data-now-value="25" data-number-of-steps="4" style="width: 25%;"></div>
+              <div class="f1-progress-line" data-now-value="20" data-number-of-steps="5" style="width: 20%;"></div>
             </div>
             <div class="f1-step active">
+              <div class="f1-step-icon"><i class="fa fa-graduation-cap"></i></div>
+              <p>Program Studi</p>
+            </div>
+            <div class="f1-step">
               <div class="f1-step-icon"><i class="fa fa-user"></i></div>
               <p>Biodata</p>
             </div>
@@ -40,7 +44,36 @@
               <p>Sosial</p>
             </div>
           </div>
-          <!-- step 1 -->
+          <!-- step 1: Program Studi -->
+          <fieldset>
+            <h4>Pilih Program Studi</h4>
+            <div class="form-group">
+              <label>Asal Sekolah</label>
+              <select id="asal_sekolah" name="asal_sekolah" class="form-control">
+                <option value="">-- Pilih Asal Sekolah --</option>
+                <option value="sma">SMA</option>
+                <option value="smk">SMK</option>
+              </select>
+            </div>
+            <div class="form-group" id="smk-jenis-group" style="display:none;">
+              <label>Jenis SMK</label>
+              <select id="smk_jenis" name="smk_jenis" class="form-control">
+                <option value="">-- Pilih Jenis SMK --</option>
+                <option value="smk_kesehatan">SMK Kesehatan</option>
+                <option value="smk_lainnya">SMK Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Program Studi</label>
+              <select id="program_studi" name="program_studi" class="form-control">
+                <option value="">-- Pilih Program Studi --</option>
+              </select>
+            </div>
+            <div class="f1-buttons">
+              <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
+            </div>
+          </fieldset>
+          <!-- step 2: Biodata -->
           <fieldset>
             <h4>Identitas Pribadi</h4>
             <div class="form-group">
@@ -96,10 +129,11 @@
               <textarea name="tentang_kamu" placeholder="Tentang Kamu" class="form-control"></textarea>
             </div>
             <div class="f1-buttons">
+              <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
               <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
             </div>
           </fieldset>
-          <!-- step 2 -->
+          <!-- step 3: Alamat -->
           <fieldset>
             <!-- 1. Asal daerah: dalam / luar Bengkulu -->
             <div class="form-group">
@@ -168,7 +202,7 @@
               <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
             </div>
           </fieldset>
-          <!-- step 3 -->
+          <!-- step 4: Akun -->
           <fieldset>
             <h4>Buat Akun</h4>
             <div class="form-group">
@@ -188,7 +222,7 @@
               <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
             </div>
           </fieldset>
-          <!-- step 4 -->
+          <!-- step 5: Sosial -->
           <fieldset>
             <h4>Sosial Media</h4>
             <div class="form-group">
@@ -217,6 +251,143 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="wizard.js"></script>
   <script>
+    // ========================================
+    // PROGRAM STUDI SELECTION LOGIC
+    // ========================================
+    const asalSekolahSelect = document.getElementById('asal_sekolah');
+    const smkJenisGroup = document.getElementById('smk-jenis-group');
+    const smkJenisSelect = document.getElementById('smk_jenis');
+    const programStudiSelect = document.getElementById('program_studi');
+
+    // Daftar program studi berdasarkan tipe sekolah
+    const programStudiList = {
+      sma: [{
+          value: 'keperawatan',
+          text: 'Keperawatan'
+        },
+        {
+          value: 'kebidanan',
+          text: 'Kebidanan'
+        },
+        {
+          value: 'farmasi',
+          text: 'Farmasi'
+        },
+        {
+          value: 'tlm',
+          text: 'Teknologi Laboratorium Medis (TLM)'
+        },
+        {
+          value: 'promkes',
+          text: 'Promosi Kesehatan (Promkes)'
+        },
+        {
+          value: 'kesling',
+          text: 'Kesehatan Lingkungan (Kesling)'
+        },
+        {
+          value: 'gizi',
+          text: 'Gizi'
+        }
+      ],
+      smk_kesehatan: [{
+          value: 'keperawatan',
+          text: 'Keperawatan'
+        },
+        {
+          value: 'kebidanan',
+          text: 'Kebidanan'
+        },
+        {
+          value: 'farmasi',
+          text: 'Farmasi'
+        },
+        {
+          value: 'tlm',
+          text: 'Teknologi Laboratorium Medis (TLM)'
+        },
+        {
+          value: 'promkes',
+          text: 'Promosi Kesehatan (Promkes)'
+        },
+        {
+          value: 'kesling',
+          text: 'Kesehatan Lingkungan (Kesling)'
+        },
+        {
+          value: 'gizi',
+          text: 'Gizi'
+        }
+      ],
+      smk_lainnya: [{
+          value: 'tlm',
+          text: 'Teknologi Laboratorium Medis (TLM)'
+        },
+        {
+          value: 'promkes',
+          text: 'Promosi Kesehatan (Promkes)'
+        },
+        {
+          value: 'kesling',
+          text: 'Kesehatan Lingkungan (Kesling)'
+        },
+        {
+          value: 'gizi',
+          text: 'Gizi'
+        }
+      ]
+    };
+
+    // Helper untuk update program studi options
+    function updateProgramStudi(programList) {
+      programStudiSelect.innerHTML = '';
+      const defaultOpt = document.createElement('option');
+      defaultOpt.value = '';
+      defaultOpt.textContent = '-- Pilih Program Studi --';
+      programStudiSelect.appendChild(defaultOpt);
+
+      if (programList) {
+        programList.forEach(prog => {
+          const opt = document.createElement('option');
+          opt.value = prog.value;
+          opt.textContent = prog.text;
+          programStudiSelect.appendChild(opt);
+        });
+      }
+    }
+
+    // Event listener untuk asal sekolah
+    asalSekolahSelect.addEventListener('change', function() {
+      const selectedValue = this.value;
+      smkJenisSelect.value = '';
+
+      if (selectedValue === 'sma') {
+        smkJenisGroup.style.display = 'none';
+        updateProgramStudi(programStudiList.sma);
+      } else if (selectedValue === 'smk') {
+        smkJenisGroup.style.display = 'block';
+        updateProgramStudi(null);
+      } else {
+        smkJenisGroup.style.display = 'none';
+        updateProgramStudi(null);
+      }
+    });
+
+    // Event listener untuk jenis SMK
+    smkJenisSelect.addEventListener('change', function() {
+      const selectedValue = this.value;
+
+      if (selectedValue === 'smk_kesehatan') {
+        updateProgramStudi(programStudiList.smk_kesehatan);
+      } else if (selectedValue === 'smk_lainnya') {
+        updateProgramStudi(programStudiList.smk_lainnya);
+      } else {
+        updateProgramStudi(null);
+      }
+    });
+    //batas pilih prodi
+    // ========================================
+
     const API_URL = '../proxy_province.php'; // path ke PHP proxy
     const BENGKULU_CODE = '17'; // kode provinsi Bengkulu (di data wilayah.id)
 
