@@ -48,6 +48,20 @@
           <fieldset>
             <h4>Pilih Program Studi</h4>
             <div class="form-group">
+              <label>Nama Sekolah</label>
+              <input type="text" name="nama_sekolah" placeholder="Masukan nama Sekolah" class="form-control" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label>Akreditasi Sekolah</label>
+              <select name="akreditasi_sekolah" class="form-control">
+                <option value="">-- Pilih Akreditasi Sekolah --</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+                <option value="lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label>Asal Sekolah</label>
               <select id="asal_sekolah" name="asal_sekolah" class="form-control">
                 <option value="">-- Pilih Asal Sekolah --</option>
@@ -109,31 +123,31 @@
             </div>
             <div class="form-group">
               <label>Tempat Lahir</label>
-              <input type="text" name="nama_awal" placeholder="Tempat Lahir" class="form-control">
+              <input type="text" name="nama_awal" placeholder="Input Tempat Lahir" class="form-control">
             </div>
             <div class="form-group">
               <label>Tanggal Lahir</label>
-              <input type="text" name="tgl_lahir" placeholder="Tanggal Lahir" class="form-control">
+              <input type="text" name="tgl_lahir" placeholder="Input Tanggal Lahir" class="form-control">
             </div>
             <div class="form-group">
               <label>Berat Badan</label>
-              <input type="text" name="berat_badan" placeholder="Berat Badan" class="form-control">
+              <input type="text" name="berat_badan" placeholder="Input Berat Badan" class="form-control">
             </div>
             <div class="form-group">
               <label>Tinggi Badan</label>
-              <input type="text" name="tinggi_badan" placeholder="Tinggi Padang" class="form-control">
+              <input type="text" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control">
             </div>
             <div class="form-group">
               <label>Golongan Darah</label>
-              <input type="text" name="gol_darah" placeholder="Golongan darah" class="form-control">
+              <input type="text" name="gol_darah" placeholder="Input Golongan darah" class="form-control">
             </div>
             <div class="form-group">
               <label>NIK</label>
-              <input type="text" name="nik" placeholder="NIK" class="form-control">
+              <input type="text" name="nik" placeholder="Input NIK" class="form-control">
             </div>
             <div class="form-group">
               <label>Tentang Kamu</label>
-              <textarea name="tentang_kamu" placeholder="Tentang Kamu" class="form-control"></textarea>
+              <textarea name="tentang_kamu" placeholder="Input Tentang Kamu" class="form-control"></textarea>
             </div>
             <div class="f1-buttons">
               <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
@@ -287,18 +301,18 @@
 
       // SMK Kesehatan: akses penuh ke program kesehatan
       smk_kesehatan: [
-        { value: 'D3 keperawatan Curup', text: 'D3 Keperawatan Curup' },
-        { value: 'D3 kebidanan Curup', text: 'D3 Kebidanan Curup' },
         { value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)', text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' },
         { value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners', text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' },
         { value: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan', text: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan' },
-        { value: 'D3 kebidanan Bengkulu', text: 'D3 Kebidanan Bengkulu' },
+        { value: 'Sarjana Terapan promosi Kesehatan', text: 'Sarjana Terapan Promosi Kesehatan (Promkes)' },
+        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
+        { value: 'D3 keperawatan Curup', text: 'D3 Keperawatan Curup' },
+        { value: 'D3 kebidanan Curup', text: 'D3 Kebidanan Curup' },
         { value: 'D3 Keperawatan Bengkulu', text: 'D3 Keperawatan Bengkulu' },
+        { value: 'D3 kebidanan Bengkulu', text: 'D3 Kebidanan Bengkulu' },
         { value: 'D3 Farmasi', text: 'D3 Farmasi' },
         { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
-        { value: 'Sarjana Terapan promosi Kesehatan', text: 'Sarjana Terapan Promosi Kesehatan (Promkes)' },
         { value: 'D3 Sanitasi', text: 'D3 Sanitasi' },
-        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
         { value: 'D3 Gizi', text: 'D3 Gizi' }
       ],
 
