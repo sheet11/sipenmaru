@@ -86,7 +86,7 @@ include "../config/koneksi.php";
 						if (prestasi === "Lainnya") {
 							document.getElementById("containerPrestasi").innerHTML = `
 				<input type="text" class="form-control" name="prestasi" 
-				placeholder="Tulis nama prestasi..." onblur="kembaliSelect()">
+				placeholder="Tulis nama prestasi..." >
 			`;
 
 							document.getElementById("containerKeterangan").innerHTML = `
