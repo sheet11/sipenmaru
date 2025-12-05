@@ -19,7 +19,7 @@ include "../config/koneksi.php";
 							<option value="">-- Pilih --</option>
 							<option value="Paskibraka">Paskibraka</option>
 							<option value="Tahfiz">Tahfiz</option>
-							<option value="Lainnya">Lainnya</option>
+							<option value="Lainnya">Lainnya:</label>
 						</select>
 					</div>
 				</div>
@@ -41,7 +41,7 @@ include "../config/koneksi.php";
 			<option value="">-- Pilih --</option>
 			<option value="Paskibraka">Paskibraka</option>
 			<option value="Tahfiz">Tahfiz</option>
-			<option value="Lainnya">Lainnya</option>
+			<option value="Lainnya">Lainnya:</option>
 		</select>
 	`;
 
@@ -90,8 +90,13 @@ include "../config/koneksi.php";
 			`;
 
 							document.getElementById("containerKeterangan").innerHTML = `
-				<label>Keterangan</label>
-				<input type="text" class="form-control" name="ket" placeholder="Tulis keterangan...">
+		<label>Keterangan</label>
+		<select class="form-control" name="ket" id="ketSelect">
+			<option value="">Pilih Juara</option>
+			<option value="Juara 1">Juara 1</option>
+			<option value="Juara 2">Juara 2</option>
+			<option value="Juara 3">Juara 3</option>
+		</select>
 			`;
 						}
 					}
