@@ -11,46 +11,95 @@ include "../config/koneksi.php";
 		<div>
 			<hr>
 			<form method="post" enctype="multipart/form-data" action="04_proses_input_prestasi.php">
-				<div class="row">
-					<div class="form-group col-md-6">
-						<label>Nama Prestasi</label>
-						<input type="text" name="nama" class="form-control" required>
-					</div>
-					<div class="mb-3">
-						<label class="form-label">Kategori</label>
-
-						<!-- 1 elemen form-control yang akan berubah -->
-						<div id="containerInput" class="form-group col-md-6">
-							<select class="form-control" id="inputKategori" onchange="cekLainnya()">
-								<option value="">-- Pilih --</option>
-								<option value="Buah">Buah</option>
-								<option value="Sayur">Sayur</option>
-								<option value="Lainnya">Lainnya</option>
-							</select>
-						</div>
-					</div>
-
-					<script>
-						function cekLainnya() {
-							let elemen = document.getElementById("inputKategori");
-
-							if (elemen.value === "Lainnya") {
-								// Ganti select menjadi input text
-								document.getElementById("containerInput").innerHTML =
-									'<input type="text" class="form-control" id="inputKategori" placeholder="Tulis kategori bebas...">';
-							}
-						}
-					</script>
-				</div>
 				<div class="form-group col-md-6">
+					<label>Nama Prestasi</label>
+
+					<div id="containerPrestasi">
+						<select class="form-control" id="prestasi" name="prestasi" onchange="ubahForm()">
+							<option value="">-- Pilih --</option>
+							<option value="Paskibraka">Paskibraka</option>
+							<option value="Tahfiz">Tahfiz</option>
+							<option value="Lainnya">Lainnya</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group col-md-6" id="containerKeterangan">
 					<label>Keterangan</label>
-					<select class="form-control" name="ket" required>
+					<select class="form-control" name="ket" id="ketSelect">
 						<option value="">Pilih Juara</option>
 						<option value="Juara 1">Juara 1</option>
 						<option value="Juara 2">Juara 2</option>
 						<option value="Juara 3">Juara 3</option>
 					</select>
 				</div>
+
+				<script>
+					// Simpan HTML asli untuk bisa dikembalikan kapan saja
+					const originalPrestasi = `
+		<select class="form-control" id="prestasi" name="prestasi" onchange="ubahForm()">
+			<option value="">-- Pilih --</option>
+			<option value="Paskibraka">Paskibraka</option>
+			<option value="Tahfiz">Tahfiz</option>
+			<option value="Lainnya">Lainnya</option>
+		</select>
+	`;
+
+					const originalKet = `
+		<label>Keterangan</label>
+		<select class="form-control" name="ket" id="ketSelect">
+			<option value="">Pilih Juara</option>
+			<option value="Juara 1">Juara 1</option>
+			<option value="Juara 2">Juara 2</option>
+			<option value="Juara 3">Juara 3</option>
+		</select>
+	`;
+
+					function ubahForm() {
+						let prestasi = document.getElementById("prestasi").value;
+
+						// 1️⃣ Kembalikan komponen ke kondisi awal setiap kali memilih
+						document.getElementById("containerPrestasi").innerHTML = originalPrestasi;
+						document.getElementById("containerKeterangan").innerHTML = originalKet;
+
+						// Ambil ulang nilai prestasi karena select direfresh
+						document.getElementById("prestasi").value = prestasi;
+						document.getElementById("prestasi").onchange = ubahForm;
+
+						// 2️⃣ Jika pilih Paskibraka → sembunyikan container keterangan
+						if (prestasi === "Paskibraka") {
+							document.getElementById("containerKeterangan").style.display = "none";
+						} else {
+							document.getElementById("containerKeterangan").style.display = "block";
+						}
+
+						// 3️⃣ Jika pilih Tahfiz → keterangan jadi input "Juz"
+						if (prestasi === "Tahfiz") {
+							document.getElementById("containerKeterangan").innerHTML = `
+				<label>Juz</label>
+				<input type="text" class="form-control" name="ket" placeholder="Masukkan jumlah Juz...">
+			`;
+						}
+
+						// 4️⃣ Jika pilih Lainnya → select jadi textbox & keterangan bebas
+						if (prestasi === "Lainnya") {
+							document.getElementById("containerPrestasi").innerHTML = `
+				<input type="text" class="form-control" name="prestasi" 
+				placeholder="Tulis nama prestasi..." onblur="kembaliSelect()">
+			`;
+
+							document.getElementById("containerKeterangan").innerHTML = `
+				<label>Keterangan</label>
+				<input type="text" class="form-control" name="ket" placeholder="Tulis keterangan...">
+			`;
+						}
+					}
+
+					function kembaliSelect() {
+						document.getElementById("containerPrestasi").innerHTML = originalPrestasi;
+					}
+				</script>
+
 				<div class="form-group col-md-6">
 					<label>Tingkat Prestasi</label>
 					<select class="form-control" name="tingkat" required>
