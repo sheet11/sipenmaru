@@ -7,15 +7,23 @@ function scroll_to_class(element_class, removed_height) {
 
 function bar_progress(progress_line_object, direction) {
 	var number_of_steps = progress_line_object.data('number-of-steps');
-	var now_value = progress_line_object.data('now-value');
-	var new_value = 0;
-	if(direction == 'right') {
-		new_value = now_value + ( 100 / number_of_steps );
-	}
-	else if(direction == 'left') {
-		new_value = now_value - ( 100 / number_of_steps );
-	}
-	progress_line_object.attr('style', 'width: ' + new_value + '%;').data('now-value', new_value);
+	// Calculate progress line width based on icon centers so it aligns precisely
+	var $f1 = progress_line_object.closest('.f1');
+	var $steps = $f1.find('.f1-step');
+	var $progress = $f1.find('.f1-progress');
+	var progressLeft = $progress.offset().left;
+	var centers = [];
+	$steps.each(function() {
+		var $icon = $(this).find('.f1-step-icon');
+		var center = $icon.offset().left + ($icon.outerWidth() / 2) - progressLeft;
+		centers.push(center);
+	});
+	// find current active index
+	var activeIndex = $steps.index($steps.filter('.active'));
+	if(direction === 'right') activeIndex = Math.min(activeIndex + 1, centers.length - 1);
+	else if(direction === 'left') activeIndex = Math.max(activeIndex - 1, 0);
+	var newWidth = centers[activeIndex] || 0;
+	progress_line_object.css('width', newWidth + 'px').data('now-value', Math.round(((activeIndex + 1) / number_of_steps) * 100));
 }
 
 $(document).ready(function() {
@@ -36,8 +44,8 @@ $(document).ready(function() {
     	
     	// validasi form - hanya field yang visible dan tidak disabled
     	parent_fieldset.find('input[type="text"], input[type="password"], textarea, select').each(function() {
-    		// Skip field yang hidden atau disabled
-    		if( $(this).closest('.group').is(':hidden') || $(this).is(':disabled') ) {
+    		// Skip field yang hidden atau disabled atau dalam .group yang hidden
+    		if( $(this).is(':hidden') || $(this).closest('.group').is(':hidden') || $(this).closest('div[style*="display:none"]').length || $(this).is(':disabled') ) {
     			$(this).removeClass('input-error');
     			return;
     		}
@@ -87,8 +95,8 @@ $(document).ready(function() {
     $('.f1').on('submit', function(e) {
     	// validasi form - hanya field yang visible dan tidak disabled
     	$(this).find('input[type="text"], input[type="password"], textarea, select').each(function() {
-    		// Skip field yang hidden atau disabled
-    		if( $(this).closest('.group').is(':hidden') || $(this).is(':disabled') ) {
+    		// Skip field yang hidden atau disabled atau dalam .group yang hidden
+    		if( $(this).is(':hidden') || $(this).closest('.group').is(':hidden') || $(this).closest('div[style*="display:none"]').length || $(this).is(':disabled') ) {
     			$(this).removeClass('input-error');
     			return;
     		}

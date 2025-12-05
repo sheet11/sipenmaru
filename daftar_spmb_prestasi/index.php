@@ -60,7 +60,14 @@
               <select id="smk_jenis" name="smk_jenis" class="form-control">
                 <option value="">-- Pilih Jenis SMK --</option>
                 <option value="smk_kesehatan">SMK Kesehatan</option>
-                <option value="smk_lainnya">SMK Lainnya</option>
+                <option value="smk_farmasi">SMK Farmasi</option>
+                <option value="smk_kimia">SMK Kimia</option>
+                <option value="smk_analis">Sekolah Menengah Analis Kesehatan</option>
+                <option value="smk_teknik">SMK Teknik / Teknik Industri</option>
+                <option value="smk_tataboga">SMK Tataboga</option>
+                <option value="smk_pariwisata">SMK Pariwisata</option>
+                <option value="smk_pertanian">SMK Pertanian</option>
+                <option value="smk_semua">SMK (Semua Jurusan / Lainnya)</option>
               </select>
             </div>
             <div class="form-group">
@@ -259,82 +266,92 @@
     const smkJenisSelect = document.getElementById('smk_jenis');
     const programStudiSelect = document.getElementById('program_studi');
 
-    // Daftar program studi berdasarkan tipe sekolah
+    // Daftar program studi berdasarkan jenis sekolah / jurusan SMK
     const programStudiList = {
-      sma: [{
-          value: 'keperawatan',
-          text: 'Keperawatan'
-        },
-        {
-          value: 'kebidanan',
-          text: 'Kebidanan'
-        },
-        {
-          value: 'farmasi',
-          text: 'Farmasi'
-        },
-        {
-          value: 'tlm',
-          text: 'Teknologi Laboratorium Medis (TLM)'
-        },
-        {
-          value: 'promkes',
-          text: 'Promosi Kesehatan (Promkes)'
-        },
-        {
-          value: 'kesling',
-          text: 'Kesehatan Lingkungan (Kesling)'
-        },
-        {
-          value: 'gizi',
-          text: 'Gizi'
-        }
+      // SMA: umumnya bisa memilih program non-kejuruan tertentu (biarkan semua tersedia)
+      sma: [
+        { value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)', text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' },
+        { value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners', text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' },
+        { value: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan', text: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan' },
+        { value: 'Sarjana Terapan promosi Kesehatan', text: 'Sarjana Terapan Promosi Kesehatan (Promkes)' },
+        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
+        { value: 'D3 Keperawatan Bengkulu', text: 'D3 Keperawatan Bengkulu' },
+        { value: 'D3 kebidanan Bengkulu', text: 'D3 Kebidanan Bengkulu' },
+        { value: 'D3 keperawatan Curup', text: 'D3 Keperawatan Curup' },
+        { value: 'D3 kebidanan Curup', text: 'D3 Kebidanan Curup' },
+        { value: 'D3 Farmasi', text: 'D3 Farmasi' },
+        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
+        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' },
+        { value: 'D3 Gizi', text: 'D3 Gizi' }
       ],
-      smk_kesehatan: [{
-          value: 'keperawatan',
-          text: 'Keperawatan'
-        },
-        {
-          value: 'kebidanan',
-          text: 'Kebidanan'
-        },
-        {
-          value: 'farmasi',
-          text: 'Farmasi'
-        },
-        {
-          value: 'tlm',
-          text: 'Teknologi Laboratorium Medis (TLM)'
-        },
-        {
-          value: 'promkes',
-          text: 'Promosi Kesehatan (Promkes)'
-        },
-        {
-          value: 'kesling',
-          text: 'Kesehatan Lingkungan (Kesling)'
-        },
-        {
-          value: 'gizi',
-          text: 'Gizi'
-        }
+
+      // SMK Kesehatan: akses penuh ke program kesehatan
+      smk_kesehatan: [
+        { value: 'D3 keperawatan Curup', text: 'D3 Keperawatan Curup' },
+        { value: 'D3 kebidanan Curup', text: 'D3 Kebidanan Curup' },
+        { value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)', text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' },
+        { value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners', text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' },
+        { value: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan', text: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan' },
+        { value: 'D3 kebidanan Bengkulu', text: 'D3 Kebidanan Bengkulu' },
+        { value: 'D3 Keperawatan Bengkulu', text: 'D3 Keperawatan Bengkulu' },
+        { value: 'D3 Farmasi', text: 'D3 Farmasi' },
+        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
+        { value: 'Sarjana Terapan promosi Kesehatan', text: 'Sarjana Terapan Promosi Kesehatan (Promkes)' },
+        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' },
+        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
+        { value: 'D3 Gizi', text: 'D3 Gizi' }
       ],
-      smk_lainnya: [{
-          value: 'tlm',
-          text: 'Teknologi Laboratorium Medis (TLM)'
-        },
-        {
-          value: 'promkes',
-          text: 'Promosi Kesehatan (Promkes)'
-        },
-        {
-          value: 'kesling',
-          text: 'Kesehatan Lingkungan (Kesling)'
-        },
-        {
-          value: 'gizi',
-          text: 'Gizi'
-        }
+
+      // SMK Farmasi: khusus Farmasi (sesuai tabel)
+      smk_farmasi: [
+        { value: 'D3 Farmasi', text: 'D3 Farmasi' }
+      ],
+
+      // SMK Kimia: cocok untuk TLM dan Kesling
+      smk_kimia: [
+        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
+        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' }
+      ],
+
+      // Sekolah Menengah Analis Kesehatan: pilihan TLM / analis
+      smk_analis: [
+        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' }
+      ],
+
+      // SMK Teknik / Teknik Industri: beberapa program teknis seperti TLM atau Kesling
+      smk_teknik: [
+        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
+        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' }
+      ],
+
+      // SMK Tataboga / Pariwisata / Pertanian: cocok untuk Gizi
+      smk_tataboga: [
+        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
+        { value: 'D3 Gizi', text: 'D3 Gizi' }
+      ],
+      smk_pariwisata: [
+        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
+        { value: 'D3 Gizi', text: 'D3 Gizi' }
+      ],
+      smk_pertanian: [
+        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
+        { value: 'D3 Gizi', text: 'D3 Gizi' }
+      ],
+
+      // SMK semua jurusan / lainnya: paling fleksibel — set beberapa program yang umum
+      smk_semua: [
+        { value: 'Sarjana Terapan promosi Kesehatan', text: 'Sarjana Terapan Promosi Kesehatan (Promkes)' },
+        { value: 'D3 Gizi', text: 'D3 Gizi' },
+        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' },
+        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' }
+      ],
+
+      // Fallback untuk SMK jenis lain
+      smk_lainnya: [
+        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
+        { value: 'Sarjana Terapan promosi Kesehatan', text: 'Sarjana Terapan Promosi Kesehatan (Promkes)' },
+        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' },
+        { value: 'D3 Gizi', text: 'D3 Gizi' }
       ]
     };
 
@@ -373,17 +390,11 @@
       }
     });
 
-    // Event listener untuk jenis SMK
+    // Event listener untuk jenis SMK — gunakan mapping yang sudah didefinisikan di programStudiList
     smkJenisSelect.addEventListener('change', function() {
       const selectedValue = this.value;
-
-      if (selectedValue === 'smk_kesehatan') {
-        updateProgramStudi(programStudiList.smk_kesehatan);
-      } else if (selectedValue === 'smk_lainnya') {
-        updateProgramStudi(programStudiList.smk_lainnya);
-      } else {
-        updateProgramStudi(null);
-      }
+      const list = programStudiList[selectedValue] || null;
+      updateProgramStudi(list);
     });
     //batas pilih prodi
     // ========================================
