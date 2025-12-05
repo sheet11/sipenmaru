@@ -78,6 +78,7 @@ include "../config/koneksi.php";
 							document.getElementById("containerKeterangan").innerHTML = `
 				<label>Juz</label>
 				<input type="text" class="form-control" name="ket" placeholder="Masukkan jumlah Juz...">
+				<small class="text-danger">Contoh: 1 Juz, 30 Juz</small>
 			`;
 						}
 
