@@ -13,7 +13,7 @@
 		$nama = $_SESSION['username'];
 		
 		// Folder tempat menyimpan gambarnya
-		$path = "toefel/$nama-".$nama_file;
+		$path = "toefl/$nama-".$nama_file;
 	
 	if(empty($nama_file))
 	{
