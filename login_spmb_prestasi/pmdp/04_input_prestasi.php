@@ -131,6 +131,7 @@ include "../config/koneksi.php";
 				</div>
 				<div class="form-group col-md-6">
 					<button class="btn btn-lg btn-success" name="simpan"><i class="fa fa-save"></i> Simpan</button>
+					<button onclick="location.reload();" class="btn btn-lg btn-primary" name="reset">Reset</button>
 				</div>
 		</div>
 		</form>
