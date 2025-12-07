@@ -166,23 +166,31 @@ if (isset($_POST['submit'])) {
 
 	nilaiInputs.forEach(function(input) {
 		input.addEventListener('input', function() {
-			const val = parseFloat(this.value);
+			const str = this.value; // nilai dalam bentuk string
+			const val = parseFloat(str); // nilai dalam bentuk angka
 
-			// Jika kosong, jangan kasih error
-			if (this.value === '') {
+			// Jika kosong, jangan beri error dulu
+			if (str === '') {
 				this.setCustomValidity('');
 				return;
 			}
 
-			// 0 diperbolehkan (tidak ada nilai di rapor)
-			if (val === 0) {
+			// 00, 000, dst: tidak boleh
+			if (/^0{2,}$/.test(str)) {
+				this.setCustomValidity('Format tidak valid. Gunakan 0 (satu digit) jika mata pelajaran tidak ada di rapor.');
+				this.reportValidity();
+				return;
+			}
+
+			// 0 (satu digit) diperbolehkan
+			if (str === '0') {
 				this.setCustomValidity('');
 				return;
 			}
 
-			// 1–59 TIDAK boleh
+			// 1–59 tidak boleh
 			if (!isNaN(val) && val < 60) {
-				this.setCustomValidity('Nilai tidak boleh di bawah 60, kecuali 0 jika tidak ada di rapor');
+				this.setCustomValidity('Nilai tidak boleh di bawah 60, kecuali 0 jika mata pelajaran tidak ada di rapor.');
 				this.reportValidity();
 			} else {
 				// 60 ke atas aman
@@ -191,6 +199,7 @@ if (isset($_POST['submit'])) {
 		});
 	});
 </script>
+
 
 </body>
 
