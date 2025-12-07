@@ -7,23 +7,15 @@ function scroll_to_class(element_class, removed_height) {
 
 function bar_progress(progress_line_object, direction) {
 	var number_of_steps = progress_line_object.data('number-of-steps');
-	// Calculate progress line width based on icon centers so it aligns precisely
-	var $f1 = progress_line_object.closest('.f1');
-	var $steps = $f1.find('.f1-step');
-	var $progress = $f1.find('.f1-progress');
-	var progressLeft = $progress.offset().left;
-	var centers = [];
-	$steps.each(function() {
-		var $icon = $(this).find('.f1-step-icon');
-		var center = $icon.offset().left + ($icon.outerWidth() / 2) - progressLeft;
-		centers.push(center);
-	});
-	// find current active index
-	var activeIndex = $steps.index($steps.filter('.active'));
-	if(direction === 'right') activeIndex = Math.min(activeIndex + 1, centers.length - 1);
-	else if(direction === 'left') activeIndex = Math.max(activeIndex - 1, 0);
-	var newWidth = centers[activeIndex] || 0;
-	progress_line_object.css('width', newWidth + 'px').data('now-value', Math.round(((activeIndex + 1) / number_of_steps) * 100));
+	var now_value = progress_line_object.data('now-value');
+	var new_value = 0;
+	if(direction == 'right') {
+		new_value = now_value + ( 100 / number_of_steps );
+	}
+	else if(direction == 'left') {
+		new_value = now_value - ( 100 / number_of_steps );
+	}
+	progress_line_object.attr('style', 'width: ' + new_value + '%;').data('now-value', new_value);
 }
 
 $(document).ready(function() {
@@ -43,9 +35,9 @@ $(document).ready(function() {
     	var progress_line = $(this).parents('.f1').find('.f1-progress-line');
     	
     	// validasi form - hanya field yang visible dan tidak disabled
-    	parent_fieldset.find('input[type="text"], input[type="password"], textarea, select').each(function() {
-    		// Skip field yang hidden atau disabled atau dalam .group yang hidden
-    		if( $(this).is(':hidden') || $(this).closest('.group').is(':hidden') || $(this).closest('div[style*="display:none"]').length || $(this).is(':disabled') ) {
+    	parent_fieldset.find('input[type="text"], input[type="date"], input[type="file"], input[type="password"], input[type="number"], textarea, select').each(function() {
+    		// Skip field yang hidden atau disabled atau dalam parent hidden
+    		if( $(this).closest('.group').is(':hidden') || $(this).is(':disabled') || $(this).closest('.form-group').is(':hidden') ) {
     			$(this).removeClass('input-error');
     			return;
     		}
@@ -93,21 +85,65 @@ $(document).ready(function() {
     
     // submit (ketika klik tombol submit diakhir wizard)
     $('.f1').on('submit', function(e) {
+    	e.preventDefault();
+    	
+    	var form_valid = true;
+    	var $form = $(this);
+    	
     	// validasi form - hanya field yang visible dan tidak disabled
-    	$(this).find('input[type="text"], input[type="password"], textarea, select').each(function() {
-    		// Skip field yang hidden atau disabled atau dalam .group yang hidden
-    		if( $(this).is(':hidden') || $(this).closest('.group').is(':hidden') || $(this).closest('div[style*="display:none"]').length || $(this).is(':disabled') ) {
+    	$form.find('input[type="text"], input[type="date"], input[type="password"], input[type="file"],input[type="number"] , textarea, select').each(function() {
+    		// Skip field yang hidden atau disabled
+    		if( $(this).closest('.group').is(':hidden') || $(this).is(':disabled') || $(this).closest('.form-group').is(':hidden') ) {
     			$(this).removeClass('input-error');
     			return;
     		}
     		
     		if( $(this).val() == "" ) {
-    			e.preventDefault();
     			$(this).addClass('input-error');
+    			form_valid = false;
     		}
     		else {
     			$(this).removeClass('input-error');
     		}
     	});
+    	
+    	if (!form_valid) {
+    		scroll_to_class( $('.f1'), 20 );
+    		alert('Mohon isi semua field yang wajib diisi');
+    		return false;
+    	}
+    	
+    	// Submit via AJAX menggunakan FormData untuk handle file upload
+    	var formData = new FormData($form[0]);
+    	
+    	$.ajax({
+    		url: $form.attr('action'),
+    		type: 'POST',
+    		data: formData,
+    		contentType: false,
+    		processData: false,
+    		dataType: 'html',
+    		beforeSend: function() {
+    			$form.find('.btn-submit').prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Memproses...');
+    		},
+    		success: function(response) {
+    			// Jika redirect sukses, browser akan handle
+    			window.location.href = response.trim();
+    		},
+    		error: function(xhr, status, error) {
+    			$form.find('.btn-submit').prop('disabled', false).html('<i class="fa fa-save"></i> Submit');
+    			
+    			// Cek apakah ada header location dari error response
+    			var redirectUrl = xhr.getResponseHeader('Location');
+    			if (redirectUrl) {
+    				window.location.href = redirectUrl;
+    			} else {
+    				alert('Ada kesalahan: ' + (xhr.responseText || error));
+    				scroll_to_class( $('.f1'), 20 );
+    			}
+    		}
+    	});
+    	
+    	return false;
     });
 });

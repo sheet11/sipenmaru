@@ -12,16 +12,23 @@
   <link rel="stylesheet" href="wizard.css">
 </head>
 
+<?php
+include "koneksi.php";
+$ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_formulir FROM tb_formulir3 WHERE status='Belum Lengkap' ORDER BY id_formulir ASC LIMIT 1"));
+?>
+
 <body style="text-align: center;">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <form action="" method="post" class="f1">
+        <form action="proses_daftar.php" method="post" enctype="multipart/form-data" class="f1">
+          <input type="hidden" name="id" value="<?php echo $ambil['id_formulir']; ?>">
+          <input type="hidden" name="username" value="<?php echo $ambil['username']; ?>">
           <h3>Pendaftaran SPMB Jalur Prestasi</h3>
           <p>Poltekkes Kemenkes Bengkulu</p>
           <div class="f1-steps">
             <div class="f1-progress">
-              <div class="f1-progress-line" data-now-value="20" data-number-of-steps="5" style="width: 20%;"></div>
+              <div class="f1-progress-line" data-now-value="25" data-number-of-steps="4" style="width: 25%;"></div>
             </div>
             <div class="f1-step active">
               <div class="f1-step-icon"><i class="fa fa-graduation-cap"></i></div>
@@ -36,10 +43,6 @@
               <p>Alamat</p>
             </div>
             <div class="f1-step">
-              <div class="f1-step-icon"><i class="fa fa-key"></i></div>
-              <p>Akun</p>
-            </div>
-            <div class="f1-step">
               <div class="f1-step-icon"><i class="fa fa-address-book"></i></div>
               <p>Sosial</p>
             </div>
@@ -49,21 +52,30 @@
             <h4>Pilih Program Studi</h4>
             <div class="form-group">
               <label>Nama Sekolah</label>
-              <input type="text" name="nama_sekolah" placeholder="Masukan nama Sekolah" class="form-control" autocomplete="off">
+              <input type="text" name="nama_sekolah" placeholder="Masukan nama Sekolah" class="form-control required" autocomplete="off">
+              <span class="help-block">Contoh: SMAN 1 Bengkulu, SMK Farmasi Harapan Bangsa, dll.</span>
             </div>
             <div class="form-group">
               <label>Akreditasi Sekolah</label>
-              <select name="akreditasi_sekolah" class="form-control">
+              <select name="akreditasi" class="form-control required">
                 <option value="">-- Pilih Akreditasi Sekolah --</option>
-                <option value="a">A</option>
-                <option value="b">B</option>
-                <option value="c">C</option>
-                <option value="lainnya">Lainnya</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Keterangan Sekolah</label>
+              <select name="keterangan_sekolah" class="form-control required">
+                <option value="">-- Pilih Keterangan Sekolah --</option>
+                <option value="Dalam Kota Bengkulu">Dalam Kota Bengkulu</option>
+                <option value="Luar Kota Bengkulu">Luar Kota Bengkulu</option>
+                <option value="Luar Provinsi Bengkulu">Luar Provinsi Bengkulu</option>
               </select>
             </div>
             <div class="form-group">
               <label>Asal Sekolah</label>
-              <select id="asal_sekolah" name="asal_sekolah" class="form-control">
+              <select id="asal_sekolah" name="asal_sekolah" class="form-control required">
                 <option value="">-- Pilih Asal Sekolah --</option>
                 <option value="sma">SMA</option>
                 <option value="smk">SMK</option>
@@ -99,55 +111,123 @@
             <h4>Identitas Pribadi</h4>
             <div class="form-group">
               <label>Nama Lengkap</label>
-              <input type="text" name="nama_awal" placeholder="Nama Lengkap" class="form-control">
+              <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" class="form-control">
             </div>
-            <div class="form-group">
-              <label>Jenis Kelamin</label>
-              <select name="jenis_kelamin" class="form-control">
-                <option value="">-- Pilih Jenis Kelamin --</option>
-                <option value="laki-laki">Laki-laki</option>
-                <option value="perempuan">Perempuan</option>
-              </select>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Jenis Kelamin</label>
+                  <select name="jenis_kelamin" class="form-control">
+                    <option value="">-- Pilih Jenis Kelamin --</option>
+                    <option value="laki-laki">Laki-laki</option>
+                    <option value="perempuan">Perempuan</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Agama</label>
+                  <select name="agama" id="" class="form-control">
+                    <option value="">-- Pilih Agama --</option>
+                    <option value="islam">Islam</option>
+                    <option value="kristen">Kristen</option>
+                    <option value="katolik">Katolik</option>
+                    <option value="hindu">Hindu</option>
+                    <option value="budha">Budha</option>
+                    <option value="konghucu">Konghucu</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label>Agama</label>
-              <select name="agama" id="" class="form-control">
-                <option value="">-- Pilih Agama --</option>
-                <option value="islam">Islam</option>
-                <option value="kristen">Kristen</option>
-                <option value="katolik">Katolik</option>
-                <option value="hindu">Hindu</option>
-                <option value="budha">Budha</option>
-                <option value="konghucu">Konghucu</option>
-              </select>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Tempat Lahir</label>
+                  <input type="text" name="tempat_lahir" placeholder="Input Tempat Lahir" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Tanggal Lahir</label>
+                  <input type="date" name="tanggal_lahir" placeholder="Input Tanggal Lahir" class="form-control">
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label>Tempat Lahir</label>
-              <input type="text" name="nama_awal" placeholder="Input Tempat Lahir" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Tanggal Lahir</label>
-              <input type="text" name="tgl_lahir" placeholder="Input Tanggal Lahir" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Berat Badan</label>
-              <input type="text" name="berat_badan" placeholder="Input Berat Badan" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Tinggi Badan</label>
-              <input type="text" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Berat Badan</label>
+                  <input type="number" name="berat_badan" placeholder="Input Berat Badan" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Tinggi Badan</label>
+                  <input type="number" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control">
+                </div>
+              </div>
             </div>
             <div class="form-group">
               <label>Golongan Darah</label>
-              <input type="text" name="gol_darah" placeholder="Input Golongan darah" class="form-control">
+              <select name="golongan_darah" id="" class="form-control">
+                <option value="">-- Pilih Golongan Darah --</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
+              </select>
             </div>
             <div class="form-group">
-              <label>NIK</label>
-              <input type="text" name="nik" placeholder="Input NIK" class="form-control">
+              <label>Nomor Induk Keluarga(NIK)</label>
+              <input type="number" name="nik" placeholder="Input NIK" class="form-control">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Nama Orang Tua</label>
+                  <input type="text" name="nama_orang_tua" placeholder="Input Nama Orang Tua" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Pekerjaan Orang Tua</label>
+                  <select name="pekerjaan_orang_tua" class="form-control">
+                    <option value="">-- Pilih Pekerjaan Orang Tua --</option>
+                    <option value="PNS">PNS</option>
+                    <option value="TNI/Polri">TNI/Polri</option>
+                    <option value="Swasta">Swasta</option>
+                    <option value="Wiraswasta">Wiraswasta</option>
+                    <option value="Petani">Petani</option>
+                    <option value="Buruh">Buruh</option>
+                    <option value="Nelayan">Nelayan</option>
+                    <option value="Pensiunan">Pensiunan</option>
+                    <option value="Lainnya">Lainnya</option>
+                  </select>
+                </div>
+              </div>
             </div>
             <div class="form-group">
-              <label>Tentang Kamu</label>
-              <textarea name="tentang_kamu" placeholder="Input Tentang Kamu" class="form-control"></textarea>
+              <label>Penghasilan Orang Tua (per bulan)</label>
+              <select name='penghasilan_orang_tua' class='form-control'>
+                <option>-- Pilih Penghasilan Orang Tua --</option>
+                <?php include "koneksi.php";
+                $query = mysqli_query($kon, "SELECT * FROM tb_penghasilan_orangtua");
+                while ($row = mysqli_fetch_array($query)) {
+                ?>
+                  <option value='<?php echo $row["jumlah_penghasilan_orangtua"]; ?>'><?php echo $row["keterangan"]; ?></option>
+                <?php
+                }
+                ?>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Nomor Kartu BPJS</label>
+              <input type="text" name="kartu_bpjs" placeholder="Input Nomor Kartu BPJS" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Pas Foto</label>
+              <input type="file" name="pas_foto" accept="image/*" class="form-control" required>
+              <span class="help-block">Format: JPG, PNG. Ukuran maksimal: 1 MB</span>
             </div>
             <div class="f1-buttons">
               <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
@@ -211,52 +291,30 @@
               </div>
             </div>
             <div class="form-group">
-              <label>Tempat Lahir</label>
-              <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" class="form-control">
-            </div>
-            <div class="form-group">
               <label>Alamat Rumah</label>
               <input type="text" name="alamat_rumah" placeholder="Alamat Rumah" class="form-control">
             </div>
-            <div class="f1-buttons">
-              <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
-              <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
-            </div>
-          </fieldset>
-          <!-- step 4: Akun -->
-          <fieldset>
-            <h4>Buat Akun</h4>
             <div class="form-group">
-              <label>Email</label>
-              <input type="text" name="email" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input type="password" name="password" placeholder="Password" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Ulangi password</label>
-              <input type="password" name="ulangi_password" placeholder="Ulangi password" class="form-control">
+              <label>Daerah Asal</label>
+              <input type="text" id="daerah_asal" name="daerah_asal" placeholder="Nama Daerah/Kelurahan Asal" class="form-control" readonly>
+              <span class="help-block">Nilai ini akan otomatis diisi berdasarkan pilihan wilayah (kabupaten/kecamatan).</span>
             </div>
             <div class="f1-buttons">
               <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
               <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
             </div>
           </fieldset>
+          <!-- Akun step removed -->
           <!-- step 5: Sosial -->
           <fieldset>
-            <h4>Sosial Media</h4>
+            <h4>Info Kontak</h4>
             <div class="form-group">
-              <label>Facebook</label>
-              <input type="text" name="facebook" placeholder="Facebook" class="form-control">
+              <label>Email</label>
+              <input type="text" name="email" placeholder="Input Email Aktif anda" class="form-control">
             </div>
             <div class="form-group">
-              <label>Twitter</label>
-              <input type="text" name="twitter" placeholder="Twitter" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Google plus</label>
-              <input type="text" name="google_plus" placeholder="Google plus" class="form-control">
+              <label>Nomor HP</label>
+              <input type="text" name="no_hp" placeholder="Input Nomor HP anda" class="form-control">
             </div>
             <div class="f1-buttons">
               <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
@@ -283,89 +341,214 @@
     // Daftar program studi berdasarkan jenis sekolah / jurusan SMK
     const programStudiList = {
       // SMA: umumnya bisa memilih program non-kejuruan tertentu (biarkan semua tersedia)
-      sma: [
-        { value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)', text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' },
-        { value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners', text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' },
-        { value: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan', text: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan' },
-        { value: 'Sarjana Terapan promosi Kesehatan', text: 'Sarjana Terapan Promosi Kesehatan (Promkes)' },
-        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
-        { value: 'D3 Keperawatan Bengkulu', text: 'D3 Keperawatan Bengkulu' },
-        { value: 'D3 kebidanan Bengkulu', text: 'D3 Kebidanan Bengkulu' },
-        { value: 'D3 keperawatan Curup', text: 'D3 Keperawatan Curup' },
-        { value: 'D3 kebidanan Curup', text: 'D3 Kebidanan Curup' },
-        { value: 'D3 Farmasi', text: 'D3 Farmasi' },
-        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
-        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' },
-        { value: 'D3 Gizi', text: 'D3 Gizi' }
+      sma: [{
+          value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)',
+          text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)'
+        },
+        {
+          value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners',
+          text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners'
+        },
+        {
+          value: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan',
+          text: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan'
+        },
+        {
+          value: 'Sarjana Terapan promosi Kesehatan',
+          text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
+        },
+        {
+          value: 'Sarjana Terapan Gizi',
+          text: 'Sarjana Terapan Gizi'
+        },
+        {
+          value: 'D3 Keperawatan Bengkulu',
+          text: 'D3 Keperawatan Bengkulu'
+        },
+        {
+          value: 'D3 kebidanan Bengkulu',
+          text: 'D3 Kebidanan Bengkulu'
+        },
+        {
+          value: 'D3 keperawatan Curup',
+          text: 'D3 Keperawatan Curup'
+        },
+        {
+          value: 'D3 kebidanan Curup',
+          text: 'D3 Kebidanan Curup'
+        },
+        {
+          value: 'D3 Farmasi',
+          text: 'D3 Farmasi'
+        },
+        {
+          value: 'D3 Teknologi Laboratorium Medis',
+          text: 'D3 Teknologi Laboratorium Medis (TLM)'
+        },
+        {
+          value: 'D3 Sanitasi',
+          text: 'D3 Sanitasi'
+        },
+        {
+          value: 'D3 Gizi',
+          text: 'D3 Gizi'
+        }
       ],
 
       // SMK Kesehatan: akses penuh ke program kesehatan
-      smk_kesehatan: [
-        { value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)', text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' },
-        { value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners', text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' },
-        { value: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan', text: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan' },
-        { value: 'Sarjana Terapan promosi Kesehatan', text: 'Sarjana Terapan Promosi Kesehatan (Promkes)' },
-        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
-        { value: 'D3 keperawatan Curup', text: 'D3 Keperawatan Curup' },
-        { value: 'D3 kebidanan Curup', text: 'D3 Kebidanan Curup' },
-        { value: 'D3 Keperawatan Bengkulu', text: 'D3 Keperawatan Bengkulu' },
-        { value: 'D3 kebidanan Bengkulu', text: 'D3 Kebidanan Bengkulu' },
-        { value: 'D3 Farmasi', text: 'D3 Farmasi' },
-        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
-        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' },
-        { value: 'D3 Gizi', text: 'D3 Gizi' }
+      smk_kesehatan: [{
+          value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)',
+          text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)'
+        },
+        {
+          value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners',
+          text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners'
+        },
+        {
+          value: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan',
+          text: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan'
+        },
+        {
+          value: 'Sarjana Terapan promosi Kesehatan',
+          text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
+        },
+        {
+          value: 'Sarjana Terapan Gizi',
+          text: 'Sarjana Terapan Gizi'
+        },
+        {
+          value: 'D3 keperawatan Curup',
+          text: 'D3 Keperawatan Curup'
+        },
+        {
+          value: 'D3 kebidanan Curup',
+          text: 'D3 Kebidanan Curup'
+        },
+        {
+          value: 'D3 Keperawatan Bengkulu',
+          text: 'D3 Keperawatan Bengkulu'
+        },
+        {
+          value: 'D3 kebidanan Bengkulu',
+          text: 'D3 Kebidanan Bengkulu'
+        },
+        {
+          value: 'D3 Farmasi',
+          text: 'D3 Farmasi'
+        },
+        {
+          value: 'D3 Teknologi Laboratorium Medis',
+          text: 'D3 Teknologi Laboratorium Medis (TLM)'
+        },
+        {
+          value: 'D3 Sanitasi',
+          text: 'D3 Sanitasi'
+        },
+        {
+          value: 'D3 Gizi',
+          text: 'D3 Gizi'
+        }
       ],
 
       // SMK Farmasi: khusus Farmasi (sesuai tabel)
-      smk_farmasi: [
-        { value: 'D3 Farmasi', text: 'D3 Farmasi' }
-      ],
+      smk_farmasi: [{
+        value: 'D3 Farmasi',
+        text: 'D3 Farmasi'
+      }],
 
       // SMK Kimia: cocok untuk TLM dan Kesling
-      smk_kimia: [
-        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
-        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' }
+      smk_kimia: [{
+          value: 'D3 Teknologi Laboratorium Medis',
+          text: 'D3 Teknologi Laboratorium Medis (TLM)'
+        },
+        {
+          value: 'D3 Sanitasi',
+          text: 'D3 Sanitasi'
+        }
       ],
 
       // Sekolah Menengah Analis Kesehatan: pilihan TLM / analis
-      smk_analis: [
-        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' }
-      ],
+      smk_analis: [{
+        value: 'D3 Teknologi Laboratorium Medis',
+        text: 'D3 Teknologi Laboratorium Medis (TLM)'
+      }],
 
       // SMK Teknik / Teknik Industri: beberapa program teknis seperti TLM atau Kesling
-      smk_teknik: [
-        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
-        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' }
+      smk_teknik: [{
+          value: 'D3 Teknologi Laboratorium Medis',
+          text: 'D3 Teknologi Laboratorium Medis (TLM)'
+        },
+        {
+          value: 'D3 Sanitasi',
+          text: 'D3 Sanitasi'
+        }
       ],
 
       // SMK Tataboga / Pariwisata / Pertanian: cocok untuk Gizi
-      smk_tataboga: [
-        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
-        { value: 'D3 Gizi', text: 'D3 Gizi' }
+      smk_tataboga: [{
+          value: 'Sarjana Terapan Gizi',
+          text: 'Sarjana Terapan Gizi'
+        },
+        {
+          value: 'D3 Gizi',
+          text: 'D3 Gizi'
+        }
       ],
-      smk_pariwisata: [
-        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
-        { value: 'D3 Gizi', text: 'D3 Gizi' }
+      smk_pariwisata: [{
+          value: 'Sarjana Terapan Gizi',
+          text: 'Sarjana Terapan Gizi'
+        },
+        {
+          value: 'D3 Gizi',
+          text: 'D3 Gizi'
+        }
       ],
-      smk_pertanian: [
-        { value: 'Sarjana Terapan Gizi', text: 'Sarjana Terapan Gizi' },
-        { value: 'D3 Gizi', text: 'D3 Gizi' }
+      smk_pertanian: [{
+          value: 'Sarjana Terapan Gizi',
+          text: 'Sarjana Terapan Gizi'
+        },
+        {
+          value: 'D3 Gizi',
+          text: 'D3 Gizi'
+        }
       ],
 
       // SMK semua jurusan / lainnya: paling fleksibel — set beberapa program yang umum
-      smk_semua: [
-        { value: 'Sarjana Terapan promosi Kesehatan', text: 'Sarjana Terapan Promosi Kesehatan (Promkes)' },
-        { value: 'D3 Gizi', text: 'D3 Gizi' },
-        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' },
-        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' }
+      smk_semua: [{
+          value: 'Sarjana Terapan promosi Kesehatan',
+          text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
+        },
+        {
+          value: 'D3 Gizi',
+          text: 'D3 Gizi'
+        },
+        {
+          value: 'D3 Sanitasi',
+          text: 'D3 Sanitasi'
+        },
+        {
+          value: 'D3 Teknologi Laboratorium Medis',
+          text: 'D3 Teknologi Laboratorium Medis (TLM)'
+        }
       ],
 
       // Fallback untuk SMK jenis lain
-      smk_lainnya: [
-        { value: 'D3 Teknologi Laboratorium Medis', text: 'D3 Teknologi Laboratorium Medis (TLM)' },
-        { value: 'Sarjana Terapan promosi Kesehatan', text: 'Sarjana Terapan Promosi Kesehatan (Promkes)' },
-        { value: 'D3 Sanitasi', text: 'D3 Sanitasi' },
-        { value: 'D3 Gizi', text: 'D3 Gizi' }
+      smk_lainnya: [{
+          value: 'D3 Teknologi Laboratorium Medis',
+          text: 'D3 Teknologi Laboratorium Medis (TLM)'
+        },
+        {
+          value: 'Sarjana Terapan promosi Kesehatan',
+          text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
+        },
+        {
+          value: 'D3 Sanitasi',
+          text: 'D3 Sanitasi'
+        },
+        {
+          value: 'D3 Gizi',
+          text: 'D3 Gizi'
+        }
       ]
     };
 
@@ -603,6 +786,80 @@
         .catch(err => {
           console.error('Error load kecamatan luar:', err);
         });
+    });
+
+    // -----------------------------------------------------------------
+    // Gabungkan pilihan wilayah ke `daerah_asal` (read-only) sesuai
+    // - jika 'dalam' : gabungkan kec + kab + "- Bengkulu"
+    // - jika 'luar'   : gabungkan kec + kab + prov
+    // -----------------------------------------------------------------
+    const daerahAsalInput = document.getElementById('daerah_asal');
+
+    function setDaerahAsal(text) {
+      if (daerahAsalInput) daerahAsalInput.value = text || '';
+    }
+
+    function updateDaerahDalam() {
+      const kabText = kabBklSelect.options[kabBklSelect.selectedIndex] ?
+        kabBklSelect.options[kabBklSelect.selectedIndex].text :
+        '';
+      const kecText = kecBklSelect.options[kecBklSelect.selectedIndex] ?
+        kecBklSelect.options[kecBklSelect.selectedIndex].text :
+        '';
+
+      if (kecText && kabText) {
+        setDaerahAsal(kecText + ', ' + kabText + ' - Bengkulu');
+      } else if (kabText) {
+        setDaerahAsal(kabText + ' - Bengkulu');
+      } else {
+        setDaerahAsal('');
+      }
+    }
+
+    function updateDaerahLuar() {
+      const provText = provLuarSelect.options[provLuarSelect.selectedIndex] ?
+        provLuarSelect.options[provLuarSelect.selectedIndex].text :
+        '';
+      const kabText = kabLuarSelect.options[kabLuarSelect.selectedIndex] ?
+        kabLuarSelect.options[kabLuarSelect.selectedIndex].text :
+        '';
+      const kecText = kecLuarSelect.options[kecLuarSelect.selectedIndex] ?
+        kecLuarSelect.options[kecLuarSelect.selectedIndex].text :
+        '';
+
+      if (kecText && kabText && provText) {
+        setDaerahAsal(kecText + ', ' + kabText + ', ' + provText);
+      } else if (kabText && provText) {
+        setDaerahAsal(kabText + ', ' + provText);
+      } else if (provText) {
+        setDaerahAsal(provText);
+      } else {
+        setDaerahAsal('');
+      }
+    }
+
+    // Wire listeners
+    kabBklSelect.addEventListener('change', () => {
+      updateDaerahDalam();
+    });
+    kecBklSelect.addEventListener('change', () => {
+      updateDaerahDalam();
+    });
+
+    provLuarSelect.addEventListener('change', () => {
+      // reset dependent selects when province changes
+      updateDaerahLuar();
+    });
+    kabLuarSelect.addEventListener('change', () => {
+      updateDaerahLuar();
+    });
+    kecLuarSelect.addEventListener('change', () => {
+      updateDaerahLuar();
+    });
+
+    // Clear daerah_asal when asal selection changes
+    asalSelect.addEventListener('change', () => {
+      setDaerahAsal('');
     });
   </script>
 </body>
