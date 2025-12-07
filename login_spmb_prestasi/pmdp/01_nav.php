@@ -85,11 +85,11 @@
                             <li>
                                 <a  href="07_upload_akreditasi.php"><i class="fa fa-trophy fa-2x"></i> Sertifikat Akreditas Sekolah </a>
                             </li>
-                            <li>
-                                <a  href="04_upload_prestasi.php"><i class="fa fa-trophy fa-2x"></i> Upload Prestasi </a>
+                             <li>
+                                <a  href="07_upload_toefl_itp.php"><i class="fa fa-trophy fa-2x"></i> Sertifikat Toefl Itp </a>
                             </li>
                             <li>
-                                <a  href="04_upload_penghargaan_tahfizh.php"><i class="fa fa-trophy fa-2x"></i> Upload Penghargaan Tahfizh </a>
+                                <a  href="04_upload_prestasi.php"><i class="fa fa-trophy fa-2x"></i> Upload Prestasi </a>
                             </li>
 
 							<li>
