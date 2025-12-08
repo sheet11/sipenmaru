@@ -120,13 +120,13 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
           <fieldset>
             <h4>Identitas Pribadi</h4>
             <div class="form-group">
-              <label>Nama Lengkap</label>
+              <label>Nama Lengkap<span class="text-danger" style="font-size: large;">*</span></label>
               <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" class="form-control">
             </div>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Jenis Kelamin</label>
+                  <label>Jenis Kelamin <span class="text-danger" style="font-size: large;">*</span></label>
                   <select name="jenis_kelamin" class="form-control">
                     <option value="">-- Pilih Jenis Kelamin --</option>
                     <option value="laki-laki">Laki-laki</option>
@@ -136,7 +136,7 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Agama</label>
+                  <label>Agama <span class="text-danger" style="font-size: large;">*</span></label>
                   <select name="agama" id="" class="form-control">
                     <option value="">-- Pilih Agama --</option>
                     <option value="islam">Islam</option>
@@ -152,13 +152,13 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Tempat Lahir</label>
+                  <label>Tempat Lahir <span class="text-danger" style="font-size: large;">*</span></label>
                   <input type="text" name="tempat_lahir" placeholder="Input Tempat Lahir" class="form-control">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Tanggal Lahir</label>
+                  <label>Tanggal Lahir <span class="text-danger" style="font-size: large;">*</span></label>
                   <input type="date" name="tanggal_lahir" placeholder="Input Tanggal Lahir" class="form-control">
                 </div>
               </div>
@@ -166,19 +166,19 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Berat Badan</label>
+                  <label>Berat Badan <span class="text-danger" style="font-size: large;">*</span></label>
                   <input type="number" name="berat_badan" placeholder="Input Berat Badan" class="form-control">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Tinggi Badan</label>
+                  <label>Tinggi Badan <span class="text-danger" style="font-size: large;">*</span></label>
                   <input type="number" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control">
                 </div>
               </div>
             </div>
             <div class="form-group">
-              <label>Golongan Darah</label>
+              <label>Golongan Darah <span class="text-danger" style="font-size: large;">*</span></label>
               <select name="golongan_darah" id="" class="form-control">
                 <option value="">-- Pilih Golongan Darah --</option>
                 <option value="A">A</option>
@@ -188,19 +188,20 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
               </select>
             </div>
             <div class="form-group">
-              <label>Nomor Induk Keluarga(NIK)</label>
+              <label>Nomor Induk Keluarga(NIK) <span class="text-danger" style="font-size: large;">*</span></label>
               <input type="number" name="nik" placeholder="Input NIK" class="form-control">
             </div>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Nama Orang Tua</label>
+                  <label>Nama Ayah</label>
                   <input type="text" name="nama_orang_tua" placeholder="Input Nama Orang Tua" class="form-control">
+                  <span class="help-block">Contoh: Budi/helen</span>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Pekerjaan Orang Tua</label>
+                  <label>Pekerjaan Ayah <span class="text-danger" style="font-size: large;">*</span></label>
                   <select name="pekerjaan_orang_tua" class="form-control">
                     <option value="">-- Pilih Pekerjaan Orang Tua --</option>
                     <option value="PNS">PNS</option>
@@ -216,8 +217,34 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Nama Ibu</label>
+                  <input type="text" name="nama_orang_tua_ibu" placeholder="Input Nama Orang Tua" class="form-control">
+                  <span class="help-block">Contoh: Budi/helen</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Pekerjaan Ibu <span class="text-danger" style="font-size: large;">*</span></label>
+                  <select name="pekerjaan_orang_tua_ibu" class="form-control">
+                    <option value="">-- Pilih Pekerjaan Orang Tua --</option>
+                    <option value="PNS">PNS</option>
+                    <option value="TNI/Polri">TNI/Polri</option>
+                    <option value="Swasta">Swasta</option>
+                    <option value="Wiraswasta">Wiraswasta</option>
+                    <option value="Petani">Petani</option>
+                    <option value="Buruh">Buruh</option>
+                    <option value="Nelayan">Nelayan</option>
+                    <option value="Pensiunan">Pensiunan</option>
+                    <option value="Lainnya">Lainnya</option>
+                  </select>
+                </div>
+              </div>
+            </div>
             <div class="form-group">
-              <label>Penghasilan Orang Tua (per bulan)</label>
+              <label>Penghasilan Orang Tua Ayah + Ibu (per bulan) <span class="text-danger" style="font-size: large;">*</span></label>
               <select name='penghasilan_orang_tua' class='form-control'>
                 <option>-- Pilih Penghasilan Orang Tua --</option>
                 <?php include "koneksi.php";
@@ -235,7 +262,7 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
               <input type="text" name="kartu_bpjs" placeholder="Input Nomor Kartu BPJS" class="form-control">
             </div>
             <div class="form-group">
-              <label>Pas Foto</label>
+              <label>Pas Foto<span class="text-danger" style="font-size: large;">*</span></label>
               <input type="file" name="pas_foto" accept="image/*" class="form-control" required>
               <span class="help-block">Format: JPG, PNG. Ukuran maksimal: 1 MB</span>
             </div>

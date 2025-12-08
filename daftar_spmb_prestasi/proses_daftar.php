@@ -24,6 +24,8 @@ try {
         'nik',
         'nama_orang_tua',
         'pekerjaan_orang_tua',
+        'nama_orang_tua_ibu',
+        'pekerjaan_orang_tua_ibu',
         'penghasilan_orang_tua',
         'kartu_bpjs',
         'asal',
@@ -91,7 +93,9 @@ try {
     $nik = mysqli_real_escape_string($kon, $_POST['nik']);
     $nama_orang_tua = mysqli_real_escape_string($kon, $_POST['nama_orang_tua']);
     $pekerjaan_orang_tua = mysqli_real_escape_string($kon, $_POST['pekerjaan_orang_tua']);
-    $penghasilan_orang_tua = mysqli_real_escape_string($kon, $_POST['penghasilan_orang_tua']);
+    $nama_orang_tua = mysqli_real_escape_string($kon, $_POST['nama_orang_tua']);
+    $pekerjaan_orang_tua_ibu = mysqli_real_escape_string($kon, $_POST['pekerjaan_orang_tua_ibu']);
+    $penghasilan_orang_tua_ibu = mysqli_real_escape_string($kon, $_POST['penghasilan_orang_tua_ibu']);
     $kartu_bpjs = mysqli_real_escape_string($kon, $_POST['kartu_bpjs']);
 
     $asal = mysqli_real_escape_string($kon, $_POST['asal']);
@@ -164,6 +168,8 @@ try {
             nama_orang_tua = '$nama_orang_tua',
             pekerjaan_orang_tua = '$pekerjaan_orang_tua',
             penghasilan_orang_tua = '$penghasilan_orang_tua',
+            pekerjaan_orang_tua_ibu = '$pekerjaan_orang_tua_ibu',
+            penghasilan_orang_tua_ibu = '$penghasilan_orang_tua_ibu',
             kartu_bpjs = '$kartu_bpjs',
             nama_sekolah = '$nama_sekolah',
             akreditasi = '$akreditasi',
