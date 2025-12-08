@@ -74,10 +74,10 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
               </select>
             </div>
             <div class="form-group">
-              <label>Asal Sekolah</label>
+              <label>Jenis Sekolah</label>
               <select id="asal_sekolah" name="asal_sekolah" class="form-control required">
                 <option value="">-- Pilih Asal Sekolah --</option>
-                <option value="sma">SMA</option>
+                <option value="sma">SMA/MA</option>
                 <option value="smk">SMK</option>
               </select>
             </div>

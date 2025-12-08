@@ -76,7 +76,8 @@ try {
     $nama_sekolah = mysqli_real_escape_string($kon, $_POST['nama_sekolah']);
     $akreditasi = mysqli_real_escape_string($kon, $_POST['akreditasi']);
     $asal_sekolah = mysqli_real_escape_string($kon, $_POST['asal_sekolah']);
-    $jurusan_sekolah = isset($_POST['smk_jenis']) ? mysqli_real_escape_string($kon, $_POST['smk_jenis']) : '';
+    $smk_jenis = isset($_POST['smk_jenis']) ? mysqli_real_escape_string($kon, $_POST['smk_jenis']) : '';
+    $jurusan_sekolah = isset($_POST['jurusan_sekolah']) ? mysqli_real_escape_string($kon, $_POST['jurusan_sekolah']) : $jurusan_sekolah;
     $program_studi = isset($_POST['program_studi']) ? mysqli_real_escape_string($kon, $_POST['program_studi']) : '';
 
     $nama_lengkap = mysqli_real_escape_string($kon, $_POST['nama_lengkap']);
@@ -168,6 +169,7 @@ try {
             akreditasi = '$akreditasi',
             asal_sekolah = '$asal_sekolah',
             jurusan_sekolah = '$jurusan_sekolah',
+            smk_jenis = '$smk_jenis',
             daerah_asal = '$daerah_asal',
             nama_foto = '$foto_path',
             email = '$email',
