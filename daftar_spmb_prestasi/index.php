@@ -81,7 +81,7 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
                 <option value="smk">SMK</option>
               </select>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="sma-jenis-group" style="display:none;">
               <label>Jurusan Sekolah</label>
               <select name="jurusan_sekolah" class="form-control required">
                 <option value="">-- Pilih Jurusan Sekolah --</option>
@@ -345,6 +345,7 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
     // ========================================
     const asalSekolahSelect = document.getElementById('asal_sekolah');
     const smkJenisGroup = document.getElementById('smk-jenis-group');
+    const smaJenisGroup = document.getElementById('sma-jenis-group');
     const smkJenisSelect = document.getElementById('smk_jenis');
     const programStudiSelect = document.getElementById('program_studi');
 
@@ -584,15 +585,19 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
     asalSekolahSelect.addEventListener('change', function() {
       const selectedValue = this.value;
       smkJenisSelect.value = '';
+      smaJenisGroup.value = '';
 
       if (selectedValue === 'sma') {
         smkJenisGroup.style.display = 'none';
+        smaJenisGroup.style.display = 'block';
         updateProgramStudi(programStudiList.sma);
       } else if (selectedValue === 'smk') {
         smkJenisGroup.style.display = 'block';
+        smaJenisGroup.style.display = 'none';
         updateProgramStudi(null);
       } else {
         smkJenisGroup.style.display = 'none';
+        smaJenisGroup.style.display = 'none';
         updateProgramStudi(null);
       }
     });
