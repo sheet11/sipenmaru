@@ -11,19 +11,18 @@ include "../config/koneksi.php";
 		<div>
 			<hr>
 			<form method="post" enctype="multipart/form-data" action="04_proses_input_prestasi.php">
-				<div class="form-group col-md-6">
-					<label>Nama Prestasi</label>
-
+			<div class="form-group col-md-6">
+					<label>Jenis Prestasi</label>
 					<div id="containerPrestasi">
 						<select class="form-control" id="prestasi" name="prestasi" onchange="ubahForm()">
 							<option value="">-- Pilih --</option>
+							<option value="Non Akademik">Non Akademik</option>
+							<option value="Akademik">Akademik</option>
 							<option value="Paskibraka">Paskibraka</option>
 							<option value="Tahfiz">Tahfiz</option>
-							<option value="Lainnya">Lainnya:</label>
 						</select>
 					</div>
-				</div>
-
+				</div>	
 				<div class="form-group col-md-6" id="containerKeterangan">
 					<label>Keterangan</label>
 					<select class="form-control" name="ket" id="ketSelect">
@@ -33,15 +32,21 @@ include "../config/koneksi.php";
 						<option value="Juara 3">Juara 3</option>
 					</select>
 				</div>
+				<!-- Nama Prestasi, default disembunyikan -->
+				<div class="form-group col-md-6" id="namaPrestasiContainer" style="display:none;">
+    				<label>Nama Prestasi</label>
+   					<input type="text" class="form-control" name="nama" placeholder="Contoh: Lomba Matematika">
+				</div>
 
 				<script>
 					// Simpan HTML asli untuk bisa dikembalikan kapan saja
 					const originalPrestasi = `
 		<select class="form-control" id="prestasi" name="prestasi" onchange="ubahForm()">
 			<option value="">-- Pilih --</option>
+			<option value="Akademik">Akademik</option>				
+			<option value="Non Akademik">Non Akademik</option>
 			<option value="Paskibraka">Paskibraka</option>
 			<option value="Tahfiz">Tahfiz</option>
-			<option value="Lainnya">Lainnya:</option>
 		</select>
 	`;
 
@@ -56,50 +61,58 @@ include "../config/koneksi.php";
 	`;
 
 					function ubahForm() {
-						let prestasi = document.getElementById("prestasi").value;
+    				let prestasi = document.getElementById("prestasi").value;
 
-						// 1️⃣ Kembalikan komponen ke kondisi awal setiap kali memilih
-						document.getElementById("containerPrestasi").innerHTML = originalPrestasi;
-						document.getElementById("containerKeterangan").innerHTML = originalKet;
+    				// Reset container
+   					 document.getElementById("containerPrestasi").innerHTML = originalPrestasi;
+   					 document.getElementById("containerKeterangan").innerHTML = originalKet;
+    				 document.getElementById("prestasi").value = prestasi;
+    				 document.getElementById("prestasi").onchange = ubahForm;
 
-						// Ambil ulang nilai prestasi karena select direfresh
-						document.getElementById("prestasi").value = prestasi;
-						document.getElementById("prestasi").onchange = ubahForm;
+                    // Keterangan
+   					if (prestasi === "Paskibraka") {
+        				document.getElementById("containerKeterangan").style.display = "none";
+    					}
+					else {
+        					document.getElementById("containerKeterangan").style.display = "block";
+    				}
 
-						// 2️⃣ Jika pilih Paskibraka → sembunyikan container keterangan
-						if (prestasi === "Paskibraka") {
-							document.getElementById("containerKeterangan").style.display = "none";
-						} else {
-							document.getElementById("containerKeterangan").style.display = "block";
+    				// Tahfiz → ubah keterangan jadi input Juz
+    				if (prestasi === "Tahfiz") {
+       					document.getElementById("containerKeterangan").innerHTML = `
+            				<label>Juz</label>
+           					<input type="text" class="form-control" name="ket" placeholder="Masukkan jumlah Juz...">
+            				<small class="text-danger">Contoh: 1 Juz, 30 Juz</small>
+							`;
 						}
 
-						// 3️⃣ Jika pilih Tahfiz → keterangan jadi input "Juz"
-						if (prestasi === "Tahfiz") {
-							document.getElementById("containerKeterangan").innerHTML = `
-				<label>Juz</label>
-				<input type="text" class="form-control" name="ket" placeholder="Masukkan jumlah Juz...">
-				<small class="text-danger">Contoh: 1 Juz, 30 Juz</small>
-			`;
-						}
+    				// Tampilkan nama prestasi hanya untuk Akademik & Non Akademik
+    				if (prestasi === "Akademik" || prestasi === "Non Akademik") {
+        				document.getElementById("namaPrestasiContainer").style.display = "block";
+    					}
+					else {
+        				document.getElementById("namaPrestasiContainer").style.display = "none";
+    				}
+					}
 
 						// 4️⃣ Jika pilih Lainnya → select jadi textbox & keterangan bebas
-						if (prestasi === "Lainnya") {
-							document.getElementById("containerPrestasi").innerHTML = `
-				<input type="text" class="form-control" name="prestasi" 
-				placeholder="Tulis nama prestasi..." >
-			`;
+		// 	 			if (prestasi === "Lainnya") {
+		// 					document.getElementById("containerPrestasi").innerHTML = `
+		// 		<input type="text" class="form-control" name="prestasi" 
+		// 	 	placeholder="Tulis nama prestasi..." >
+		// 	 `;
 
-							document.getElementById("containerKeterangan").innerHTML = `
-		<label>Keterangan</label>
-		<select class="form-control" name="ket" id="ketSelect">
-			<option value="">Pilih Juara</option>
-			<option value="Juara 1">Juara 1</option>
-			<option value="Juara 2">Juara 2</option>
-			<option value="Juara 3">Juara 3</option>
-		</select>
-			`;
-						}
-					}
+		// 					document.getElementById("containerKeterangan").innerHTML = `
+		// <label>Keterangan</label>
+		// <select class="form-control" name="ket" id="ketSelect">
+		// 	<option value="">Pilih Juara</option>
+		// 	<option value="Juara 1">Juara 1</option>
+		// 	<option value="Juara 2">Juara 2</option>
+		// 	<option value="Juara 3">Juara 3</option>
+		// </select>
+		// 	`;
+		// 				}
+		// 			}
 
 					function kembaliSelect() {
 						document.getElementById("containerPrestasi").innerHTML = originalPrestasi;

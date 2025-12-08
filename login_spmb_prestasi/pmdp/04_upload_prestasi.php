@@ -10,164 +10,145 @@ include "../config/koneksi.php";
 		<h5>Di Halaman Sistem Informasi Pendaftaran Mahasiswa Baru Online</h5>
 		<div>
 			<hr>
-			<h2 style="text-align:center; color:black;">Prestasi lainnya</h2>
-			<div class="table-responsive">
+				<a class="btn btn-success btn-sm" href="04_input_prestasi.php"><i class="fa fa-plus"></i> Tambah Prestasi</a>
+				<hr>
+			<?php
+$qt = mysqli_query($kon, "
+    SELECT * FROM tb_prestasi 
+    WHERE username='$_SESSION[username]' 
+    AND (jenis_prestasi='Akademik' OR jenis_prestasi='Non Akademik')
+    ORDER BY tingkat ASC
+");
+
+if (mysqli_num_rows($qt) > 0) {
+?>
+<h2 style="text-align:center; color:black;">Prestasi Akademik dan Non Akademik</h2>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <th>No.</th>
+        <th>Nama Prestasi</th>
+        <th>Tingkat</th>
+        <th>Bukti</th>
+        <th>Tanggal Sertifikat</th>
+        <th>Keterangan</th>
+        <th>Aksi</th>
+    </thead>
+    <?php
+    $no = 1;
+    while ($q = mysqli_fetch_array($qt)) {
+    ?>
+    <tr>
+        <td><?= $no++; ?></td>
+        <td><?= $q['nama']; ?></td>
+        <td>
+            <?php
+            $tingkatText = [
+                1 => "Internasional",
+                2 => "Nasional",
+                3 => "Regional",
+                4 => "Provinsi",
+                5 => "Kabupaten/Kota",
+                6 => "Sekolah"
+            ];
+            echo $tingkatText[$q['tingkat']];
+            ?>
+        </td>
+        <td><a href="prestasi/<?= $q['bukti_n']; ?>" target="_blank"><img src="prestasi/<?= $q['bukti_n']; ?>" width="200"></a></td>
+        <td><?= $q['tgl']; ?></td>
+        <td><?= $q['ket']; ?></td>
+        <td>
+            <a href="04_delete_prestasi.php?id=<?= $q['id']; ?>" class="btn btn-danger btn-sm"
+                onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                <i class="fa fa-trash"></i>
+            </a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>
+<?php } ?>
+
 				<?php
-				// $jqt=mysqli_num_rows(mysqli_query($kon,"select * from tb_prestasi where username='$_SESSION[username]' order by tingkat asc"));
-				// if($jqt==0)
-				// {
-				// 	 ?>
-				<a class="btn btn-success btn-sm" href="04_input_prestasi.php"><i class="fa fa-plus"></i> Tambah
-					Prestasi</a>
+$qt = mysqli_query($kon, "
+    SELECT * FROM tb_prestasi 
+    WHERE username='$_SESSION[username]' 
+    AND jenis_prestasi='Tahfiz'
+    AND juz IS NOT NULL AND juz <> ''
+    ORDER BY tingkat ASC
+");
+
+if (mysqli_num_rows($qt) > 0) {
+?>
+<h2 style="text-align:center; color:black;">Prestasi Tahfiz</h2>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <th>No.</th>
+        <th>Tingkat</th>
+        <th>Bukti</th>
+        <th>Tanggal Sertifikat</th>
+        <th>Juz</th>
+        <th>Aksi</th>
+    </thead>
+
+    <?php
+    $no = 1;
+    while ($q = mysqli_fetch_array($qt)) {
+    ?>
+    <tr>
+        <td><?= $no++; ?></td>
+        <td><?= $tingkatText[$q['tingkat']]; ?></td>
+        <td><a href="prestasi/<?= $q['bukti_n']; ?>" target="_blank"><img src="prestasi/<?= $q['bukti_n']; ?>" width="200"></a></td>
+        <td><?= $q['tgl']; ?></td>
+        <td><?= $q['juz']; ?></td>
+        <td>
+            <a href="04_delete_prestasi.php?id=<?= $q['id']; ?>" class="btn btn-danger btn-sm"
+                onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                <i class="fa fa-trash"></i>
+            </a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>
+<?php } ?>
+
 				<?php
-				// }
-				// ?>
+$qt = mysqli_query($kon, "
+    SELECT * FROM tb_prestasi 
+    WHERE username='$_SESSION[username]' 
+    AND jenis_prestasi='Paskibraka'
+    ORDER BY tingkat ASC
+");
 
-				<table class="table table-bordered table-hover table-striped">
-					<thead>
-						<th>No.</th>
-						<th>Nama Prestasi</th>
-						<th>Tingkat</th>
-						<th>Bukti</th>
-						<th>Tanggal Sertifikat</th>
-						<th>Keterangan</th>
-						<th>Aksi</th>
-					</thead>
-					<?php
-					$no = 1;
-					$qt = mysqli_query($kon, "select * from tb_prestasi where username='$_SESSION[username]' order by tingkat asc");
-					while ($q = mysqli_fetch_array($qt)) {
-						?>
-						<tr>
-							<td><?php echo $no; ?></td>
-							<td><?php echo $q['nama']; ?></td>
-							<td><?php
-							if ($q['tingkat'] == 1) {
-								$nprestasi = 'Internasional';
-							} elseif ($q['tingkat'] == 2) {
-								$nprestasi = 'Nasional';
-							} elseif ($q['tingkat'] == 3) {
-								$nprestasi = 'Regional';
-							} elseif ($q['tingkat'] == 4) {
-								$nprestasi = 'Provinsi';
-							} elseif ($q['tingkat'] == 5) {
-								$nprestasi = 'Kabupaten/Kota';
-							} elseif ($q['tingkat'] == 6) {
-								$nprestasi = 'Sekolah';
-							}
-							echo $nprestasi; ?></td>
-							<td><a href="prestasi/<?php echo $q['bukti_n']; ?>" target="_blank">
-									<img src="prestasi/<?php echo $q['bukti_n']; ?>" width="200"></a></td>
-							<td><?php echo $q['tgl']; ?></td>
-							<td><?php echo $q['ket']; ?></td>
-							<td><a href="04_delete_prestasi.php?id=<?php echo $q['id']; ?>" class="btn btn-danger btn-sm"
-									onclick="return confirm('Anda yakin ingin menghapus data ini?')"><i
-										class="fa fa-trash"></i></a></td>
-						</tr>
+if (mysqli_num_rows($qt) > 0) {
+?>
+<h2 style="text-align:center; color:black;">Paskibraka</h2>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <th>No.</th>
+        <th>Tingkat</th>
+        <th>Bukti</th>
+        <th>Tanggal Sertifikat</th>
+        <th>Aksi</th>
+    </thead>
 
-						<?php
-						$no++;
-					}
-					?>
-				</table>
-				<hr>
-				<hr>
-				<h2 style="text-align:center; color:black;">Prestasi Tahfizh</h2>
-				<table class="table table-bordered table-hover table-striped">
-					<thead>
-						<th>No.</th>
-						<th>Tingkat</th>
-						<th>Bukti</th>
-						<th>Tanggal Sertifikat</th>
-						<th>Juz</th>
-						<th>Aksi</th>
-					</thead>
-					<?php
-					$no = 1;
-					$qt = mysqli_query($kon, "select * from tb_prestasi where username='$_SESSION[username]' order by tingkat asc");
-					while ($q = mysqli_fetch_array($qt)) {
-						?>
-						<tr>
-							<td><?php echo $no; ?></td>
-							<td><?php echo $q['nama']; ?></td>
-							<td><?php
-							if ($q['tingkat'] == 1) {
-								$nprestasi = 'Internasional';
-							} elseif ($q['tingkat'] == 2) {
-								$nprestasi = 'Nasional';
-							} elseif ($q['tingkat'] == 3) {
-								$nprestasi = 'Regional';
-							} elseif ($q['tingkat'] == 4) {
-								$nprestasi = 'Provinsi';
-							} elseif ($q['tingkat'] == 5) {
-								$nprestasi = 'Kabupaten/Kota';
-							} elseif ($q['tingkat'] == 6) {
-								$nprestasi = 'Sekolah';
-							}
-							echo $nprestasi; ?></td>
-							<td><a href="prestasi/<?php echo $q['bukti_n']; ?>" target="_blank">
-									<img src="prestasi/<?php echo $q['bukti_n']; ?>" width="200"></a></td>
-							<td><?php echo $q['tgl']; ?></td>
-							<td><?php echo $q['ket']; ?></td>
-							<td><a href="04_delete_prestasi.php?id=<?php echo $q['id']; ?>" class="btn btn-danger btn-sm"
-									onclick="return confirm('Anda yakin ingin menghapus data ini?')"><i
-										class="fa fa-trash"></i></a></td>
-						</tr>
-
-						<?php
-						$no++;
-					}
-					?>
-				</table>
-				<hr>
-				<hr>
-				<h2 style="text-align:center; color:black;">Paskibraka</h2>
-				<table class="table table-bordered table-hover table-striped">
-					<thead>
-						<th>No.</th>
-						<th>Nama Prestasi</th>
-						<th>Tingkat</th>
-						<th>Bukti</th>
-						<th>Tanggal Sertifikat</th>
-						<th>Aksi</th>
-					</thead>
-					<?php
-					$no = 1;
-					$qt = mysqli_query($kon, "select * from tb_prestasi where username='$_SESSION[username]' order by tingkat asc");
-					while ($q = mysqli_fetch_array($qt)) {
-						?>
-						<tr>
-							<td><?php echo $no; ?></td>
-							<td><?php echo $q['nama']; ?></td>
-							<td><?php
-							if ($q['tingkat'] == 1) {
-								$nprestasi = 'Internasional';
-							} elseif ($q['tingkat'] == 2) {
-								$nprestasi = 'Nasional';
-							} elseif ($q['tingkat'] == 3) {
-								$nprestasi = 'Regional';
-							} elseif ($q['tingkat'] == 4) {
-								$nprestasi = 'Provinsi';
-							} elseif ($q['tingkat'] == 5) {
-								$nprestasi = 'Kabupaten/Kota';
-							} elseif ($q['tingkat'] == 6) {
-								$nprestasi = 'Sekolah';
-							}
-							echo $nprestasi; ?></td>
-							<td><a href="prestasi/<?php echo $q['bukti_n']; ?>" target="_blank">
-									<img src="prestasi/<?php echo $q['bukti_n']; ?>" width="200"></a></td>
-							<td><?php echo $q['tgl']; ?></td>
-							<td><?php echo $q['ket']; ?></td>
-							<td><a href="04_delete_prestasi.php?id=<?php echo $q['id']; ?>" class="btn btn-danger btn-sm"
-									onclick="return confirm('Anda yakin ingin menghapus data ini?')"><i
-										class="fa fa-trash"></i></a></td>
-						</tr>
-
-						<?php
-						$no++;
-					}
-					?>
-				</table>
+    <?php
+    $no = 1;
+    while ($q = mysqli_fetch_array($qt)) {
+    ?>
+    <tr>
+        <td><?= $no++; ?></td>
+        <td><?= $tingkatText[$q['tingkat']]; ?></td>
+        <td><a href="prestasi/<?= $q['bukti_n']; ?>" target="_blank"><img src="prestasi/<?= $q['bukti_n']; ?>" width="200"></a></td>
+        <td><?= $q['tgl']; ?></td>
+        <td>
+            <a href="04_delete_prestasi.php?id=<?= $q['id']; ?>" class="btn btn-danger btn-sm"
+                onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                <i class="fa fa-trash"></i>
+            </a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>
+<?php } ?>
 			</div>
 		</div>
 	</div>
