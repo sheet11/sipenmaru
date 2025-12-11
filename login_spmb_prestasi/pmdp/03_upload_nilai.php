@@ -55,6 +55,7 @@
 			<tr>
 				<td><b>Catatan</b><br>
 				1. Klik Tombol Semester Untuk Melengkapi Data</br>
+				2. Catatan Untuk Form Upload Nilai Dokumen Harus Terbaca Jelas/ Di Scanner Dengan Perangkat Hp Atau Scanner Di Foto Copy Yang Jernih</br>
 				</td>
 			</tr>
 			</table>
