@@ -29,115 +29,115 @@ error_reporting(0);
 				<tr>
 					<td width="25%">&nbsp;</td>
 					<td>Pengetahuan</td>
-					<td>Keterampilan</td>
+					<!-- <td>Keterampilan</td> -->
 				</tr>
 
 				<tr>
 					<td>Pendidikan Agama</td>
 					<td><input type="number" name="peng_agama" required="yes" class="form-control nilai60" min="0" max="100" required></td>
-					<td><input type="number" name="prak_agama" required="yes" class="form-control nilai60" min="0" max="100" required></td>
+					<!-- <td><input type="number" name="prak_agama" required="yes" class="form-control nilai60" min="0" max="100" required></td> -->
 				</tr>
 
 				<tr>
 					<td>Kewarganegaraan</td>
 					<td><input type="number" name="peng_kewarganegaraan" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_kewarganegaraan" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_kewarganegaraan" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Bahasa Indonesia</td>
 					<td><input type="number" name="peng_bahasa_indonesia" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_bahasa_indonesia" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_bahasa_indonesia" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Bahasa Inggris</td>
 					<td><input type="number" name="peng_bahasa_inggris" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_bahasa_inggris" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_bahasa_inggris" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Matematika Wajib</td>
 					<td><input type="number" name="peng_matematika" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_matematika" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_matematika" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Fisika</td>
 					<td><input type="number" name="peng_fisika" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_fisika" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_fisika" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Biologi</td>
 					<td><input type="number" name="peng_biologi" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_biologi" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_biologi" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Kimia</td>
 					<td><input type="number" name="peng_kimia" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_kimia" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_kimia" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Sejarah</td>
 					<td><input type="number" name="peng_sejarah" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_sejarah" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_sejarah" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Geografi</td>
 					<td><input type="number" name="peng_geografi" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_geografi" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_geografi" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Ekonomi</td>
 					<td><input type="number" name="peng_ekonomi" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_ekonomi" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_ekonomi" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Sosiologi</td>
 					<td><input type="number" name="peng_sosiologi" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_sosiologi" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_sosiologi" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Seni Budaya</td>
 					<td><input type="number" name="peng_senibudaya" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_senibudaya" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_senibudaya" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Pendidikan Jasmani</td>
 					<td><input type="number" name="peng_pend_jasmani" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_pend_jasmani" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_pend_jasmani" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Teknologi Informasi</td>
 					<td><input type="number" name="peng_teknologi_informasi" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_teknologi_informasi" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_teknologi_informasi" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Keterampilan / Bhs Asing</td>
 					<td><input type="number" name="peng_keterampilan" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_keterampilan" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_keterampilan" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>Muatan Lokal</td>
 					<td><input type="number" name="peng_mulok" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
-					<td><input type="number" name="prak_mulok" required="yes" class="form-control nilai60" min="0" max="100" required> </td>
+					<!-- <td><input type="number" name="prak_mulok" required="yes" class="form-control nilai60" min="0" max="100" required> </td> -->
 				</tr>
 
 				<tr>
 					<td>&nbsp;</td>
 					<td><input type="submit" name="submit" value="Simpan" class="btn btn-danger">
-						<input type="reset" name="submit" value="Hapus" class="btn btn-success">
+						<!-- <input type="reset" name="submit" value="Hapus" class="btn btn-success"> -->
 					</td>
 				</tr>
 
