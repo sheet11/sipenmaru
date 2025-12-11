@@ -227,7 +227,7 @@ function ubahLevelBahasa() {
         levelContainer.innerHTML = `
             <label>Nilai TOEFL <span class="text-danger">*</span></label>
             <input type="number" class="form-control" name="ket" placeholder="Masukkan skor TOEFL" required min="0">
-            <small class="text-muted">Contoh: 450</small>
+            <small class="text-danger">Contoh: 450 untuk KI minimal skor 400</small>
         `;
     }
     else if (bahasa === "Jerman") {
