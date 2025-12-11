@@ -51,14 +51,6 @@
 				?>
 
 			</table>
-
-				<b>Catatan</b><br>
-				1. Bila Nilai Skala 1-4 Di Konversikan Dulu Ke Skala 1-100 <br />
-				2. Untuk Nilai Semester Kurikulum 13(K13) harus dikonversi ke nilai tunggal<br>
-				4. Jika tidak memiliki nilai pada matakuliah yang tertera silahkan di isi dengan angka " 0 "<br>
-				5. Setelah selesai input, Mohon untuk di cek kembali agar tidak ada duplikasi semester<br>
-				6. Raport Asli dibawa pada saat mengumpulkan berkas	 
-	</div>
 </div>
 
 

@@ -4,7 +4,56 @@ include "../assets/js/date.php";
 error_reporting(0);
 ?>
 
-<div id="page-wrapper">
+<!-- PERINGATAN -->
+<div id="modalPeringatan" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+">
+    <div style="
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 600px;
+        width: 90%;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    ">
+        <h3 style="color: #d9534f; margin-top: 0;">
+            <i class="fa fa-exclamation-triangle"></i> Perhatian Penting!
+        </h3>
+        <hr>
+        <div style="text-align: left; line-height: 1.8; font-size: 14px;">
+            <p><strong>Sebelum mengisi form nilai, harap perhatikan hal-hal berikut:</strong></p>
+            <ol>
+                <li>Bila Nilai Skala 1-4 Di Konversikan Ke Skala 1-100</li>
+                <li>Untuk Nilai Semester <strong>Kurikulum 13(K13)</strong> harus dikonversi ke nilai tunggal</li>
+                <li>Jika tidak memiliki nilai pada matakuliah yang tertera silahkan di isi dengan angka <strong>" 0 "</strong></li>
+                <li>Cek kembali agar tidak ada duplikasi semester</li>
+				<li><strong>Raport Asli dibawa</strong> pada saat mengumpulkan berkas</li>
+                <li><strong>Periksa kembali</strong> semua nilai sebelum menekan tombol Simpan</li>
+            </ol>
+            <!-- <p style="color: #d9534f; font-weight: bold; margin-top: 15px;">
+                <i class="fa fa-info-circle"></i> 
+                Nilai 0 (nol) hanya boleh digunakan untuk mata pelajaran yang TIDAK ADA di rapor Anda!
+            </p> -->
+        </div>
+        <hr>
+        <div style="text-align: center;">
+            <button onclick="tutupModal()" class="btn btn-success btn-lg">
+                <i class="fa fa-check"></i> Saya Mengerti, Lanjutkan
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="page-wrapper" style="opacity: 0.3; pointer-events: none;">
 	<div class="container-fluid" style="margin:30px;">
 		<form method="post" action="" enctype="multipart/form-data">
 			<table width="100%" class="table table-bordered">
@@ -162,44 +211,62 @@ if (isset($_POST['submit'])) {
 ?>
 
 <script>
-	const nilaiInputs = document.querySelectorAll('input.nilai60');
+// Fungsi untuk menutup modal
+function tutupModal() {
+    const modal = document.getElementById('modalPeringatan');
+    const pageWrapper = document.getElementById('page-wrapper');
+    
+    // Sembunyikan modal dengan animasi
+    modal.style.transition = 'opacity 0.3s ease';
+    modal.style.opacity = '0';
+    
+    setTimeout(function() {
+        modal.style.display = 'none';
+        
+        // Aktifkan form
+        pageWrapper.style.opacity = '1';
+        pageWrapper.style.pointerEvents = 'auto';
+    }, 300);
+}
 
-	nilaiInputs.forEach(function(input) {
-		input.addEventListener('input', function() {
-			const str = this.value; // nilai dalam bentuk string
-			const val = parseFloat(str); // nilai dalam bentuk angka
+// Validasi nilai input
+const nilaiInputs = document.querySelectorAll('input.nilai60');
 
-			// Jika kosong, jangan beri error dulu
-			if (str === '') {
-				this.setCustomValidity('');
-				return;
-			}
+nilaiInputs.forEach(function(input) {
+    input.addEventListener('input', function() {
+        const str = this.value; // nilai dalam bentuk string
+        const val = parseFloat(str); // nilai dalam bentuk angka
 
-			// 00, 000, dst: tidak boleh
-			if (/^0{2,}$/.test(str)) {
-				this.setCustomValidity('Format tidak valid. Gunakan 0 (satu digit) jika mata pelajaran tidak ada di rapor.');
-				this.reportValidity();
-				return;
-			}
+        // Jika kosong, jangan beri error dulu
+        if (str === '') {
+            this.setCustomValidity('');
+            return;
+        }
 
-			// 0 (satu digit) diperbolehkan
-			if (str === '0') {
-				this.setCustomValidity('');
-				return;
-			}
+        // 00, 000, dst: tidak boleh
+        if (/^0{2,}$/.test(str)) {
+            this.setCustomValidity('Format tidak valid. Gunakan 0 (satu digit) jika mata pelajaran tidak ada di rapor.');
+            this.reportValidity();
+            return;
+        }
 
-			// 1–59 tidak boleh
-			if (!isNaN(val) && val < 60) {
-				this.setCustomValidity('Nilai tidak boleh di bawah 60, kecuali 0 jika mata pelajaran tidak ada di rapor.');
-				this.reportValidity();
-			} else {
-				// 60 ke atas aman
-				this.setCustomValidity('');
-			}
-		});
-	});
+        // 0 (satu digit) diperbolehkan
+        if (str === '0') {
+            this.setCustomValidity('');
+            return;
+        }
+
+        // 1–59 tidak boleh
+        if (!isNaN(val) && val < 60) {
+            this.setCustomValidity('Nilai tidak boleh di bawah 60, kecuali 0 jika mata pelajaran tidak ada di rapor.');
+            this.reportValidity();
+        } else {
+            // 60 ke atas aman
+            this.setCustomValidity('');
+        }
+    });
+});
 </script>
-
 
 </body>
 
