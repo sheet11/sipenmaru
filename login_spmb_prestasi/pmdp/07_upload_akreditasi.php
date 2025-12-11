@@ -18,7 +18,6 @@
       <div class="modal-body">
         <p><b>Catatan:</b></p>
         <ol>
-            <li>Klik Tombol Semester Untuk Melengkapi Data</li>
             <li>Catatan Untuk Akre Sekolah Bisa Diminta Ke Sekolah Masing-Masing</li>
         </ol>
 

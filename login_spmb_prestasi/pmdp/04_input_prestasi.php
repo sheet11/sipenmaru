@@ -4,6 +4,45 @@ error_reporting(0);
 include "../config/koneksi.php";
 ?>
 
+<!-- TAMBAHKAN SWEETALERT2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- NOTIFIKASI SETELAH SIMPAN -->
+<?php if (isset($_GET['status'])): ?>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    <?php if ($_GET['status'] == 'success'): ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil Disimpan!',
+            html: '<p>Data prestasi berhasil ditambahkan ke sistem</p><p class="text-success"><i class="fa fa-check-circle"></i> Anda akan diarahkan ke halaman daftar prestasi</p>',
+            confirmButtonColor: '#28a745',
+            confirmButtonText: '<i class="fa fa-check"></i> Lihat Daftar Prestasi',
+            allowOutsideClick: false,
+            timer: 3000,
+            timerProgressBar: true,
+            customClass: {
+                confirmButton: 'btn btn-success btn-lg'
+            },
+            buttonsStyling: false
+        }).then(() => {
+            window.location.href = '04_upload_prestasi.php';
+        });
+    <?php elseif ($_GET['status'] == 'upload_error'): ?>
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal Upload File!',
+            text: 'Data gagal disimpan karena error saat upload file. Silakan coba lagi.',
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            window.history.replaceState({}, document.title, '04_input_prestasi.php');
+        });
+    <?php endif; ?>
+});
+</script>
+<?php endif; ?>
+
 <div id="page-wrapper">
     <div id="page-inner">
         <h2>Selamat Datang</h2>
@@ -68,7 +107,7 @@ include "../config/koneksi.php";
                 <!-- BUKTI -->
                 <div class="form-group col-md-6">
                     <label>Bukti Prestasi <span class="text-danger">*</span></label>
-                    <input type="file" name="bukti" class="form-control" accept="image/*" required>
+                    <input type="file" name="bukti" id="fileBukti" class="form-control" accept="image/*" required>
                     <small class="text-danger">Ukuran Gambar tidak boleh melebihi 500kb dan Format (.jpg/.png/.jpeg)</small>
                 </div>
 
@@ -259,8 +298,99 @@ function ubahLevelBahasa() {
     }
 }
 
+// VALIDASI FILE SEBELUM SUBMIT
+document.getElementById('formPrestasi').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const fileInput = document.getElementById('fileBukti');
+    const file = fileInput.files[0];
+    
+    if (!file) {
+        Swal.fire({
+            icon: 'error',
+            title: 'File Tidak Dipilih!',
+            text: 'Silakan pilih file bukti prestasi',
+            confirmButtonColor: '#d33'
+        });
+        return false;
+    }
+    
+    // Validasi ukuran file (500KB = 512000 bytes)
+    const maxSize = 512000;
+    if (file.size > maxSize) {
+        const fileSizeKB = (file.size / 1024).toFixed(2);
+        Swal.fire({
+            icon: 'error',
+            title: 'Ukuran File Terlalu Besar!',
+            html: `
+                <p>Ukuran file yang Anda pilih: <strong>${fileSizeKB} KB</strong></p>
+                <p>Maksimal ukuran file: <strong>500 KB</strong></p>
+                <p class="text-danger">Silakan kompres gambar terlebih dahulu atau pilih gambar lain.</p>
+            `,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'OK, Saya Mengerti'
+        });
+        fileInput.value = ''; // Reset file input
+        return false;
+    }
+    
+    // Validasi format file
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+    if (!allowedTypes.includes(file.type)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Format File Tidak Valid!',
+            html: `
+                <p>Format file yang Anda pilih: <strong>${file.type}</strong></p>
+                <p>Format yang diperbolehkan:</p>
+                <ul style="text-align:left;">
+                    <li>.jpg / .jpeg</li>
+                    <li>.png</li>
+                </ul>
+            `,
+            confirmButtonColor: '#d33'
+        });
+        fileInput.value = ''; // Reset file input
+        return false;
+    }
+    
+    // Jika semua validasi OK, tampilkan loading dan submit
+    Swal.fire({
+        title: 'Menyimpan Data...',
+        html: 'Mohon tunggu, sedang memproses data Anda',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
+    
+    // Submit form
+    this.submit();
+});
+
 // Jalankan saat load
 window.addEventListener('load', function() {
     ubahForm();
 });
 </script>
+
+<style>
+/* Styling untuk SweetAlert2 */
+.swal2-popup {
+    font-family: 'Arial', sans-serif;
+    border-radius: 15px !important;
+}
+
+.swal2-title {
+    font-size: 22px !important;
+    font-weight: bold !important;
+}
+
+.swal2-html-container {
+    font-size: 14px !important;
+}
+</style>
+
+</body>
+</html>

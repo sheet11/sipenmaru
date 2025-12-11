@@ -166,12 +166,13 @@ if (!file_exists('prestasi')) {
 if (!move_uploaded_file($bukti_t, "prestasi/$namaFix")) {
     // Rollback database jika upload gagal
     mysqli_query($kon, "DELETE FROM tb_prestasi WHERE username='$user' AND bukti_n='$namaFix'");
-    echo "<script>alert('❌ Gagal mengupload file');window.history.back();</script>";
+    
+    // Redirect dengan status error
+    header("Location: 04_input_prestasi.php?status=upload_error");
     exit;
 }
 
-echo "<script>
-    alert('✅ Prestasi berhasil disimpan');
-    window.location='04_upload_prestasi.php';
-</script>";
+// Redirect dengan status sukses
+header("Location: 04_input_prestasi.php?status=success");
+exit;
 ?>
