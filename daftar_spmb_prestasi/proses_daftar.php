@@ -78,6 +78,7 @@ try {
     $nama_sekolah = mysqli_real_escape_string($kon, $_POST['nama_sekolah']);
     $akreditasi = mysqli_real_escape_string($kon, $_POST['akreditasi']);
     $asal_sekolah = mysqli_real_escape_string($kon, $_POST['asal_sekolah']);
+    $tahun_lulus = mysqli_real_escape_string($kon, $_POST['tahun_lulus']);
     $smk_jenis = isset($_POST['smk_jenis']) ? mysqli_real_escape_string($kon, $_POST['smk_jenis']) : '';
     $jurusan_sekolah = isset($_POST['jurusan_sekolah']) ? mysqli_real_escape_string($kon, $_POST['jurusan_sekolah']) : $jurusan_sekolah;
     $program_studi = isset($_POST['program_studi']) ? mysqli_real_escape_string($kon, $_POST['program_studi']) : '';
@@ -93,9 +94,9 @@ try {
     $nik = mysqli_real_escape_string($kon, $_POST['nik']);
     $nama_orang_tua = mysqli_real_escape_string($kon, $_POST['nama_orang_tua']);
     $pekerjaan_orang_tua = mysqli_real_escape_string($kon, $_POST['pekerjaan_orang_tua']);
-    $nama_orang_tua = mysqli_real_escape_string($kon, $_POST['nama_orang_tua']);
+    $nama_orang_tua_ibu = mysqli_real_escape_string($kon, $_POST['nama_orang_tua_ibu']);
     $pekerjaan_orang_tua_ibu = mysqli_real_escape_string($kon, $_POST['pekerjaan_orang_tua_ibu']);
-    $penghasilan_orang_tua_ibu = mysqli_real_escape_string($kon, $_POST['penghasilan_orang_tua_ibu']);
+    $penghasilan_orang_tua = mysqli_real_escape_string($kon, $_POST['penghasilan_orang_tua']);
     $kartu_bpjs = mysqli_real_escape_string($kon, $_POST['kartu_bpjs']);
 
     $asal = mysqli_real_escape_string($kon, $_POST['asal']);
@@ -166,10 +167,10 @@ try {
             golongan_darah = '$golongan_darah',
             nik = '$nik',
             nama_orang_tua = '$nama_orang_tua',
+            nama_orang_tua_ibu = '$nama_orang_tua_ibu',
             pekerjaan_orang_tua = '$pekerjaan_orang_tua',
             penghasilan_orang_tua = '$penghasilan_orang_tua',
             pekerjaan_orang_tua_ibu = '$pekerjaan_orang_tua_ibu',
-            penghasilan_orang_tua_ibu = '$penghasilan_orang_tua_ibu',
             kartu_bpjs = '$kartu_bpjs',
             nama_sekolah = '$nama_sekolah',
             akreditasi = '$akreditasi',

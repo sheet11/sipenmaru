@@ -65,6 +65,19 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
               </select>
             </div>
             <div class="form-group">
+              <label>Tahun Lulus</label>
+              <select name="tahun_lulus" id="" class="form-control required"> 
+                <option value="">-- Pilih Tahun Lulus --</option>
+                <?php
+                $currentYear = date("Y");
+                for ($year = $currentYear; $year >= $currentYear - 1; $year--) {
+                  echo "<option value='$year'>$year</option>";
+                }
+                ?>
+
+              </select>
+            </div>
+            <div class="form-group">
               <label>Keterangan Sekolah</label>
               <select name="keterangan_sekolah" class="form-control required">
                 <option value="">-- Pilih Keterangan Sekolah --</option>
@@ -189,14 +202,13 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
             </div>
             <div class="form-group">
               <label>Nomor Induk Keluarga(NIK) <span class="text-danger" style="font-size: large;">*</span></label>
-              <input type="number" name="nik" placeholder="Input NIK" class="form-control">
+              <input type="text" name="nik" placeholder="Input NIK" pattern="\d{16}" maxlength="16" minlength="16" class="form-control">
             </div>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Nama Ayah</label>
                   <input type="text" name="nama_orang_tua" placeholder="Input Nama Orang Tua" class="form-control">
-                  <span class="help-block">Contoh: Budi/helen</span>
                 </div>
               </div>
               <div class="col-md-6">
@@ -222,7 +234,6 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
                 <div class="form-group">
                   <label>Nama Ibu</label>
                   <input type="text" name="nama_orang_tua_ibu" placeholder="Input Nama Orang Tua" class="form-control">
-                  <span class="help-block">Contoh: Budi/helen</span>
                 </div>
               </div>
               <div class="col-md-6">
@@ -350,8 +361,12 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
               <input type="text" name="email" placeholder="Input Email Aktif anda" class="form-control">
             </div>
             <div class="form-group">
-              <label>Nomor HP</label>
+              <label>Nomor HP Aktif(WA)</label>
               <input type="text" name="no_hp" placeholder="Input Nomor HP anda" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Nomor HP Orang Tua/Wali yang bisa dihubungi</label>
+              <input type="text" name="no_hp_ortu" placeholder="Input Nomor HP Orang Tua anda" class="form-control">
             </div>
             <div class="f1-buttons">
               <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
@@ -571,21 +586,10 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
       ],
 
       // Fallback untuk SMK jenis lain
-      smk_lainnya: [{
-          value: 'D3 Teknologi Laboratorium Medis',
-          text: 'D3 Teknologi Laboratorium Medis (TLM)'
-        },
+      smk_lainnya: [
         {
           value: 'Sarjana Terapan promosi Kesehatan',
           text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
-        },
-        {
-          value: 'D3 Sanitasi',
-          text: 'D3 Sanitasi'
-        },
-        {
-          value: 'D3 Gizi',
-          text: 'D3 Gizi'
         }
       ]
     };
