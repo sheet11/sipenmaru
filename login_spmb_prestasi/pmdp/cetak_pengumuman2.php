@@ -252,4 +252,4 @@ div {text-align: center;}
         </td>
     </tr>
 </table> 
-<? } ?>
+<?php } ?>
