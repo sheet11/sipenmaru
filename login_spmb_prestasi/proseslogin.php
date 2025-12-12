@@ -19,6 +19,8 @@ if($row && $row['level'] == "PMDP")
 		$_SESSION['nama_lengkap'] = $row['nama_lengkap'];
 		$_SESSION['level'] = $row['level'];
 		$_SESSION['kelulusan'] = '';
+		$_SESSION['prodi'] = $row['pilihan_prodi'];
+		
 
 
 			header("location:pmdp/index.php");

@@ -85,9 +85,15 @@
                             <li>
                                 <a  href="07_upload_akreditasi.php"><i class="fa fa-trophy fa-2x"></i> Sertifikat Akreditas Sekolah </a>
                             </li>
-                             <li>
+                             <!-- <li>
                                 <a  href="07_upload_toefl_itp.php"><i class="fa fa-trophy fa-2x"></i> Sertifikat Toefl Itp/Prediction </a>
-                            </li>
+                            </li> -->
+                            <?php 
+                                if ($_SESSION['prodi'] == "Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)" || $_SESSION['prodi'] == "Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)" || $_SESSION['prodi'] == "Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)") { ?>
+                                    <li>
+                                        <a href="07_upload_toefl_itp.php"><i class="fa fa-trophy fa-2x"></i> Sertifikat Toefl/ITP Prediction</a>
+                                    </li>
+                                <?php } ?>
                             <li>
                                 <a  href="04_upload_prestasi.php"><i class="fa fa-trophy fa-2x"></i> Upload Prestasi </a>
                             </li>

@@ -395,8 +395,8 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
     const programStudiList = {
       // SMA: umumnya bisa memilih program non-kejuruan tertentu (biarkan semua tersedia)
       sma: [{
-          value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)',
-          text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)'
+          value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)',
+          text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)'
         },
         {
           value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners',
