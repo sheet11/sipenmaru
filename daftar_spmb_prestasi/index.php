@@ -180,13 +180,13 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Berat Badan <span class="text-danger" style="font-size: large;">*</span></label>
-                  <input type="number" name="berat_badan" placeholder="Input Berat Badan" class="form-control">
+                  <input type="number" name="berat_badan" placeholder="Input Berat Badan" class="form-control" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Tinggi Badan <span class="text-danger" style="font-size: large;">*</span></label>
-                  <input type="number" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control">
+                  <input type="number" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control" required>
                 </div>
               </div>
             </div>
@@ -270,7 +270,7 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
             </div>
             <div class="form-group">
               <label>Nomor Kartu BPJS</label>
-              <input type="text" name="kartu_bpjs" placeholder="Input Nomor Kartu BPJS" class="form-control">
+              <input type="number" name="kartu_bpjs" placeholder="Input Nomor Kartu BPJS" class="form-control">
             </div>
             <div class="form-group">
               <label>Pas Foto<span class="text-danger" style="font-size: large;">*</span></label>

@@ -35,7 +35,7 @@ $(document).ready(function() {
     	var progress_line = $(this).parents('.f1').find('.f1-progress-line');
     	
     	// validasi form - hanya field yang visible dan tidak disabled
-    	parent_fieldset.find('input[type="text"], input[type="date"], input[type="file"], input[type="password"], input[type="number"], textarea, select').each(function() {
+    	parent_fieldset.find('input[type="text"], input[type="date"], input[type="file"], input[type="password"], textarea, select').each(function() {
     		// Skip field yang hidden atau disabled atau dalam parent hidden
     		if( $(this).closest('.group').is(':hidden') || $(this).is(':disabled') || $(this).closest('.form-group').is(':hidden') ) {
     			$(this).removeClass('input-error');
@@ -91,7 +91,7 @@ $(document).ready(function() {
     	var $form = $(this);
     	
     	// validasi form - hanya field yang visible dan tidak disabled
-    	$form.find('input[type="text"], input[type="date"], input[type="password"], input[type="file"],input[type="number"] , textarea, select').each(function() {
+    	$form.find('input[type="text"], input[type="date"], input[type="password"], input[type="file"], textarea, select').each(function() {
     		// Skip field yang hidden atau disabled
     		if( $(this).closest('.group').is(':hidden') || $(this).is(':disabled') || $(this).closest('.form-group').is(':hidden') ) {
     			$(this).removeClass('input-error');
