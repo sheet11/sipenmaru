@@ -156,18 +156,18 @@
 					<tr>
 						<td>Foto</td>
 						<td>: </td>
-						<<td rowspan=14 width=164 valign="top"><a href="../assets/img/<?php echo $a['nama_foto'];?>" class="fancy">
+						<td rowspan=14 width=164 valign="top"><a href="../assets/img/<?php echo $a['nama_foto'];?>" class="fancy">
               <img src="../assets/img/<?php echo $a['nama_foto'];?>" alt="" width=150 height=175 border="0" /></td>
 					</tr>
 
-					<tr>
-						<td colspan="2">&nbsp;</td>
-						<td >
-							<a href="01_formulir.php" class="btn btn-primary">Kembali</a>
-							<!-- <input type="reset" name="submit" value="Hapus" class="btn btn-success"> -->
-						</td>
-					</tr>
 				</table>
+				<tr>
+					<td colspan="2">&nbsp;</td>
+					<td >
+						<a href="01_formulir.php" class="btn btn-primary">Kembali</a>
+						<!-- <input type="reset" name="submit" value="Hapus" class="btn btn-success"> -->
+					</td>
+				</tr>
 		</div>
 	</div>
 </div>

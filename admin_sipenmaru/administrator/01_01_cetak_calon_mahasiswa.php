@@ -30,7 +30,7 @@ ob_start();
   <table width="60%" border="0"  align="center">
   <tr>
     <td width="101" height="102"><img src="../assets/img/baktihusada.jpg" width="100" height="100"/></td>
-    <td width="601" align="center"><strong><h2>Seleksi Penerimaan Mahasiswa Baru (SIPENMARU)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu T.A 2019/2020</h2></strong></td>
+    <td width="601" align="center"><strong><h2>Seleksi Penerimaan Mahasiswa Baru (SPMB)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu T.A 2019/2020</h2></strong></td>
     <td width="109" align="center"><img src="../assets/img/logorevisi.png" width="100" height="100"/></td>
   </tr>
   <tr><td colspan="3"><hr></hr></td>
