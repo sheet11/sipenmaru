@@ -275,7 +275,7 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
             <div class="form-group">
               <label>Pas Foto<span class="text-danger" style="font-size: large;">*</span></label>
               <input type="file" name="pas_foto" accept="image/*" class="form-control" required>
-              <span class="help-block">Format: JPG, PNG. Ukuran maksimal: 1 MB</span>
+              <span class="help-block">Format: JPG, PNG. Ukuran maksimal: 1 MB. Pas Foto Formal Dengan Ukuran 3x4</span>
             </div>
             <div class="f1-buttons">
               <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
