@@ -170,7 +170,7 @@ if (mysqli_num_rows($qt)>0) {
   <thead>
   <tr>
     <th>No</th>
-    <th>Tingkat</th>
+    <!-- <th>Tingkat</th> -->
     <th>Tanggal</th>
     <th>Bukti</th>
     <th>Juz</th>
@@ -180,7 +180,7 @@ if (mysqli_num_rows($qt)>0) {
 <?php $no=1; while($r=mysqli_fetch_assoc($qt)){ ?>
 <tr>
   <td><?= $no++; ?></td>
-  <td><?= $tingkatText[$r['tingkat']] ?? '-'; ?></td>
+  <!-- <td><?= $tingkatText[$r['tingkat']] ?? '-'; ?></td> -->
   <td><?= $r['tgl']; ?></td>
   <td><a href="prestasi/<?= $r['bukti_n']; ?>" target="_blank"><img src="prestasi/<?= $r['bukti_n']; ?>" width="130"></a></td>
   <td><?= htmlspecialchars($r['juz']); ?></td>

@@ -178,8 +178,8 @@ function ubahForm() {
             <input type="text" class="form-control" name="ket" id="ketJuz" placeholder="Contoh: 1 Juz / 30 Juz" required>
         `;
         namaContainer.style.display = "none";
-        tingkatContainer.style.display = "block";
-        tingkatSelect.required = true;
+        tingkatContainer.style.display = "none";
+        tingkatSelect.required = false;
     }
     else if (prestasi === "Prestasi Akademik (Juara Kelas)") {
         // Juara Kelas
