@@ -69,10 +69,8 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
               <select name="tahun_lulus" id="" class="form-control required"> 
                 <option value="">-- Pilih Tahun Lulus --</option>
                 <?php
-                $currentYear = date("Y");
-                for ($year = $currentYear; $year >= $currentYear - 1; $year--) {
-                  echo "<option value='$year'>$year</option>";
-                }
+                $year = date("Y");                
+                  echo "<option value='$year'>$year</option>";                
                 ?>
 
               </select>
@@ -180,13 +178,13 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Berat Badan <span class="text-danger" style="font-size: large;">*</span></label>
-                  <input type="number" name="berat_badan" placeholder="Input Berat Badan" class="form-control" required>
+                  <input type="number" name="berat_badan" placeholder="Input Berat Badan" class="form-control">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Tinggi Badan <span class="text-danger" style="font-size: large;">*</span></label>
-                  <input type="number" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control" required>
+                  <input type="number" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control">
                 </div>
               </div>
             </div>
@@ -202,7 +200,7 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
             </div>
             <div class="form-group">
               <label>Nomor Induk Keluarga(NIK) <span class="text-danger" style="font-size: large;">*</span></label>
-              <input type="text" name="nik" placeholder="Input NIK" pattern="\d{16}" maxlength="16" minlength="16" class="form-control">
+              <input type="text" name="nik" placeholder="NIK Harus 16 Digit angka" maxlength="16" class="form-control" required>
             </div>
             <div class="row">
               <div class="col-md-6">
@@ -570,18 +568,6 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
       smk_semua: [{
           value: 'Sarjana Terapan promosi Kesehatan',
           text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
-        },
-        {
-          value: 'D3 Gizi',
-          text: 'D3 Gizi'
-        },
-        {
-          value: 'D3 Sanitasi',
-          text: 'D3 Sanitasi'
-        },
-        {
-          value: 'D3 Teknologi Laboratorium Medis',
-          text: 'D3 Teknologi Laboratorium Medis (TLM)'
         }
       ],
 

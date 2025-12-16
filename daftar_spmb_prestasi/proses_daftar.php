@@ -27,7 +27,6 @@ try {
         'nama_orang_tua_ibu',
         'pekerjaan_orang_tua_ibu',
         'penghasilan_orang_tua',
-        'kartu_bpjs',
         'asal',
         'alamat_rumah',
         'daerah_asal',
@@ -39,6 +38,10 @@ try {
         if (empty($_POST[$field])) {
             throw new Exception("Field $field tidak boleh kosong");
         }
+    }
+
+    if (strlen($_POST['nik']) !== 16 || !ctype_digit($_POST['nik'])) {
+        throw new Exception('NIK harus 16 digit angka');
     }
 
     // Proses upload file pas_foto
@@ -126,6 +129,9 @@ try {
         $alamat_detail = $alamat_rumah;
     }
 
+    if (strlen($nik) !== 16 || !ctype_digit($nik)) {
+        throw new Exception('NIK harus 16 digit angka');
+    }
 
     // Ambil username dari POST (jika ada). Jika tidak ada, akan dibuat record baru (insert)
     $is_new = $_POST['username'];
@@ -160,6 +166,8 @@ try {
             jenis_kelamin = '$jenis_kelamin',
             agama = '$agama',
             no_hp = '$no_hp',
+            keterangan_sekolah = '$keterangan_sekolah',
+            tahun_lulus = '$tahun_lulus',
             tempat_lahir = '$tempat_lahir',
             tanggal_lahir = '$tanggal_lahir',
             berat_badan = $berat_badan,
