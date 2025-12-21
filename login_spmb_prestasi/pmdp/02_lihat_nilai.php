@@ -51,14 +51,6 @@
 				?>
 
 			</table>
-
-				<b>Catatan</b><br>
-				1. Jika nilai di raport cuma ada 1 nilai, maka nilai pengajaran dan praktek disamain, misalnya matematika pengajaran 80, jadi praktekny jg di isi 80 <br />
-				2. Untuk Nilai Semester Kurikulum 13(K13) harus dikonversi ke nilai tunggal<br>
-				4. Jika tidak memiliki nilai pada matakuliah yang tertera silahkan di isi dengan angka " 0 "<br>
-				5. Setelah selesai input, Mohon untuk di cek kembali agar tidak ada duplikasi semester<br>
-				6. Raport Asli dibawah pada saat mengumpulkan berkas	 
-	</div>
 </div>
 
 

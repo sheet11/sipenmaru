@@ -33,7 +33,7 @@
 
 						echo "
 						
-						<a href='01_edit_formulir.php?id_formulir=$a[id_formulir]' class='btn btn-danger'><b>Edit</b></a>
+						
 						<a href='01_lihat_formulir.php?id_formulir=$a[id_formulir]' class='btn btn-primary'><b>Lihat</b></a>
 						
 						
@@ -49,6 +49,7 @@
 				$i++;
 			}
 			?>
+			<!-- <a href='01_edit_formulir.php?id_formulir=$a[id_formulir]' class='btn btn-danger'><b>Edit</b></a> -->
 			<tr>
 				<td><b>Catatan</b><br>
 				1. Klik Tombol Edit Untuk Melengkapi Data</br>

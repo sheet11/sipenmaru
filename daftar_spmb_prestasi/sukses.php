@@ -19,7 +19,7 @@ $mhs = mysqli_fetch_array($query);
             <table width='100%' style="border: none;" align='center'>
             <tr>
                 <td width='150' height='80'></td>
-                <td width='600' align='center'><h2>Seleksi Penerimaan Mahasiswa Baru (SPMB)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun 2025/2026</h2></td>
+                <td width='600' align='center'><h2>Seleksi Penerimaan Mahasiswa Baru (SPMB)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun 2026/2027</h2></td>
                 <td width='100' align='center'></td>
             </tr>
             <tr>
@@ -41,7 +41,7 @@ $mhs = mysqli_fetch_array($query);
                 </tr>
 
                 <tr>
-                    <td> Jalur </td><td width='5' align='top'>:</td><td align='top'> <?=$mhs['level']?></td>
+                    <td> Jalur </td><td width='5' align='top'>:</td><td align='top'> Prestasi</td>
                 </tr>
 
                 <tr>
@@ -66,8 +66,15 @@ $mhs = mysqli_fetch_array($query);
 							<ul><li><b>Via Livin/ Mobile Banking Mandiri</b><br>1.Pilih menu Pembayaran/bayar <br>2.Menu Pendidikan <br>3.Cari poltekkes kemenkes BKL <br>4.Masukkan Identitas diri/ID kemudian bayar<br>Simpan bukti pembayaran dan jangan lupa catat PIN nya</li>
 								<br/><li><b>Via Teller Mandiri</b> <br/>Mengisi Slip Setor (Sertakan Nama Pendaftar, id Peserta, Pilihan Prodi dan Jumlah Pembayaran) -> <b>yang perlu diperhatikan No ID Peserta dijadikan sebagai No Rekening</b>
                                 <b>Pastikan Anda Mendapatkan PIN Pada Saat Pembayaran Ke Bank Mandiri</b></li> <br>
+<<<<<<< HEAD
 								<li><b>Setelah Anda Membayar Silahkan Login https://spmb-polkeslu.cloud/login_spmb_prestasi <br>dengan memasukkan Identitas Diri/ID dan Password yang didapat saat Pembayaran</li>					
 							</ul>
+=======
+								<li><b>Setelah Anda Membayar Silahkan Login <a href="https://spmb-polkeslu.cloud/login_spmb_prestasi">https://spmb-polkeslu.cloud/login_spmb_prestasi</a> <br>dengan memasukkan Identitas Diri/ID dan Password yang didapat saat Pembayaran <br><br></li>
+                                <br>		
+                                <li><i style="font: red; color: red;">Pendaftaran dan Pembayaran Terakhir pada tanggal 20 Februari 2025.</i></li>
+                            </ul>
+>>>>>>> f76b31386cf671c903c58a8025169602b87c4491
                         </td>
 					</tr>
 			</table>

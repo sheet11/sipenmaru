@@ -21,7 +21,7 @@ include("fucnt_tgl.php");
                     <tr class="info">
                         <th width="5%">No.</th>
                         <th>ID </th>
-                        <th>Nama Lengkap </th>
+                        <th>Nama Lengkap :</th>
                          <th>Prodi</th>
                          <th>Status</th>
                          <!--
