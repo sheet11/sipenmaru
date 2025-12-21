@@ -59,7 +59,7 @@ foreach ($data as $username => $prestasi_list) {
     echo "<td>{$prestasi['tingkat_kejuaraan']}</td>";
     echo "<td>{$prestasi['tanggal_prestasi']}</td>";
     echo "<td>{$prestasi['tanggal_entri_prestasi']}</td>";
-    echo "<td><a href='https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/{$prestasi['bukti']}' target='_blank'></a><img src='https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/{$prestasi['bukti']}' alt='Bukti' width='100'></td>";
+    echo "<td><a href='https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/{$prestasi['bukti']}' target='_blank'></a><img src='https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/{$prestasi['bukti']}' alt='Bukti' width='100'></td>";
     echo "</tr>";
     }
 }

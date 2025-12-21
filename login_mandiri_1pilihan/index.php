@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/stylelogin.css">
     <script src="js/prefixfree.min.js"></script>
+
   </head>
 
   <body>
@@ -31,5 +32,6 @@
 </div>
       
   </body>
+
 </html>
 <!-- Sedang Perbaikan, Mohon di tunggu -->

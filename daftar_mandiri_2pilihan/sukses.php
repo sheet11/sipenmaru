@@ -98,7 +98,7 @@ $mhs = mysqli_fetch_array($query);
                 <li><b>Via Teller Mandiri</b> <br />Mengisi Slip Setor (Sertakan Nama Pendaftar, id Peserta, Pilihan Prodi dan Jumlah Pembayaran) -> <b>yang perlu diperhatikan No ID Peserta dijadikan sebagai No Rekening</b>
                     <b>Pastikan Anda Mendapatkan PIN Pada Saat Pembayaran Ke Bank Mandiri</b>
                 </li> <br>
-                <li><b>Setelah Anda Membayar Silahkan Login di link<br> <a href="https://sipenmaru-polkeslu.cloud/login_mandiri_2pilihan/">https://sipenmaru-polkeslu.cloud/login_mandiri_2pilihan/</a> <br>dengan memasukkan Identitas Diri/ID dan PIN yang didapat saat Pembayaran</li>
+                <li><b>Setelah Anda Membayar Silahkan Login di link<br> <a href="https://spmb-polkeslu.cloud/login_mandiri_2pilihan/">https://spmb-polkeslu.cloud/login_mandiri_2pilihan/</a> <br>dengan memasukkan Identitas Diri/ID dan PIN yang didapat saat Pembayaran</li>
             </ul>
         </td>
     </tr>

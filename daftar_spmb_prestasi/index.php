@@ -1,5 +1,6 @@
     <script src="assets/js/jquery-1.11.0.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">

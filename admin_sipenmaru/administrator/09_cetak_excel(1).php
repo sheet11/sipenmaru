@@ -52,7 +52,7 @@
                              WHEN tingkat = '6' THEN 'Sekolah'
                              WHEN tingkat = 'Tingkat Pr' THEN 'Tidak Bertingkat' 
                          END, '), ', 
-                         'Prestasi: ', tgl, ', Entri: ', entri, ',Bukti: <a href='https://sipenmaru-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/',bukti_n,''>Bukti</a>')
+                         'Prestasi: ', tgl, ', Entri: ', entri, ',Bukti: <a href='https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/',bukti_n,''>Bukti</a>')
                  SEPARATOR ' | ') AS daftar_prestasi
 FROM tb_prestasi
 WHERE username BETWEEN '25100001' AND '25103500'
