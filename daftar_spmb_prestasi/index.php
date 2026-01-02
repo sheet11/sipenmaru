@@ -405,11 +405,11 @@ if(($date >= $buka) && ($date <= $tutup)) { ?>
       </p>
 
       <div class="alert alert-info" style="margin:15px 0;">
-        <strong>Catatan:</strong> Jadwal pendaftaran akan ditampilkan setelah periode dibuka.
+        <strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan diumumkan melalui kanal institusi.
       </div>
 
       <p style="margin:0;">
-        Silakan cek kembali secara berkala. Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
+        Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
       </p>
 
       <hr style="margin:18px 0;">
@@ -435,11 +435,11 @@ if(($date >= $buka) && ($date <= $tutup)) { ?>
       </p>
 
       <div class="alert alert-info" style="margin:15px 0;">
-        <strong>Catatan:</strong> Jadwal pendaftaran akan ditampilkan setelah periode dibuka.
+        <strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan diumumkan melalui kanal institusi.
       </div>
 
       <p style="margin:0;">
-        Silakan cek kembali secara berkala. Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
+        Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
       </p>
 
       <hr style="margin:18px 0;">
