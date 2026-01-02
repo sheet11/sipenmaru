@@ -149,14 +149,14 @@ try {
         $user_data = mysqli_fetch_array($cek_result);
 
         // Jika data sudah lengkap, alihkan ke pilih username
-        if (!empty($user_data['nama_foto']) && !empty($user_data['nama_lengkap']) && !empty($user_data['tempat_lahir']) && !empty($user_data['nik'])) {
-            session_start();
-            $_SESSION['form_data'] = $_POST;
-            $_SESSION['foto_path'] = $foto_path;
-            $_SESSION['username_taken'] = $username;
-            header('Location: pilih_username.php?taken=' . $username);
-            exit();
-        }
+        // if (!empty($user_data['nama_foto']) && !empty($user_data['nama_lengkap']) && !empty($user_data['tempat_lahir']) && !empty($user_data['nik'])) {
+        //     session_start();
+        //     $_SESSION['form_data'] = $_POST;
+        //     $_SESSION['foto_path'] = $foto_path;
+        //     $_SESSION['username_taken'] = $username;
+        //     header('Location: pilih_username.php?taken=' . $username);
+        //     exit();
+        // }
 
         // Update data
         $query = "UPDATE tb_formulir3 SET
