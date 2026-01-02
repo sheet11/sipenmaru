@@ -22,7 +22,7 @@ if($row && $row['level'] == "Prestasi")
 		$_SESSION['prodi'] = $row['pilihan_prodi'];
 
 		if($row['status'] == 'Terdaftar'){
-		mysqli_query($kon,"update tb_formulir3 set tanggal_login = now() and status = 'Sudah Membayar' where username = '$username'");
+		mysqli_query($kon,"update tb_formulir3 set tanggal_login = now(), status = 'Sudah Membayar' where username = '$username'");
 		}else {
 		mysqli_query($kon,"update tb_formulir3 set tanggal_login = now() where username = '$username'");
 		}
