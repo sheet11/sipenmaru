@@ -16,7 +16,22 @@
 include "koneksi.php";
 $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_formulir FROM tb_formulir3 WHERE status='Belum Lengkap' ORDER BY id_formulir ASC LIMIT 1"));
 ?>
+<?php
+$date = date("Y-m-d"); 
+$date=date('Y-m-d', strtotime($date));
+//echo $paymentDate; // echos today! 
+$query = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='SPMB Prestasi'");
 
+		if ($query) {
+			$a = mysqli_fetch_array($query);
+		}
+$id_periode = $a['id_periode'];
+$nama_periode = $a['nama_periode'];
+$buka = $a['tanggal_buka'];
+$tutup = $a['tanggal_tutup'];
+$status = $a['status_periode'];
+if ($status=="Buka") {
+if(($date >= $buka) && ($date <= $tutup)) { ?>
 <body style="text-align: center;">
   <div class="container">
     <div class="row">
@@ -375,6 +390,41 @@ $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_fo
       </div>
     </div>
   </div>
+  <?php }else{ ?>
+	<div class="wrap">
+  <div class="card">
+    <div class="card-head">Pendaftaran Belum Dibuka</div>
+    <div class="card-body">
+      <p><b>Periode pendaftaran belum dibuka.</b></p>
+      <p>Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan diumumkan melalui kanal institusi.</p>
+
+      <div class="note">
+        Jika Anda membutuhkan bantuan, silakan hubungi Helpdesk.
+      </div>
+
+      <div class="actions">
+        <a class="btn secondary" href="/">Kembali</a>
+        <!-- <a class="btn primary" href="/pengumuman">Lihat Pengumuman</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .wrap{max-width:760px;margin:40px auto;padding:0 16px;font-family:Arial,Helvetica,sans-serif;}
+  .card{border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08);background:#fff;}
+  .card-head{padding:16px 18px;background:#f3f4f6;font-weight:700;font-size:18px;}
+  .card-body{padding:18px;color:#111827;line-height:1.5;}
+  .note{margin:14px 0;padding:12px 14px;border-radius:12px;background:#eff6ff;border:1px solid #bfdbfe;}
+  .actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none;border:1px solid transparent}
+  .btn.primary{background:#111827;color:#fff;}
+  .btn.secondary{background:#fff;border-color:#d1d5db;color:#111827;}
+</style>
+
+<?php }}else{ ?>
+	<h1>Pendaftaran di tutup</h1>
+<?php } ?>
   <!-- Javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
