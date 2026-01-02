@@ -256,12 +256,12 @@ nilaiInputs.forEach(function(input) {
             return;
         }
 
-        // 1–59 tidak boleh
-        if (!isNaN(val) && val < 60) {
-            this.setCustomValidity('Nilai tidak boleh di bawah 60, kecuali 0 jika mata pelajaran tidak ada di rapor.');
+        // 1–74 tidak boleh
+        if (!isNaN(val) && val < 75) {
+            this.setCustomValidity('Nilai tidak boleh di bawah 75, kecuali 0 jika mata pelajaran tidak ada di rapor.');
             this.reportValidity();
         } else {
-            // 60 ke atas aman
+            // 75 ke atas aman
             this.setCustomValidity('');
         }
     });
