@@ -30,7 +30,7 @@
 	}
 	else
 	{
-		if($tipe_file == "image/jpeg" || $tipe_file == "image/png" || $tipe_file == "image/jpg")
+		if($tipe_file == "image/jpeg" || $tipe_file == "image/png" || $tipe_file == "image/jpg" || $tipe_file == "application/pdf")
 		{
 			if($ukuran_file <= 500000)
 			{
