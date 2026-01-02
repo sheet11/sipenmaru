@@ -20,10 +20,14 @@ if($row && $row['level'] == "Prestasi")
 		$_SESSION['level'] = $row['level'];
 		$_SESSION['kelulusan'] = '';
 		$_SESSION['prodi'] = $row['pilihan_prodi'];
-		
 
+		if($row['status'] == 'Terdaftar'){
+		mysqli_query($kon,"update tb_formulir3 set tanggal_login = now() and status = 'Sudah Membayar' where username = '$username'");
+		}else {
+		mysqli_query($kon,"update tb_formulir3 set tanggal_login = now() where username = '$username'");
+		}
 
-			header("location:pmdp/index.php");
+		header("location:pmdp/index.php");
 		
 	}
 	
