@@ -391,39 +391,65 @@ if(($date >= $buka) && ($date <= $tutup)) { ?>
     </div>
   </div>
   <?php }else{ ?>
-	<div class="wrap">
-  <div class="card">
-    <div class="card-head">Pendaftaran Belum Dibuka</div>
-    <div class="card-body">
-      <p><b>Periode pendaftaran belum dibuka.</b></p>
-      <p>Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan diumumkan melalui kanal institusi.</p>
+	<div class="container" style="max-width:720px; margin-top:40px;">
+  <div class="panel panel-default" style="border-radius:10px; overflow:hidden;">
+    <div class="panel-heading" style="padding:18px 20px;">
+      <h3 class="panel-title" style="font-size:18px; font-weight:600;">
+        Pendaftaran Belum Dibuka
+      </h3>
+    </div>
 
-      <div class="note">
-        Jika Anda membutuhkan bantuan, silakan hubungi Helpdesk.
+    <div class="panel-body" style="padding:20px;">
+      <p style="margin:0 0 10px;">
+        Saat ini <strong>periode pendaftaran belum dibuka</strong>.
+      </p>
+
+      <div class="alert alert-info" style="margin:15px 0;">
+        <strong>Catatan:</strong> Jadwal pendaftaran akan ditampilkan setelah periode dibuka.
       </div>
 
-      <div class="actions">
-        <a class="btn secondary" href="/">Kembali</a>
-        <!-- <a class="btn primary" href="/pengumuman">Lihat Pengumuman</a> -->
-      </div>
+      <p style="margin:0;">
+        Silakan cek kembali secara berkala. Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
+      </p>
+
+      <hr style="margin:18px 0;">
+
+      <a href="/" class="btn btn-default">Kembali ke Beranda</a>
+      <!-- <a href="/pengumuman" class="btn btn-primary">Lihat Pengumuman</a> -->
     </div>
   </div>
 </div>
 
-<style>
-  .wrap{max-width:760px;margin:40px auto;padding:0 16px;font-family:Arial,Helvetica,sans-serif;}
-  .card{border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08);background:#fff;}
-  .card-head{padding:16px 18px;background:#f3f4f6;font-weight:700;font-size:18px;}
-  .card-body{padding:18px;color:#111827;line-height:1.5;}
-  .note{margin:14px 0;padding:12px 14px;border-radius:12px;background:#eff6ff;border:1px solid #bfdbfe;}
-  .actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
-  .btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none;border:1px solid transparent}
-  .btn.primary{background:#111827;color:#fff;}
-  .btn.secondary{background:#fff;border-color:#d1d5db;color:#111827;}
-</style>
-
 <?php }}else{ ?>
-	<h1>Pendaftaran di tutup</h1>
+	<div class="container" style="max-width:720px; margin-top:40px;">
+  <div class="panel panel-default" style="border-radius:10px; overflow:hidden;">
+    <div class="panel-heading" style="padding:18px 20px;">
+      <h3 class="panel-title" style="font-size:18px; font-weight:600;">
+        Pendaftaran Belum Dibuka
+      </h3>
+    </div>
+
+    <div class="panel-body" style="padding:20px;">
+      <p style="margin:0 0 10px;">
+        Saat ini <strong>periode pendaftaran sudah ditutup</strong>.
+      </p>
+
+      <div class="alert alert-info" style="margin:15px 0;">
+        <strong>Catatan:</strong> Jadwal pendaftaran akan ditampilkan setelah periode dibuka.
+      </div>
+
+      <p style="margin:0;">
+        Silakan cek kembali secara berkala. Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
+      </p>
+
+      <hr style="margin:18px 0;">
+
+      <a href="/" class="btn btn-default">Kembali ke Beranda</a>
+      <!-- <a href="/pengumuman" class="btn btn-primary">Lihat Pengumuman</a> -->
+    </div>
+  </div>
+</div>
+
 <?php } ?>
   <!-- Javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
