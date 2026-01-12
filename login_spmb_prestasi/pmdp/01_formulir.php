@@ -34,6 +34,7 @@
 						echo "
 						
 						
+						<a href='01_edit_formulir.php?id_formulir=$a[id_formulir]' class='btn btn-primary'><b>Edit</b></a>
 						<a href='01_lihat_formulir.php?id_formulir=$a[id_formulir]' class='btn btn-primary'><b>Lihat</b></a>
 						
 						

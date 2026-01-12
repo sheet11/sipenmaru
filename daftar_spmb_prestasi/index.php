@@ -14,7 +14,87 @@
 
 <?php
 include "koneksi.php";
-$ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_formulir FROM tb_formulir3 WHERE status='Belum Lengkap' ORDER BY id_formulir ASC LIMIT 1"));
+
+// Pastikan tabel reservasi ada (idempotent)
+$reservation_table_check = mysqli_query($kon, "SHOW TABLES LIKE 'tb_form_reservation'");
+if (!$reservation_table_check || mysqli_num_rows($reservation_table_check) == 0) {
+    $create_table_sql = "
+        CREATE TABLE IF NOT EXISTS tb_form_reservation (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            id_formulir INT NOT NULL UNIQUE,
+            reservation_token VARCHAR(64) NOT NULL UNIQUE,
+            reserved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            expires_at TIMESTAMP NOT NULL,
+            client_ip VARCHAR(45),
+            user_agent VARCHAR(255),
+            attempts INT DEFAULT 0,
+            status ENUM('active', 'used', 'expired') DEFAULT 'active',
+            INDEX idx_token (reservation_token),
+            INDEX idx_expires (expires_at),
+            INDEX idx_id_formulir (id_formulir),
+            FOREIGN KEY (id_formulir) REFERENCES tb_formulir3(id_formulir) ON DELETE CASCADE
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+    ";
+    @mysqli_query($kon, $create_table_sql);
+}
+
+// Cleanup expired reservations (lightweight)
+@mysqli_query($kon, "DELETE FROM tb_form_reservation WHERE expires_at < NOW()");
+
+// Buat token
+try {
+    $token = bin2hex(random_bytes(32));
+} catch (Exception $e) {
+    $token = bin2hex(openssl_random_pseudo_bytes(32));
+}
+$expires_at = date('Y-m-d H:i:s', time() + 15 * 60); // 15 menit
+$client_ip = $_SERVER['REMOTE_ADDR'] ?? null;
+$user_agent = $_SERVER['HTTP_USER_AGENT'] ?? null;
+$ambil = null;
+
+try {
+    mysqli_begin_transaction($kon, MYSQLI_TRANS_START_READ_WRITE);
+
+    // Ambil formulir yg belum dipesan (tidak punya active reservation)
+    $sel_sql = "SELECT f.id_formulir, f.username, f.password
+                FROM tb_formulir3 f
+                LEFT JOIN tb_form_reservation r ON f.id_formulir = r.id_formulir AND r.status = 'active' AND r.expires_at > NOW()
+                WHERE f.status = 'Belum Lengkap' AND r.id IS NULL
+                ORDER BY f.id_formulir ASC
+                LIMIT 1 FOR UPDATE";
+
+    $sel = mysqli_query($kon, $sel_sql);
+    if ($sel && mysqli_num_rows($sel) > 0) {
+        $row = mysqli_fetch_assoc($sel);
+        $id_formulir = $row['id_formulir'];
+
+        // Buat reservasi baru
+        $stmt = mysqli_prepare($kon, "INSERT INTO tb_form_reservation (id_formulir, reservation_token, expires_at, client_ip, user_agent) VALUES (?, ?, ?, ?, ?)");
+        if (!$stmt) {
+            mysqli_rollback($kon);
+            throw new Exception('Gagal menyiapkan reservasi: ' . mysqli_error($kon));
+        }
+
+        mysqli_stmt_bind_param($stmt, "issss", $id_formulir, $token, $expires_at, $client_ip, $user_agent);
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_commit($kon);
+            $row['reservation_token'] = $token;
+            $row['reservation_expires'] = $expires_at;
+            $ambil = $row;
+        } else {
+            mysqli_rollback($kon);
+        }
+    } else {
+        mysqli_rollback($kon);
+    }
+} catch (Exception $e) {
+    mysqli_rollback($kon);
+}
+
+// Fallback (jika tidak berhasil membuat reservasi) — ambil formulir tanpa reservasi
+if (!$ambil) {
+    $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT id_formulir, username, password FROM tb_formulir3 WHERE status='Belum Lengkap' ORDER BY id_formulir ASC LIMIT 1"));
+}
 ?>
 <?php
 $date = date("Y-m-d"); 
