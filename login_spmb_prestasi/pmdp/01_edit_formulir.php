@@ -41,7 +41,7 @@ $a = mysqli_fetch_array($query);
 					<tr>
 						<td>Pilihan Prodi</td>
 						<td>:</td>
-						<td><select name='pilihan_prodi' class='form-control'>";
+						<td><select name='pilihan_prodi' class='form-control' disabled>";
 								<option value="<?php echo $a['pilihan_prodi']; ?>"><?php echo $a['pilihan_prodi']; ?></option>
 								<?php include "../config/koneksi.php";
 								$query = mysqli_query($kon, "SELECT * FROM tb_prodi ");
@@ -104,6 +104,18 @@ $a = mysqli_fetch_array($query);
 					</tr>
 
 					<tr>
+						<td>No HP Orang Tua/Wali yang dapat dihubungi</td>
+						<td>:</td>
+						<td><input type="text" name="no_hp_ortu" value="<?php echo $a['no_hp_ortu']; ?>" placeholder="Input Nomor HP Orang Tua anda" class="form-control" required></td>
+					</tr>
+
+					<tr>
+						<td>Email</td>
+						<td>:</td>
+						<td><input type="email" name="email" value="<?php echo $a['email']; ?>" class="form-control" required></td>
+					</tr>
+
+					<tr>
 						<td>Tempat Lahir</td>
 						<td>:</td>
 						<td><input type="text" name="tempat_lahir" value="<?php echo $a['tempat_lahir']; ?>" class="form-control" required></td>
@@ -153,13 +165,18 @@ $a = mysqli_fetch_array($query);
 					</tr>
 
 					<tr>
-						<td>Nama Orang Tua</td>
+						<td>Nama Ayah</td>
 						<td>:</td>
 						<td><input type="text" name="nama_orang_tua" value="<?php echo $a['nama_orang_tua']; ?>" class="form-control" required></td>
 					</tr>
+					<tr>
+						<td>Nama Ibu</td>
+						<td>:</td>
+						<td><input type="text" name="nama_orang_tua_ibu" value="<?php echo $a['nama_orang_tua_ibu']; ?>" class="form-control" required></td>
+					</tr>
 
 					<tr>
-						<td>Pekerjaan Orang Tua</td>
+						<td>Pekerjaan Ayah</td>
 						<td>:</td>
 						<td><select name='pekerjaan_orang_tua' class='form-control'>";
 								<option value="<?php echo $a['pekerjaan_orang_tua']; ?>"><?php echo $a['pekerjaan_orang_tua']; ?></option>
@@ -173,9 +190,23 @@ $a = mysqli_fetch_array($query);
 								?>
 							</select></td>
 					</tr>
+					<tr>
+						<td>Pekerjaan Ibu</td>
+						<td>:</td>
+						<td><select name='pekerjaan_orang_tua_ibu' class='form-control'>";
+								<option value="<?php echo $a['pekerjaan_orang_tua_ibu']; ?>"><?php echo $a['pekerjaan_orang_tua_ibu']; ?></option>
+								<?php include "../config/koneksi.php";
+								$query = mysqli_query($kon, "SELECT * FROM tb_pekerjaan_orangtua");
+								while ($row = mysqli_fetch_array($query)) {
+									echo "
+				        	<option value='$row[nama_pekerjaan_orangtua]'>$row[nama_pekerjaan_orangtua]</option>
+				        	";
+								}
+								?>
+							</select></td>
 
 					<tr>
-						<td>Penghasilan Orang Tua</td>
+						<td>Penghasilan Orang Tua (Penghasilan Ayah + Ibu)</td>
 						<td>:</td>
 						<td><select name='penghasilan_orang_tua' class='form-control'>";
 								<option value="<?php echo $a['penghasilan_orang_tua']; ?>"><?php echo $a['penghasilan_orang_tua']; ?></option>
@@ -222,7 +253,7 @@ $a = mysqli_fetch_array($query);
 					</tr>
 
 					<tr>
-						<td>Asal Sekolah</td>
+						<td>Jenis Sekolah</td>
 						<td>:</td>
 						<td><select name='asal_sekolah' class='form-control' required>";
 								<option value="<?php echo $a['asal_sekolah']; ?>"><?php echo $a['asal_sekolah']; ?></option>
@@ -237,7 +268,34 @@ $a = mysqli_fetch_array($query);
 								echo"
 							</select></td>
 					</tr>
-
+					<tr>
+						<td>Jurusan Sekolah</td>
+						<td>:</td>
+						<td><select name="jurusan_sekolah" class="form-control required">
+								<option value="">-- Pilih Jurusan Sekolah --</option>
+								<option value="IPA">IPA</option>
+								<option value="IPS">IPS</option>
+								<option value="Kurikulum Merdeka">Kurikulum Merdeka</option>
+								<option value="Lainnya">Lainnya</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>Jenis SMK</td>
+						<td>:</td>
+						<td><select id="smk_jenis" name="smk_jenis" class="form-control">
+								<option value="">-- Pilih Jenis SMK --</option>
+								<option value="smk_kesehatan">SMK Kesehatan</option>
+								<option value="smk_farmasi">SMK Farmasi</option>
+								<option value="smk_kimia">SMK Kimia</option>
+								<option value="smk_analis">Sekolah Menengah Analis Kesehatan</option>
+								<option value="smk_teknik">SMK Teknik / Teknik Industri</option>
+								<option value="smk_tataboga">SMK Tataboga</option>
+								<option value="smk_pariwisata">SMK Pariwisata</option>
+								<option value="smk_pertanian">SMK Pertanian</option>
+								<option value="smk_semua">SMK (Semua Jurusan / Lainnya)</option>
+							</select>
+						</td>
+					</tr>
 					<tr>
 						<td>Keterangan Sekolah</td>
 						<td>:</td>
