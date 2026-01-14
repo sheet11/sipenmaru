@@ -22,9 +22,9 @@ if($row && $row['level'] == "Prestasi")
 		$_SESSION['prodi'] = $row['pilihan_prodi'];
 
 		if($row['status'] == 'Terdaftar'){
-		mysqli_query($kon,"update tb_formulir3 set tanggal_login = now(), status = 'Sudah Membayar' where username = '$username'");
+		mysqli_query($kon,"update tb_formulir3 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR), status = 'Sudah Membayar' where username = '$username'");
 		}else {
-		mysqli_query($kon,"update tb_formulir3 set tanggal_login = now() where username = '$username'");
+		mysqli_query($kon,"update tb_formulir3 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR) where username = '$username'");
 		}
 
 		header("location:pmdp/index.php");

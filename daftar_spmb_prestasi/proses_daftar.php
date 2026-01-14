@@ -213,7 +213,7 @@ try {
                     daerah_asal = ?,
                     nama_foto = ?,
                     email = ?,
-                    tanggal_daftar = NOW(),
+                    tanggal_daftar = DATE_ADD(NOW(), INTERVAL 7 HOUR),
                     status = 'Terdaftar'
                     WHERE id_formulir = ? AND status = 'Belum Lengkap'";
 
@@ -321,7 +321,7 @@ try {
                     daerah_asal = ?,
                     nama_foto = ?,
                     email = ?,
-                    tanggal_daftar = NOW(),
+                    tanggal_daftar = DATE_ADD(NOW(), INTERVAL 7 HOUR),
                     status = 'Terdaftar'
                     WHERE username = ? AND status = 'Belum Lengkap'";
 

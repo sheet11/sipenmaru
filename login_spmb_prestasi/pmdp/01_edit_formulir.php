@@ -280,7 +280,7 @@ $a = mysqli_fetch_array($query);
 							</select></td>
 					</tr>
 					<tr>
-						<td>Jenis SMK</td>
+						<td>Jenis SMK (Jika SMK)</td>
 						<td>:</td>
 						<td><select id="smk_jenis" name="smk_jenis" class="form-control">
 								<option value="">-- Pilih Jenis SMK --</option>
