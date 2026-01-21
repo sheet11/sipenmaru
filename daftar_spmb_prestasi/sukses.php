@@ -74,7 +74,7 @@ $mhs = mysqli_fetch_array($query);
 
 
                                 <br>		
-                                <i style="font: red; color: red;">Pendaftaran dan Pembayaran Terakhir pada tanggal 20 Februari 2025.</i></li>
+                                <i style="font: red; color: red;">Pendaftaran dan Pembayaran Terakhir pada tanggal 20 Februari 2026.</i></li>
                             </ul>
                         </td>
 					</tr>

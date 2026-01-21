@@ -250,26 +250,19 @@ $a = mysqli_fetch_array($query);
 														echo "selected";
 													} ?>>Terakreditasi C</option>
 							</select></td>
-					</tr>
 
+
+										<tr>
+								  <td>Jenis Sekolah</td>
+								  <td>:</td>
+								  <td><select id="asal_sekolah" name="asal_sekolah" class="form-control required">
+									<option value="">-- Pilih Asal Sekolah --</option>
+									<option value="sma" <?php if ($a['asal_sekolah'] == 'sma') { echo "selected"; } ?>>SMA/MA</option>
+									<option value="smk" <?php if ($a['asal_sekolah'] == 'smk') { echo "selected"; } ?>>SMK</option>
+								  </select></td>
+										</tr>
 					<tr>
-						<td>Jenis Sekolah</td>
-						<td>:</td>
-						<td><select name='asal_sekolah' class='form-control' required>";
-								<option value="<?php echo $a['asal_sekolah']; ?>"><?php echo $a['asal_sekolah']; ?></option>
-								<?php include "../config/koneksi.php";
-								$query = mysqli_query($kon, "SELECT * FROM tb_asal_sekolah");
-								while ($row = mysqli_fetch_array($query)) {
-									echo "
-				        	<option value='$row[asal_sekolah]'>$row[asal_sekolah]</option>
-				        	";
-								}
-								?>
-								echo"
-							</select></td>
-					</tr>
-					<tr>
-						<td>Jurusan Sekolah</td>
+						<td>Jurusan Sekolah (Jika SMA)</td>
 						<td>:</td>
 						<td><select name="jurusan_sekolah" class="form-control required">
 								<option value="">-- Pilih Jurusan Sekolah --</option>
