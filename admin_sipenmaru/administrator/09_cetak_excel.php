@@ -46,20 +46,26 @@
                 <th>Jenis Kelamin</th>
                 <th>Agama</th>
                 <th>Asal Sekolah</th>
+                <th>Jenis SMK</th>
+                <th>Jurusan sekolah</th>
+                <th>Tahun Lulus</th>
                 <th>Akreditasi</th>
                 <th>Nama Sekolah</th>
                 <th>Keterangan Sekolah</th>
                 <th>Daerah asal</th>
                 <th>Berat Badan</th>
                 <th>Tinggi Badan</th>
-                <th>Nama Orangtua</th>
-                <th>Pekerjaan Orangtua</th>
+                <th>Nama Ayah</th>
+                <th>Nama Ibu</th>
+                <th>Pekerjaan Ayah</th>
+                <th>Pekerjaan Ibu</th>
                 <th>Penghasilan Orangtua</th>
                 <th>Kartu BPJS</th>
                 <th>NIK</th>
                 <th>Golongan Darah</th>
                 <th>Rekomendasi Sekolah</th>
                 <th>Sertifikat Akreditasi</th>
+                <th>Sertifikat Toefl</th>
                 <th>Semester 1</th>
                 <th>Semester 2</th>
                 <th>Semester 3</th>
@@ -103,7 +109,7 @@
                <td><?=$a['nama_orang_tua_ibu']?></td>
                <td><?=$a['pekerjaan_orang_tua']?></td>
                <td><?=$a['penghasilan_orang_tua']?></td>
-               <td><?=$a['penghasilan_orang_tua_ibu']?></td>
+               <td><?=$a['pekerjaan_orang_tua_ibu']?></td>
                <td>'<?=$a['kartu_bpjs']?></td>
                <td>'<?=$a['nik']?></td>
                <td><?=$a['golongan_darah']?></td>
