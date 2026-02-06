@@ -81,13 +81,18 @@
                <td><?=$a['password']?></td>
                <td><?=$a['nama_lengkap']?></td>
                <td><?=$a['pilihan_prodi']?></td>
+               <td><?=$a['email']?></td>
                <td>'<?=$a['no_hp']?></td>
+               <td>'<?=$a['no_hp_ortu']?></td>
                <td><?=$a['alamat']?></td>
                <td><?=$a['tempat_lahir']?></td>
                <td><?=$a['tanggal_lahir']?></td>
                <td><?=$a['jenis_kelamin']?></td>
                <td><?=$a['agama']?></td>
                <td><?=$a['asal_sekolah']?></td>
+               <td><?=$a['smk_jenis']?></td>
+               <td><?=$a['jurusan_sekolah']?></td>
+               <td><?=$a['tahun_lulus']?></td>
                <td><?=$a['akreditasi']?></td>
                <td><?=$a['nama_sekolah']?></td>
                <td><?=$a['keterangan_sekolah']?></td>
@@ -95,13 +100,16 @@
                <td><?=$a['berat_badan']?></td>
                <td><?=$a['tinggi_badan']?></td>
                <td><?=$a['nama_orang_tua']?></td>
+               <td><?=$a['nama_orang_tua_ibu']?></td>
                <td><?=$a['pekerjaan_orang_tua']?></td>
                <td><?=$a['penghasilan_orang_tua']?></td>
+               <td><?=$a['penghasilan_orang_tua_ibu']?></td>
                <td>'<?=$a['kartu_bpjs']?></td>
                <td>'<?=$a['nik']?></td>
                <td><?=$a['golongan_darah']?></td>
                <td><?=$a['rekomendasi_sekolah']?></td>
                <td><?=$a['sertifikat_akreditasi']?></td>
+               <td><?=$a['sertifikat_toefl']?></td>
                <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo1']?>">Semester 1</a></td>
                <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo2']?>">Semester 2</a></td>
                <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo3']?>">Semester 3</a></td>
