@@ -34,12 +34,14 @@
  
 	<table border="1">
 		<tr>
-                <th>No.</th>
-                <th>ID </th>
+                <th>No</th>
+                <th>ID</th>
                 <th>Password</th>
                 <th>Nama</th>
                 <th>Prodi</th>
+                <th>Email</th>
                 <th>No HP</th>
+                <th>No HP Ortu/wali</th>
                 <th>alamat</th>
                 <th>Tempat Lahir</th>
                 <th>Tanggal Lahir</th>
