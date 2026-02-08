@@ -68,6 +68,7 @@
                 <th>Rekomendasi Sekolah</th>
                 <th>Sertifikat Akreditasi</th>
                 <th>Sertifikat Toefl</th>
+                <th>List Sertifikat</th>
                 <th>Cetak Nilai</th>
                 <th>Semester 1</th>
                 <th>Semester 2</th>
