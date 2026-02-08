@@ -54,7 +54,7 @@ if (mysqli_num_rows($qt) > 0) {
     <td><?= htmlspecialchars($r['nama']); ?></td>
     <td><?= $tingkatText[$r['tingkat']] ?? '-'; ?></td>
     <td><?= $r['tgl']; ?></td>
-    <td><img src="prestasi/<?= $r['bukti_n']; ?>" width="130"></td>
+    <td><img src="https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/<?= $r['bukti_n']; ?>" width="130"></td>
     <td><?= htmlspecialchars($r['ket']); ?></td>
     <td>
       <button onclick="konfirmasiHapus(<?= $r['id']; ?>, '<?= htmlspecialchars($r['nama'], ENT_QUOTES); ?>')" 
@@ -98,7 +98,7 @@ if (mysqli_num_rows($qt) > 0) {
     <td><?= htmlspecialchars($r['nama'] ?? 'Juara Kelas / Sekolah'); ?></td>
     <td><?= $tingkatText[$r['tingkat']] ?? 'Sekolah'; ?></td>
     <td><?= $r['tgl']; ?></td>
-    <td><img src="prestasi/<?= $r['bukti_n']; ?>" width="130"></td>
+    <td><img src="https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/<?= $r['bukti_n']; ?>" width="130"></td>
     <td><?= htmlspecialchars($r['ket']); ?></td>
     <td>
       <button onclick="konfirmasiHapus(<?= $r['id']; ?>, 'Juara Kelas')" 
@@ -137,7 +137,7 @@ if (mysqli_num_rows($qt)>0) {
   <td><?= $no++; ?></td>
   <!-- <td><?= $tingkatText[$r['tingkat']] ?? '-'; ?></td> -->
   <td><?= $r['tgl']; ?></td>
-  <td><a href="prestasi/<?= $r['bukti_n']; ?>" target="_blank"><img src="prestasi/<?= $r['bukti_n']; ?>" width="130"></a></td>
+  <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/<?= $r['bukti_n']; ?>" target="_blank"><img src="prestasi/<?= $r['bukti_n']; ?>" width="130"></a></td>
   <td><?= htmlspecialchars($r['juz']); ?></td>
   <td>
     <button onclick="konfirmasiHapus(<?= $r['id']; ?>, 'Tahfiz <?= htmlspecialchars($r['juz']); ?>')" 
@@ -171,7 +171,7 @@ if (mysqli_num_rows($qt)>0) {
   <td><?= $no++; ?></td>
   <td><?= $tingkatText[$r['tingkat']] ?? '-'; ?></td>
   <td><?= $r['tgl']; ?></td>
-  <td><a href="prestasi/<?= $r['bukti_n']; ?>" target="_blank"><img src="prestasi/<?= $r['bukti_n']; ?>" width="130"></a></td>
+  <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/<?= $r['bukti_n']; ?>" target="_blank"><img src="prestasi/<?= $r['bukti_n']; ?>" width="130"></a></td>
   <td>
     <button onclick="konfirmasiHapus(<?= $r['id']; ?>, 'Paskibraka')" 
             class="btn btn-danger btn-sm">
@@ -206,7 +206,7 @@ if (mysqli_num_rows($qt)>0) {
   <td><?= htmlspecialchars($r['bahasa']); ?></td>
   <td><?= htmlspecialchars($r['ket']); ?></td>
   <td><?= $r['tgl']; ?></td>
-  <td><a href="prestasi/<?= $r['bukti_n']; ?>" target="_blank"><img src="prestasi/<?= $r['bukti_n']; ?>" width="130"></a></td>
+  <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/prestasi/<?= $r['bukti_n']; ?>" target="_blank"><img src="prestasi/<?= $r['bukti_n']; ?>" width="130"></a></td>
   <td>
     <button onclick="konfirmasiHapus(<?= $r['id']; ?>, 'Bahasa <?= htmlspecialchars($r['bahasa']); ?>')" 
             class="btn btn-danger btn-sm">
