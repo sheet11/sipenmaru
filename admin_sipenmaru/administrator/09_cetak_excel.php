@@ -68,6 +68,7 @@
                 <th>Rekomendasi Sekolah</th>
                 <th>Sertifikat Akreditasi</th>
                 <th>Sertifikat Toefl</th>
+                <th>Cetak Nilai</th>
                 <th>Semester 1</th>
                 <th>Semester 2</th>
                 <th>Semester 3</th>
@@ -118,6 +119,8 @@
                <td><?=$a['rekomendasi_sekolah']?></td>
                <td><?=$a['sertifikat_akreditasi']?></td>
                <td><?=$a['sertifikat_toefl']?></td>
+               <td><a href="https://spmb-polkeslu.cloud/admin_sipenmaru/administrator/09_cetak_sertifikat_calon_mahasiswa_pmdp.php?username=<?=$a['username']?>">List Sertifikat</a></td>
+               <td><a href="https://spmb-polkeslu.cloud/admin_sipenmaru/administrator/09_lihat_nilai_input.php?username=<?=$a['username']?>">Cetak Nilai</a></td>
                <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo1']?>">Semester 1</a></td>
                <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo2']?>">Semester 2</a></td>
                <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo3']?>">Semester 3</a></td>
