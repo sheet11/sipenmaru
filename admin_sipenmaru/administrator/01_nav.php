@@ -125,7 +125,7 @@ include "session.php";
           <li class="treeview">
             <a href="#">
               <i class="fa fa-circle-o"></i>
-              <span>Laporan Gelombang 1</span>
+              <span>Laporan SPMB Prestasi</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -133,15 +133,29 @@ include "session.php";
             <ul class="treeview-menu">
 
               <li class="treeview">
-                <a href="01_laporan_pmdp.php"><i class="fa fa-circle-o"></i>Laporan SPMB Prestasi<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <a href="01_laporan_pmdp.php"><i class="fa fa-circle-o"></i>Laporan Umum<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                 <ul class="treeview-menu">
-                  <li><a href="09_laporan_pmdp_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a></li>
-
                   <li><a href="09_laporan_pmdp.php"><i class="fa fa-circle-o"></i>Umum</a></li>
 
-                  <li><a href="09_laporan_tingkatpoltekkes.php"><i class="fa fa-circle-o"></i>Tingkat Poltekkes</a></li>
+                  <li><a href="09_laporan_jenis_kelamin.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
 
-                  <li><a href="09_tingkat_prodi.php"><i class="fa fa-circle-o"></i>Tingkat Prodi</a></li>
+                  <li><a href="09_laporan_asal_sekolah.php"><i class="fa fa-circle-o"></i>Asal Sekolah</a></li>
+
+                  <li><a href="09_laporan_keterangan_sekolah.php"><i class="fa fa-circle-o"></i>Keterangan Sekolah</a></li>
+
+                  <li><a href="09_golongan_darah.php"><i class="fa fa-circle-o"></i>Golongan Darah</a></li>
+
+                  <li><a href="09_penghasilan_orangtua.php"><i class="fa fa-circle-o"></i>Penghasilan Ortu</a></li>
+
+                  <li><a href="09_pekerjaan_orangtua.php"><i class="fa fa-circle-o"></i>Pekerjaan Ortu</a></li>
+
+                  <li><a href="09_daftar_nilai_pmdp.php"><i class="fa fa-circle-o"></i>Daftar Nilai PMDP</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="01_laporan_pmdp.php"><i class="fa fa-circle-o"></i>Laporan Keseluruhan<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                  <li><a href="09_laporan_pmdp_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a></li>
 
                   <li><a href="09_laporan_jenis_kelamin.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
 
@@ -251,80 +265,6 @@ include "session.php";
 
             </ul>
           </li>
-
-
-          <!--
-
-				       
-
-
-						<li class="treeview">
-				          	<a href="#">
-					            <i class="fa fa-circle-o"></i>
-					            <span>Pengaturan Gel 1</span>
-					            <span class="pull-right-container">
-					              <i class="fa fa-angle-left pull-right"></i>
-					            </span>
-					        </a>
-					        <ul class="treeview-menu">
-					          	
-                                <li class="treeview"><a href=""><i class="fa fa-circle-o"></i>PMDP<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-						          <ul class="treeview-menu">
-							          	<li><a href="kehadiran_PMDP.php"><i class="fa fa-circle-o"></i>Kehadiran</a></li>
-			                            <li><a href="kelulusan_PMDP.php"><i class="fa fa-circle-o"></i>Kelulusan</a></li>
-						          </ul>
-					       		 </li>
-                                  
-                                  
-					       		 </li>
-					       	</ul>
-				       		
-				       </li>
-
-
-
-
-
-
-				        <li class="treeview">
-				          	<a href="#">
-					            <i class="fa fa-circle-o"></i>
-					            <span>Pengaturan Gel 2</span>
-					            <span class="pull-right-container">
-					              <i class="fa fa-angle-left pull-right"></i>
-					            </span>
-					        </a>
-					        <ul class="treeview-menu">
-					          	<li class="treeview"><a href=""><i class="fa fa-circle-o"></i>1 Pilihan<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-						          <ul class="treeview-menu">
-							          	<li><a href="kehadiran.php"><i class="fa fa-circle-o"></i>Kehadiran</a></li>
-			                            <li><a href="kelulusan.php"><i class="fa fa-circle-o"></i>Kelulusan</a></li>
-						          </ul>
-					       		 </li>
-
-					       		 <li class="treeview"><a href=""><i class="fa fa-circle-o"></i>2 Pilihan<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-						          <ul class="treeview-menu">
-							          	<li><a href="kehadiran2pilihan.php"><i class="fa fa-circle-o"></i>Kehadiran</a></li>
-			                            <li><a href="kelulusan2pilihan.php"><i class="fa fa-circle-o"></i>Kelulusan</a></li>
-						          </ul>
-					       		 </li>
-					       	</ul>
-				       </li>
-
-                       <li class="treeview">
-				          	<a href="#">
-					            <i class="fa fa-circle-o"></i>
-					            <span>Pengumuman Kelulusan</span>
-					            <span class="pull-right-container">
-					              <i class="fa fa-angle-left pull-right"></i>
-					            </span>
-					        </a>
-					        <ul class="treeview-menu">
-					          	<li><a href="500_daftar_pengumuman_kelulusan_jalur_umum.php"><i class="fa fa-circle-o"></i>Jalur Umum</a></li>
-					       	</ul>
-				       		
-				       </li>
-          -->
 
           <li class="treeview">
             <a href="#">

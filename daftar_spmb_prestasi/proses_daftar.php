@@ -33,6 +33,7 @@ try {
         'daerah_asal',
         'email',
         'no_hp',
+        'no_hp_ortu',
     );
 
     foreach ($required_fields as $field) {
