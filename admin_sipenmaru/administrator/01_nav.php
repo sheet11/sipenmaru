@@ -85,7 +85,7 @@ include "session.php";
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-          <li class="active">
+          <li>
             <a href="index.php">
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
@@ -340,6 +340,31 @@ include "session.php";
 
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../assets/js/AdminLTE/dashboard.js" type="text/javascript"></script>
+    <style>
+      .sidebar .treeview > .treeview-menu {
+        display: none;
+      }
+      .sidebar .treeview.active > .treeview-menu {
+        display: block !important;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const links = document.querySelectorAll(".sidebar-menu a");
+        const currentPage = location.pathname.split("/").pop();
+
+        links.forEach(link => {
+          if (link.getAttribute("href") === currentPage) {
+            link.closest("li").classList.add("active");
+            let parent = link.closest(".treeview");
+            while (parent) {
+              parent.classList.add("active");
+              parent = parent.parentElement.closest(".treeview");
+            }
+          }
+        });
+      });
+    </script>
 
 </body>
 
