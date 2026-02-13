@@ -209,7 +209,7 @@
                         </tr>
 
                         <tr>
-                            <td>9</td><td>Sarjana Terapan Gzi</td><td><?php
+                            <td>9</td><td>Sarjana Terapan Gizi</td><td><?php
                                                          require_once("../config/koneksi.php");
                                                          $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Gizi' and keterangan_sekolah='Dalam Kota Bengkulu' ");
                                                          $jumlah= mysqli_num_rows ($query);
@@ -253,25 +253,45 @@
                          <tr>
                             <td>11</td><td>Sarjana Terapan Keperawatan dan Ners</td><td><?php
                                                          require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Ners' and keterangan_sekolah='Dalam Kota Bengkulu' ");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' and keterangan_sekolah='Dalam Kota Bengkulu' ");
                                                          $jumlah= mysqli_num_rows ($query);
                                                          ?><?php echo $jumlah; ?></td>
 
                                                          <td><?php
                                                          require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Ners' and keterangan_sekolah='Luar Kota Bengkulu' ");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' and keterangan_sekolah='Luar Kota Bengkulu' ");
                                                          $jumlah= mysqli_num_rows ($query);
                                                          ?><?php echo $jumlah; ?></td>
 
                                                          <td><?php
                                                          require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Ners' and keterangan_sekolah='Luar Provinsi Bengkulu' ");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners' and keterangan_sekolah='Luar Provinsi Bengkulu' ");
                                                          $jumlah= mysqli_num_rows ($query);
                                                          ?><?php echo $jumlah; ?></td>
                         </tr>     
 
+                        <tr>
+                            <td>12</td><td>Sarjana Terapan Keperawatan dan Ners (Kelas Internasional)</td><td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)' and keterangan_sekolah='Dalam Kota Bengkulu' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+
+                                                         <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)' and keterangan_sekolah='Luar Kota Bengkulu' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+
+                                                         <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)' and keterangan_sekolah='Luar Provinsi Bengkulu' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+                        </tr>  
+
                          <tr>
-                            <td>12</td><td>Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan</td><td><?php
+                            <td>13</td><td>Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan</td><td><?php
                                                          require_once("../config/koneksi.php");
                                                          $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan' and keterangan_sekolah='Dalam Kota Bengkulu' ");
                                                          $jumlah= mysqli_num_rows ($query);
