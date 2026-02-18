@@ -38,7 +38,7 @@
 		  	</tr>
 		</table>
 <?php 
-                    $q = mysqli_query($kon,"SELECT COUNT(*) as jumlah_nilai FROM tb_nilai WHERE username='$_SESSION[username]'");
+                    $q = mysqli_query($kon,"SELECT COUNT(*) as jumlah_nilai FROM tb_nilai WHERE username='$_GET[username]'");
                     $cek_nilai = mysqli_fetch_array($q);
                     if($cek_nilai['jumlah_nilai'] == 0){ ?>
                         <h2><b>Peserta belum input Nilai</b></h2>
