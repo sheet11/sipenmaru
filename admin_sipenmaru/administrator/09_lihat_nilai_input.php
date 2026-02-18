@@ -37,7 +37,12 @@
 		  		<td colspan="3"><hr></hr></td>
 		  	</tr>
 		</table>
-
+<?php 
+                    $q = mysqli_query($kon,"SELECT COUNT(*) as jumlah_nilai FROM tb_nilai WHERE username='$_SESSION[username]'");
+                    $cek_nilai = mysqli_fetch_array($q);
+                    if($cek_nilai['jumlah_nilai'] == 0){ ?>
+                        <h2><b>Peserta belum input Nilai</b></h2>
+                        <?php }else{ ?>                                                    
         <table class="table">
           	<tr>
 	            <td valign="top"  width="200">ID</td>
@@ -374,7 +379,7 @@
 				<td align="right"><?php echo $jumlahpeng5;?></td>
 			</tr>
         </table>
-
+<?php } ?>
 
 	</body>
 </html>
