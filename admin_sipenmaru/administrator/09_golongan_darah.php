@@ -12,7 +12,7 @@
                 </div>
             </div>              
                     <table class="table table-bordered">
-                        <tr style="align:center">
+                        <tr style="text-align:center">
                             <th rowspan="2" width="2%">No</th><td rowspan="2">Program Studi</td><th colspan="4">Golongan Darah</th>
                         </tr>
 
