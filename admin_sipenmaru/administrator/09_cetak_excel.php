@@ -117,7 +117,7 @@
                <td>'<?=$a['kartu_bpjs']?></td>
                <td>'<?=$a['nik']?></td>
                <td><?=$a['golongan_darah']?></td>
-               <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/surat/<?=$a['surat_rekomendasi']?>">Surat Rekomendasi</a></td>
+               <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/surat/<?=$a['rekomendasi_sekolah']?>">Surat Rekomendasi</a></td>
                <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/surat/<?=$a['sertifikat_akreditasi']?>">Sertifikat Akreditasi</a></td>
                <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/pmdp/toefl/<?=$a['sertifikat_toefl']?>">Sertifikat Toefl</a></td>
                <td><a href="https://spmb-polkeslu.cloud/admin_sipenmaru/administrator/09_cetak_sertifikat_calon_mahasiswa_pmdp.php?username=<?=$a['username']?>">List Sertifikat</a></td>
