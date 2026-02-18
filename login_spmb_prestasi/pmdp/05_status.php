@@ -20,6 +20,7 @@
                         <th>formulir</th>
                         <th>Input Nilai/Raport</th>
                         <th>Upload Nilai/Raport</th>
+						<th>Prestasi</th>
                         <th width="25%">Aksi</th>
 					</tr>
 				</thead>
@@ -57,9 +58,18 @@
                             <a alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
                         <?php } ?>
                         </td>
+						<td><?php 
+                    $prestasi = mysqli_query($kon,"SELECT COUNT(*) as jumlah_prestasi FROM tb_prestasi WHERE username='$_SESSION[username]'");
+                    $cek_prestasi = mysqli_fetch_array($prestasi);
+                    if($cek_prestasi['jumlah_prestasi'] == 0){ ?>
+                        <a class='btn btn-sm btn-danger'><b>Belum input Prestasi</b></a>
+                        <?php }else{ ?>
+                            <a class='btn btn-sm btn-success'><b>Sudah Lengkap</b></a>
+                        <?php } ?>
+                    </td>
 					<td>
 
-						<?php if($a['nama_foto'] == null || $cek['jumlah_baris'] != 5 || $a['photo1'] == null || $a['photo2'] == null || $a['photo3'] == null || $a['photo4'] == null || $a['photo5'] == null){?>
+						<?php if($a['nama_foto'] == null || $cek['jumlah_baris'] != 5 || $a['photo1'] == null || $a['photo2'] == null || $a['photo3'] == null || $a['photo4'] == null || $a['photo5'] == null || $cek_prestasi['jumlah_prestasi'] == 0){?>
                             <a class='btn btn-sm btn-danger'><b>Belum Lengkap, Kartu Belum bisa di cetak</b></a>
                         <?php }else{ ?>                                
                             <a href='01_cetak_formulir.php?id_formulir=<?=$a["id_formulir"]?>' class='btn btn-info'><b>Cetak</b></a> 
