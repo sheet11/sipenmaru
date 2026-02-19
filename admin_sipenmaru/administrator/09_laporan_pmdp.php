@@ -370,7 +370,148 @@
                                                          ?><?php echo $jumlah; ?></td>
                         </tr>
 
+                    <hr />
                     
-            </div>   
+                </div>   
+                <div>
+    <!-- <div style="margin-top: 30px;">
+        <h3>Diagram Pendaftar Berdasarkan Prodi</h3>
+        <canvas id="prodiChart" style="max-width: 800px; margin: 20px 0;"></canvas>
+    </div>
 
+    <div style="margin-top: 30px;">
+        <h3>Diagram Pendaftar Berdasarkan Jenis Kelamin</h3>
+        <canvas id="genderChart" style="max-width: 800px; margin: 20px 0;"></canvas>
+    </div>
+    
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Data untuk Diagram Prodi
+    const prodiData = {
+        labels: [
+            'D3 Kebidanan Bengkulu',
+            'D3 Kebidanan Curup',
+            'D3 Teknologi Laboratorium Medis',
+            'D3 Sanitasi',
+            'D3 Gizi',
+            'D3 Keperawatan Bengkulu',
+            'D3 Keperawatan Curup',
+            'D3 Farmasi',
+            'Sarjana Terapan Gizi',
+            'Sarjana Terapan Promosi Kesehatan',
+            'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan',
+            'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners',
+            'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)'
+        ],
+        datasets: [{
+            label: 'Jumlah Pendaftar',
+            data: [
+                <?php 
+                    require_once("../config/koneksi.php");
+                    $prodis = [
+                        'D3 Kebidanan Bengkulu',
+                        'D3 Kebidanan Curup',
+                        'D3 Teknologi Laboratorium Medis',
+                        'D3 Sanitasi',
+                        'D3 Gizi',
+                        'D3 Keperawatan Bengkulu',
+                        'D3 Keperawatan Curup',
+                        'D3 Farmasi',
+                        'Sarjana Terapan Gizi',
+                        'Sarjana Terapan Promosi Kesehatan',
+                        'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan',
+                        'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners',
+                        'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)'
+                    ];
+                    
+                    foreach($prodis as $prodi) {
+                        $query = mysqli_query($kon, "SELECT COUNT(*) as count FROM tb_formulir3 WHERE pilihan_prodi='$prodi' AND status='Sudah Membayar'");
+                        $row = mysqli_fetch_assoc($query);
+                        echo $row['count'] . ",";
+                    }
+                ?>
+            ],
+            backgroundColor: [
+                '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+                '#FF9F40', '#FF6384', '#C9CBCF', '#4BC0C0', '#FF6384',
+                '#36A2EB', '#FFCE56', '#4BC0C0'
+            ],
+            borderColor: [
+                '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+                '#FF9F40', '#FF6384', '#C9CBCF', '#4BC0C0', '#FF6384',
+                '#36A2EB', '#FFCE56', '#4BC0C0'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    // Data untuk Diagram Jenis Kelamin
+    const genderData = {
+        labels: ['Laki-Laki', 'Perempuan'],
+        datasets: [{
+            label: 'Jumlah Pendaftar',
+            data: [
+                <?php
+                    $queryMale = mysqli_query($kon, "SELECT COUNT(*) as count FROM tb_formulir3 WHERE jenis_kelamin='Laki-Laki' AND status='Sudah Membayar'");
+                    $rowMale = mysqli_fetch_assoc($queryMale);
+                    echo $rowMale['count'] . ",";
+                    
+                    $queryFemale = mysqli_query($kon, "SELECT COUNT(*) as count FROM tb_formulir3 WHERE jenis_kelamin='Perempuan' AND status='Sudah Membayar'");
+                    $rowFemale = mysqli_fetch_assoc($queryFemale);
+                    echo $rowFemale['count'];
+                ?>
+            ],
+            backgroundColor: ['#36A2EB', '#FF6384'],
+            borderColor: ['#36A2EB', '#FF6384'],
+            borderWidth: 1
+        }]
+    };
+
+    // Chart untuk Prodi
+    const ctxProdi = document.getElementById('prodiChart').getContext('2d');
+    new Chart(ctxProdi, {
+        type: 'bar',
+        data: prodiData,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: 'Statistik Pendaftar per Program Studi'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Chart untuk Jenis Kelamin
+    const ctxGender = document.getElementById('genderChart').getContext('2d');
+    new Chart(ctxGender, {
+        type: 'doughnut',
+        data: genderData,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: 'Distribusi Pendaftar Berdasarkan Jenis Kelamin'
+                }
+            }
+        }
+    });
+</script> -->
            
