@@ -23,6 +23,7 @@
   	include("fucnt_tgl.php");	
 	$query=mysqli_query($kon,"select * from tb_nilai, tb_formulir3 where tb_nilai.username=tb_formulir3.username AND tb_nilai.username='$_GET[username]' ");
 	$a=mysqli_fetch_array($query);
+	error_reporting(0);
 ?>
 <html>
 	<body>
