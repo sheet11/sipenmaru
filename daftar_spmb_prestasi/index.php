@@ -18,7 +18,7 @@ include "koneksi.php";
 // Pastikan tabel reservasi ada (idempotent)
 $reservation_table_check = mysqli_query($kon, "SHOW TABLES LIKE 'tb_form_reservation'");
 if (!$reservation_table_check || mysqli_num_rows($reservation_table_check) == 0) {
-    $create_table_sql = "
+  $create_table_sql = "
         CREATE TABLE IF NOT EXISTS tb_form_reservation (
             id INT AUTO_INCREMENT PRIMARY KEY,
             id_formulir INT NOT NULL UNIQUE,
@@ -35,7 +35,7 @@ if (!$reservation_table_check || mysqli_num_rows($reservation_table_check) == 0)
             FOREIGN KEY (id_formulir) REFERENCES tb_formulir3(id_formulir) ON DELETE CASCADE
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
     ";
-    @mysqli_query($kon, $create_table_sql);
+  @mysqli_query($kon, $create_table_sql);
 }
 
 // Cleanup expired reservations (lightweight)
@@ -43,9 +43,9 @@ if (!$reservation_table_check || mysqli_num_rows($reservation_table_check) == 0)
 
 // Buat token
 try {
-    $token = bin2hex(random_bytes(32));
+  $token = bin2hex(random_bytes(32));
 } catch (Exception $e) {
-    $token = bin2hex(openssl_random_pseudo_bytes(32));
+  $token = bin2hex(openssl_random_pseudo_bytes(32));
 }
 $expires_at = date('Y-m-d H:i:s', time() + 15 * 60); // 15 menit
 $client_ip = $_SERVER['REMOTE_ADDR'] ?? null;
@@ -53,484 +53,486 @@ $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? null;
 $ambil = null;
 
 try {
-    mysqli_begin_transaction($kon, MYSQLI_TRANS_START_READ_WRITE);
+  mysqli_begin_transaction($kon, MYSQLI_TRANS_START_READ_WRITE);
 
-    // Ambil formulir yg belum dipesan (tidak punya active reservation)
-    $sel_sql = "SELECT f.id_formulir, f.username, f.password
+  // Ambil formulir yg belum dipesan (tidak punya active reservation)
+  $sel_sql = "SELECT f.id_formulir, f.username, f.password
                 FROM tb_formulir3 f
                 LEFT JOIN tb_form_reservation r ON f.id_formulir = r.id_formulir AND r.status = 'active' AND r.expires_at > NOW()
                 WHERE f.status = 'Belum Lengkap' AND r.id IS NULL
                 ORDER BY f.id_formulir ASC
                 LIMIT 1 FOR UPDATE";
 
-    $sel = mysqli_query($kon, $sel_sql);
-    if ($sel && mysqli_num_rows($sel) > 0) {
-        $row = mysqli_fetch_assoc($sel);
-        $id_formulir = $row['id_formulir'];
+  $sel = mysqli_query($kon, $sel_sql);
+  if ($sel && mysqli_num_rows($sel) > 0) {
+    $row = mysqli_fetch_assoc($sel);
+    $id_formulir = $row['id_formulir'];
 
-        // Buat reservasi baru
-        $stmt = mysqli_prepare($kon, "INSERT INTO tb_form_reservation (id_formulir, reservation_token, expires_at, client_ip, user_agent) VALUES (?, ?, ?, ?, ?)");
-        if (!$stmt) {
-            mysqli_rollback($kon);
-            throw new Exception('Gagal menyiapkan reservasi: ' . mysqli_error($kon));
-        }
-
-        mysqli_stmt_bind_param($stmt, "issss", $id_formulir, $token, $expires_at, $client_ip, $user_agent);
-        if (mysqli_stmt_execute($stmt)) {
-            mysqli_commit($kon);
-            $row['reservation_token'] = $token;
-            $row['reservation_expires'] = $expires_at;
-            $ambil = $row;
-        } else {
-            mysqli_rollback($kon);
-        }
-    } else {
-        mysqli_rollback($kon);
+    // Buat reservasi baru
+    $stmt = mysqli_prepare($kon, "INSERT INTO tb_form_reservation (id_formulir, reservation_token, expires_at, client_ip, user_agent) VALUES (?, ?, ?, ?, ?)");
+    if (!$stmt) {
+      mysqli_rollback($kon);
+      throw new Exception('Gagal menyiapkan reservasi: ' . mysqli_error($kon));
     }
-} catch (Exception $e) {
+
+    mysqli_stmt_bind_param($stmt, "issss", $id_formulir, $token, $expires_at, $client_ip, $user_agent);
+    if (mysqli_stmt_execute($stmt)) {
+      mysqli_commit($kon);
+      $row['reservation_token'] = $token;
+      $row['reservation_expires'] = $expires_at;
+      $ambil = $row;
+    } else {
+      mysqli_rollback($kon);
+    }
+  } else {
     mysqli_rollback($kon);
+  }
+} catch (Exception $e) {
+  mysqli_rollback($kon);
 }
 
 // Fallback (jika tidak berhasil membuat reservasi) — ambil formulir tanpa reservasi
 if (!$ambil) {
-    $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT id_formulir, username, password FROM tb_formulir3 WHERE status='Belum Lengkap' ORDER BY id_formulir ASC LIMIT 1"));
+  $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT id_formulir, username, password FROM tb_formulir3 WHERE status='Belum Lengkap' ORDER BY id_formulir ASC LIMIT 1"));
 }
 ?>
 <?php
-$date = date("Y-m-d"); 
-$date=date('Y-m-d', strtotime($date));
+$date = date("Y-m-d");
+$date = date('Y-m-d', strtotime($date));
 //echo $paymentDate; // echos today! 
 $query = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='SPMB Prestasi'");
 
-		if ($query) {
-			$a = mysqli_fetch_array($query);
-		}
+if ($query) {
+  $a = mysqli_fetch_array($query);
+}
 $id_periode = $a['id_periode'];
 $nama_periode = $a['nama_periode'];
 $buka = $a['tanggal_buka'];
 $tutup = $a['tanggal_tutup'];
 $status = $a['status_periode'];
-if ($status=="Buka") {
-if(($date >= $buka) && ($date <= $tutup)) { ?>
-<body style="text-align: center;">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <form action="proses_daftar.php" method="post" enctype="multipart/form-data" class="f1">
-          <input type="hidden" name="id" value="<?php echo $ambil['id_formulir']; ?>">
-          <input type="hidden" name="username" value="<?php echo $ambil['username']; ?>">
-          <h3>Pendaftaran SPMB Jalur Prestasi</h3>
-          <p>Poltekkes Kemenkes Bengkulu</p>
-          <div class="f1-steps">
-            <div class="f1-progress">
-              <div class="f1-progress-line" data-now-value="25" data-number-of-steps="4" style="width: 25%;"></div>
-            </div>
-            <div class="f1-step active">
-              <div class="f1-step-icon"><i class="fa fa-graduation-cap"></i></div>
-              <p>Program Studi</p>
-            </div>
-            <div class="f1-step">
-              <div class="f1-step-icon"><i class="fa fa-user"></i></div>
-              <p>Biodata</p>
-            </div>
-            <div class="f1-step">
-              <div class="f1-step-icon"><i class="fa fa-home"></i></div>
-              <p>Alamat</p>
-            </div>
-            <div class="f1-step">
-              <div class="f1-step-icon"><i class="fa fa-address-book"></i></div>
-              <p>Sosial</p>
-            </div>
+if ($status == "Buka") {
+  if (($date >= $buka) && ($date <= $tutup)) { ?>
+
+    <body style="text-align: center;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <form action="proses_daftar.php" method="post" enctype="multipart/form-data" class="f1">
+              <input type="hidden" name="id" value="<?php echo $ambil['id_formulir']; ?>">
+              <input type="hidden" name="username" value="<?php echo $ambil['username']; ?>">
+              <h3>Pendaftaran SPMB Jalur Prestasi</h3>
+              <p>Poltekkes Kemenkes Bengkulu</p>
+              <div class="f1-steps">
+                <div class="f1-progress">
+                  <div class="f1-progress-line" data-now-value="25" data-number-of-steps="4" style="width: 25%;"></div>
+                </div>
+                <div class="f1-step active">
+                  <div class="f1-step-icon"><i class="fa fa-graduation-cap"></i></div>
+                  <p>Program Studi</p>
+                </div>
+                <div class="f1-step">
+                  <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                  <p>Biodata</p>
+                </div>
+                <div class="f1-step">
+                  <div class="f1-step-icon"><i class="fa fa-home"></i></div>
+                  <p>Alamat</p>
+                </div>
+                <div class="f1-step">
+                  <div class="f1-step-icon"><i class="fa fa-address-book"></i></div>
+                  <p>Sosial</p>
+                </div>
+              </div>
+              <!-- step 1: Program Studi -->
+              <fieldset>
+                <h4>Pilih Program Studi</h4>
+                <div class="form-group">
+                  <label>Nama Sekolah</label>
+                  <input type="text" name="nama_sekolah" placeholder="Masukan nama Sekolah" class="form-control required" autocomplete="off">
+                  <span class="help-block">Contoh: SMAN 1 Bengkulu, SMK Farmasi Harapan Bangsa, dll.</span>
+                </div>
+                <div class="form-group">
+                  <label>Akreditasi Sekolah</label>
+                  <select name="akreditasi" class="form-control required">
+                    <option value="">-- Pilih Akreditasi Sekolah --</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Tahun Lulus</label>
+                  <select name="tahun_lulus" id="" class="form-control required">
+                    <option value="">-- Pilih Tahun Lulus --</option>
+                    <?php
+                    $year = date("Y");
+                    echo "<option value='$year'>$year</option>";
+                    ?>
+
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Keterangan Sekolah</label>
+                  <select name="keterangan_sekolah" class="form-control required">
+                    <option value="">-- Pilih Keterangan Sekolah --</option>
+                    <option value="Dalam Kota Bengkulu">Dalam Kota Bengkulu</option>
+                    <option value="Luar Kota Bengkulu">Luar Kota Bengkulu</option>
+                    <option value="Luar Provinsi Bengkulu">Luar Provinsi Bengkulu</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Jenis Sekolah</label>
+                  <select id="asal_sekolah" name="asal_sekolah" class="form-control required">
+                    <option value="">-- Pilih Asal Sekolah --</option>
+                    <option value="sma">SMA/MA</option>
+                    <option value="smk">SMK</option>
+                  </select>
+                </div>
+                <div class="form-group" id="sma-jenis-group" style="display:none;">
+                  <label>Jurusan Sekolah</label>
+                  <select name="jurusan_sekolah" class="form-control required">
+                    <option value="">-- Pilih Jurusan Sekolah --</option>
+                    <option value="IPA">IPA</option>
+                    <option value="IPS">IPS</option>
+                    <option value="Kurikulum Merdeka">Kurikulum Merdeka</option>
+                    <option value="Lainnya">Lainnya</option>
+                  </select>
+                </div>
+                <div class="form-group" id="smk-jenis-group" style="display:none;">
+                  <label>Jenis SMK</label>
+                  <select id="smk_jenis" name="smk_jenis" class="form-control">
+                    <option value="">-- Pilih Jenis SMK --</option>
+                    <option value="smk_kesehatan">SMK Kesehatan</option>
+                    <option value="smk_farmasi">SMK Farmasi</option>
+                    <option value="smk_kimia">SMK Kimia</option>
+                    <option value="smk_analis">Sekolah Menengah Analis Kesehatan</option>
+                    <option value="smk_teknik">SMK Teknik / Teknik Industri</option>
+                    <option value="smk_tataboga">SMK Tataboga</option>
+                    <option value="smk_pariwisata">SMK Pariwisata</option>
+                    <option value="smk_pertanian">SMK Pertanian</option>
+                    <option value="smk_semua">SMK (Semua Jurusan / Lainnya)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Program Studi</label>
+                  <select id="program_studi" name="program_studi" class="form-control">
+                    <option value="">-- Pilih Program Studi --</option>
+                  </select>
+                </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
+                </div>
+              </fieldset>
+              <!-- step 2: Biodata -->
+              <fieldset>
+                <h4>Identitas Pribadi</h4>
+                <div class="form-group">
+                  <label>Nama Lengkap<span class="text-danger" style="font-size: large;">*</span></label>
+                  <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" class="form-control">
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Jenis Kelamin <span class="text-danger" style="font-size: large;">*</span></label>
+                      <select name="jenis_kelamin" class="form-control">
+                        <option value="">-- Pilih Jenis Kelamin --</option>
+                        <option value="laki-laki">Laki-laki</option>
+                        <option value="perempuan">Perempuan</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Agama <span class="text-danger" style="font-size: large;">*</span></label>
+                      <select name="agama" id="" class="form-control">
+                        <option value="">-- Pilih Agama --</option>
+                        <option value="islam">Islam</option>
+                        <option value="kristen">Kristen</option>
+                        <option value="katolik">Katolik</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="budha">Budha</option>
+                        <option value="konghucu">Konghucu</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Tempat Lahir <span class="text-danger" style="font-size: large;">*</span></label>
+                      <input type="text" name="tempat_lahir" placeholder="Input Tempat Lahir" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Tanggal Lahir <span class="text-danger" style="font-size: large;">*</span></label>
+                      <input type="date" name="tanggal_lahir" placeholder="Input Tanggal Lahir" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Berat Badan <span class="text-danger" style="font-size: large;">*</span></label>
+                      <input type="number" name="berat_badan" placeholder="Input Berat Badan" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Tinggi Badan <span class="text-danger" style="font-size: large;">*</span></label>
+                      <input type="number" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Golongan Darah <span class="text-danger" style="font-size: large;">*</span></label>
+                  <select name="golongan_darah" id="" class="form-control">
+                    <option value="">-- Pilih Golongan Darah --</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="AB">AB</option>
+                    <option value="O">O</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Nomor Induk Keluarga(NIK) <span class="text-danger" style="font-size: large;">*</span></label>
+                  <input type="text" name="nik" placeholder="NIK Harus 16 Digit angka" maxlength="16" class="form-control" required>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Nama Ayah</label>
+                      <input type="text" name="nama_orang_tua" placeholder="Input Nama Orang Tua" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Pekerjaan Ayah <span class="text-danger" style="font-size: large;">*</span></label>
+                      <select name="pekerjaan_orang_tua" class="form-control">
+                        <option value="">-- Pilih Pekerjaan Orang Tua --</option>
+                        <option value="PNS">PNS</option>
+                        <option value="TNI/Polri">TNI/Polri</option>
+                        <option value="Swasta">Swasta</option>
+                        <option value="Wiraswasta">Wiraswasta</option>
+                        <option value="Petani">Petani</option>
+                        <option value="Buruh">Buruh</option>
+                        <option value="Nelayan">Nelayan</option>
+                        <option value="Pensiunan">Pensiunan</option>
+                        <option value="Lainnya">Lainnya</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Nama Ibu</label>
+                      <input type="text" name="nama_orang_tua_ibu" placeholder="Input Nama Orang Tua" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Pekerjaan Ibu <span class="text-danger" style="font-size: large;">*</span></label>
+                      <select name="pekerjaan_orang_tua_ibu" class="form-control">
+                        <option value="">-- Pilih Pekerjaan Orang Tua --</option>
+                        <option value="PNS">PNS</option>
+                        <option value="TNI/Polri">TNI/Polri</option>
+                        <option value="Swasta">Swasta</option>
+                        <option value="Wiraswasta">Wiraswasta</option>
+                        <option value="Petani">Petani</option>
+                        <option value="Buruh">Buruh</option>
+                        <option value="Nelayan">Nelayan</option>
+                        <option value="Pensiunan">Pensiunan</option>
+                        <option value="Lainnya">Lainnya</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Penghasilan Orang Tua Ayah + Ibu (per bulan) <span class="text-danger" style="font-size: large;">*</span></label>
+                  <select name='penghasilan_orang_tua' class='form-control'>
+                    <option>-- Pilih Penghasilan Orang Tua --</option>
+                    <?php include "koneksi.php";
+                    $query = mysqli_query($kon, "SELECT * FROM tb_penghasilan_orangtua");
+                    while ($row = mysqli_fetch_array($query)) {
+                    ?>
+                      <option value='<?php echo $row["jumlah_penghasilan_orangtua"]; ?>'><?php echo $row["keterangan"]; ?></option>
+                    <?php
+                    }
+                    ?>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Nomor Kartu BPJS</label>
+                  <input type="number" name="kartu_bpjs" placeholder="Input Nomor Kartu BPJS" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Pas Foto<span class="text-danger" style="font-size: large;">*</span></label>
+                  <input type="file" name="pas_foto" accept="image/*" class="form-control" required>
+                  <span class="help-block">Format: JPG, PNG. Ukuran maksimal: 1 MB. Pas Foto Formal Dengan Ukuran 3x4</span>
+                </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
+                  <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
+                </div>
+              </fieldset>
+              <!-- step 3: Alamat -->
+              <fieldset>
+                <!-- 1. Asal daerah: dalam / luar Bengkulu -->
+                <div class="form-group">
+                  <label for="asal">Asal daerah</label>
+                  <select id="asal" name="asal" class="form-control">
+                    <option value="">-- Pilih Asal Daerah --</option>
+                    <option value="dalam">Dalam Provinsi Bengkulu</option>
+                    <option value="luar">Luar Provinsi Bengkulu</option>
+                  </select>
+                </div>
+
+                <!-- 2a. Jika DALAM Bengkulu -->
+                <div id="group-dalam" class="group" style="display:none;">
+                  <h4>Alamat dalam Provinsi Bengkulu</h4>
+
+                  <div class="form-group">
+                    <label for="kab_bkl">Kabupaten / Kota</label>
+                    <select id="kab_bkl" name="kab_bkl" class="form-control">
+                      <option value="">-- Pilih Kab/Kota --</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="kec_bkl">Kecamatan</label>
+                    <select id="kec_bkl" name="kec_bkl" class="form-control">
+                      <option value="">-- Pilih Kecamatan --</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- 2b. Jika LUAR Bengkulu -->
+                <div id="group-luar" class="group" style="display:none;">
+                  <h4>Alamat di Luar Provinsi Bengkulu</h4>
+
+                  <div class="form-group">
+                    <label for="prov_luar">Provinsi</label>
+                    <select id="prov_luar" name="prov_luar" class="form-control">
+                      <option value="">-- Pilih Provinsi --</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="kab_luar">Kabupaten / Kota</label>
+                    <select id="kab_luar" name="kab_luar" class="form-control" disabled>
+                      <option value="">-- Pilih Kab/Kota --</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="kec_luar">Kecamatan</label>
+                    <select id="kec_luar" name="kec_luar" class="form-control" disabled>
+                      <option value="">-- Pilih Kecamatan --</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Alamat Rumah</label>
+                  <input type="text" name="alamat_rumah" placeholder="Alamat Rumah" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Daerah Asal</label>
+                  <input type="text" id="daerah_asal" name="daerah_asal" placeholder="Nama Daerah/Kelurahan Asal" class="form-control" readonly>
+                  <span class="help-block">Nilai ini akan otomatis diisi berdasarkan pilihan wilayah (kabupaten/kecamatan).</span>
+                </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
+                  <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
+                </div>
+              </fieldset>
+              <!-- Akun step removed -->
+              <!-- step 5: Sosial -->
+              <fieldset>
+                <h4>Info Kontak</h4>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" name="email" placeholder="Input Email Aktif anda" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Nomor HP Aktif(WA)</label>
+                  <input type="text" name="no_hp" placeholder="Input Nomor HP anda" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Nomor HP Orang Tua/Wali yang bisa dihubungi</label>
+                  <input type="text" name="no_hp_ortu" placeholder="Input Nomor HP Orang Tua anda" class="form-control">
+                </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
+                  <button type="submit" class="btn btn-primary btn-submit"><i class="fa fa-save"></i> Submit</button>
+                </div>
+              </fieldset>
+            </form>
           </div>
-          <!-- step 1: Program Studi -->
-          <fieldset>
-            <h4>Pilih Program Studi</h4>
-            <div class="form-group">
-              <label>Nama Sekolah</label>
-              <input type="text" name="nama_sekolah" placeholder="Masukan nama Sekolah" class="form-control required" autocomplete="off">
-              <span class="help-block">Contoh: SMAN 1 Bengkulu, SMK Farmasi Harapan Bangsa, dll.</span>
-            </div>
-            <div class="form-group">
-              <label>Akreditasi Sekolah</label>
-              <select name="akreditasi" class="form-control required">
-                <option value="">-- Pilih Akreditasi Sekolah --</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Tahun Lulus</label>
-              <select name="tahun_lulus" id="" class="form-control required"> 
-                <option value="">-- Pilih Tahun Lulus --</option>
-                <?php
-                $year = date("Y");                
-                  echo "<option value='$year'>$year</option>";                
-                ?>
-
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Keterangan Sekolah</label>
-              <select name="keterangan_sekolah" class="form-control required">
-                <option value="">-- Pilih Keterangan Sekolah --</option>
-                <option value="Dalam Kota Bengkulu">Dalam Kota Bengkulu</option>
-                <option value="Luar Kota Bengkulu">Luar Kota Bengkulu</option>
-                <option value="Luar Provinsi Bengkulu">Luar Provinsi Bengkulu</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Jenis Sekolah</label>
-              <select id="asal_sekolah" name="asal_sekolah" class="form-control required">
-                <option value="">-- Pilih Asal Sekolah --</option>
-                <option value="sma">SMA/MA</option>
-                <option value="smk">SMK</option>
-              </select>
-            </div>
-            <div class="form-group" id="sma-jenis-group" style="display:none;">
-              <label>Jurusan Sekolah</label>
-              <select name="jurusan_sekolah" class="form-control required">
-                <option value="">-- Pilih Jurusan Sekolah --</option>
-                <option value="IPA">IPA</option>
-                <option value="IPS">IPS</option>
-                <option value="Kurikulum Merdeka">Kurikulum Merdeka</option>
-                <option value="Lainnya">Lainnya</option>
-              </select>
-            </div>
-            <div class="form-group" id="smk-jenis-group" style="display:none;">
-              <label>Jenis SMK</label>
-              <select id="smk_jenis" name="smk_jenis" class="form-control">
-                <option value="">-- Pilih Jenis SMK --</option>
-                <option value="smk_kesehatan">SMK Kesehatan</option>
-                <option value="smk_farmasi">SMK Farmasi</option>
-                <option value="smk_kimia">SMK Kimia</option>
-                <option value="smk_analis">Sekolah Menengah Analis Kesehatan</option>
-                <option value="smk_teknik">SMK Teknik / Teknik Industri</option>
-                <option value="smk_tataboga">SMK Tataboga</option>
-                <option value="smk_pariwisata">SMK Pariwisata</option>
-                <option value="smk_pertanian">SMK Pertanian</option>
-                <option value="smk_semua">SMK (Semua Jurusan / Lainnya)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Program Studi</label>
-              <select id="program_studi" name="program_studi" class="form-control">
-                <option value="">-- Pilih Program Studi --</option>
-              </select>
-            </div>
-            <div class="f1-buttons">
-              <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
-            </div>
-          </fieldset>
-          <!-- step 2: Biodata -->
-          <fieldset>
-            <h4>Identitas Pribadi</h4>
-            <div class="form-group">
-              <label>Nama Lengkap<span class="text-danger" style="font-size: large;">*</span></label>
-              <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" class="form-control">
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Jenis Kelamin <span class="text-danger" style="font-size: large;">*</span></label>
-                  <select name="jenis_kelamin" class="form-control">
-                    <option value="">-- Pilih Jenis Kelamin --</option>
-                    <option value="laki-laki">Laki-laki</option>
-                    <option value="perempuan">Perempuan</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Agama <span class="text-danger" style="font-size: large;">*</span></label>
-                  <select name="agama" id="" class="form-control">
-                    <option value="">-- Pilih Agama --</option>
-                    <option value="islam">Islam</option>
-                    <option value="kristen">Kristen</option>
-                    <option value="katolik">Katolik</option>
-                    <option value="hindu">Hindu</option>
-                    <option value="budha">Budha</option>
-                    <option value="konghucu">Konghucu</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Tempat Lahir <span class="text-danger" style="font-size: large;">*</span></label>
-                  <input type="text" name="tempat_lahir" placeholder="Input Tempat Lahir" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Tanggal Lahir <span class="text-danger" style="font-size: large;">*</span></label>
-                  <input type="date" name="tanggal_lahir" placeholder="Input Tanggal Lahir" class="form-control">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Berat Badan <span class="text-danger" style="font-size: large;">*</span></label>
-                  <input type="number" name="berat_badan" placeholder="Input Berat Badan" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Tinggi Badan <span class="text-danger" style="font-size: large;">*</span></label>
-                  <input type="number" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Golongan Darah <span class="text-danger" style="font-size: large;">*</span></label>
-              <select name="golongan_darah" id="" class="form-control">
-                <option value="">-- Pilih Golongan Darah --</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="AB">AB</option>
-                <option value="O">O</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Nomor Induk Keluarga(NIK) <span class="text-danger" style="font-size: large;">*</span></label>
-              <input type="text" name="nik" placeholder="NIK Harus 16 Digit angka" maxlength="16" class="form-control" required>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Nama Ayah</label>
-                  <input type="text" name="nama_orang_tua" placeholder="Input Nama Orang Tua" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Pekerjaan Ayah <span class="text-danger" style="font-size: large;">*</span></label>
-                  <select name="pekerjaan_orang_tua" class="form-control">
-                    <option value="">-- Pilih Pekerjaan Orang Tua --</option>
-                    <option value="PNS">PNS</option>
-                    <option value="TNI/Polri">TNI/Polri</option>
-                    <option value="Swasta">Swasta</option>
-                    <option value="Wiraswasta">Wiraswasta</option>
-                    <option value="Petani">Petani</option>
-                    <option value="Buruh">Buruh</option>
-                    <option value="Nelayan">Nelayan</option>
-                    <option value="Pensiunan">Pensiunan</option>
-                    <option value="Lainnya">Lainnya</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Nama Ibu</label>
-                  <input type="text" name="nama_orang_tua_ibu" placeholder="Input Nama Orang Tua" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Pekerjaan Ibu <span class="text-danger" style="font-size: large;">*</span></label>
-                  <select name="pekerjaan_orang_tua_ibu" class="form-control">
-                    <option value="">-- Pilih Pekerjaan Orang Tua --</option>
-                    <option value="PNS">PNS</option>
-                    <option value="TNI/Polri">TNI/Polri</option>
-                    <option value="Swasta">Swasta</option>
-                    <option value="Wiraswasta">Wiraswasta</option>
-                    <option value="Petani">Petani</option>
-                    <option value="Buruh">Buruh</option>
-                    <option value="Nelayan">Nelayan</option>
-                    <option value="Pensiunan">Pensiunan</option>
-                    <option value="Lainnya">Lainnya</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Penghasilan Orang Tua Ayah + Ibu (per bulan) <span class="text-danger" style="font-size: large;">*</span></label>
-              <select name='penghasilan_orang_tua' class='form-control'>
-                <option>-- Pilih Penghasilan Orang Tua --</option>
-                <?php include "koneksi.php";
-                $query = mysqli_query($kon, "SELECT * FROM tb_penghasilan_orangtua");
-                while ($row = mysqli_fetch_array($query)) {
-                ?>
-                  <option value='<?php echo $row["jumlah_penghasilan_orangtua"]; ?>'><?php echo $row["keterangan"]; ?></option>
-                <?php
-                }
-                ?>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Nomor Kartu BPJS</label>
-              <input type="number" name="kartu_bpjs" placeholder="Input Nomor Kartu BPJS" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Pas Foto<span class="text-danger" style="font-size: large;">*</span></label>
-              <input type="file" name="pas_foto" accept="image/*" class="form-control" required>
-              <span class="help-block">Format: JPG, PNG. Ukuran maksimal: 1 MB. Pas Foto Formal Dengan Ukuran 3x4</span>
-            </div>
-            <div class="f1-buttons">
-              <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
-              <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
-            </div>
-          </fieldset>
-          <!-- step 3: Alamat -->
-          <fieldset>
-            <!-- 1. Asal daerah: dalam / luar Bengkulu -->
-            <div class="form-group">
-              <label for="asal">Asal daerah</label>
-              <select id="asal" name="asal" class="form-control">
-                <option value="">-- Pilih Asal Daerah --</option>
-                <option value="dalam">Dalam Provinsi Bengkulu</option>
-                <option value="luar">Luar Provinsi Bengkulu</option>
-              </select>
-            </div>
-
-            <!-- 2a. Jika DALAM Bengkulu -->
-            <div id="group-dalam" class="group" style="display:none;">
-              <h4>Alamat dalam Provinsi Bengkulu</h4>
-
-              <div class="form-group">
-                <label for="kab_bkl">Kabupaten / Kota</label>
-                <select id="kab_bkl" name="kab_bkl" class="form-control">
-                  <option value="">-- Pilih Kab/Kota --</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="kec_bkl">Kecamatan</label>
-                <select id="kec_bkl" name="kec_bkl" class="form-control">
-                  <option value="">-- Pilih Kecamatan --</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- 2b. Jika LUAR Bengkulu -->
-            <div id="group-luar" class="group" style="display:none;">
-              <h4>Alamat di Luar Provinsi Bengkulu</h4>
-
-              <div class="form-group">
-                <label for="prov_luar">Provinsi</label>
-                <select id="prov_luar" name="prov_luar" class="form-control">
-                  <option value="">-- Pilih Provinsi --</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="kab_luar">Kabupaten / Kota</label>
-                <select id="kab_luar" name="kab_luar" class="form-control" disabled>
-                  <option value="">-- Pilih Kab/Kota --</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="kec_luar">Kecamatan</label>
-                <select id="kec_luar" name="kec_luar" class="form-control" disabled>
-                  <option value="">-- Pilih Kecamatan --</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Alamat Rumah</label>
-              <input type="text" name="alamat_rumah" placeholder="Alamat Rumah" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Daerah Asal</label>
-              <input type="text" id="daerah_asal" name="daerah_asal" placeholder="Nama Daerah/Kelurahan Asal" class="form-control" readonly>
-              <span class="help-block">Nilai ini akan otomatis diisi berdasarkan pilihan wilayah (kabupaten/kecamatan).</span>
-            </div>
-            <div class="f1-buttons">
-              <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
-              <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
-            </div>
-          </fieldset>
-          <!-- Akun step removed -->
-          <!-- step 5: Sosial -->
-          <fieldset>
-            <h4>Info Kontak</h4>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="text" name="email" placeholder="Input Email Aktif anda" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Nomor HP Aktif(WA)</label>
-              <input type="text" name="no_hp" placeholder="Input Nomor HP anda" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Nomor HP Orang Tua/Wali yang bisa dihubungi</label>
-              <input type="text" name="no_hp_ortu" placeholder="Input Nomor HP Orang Tua anda" class="form-control">
-            </div>
-            <div class="f1-buttons">
-              <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
-              <button type="submit" class="btn btn-primary btn-submit"><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </fieldset>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
-  <?php }else{ ?>
-	<div class="container" style="max-width:720px; margin-top:40px;">
-  <div class="panel panel-default" style="border-radius:10px; overflow:hidden;">
-    <div class="panel-heading" style="padding:18px 20px;">
-      <h3 class="panel-title" style="font-size:18px; font-weight:600;">
-        Pendaftaran Belum Dibuka
-      </h3>
-    </div>
+    <?php } else { ?>
+      <div class="container" style="max-width:720px; margin-top:40px;">
+        <div class="panel panel-default" style="border-radius:10px; overflow:hidden;">
+          <div class="panel-heading" style="padding:18px 20px;">
+            <h3 class="panel-title" style="font-size:18px; font-weight:600;">
+              Pendaftaran Belum Dibuka
+            </h3>
+          </div>
 
-    <div class="panel-body" style="padding:20px;">
-      <p style="margin:0 0 10px;">
-        Saat ini <strong>periode pendaftaran belum dibuka</strong>.
-      </p>
+          <div class="panel-body" style="padding:20px;">
+            <p style="margin:0 0 10px;">
+              Saat ini <strong>periode pendaftaran belum dibuka</strong>.
+            </p>
 
-      <div class="alert alert-info" style="margin:15px 0;">
-        <strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan diumumkan melalui kanal institusi.
+            <div class="alert alert-info" style="margin:15px 0;">
+              <strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan diumumkan melalui kanal institusi.
+            </div>
+
+            <p style="margin:0;">
+              Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
+            </p>
+
+            <hr style="margin:18px 0;">
+
+            <a href="/" class="btn btn-default">Kembali ke Beranda</a>
+            <!-- <a href="/pengumuman" class="btn btn-primary">Lihat Pengumuman</a> -->
+          </div>
+        </div>
       </div>
 
-      <p style="margin:0;">
-        Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
-      </p>
+    <?php }
+} else { ?>
+    <div class="container" style="max-width:720px; margin-top:40px;">
+      <div class="panel panel-default" style="border-radius:10px; overflow:hidden;">
+        <div class="panel-heading" style="padding:18px 20px;">
+          <h3 class="panel-title" style="font-size:18px; font-weight:600;">
+            Pendaftaran SUdah ditutup
+          </h3>
+        </div>
 
-      <hr style="margin:18px 0;">
+        <div class="panel-body" style="padding:20px;">
+          <p style="margin:0 0 10px;">
+            Saat ini <strong>periode pendaftaran sudah ditutup</strong>.
+          </p>
 
-      <a href="/" class="btn btn-default">Kembali ke Beranda</a>
-      <!-- <a href="/pengumuman" class="btn btn-primary">Lihat Pengumuman</a> -->
-    </div>
-  </div>
-</div>
+          <div class="alert alert-info" style="margin:15px 0;">
+            <strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan diumumkan melalui kanal institusi.
+          </div>
 
-<?php }}else{ ?>
-	<div class="container" style="max-width:720px; margin-top:40px;">
-  <div class="panel panel-default" style="border-radius:10px; overflow:hidden;">
-    <div class="panel-heading" style="padding:18px 20px;">
-      <h3 class="panel-title" style="font-size:18px; font-weight:600;">
-        Pendaftaran Belum Dibuka
-      </h3>
-    </div>
+          <p style="margin:0;">
+            Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
+          </p>
 
-    <div class="panel-body" style="padding:20px;">
-      <p style="margin:0 0 10px;">
-        Saat ini <strong>periode pendaftaran sudah ditutup</strong>.
-      </p>
+          <hr style="margin:18px 0;">
 
-      <div class="alert alert-info" style="margin:15px 0;">
-        <strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan diumumkan melalui kanal institusi.
+          <a href="/" class="btn btn-default">Kembali ke Beranda</a>
+          <!-- <a href="/pengumuman" class="btn btn-primary">Lihat Pengumuman</a> -->
+        </div>
       </div>
-
-      <p style="margin:0;">
-        Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
-      </p>
-
-      <hr style="margin:18px 0;">
-
-      <a href="/" class="btn btn-default">Kembali ke Beranda</a>
-      <!-- <a href="/pengumuman" class="btn btn-primary">Lihat Pengumuman</a> -->
     </div>
-  </div>
-</div>
 
-<?php } ?>
+  <?php } ?>
   <!-- Javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -722,18 +724,15 @@ if(($date >= $buka) && ($date <= $tutup)) { ?>
 
       // SMK semua jurusan / lainnya: paling fleksibel — set beberapa program yang umum
       smk_semua: [{
-          value: 'Sarjana Terapan promosi Kesehatan',
-          text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
-        }
-      ],
+        value: 'Sarjana Terapan promosi Kesehatan',
+        text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
+      }],
 
       // Fallback untuk SMK jenis lain
-      smk_lainnya: [
-        {
-          value: 'Sarjana Terapan promosi Kesehatan',
-          text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
-        }
-      ]
+      smk_lainnya: [{
+        value: 'Sarjana Terapan promosi Kesehatan',
+        text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
+      }]
     };
 
     // Helper untuk update program studi options
@@ -1050,6 +1049,6 @@ if(($date >= $buka) && ($date <= $tutup)) { ?>
       setDaerahAsal('');
     });
   </script>
-</body>
+    </body>
 
 </html>
