@@ -23,7 +23,7 @@
               <img src="../assets/img/logo-kemenkes.png" width="100" height="100"/>
             </td>
             <td width="601" align="center">
-              <strong><h2>Seleksi Penerimaan Mahasiswa Baru (SIPENMARU)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu T.A 2023/2024</h2></strong>
+              <strong><h2>Seleksi Penerimaan Mahasiswa Baru (SPMB)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu T.A <?php echo date('Y') . '/' . (date('Y') + 1); ?></h2></strong>
             </td>
             <td width="109" align="center"><img src="../assets/img/logorevisi.png" width="100" height="100"/></td>
           </tr>
