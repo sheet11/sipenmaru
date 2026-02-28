@@ -10,28 +10,27 @@ $password = ($_POST['password']); // variable password, dan nilainya sesuai yang
 
 // menyesuaikan dengan data di database
 $perintah = "select * from tb_formulir3 WHERE username = '$username' AND password = '$password'";
-$hasil = mysqli_query($kon,$perintah);
+$hasil = mysqli_query($kon, $perintah);
 $row = mysqli_fetch_array($hasil);
-if($row && $row['level'] == "Prestasi")
-	{
-		session_start(); // memulai fungsi session
-		$_SESSION['username'] = $username;
-		$_SESSION['nama_lengkap'] = $row['nama_lengkap'];
-		$_SESSION['level'] = $row['level'];
-		$_SESSION['kelulusan'] = '';
-		$_SESSION['prodi'] = $row['pilihan_prodi'];
+if ($row && $row['level'] == "Prestasi") {
+	session_start(); // memulai fungsi session
+	$_SESSION['username'] = $username;
+	$_SESSION['nama_lengkap'] = $row['nama_lengkap'];
+	$_SESSION['level'] = $row['level'];
+	$_SESSION['kelulusan'] = '';
+	$_SESSION['prodi'] = $row['pilihan_prodi'];
 
-		if($row['status'] == 'Terdaftar'){
-		mysqli_query($kon,"update tb_formulir3 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR), status = 'Sudah Membayar' where username = '$username'");
-		}else {
-		mysqli_query($kon,"update tb_formulir3 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR) where username = '$username'");
-		}
-
-		header("location:pmdp/index.php");
-		
+	if ($row['status'] == 'Terdaftar') {
+		mysqli_query($kon, "update tb_formulir3 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR), status = 'Sudah Membayar' where username = '$username'");
+	} else {
+		mysqli_query($kon, "update tb_formulir3 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR) where username = '$username'");
 	}
-	
-	else
-		{
-			echo "<meta http-equiv='refresh' content='2;url=index.php' />Username atau password salah coba ulangi lagi";
-		}	
+
+	if ($row['status_pmdp'] == 'Lulus' || $row['status_pmdp'] == 'Tidak Lulus') {
+		header("location:pmdp/cetak_pengumuman1.php");
+	} else {
+		header("location:pmdp/index.php");
+	}
+} else {
+	echo "<meta http-equiv='refresh' content='2;url=index.php' />Username atau password salah coba ulangi lagi";
+}
