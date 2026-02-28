@@ -13,6 +13,7 @@
 
 <body><!--/  Form Login -->
   <?php
+  error_reporting(0);
   include "config/koneksi.php";
   $sql = mysqli_query($kon, "select * from periode where nama_periode='Login Prestasi' and status='Buka'");
   $a = mysqli_fetch_array($sql);
