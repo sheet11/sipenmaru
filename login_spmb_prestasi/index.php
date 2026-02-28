@@ -17,7 +17,7 @@
   include "config/koneksi.php";
   $sql = mysqli_query($kon, "select * from periode where nama_periode='Login Prestasi' and status_periode='Buka'");
   $a = mysqli_fetch_array($sql);
-  if ($a['status_periode'] == "Buka") { ?>
+  if ($a && $a['status_periode'] == "Buka") { ?>
     <div class="login">
       <h1>SPMB Online </h1>
       <form class="form" action="proseslogin.php" method="post" enctype="multipart/form-data">
