@@ -293,13 +293,14 @@ include "session.php";
           <li class="treeview">
             <a href="periode.php">
               <i class="fa fa-calendar"></i>
-              <span>Periode Pendaftaran</span>
+              <span>periode dan pengumuman</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
               <li><a href="periode.php"><i class="fa fa-list"></i> Daftar Periode</a></li>
+              <li><a href="login_pengumuman.php"><i class="fa fa-bullhorn"></i> Daftar Pengumuman</a></li>
             </ul>
           </li>
 
@@ -341,10 +342,11 @@ include "session.php";
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../assets/js/AdminLTE/dashboard.js" type="text/javascript"></script>
     <style>
-      .sidebar .treeview > .treeview-menu {
+      .sidebar .treeview>.treeview-menu {
         display: none;
       }
-      .sidebar .treeview.active > .treeview-menu {
+
+      .sidebar .treeview.active>.treeview-menu {
         display: block !important;
       }
     </style>

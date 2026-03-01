@@ -9,6 +9,8 @@ $password = ($_POST['password']); // variable password, dan nilainya sesuai yang
 // proses untuk login
 
 // menyesuaikan dengan data di database
+$pengumuman = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='Pengumuman Prestasi Tahap 1' AND status_periode='Buka'");
+$cek_pengumuman = mysqli_num_rows($pengumuman);
 $perintah = "select * from tb_formulir3 WHERE username = '$username' AND password = '$password'";
 $hasil = mysqli_query($kon, $perintah);
 $row = mysqli_fetch_array($hasil);
@@ -26,7 +28,8 @@ if ($row && $row['level'] == "Prestasi") {
 		mysqli_query($kon, "update tb_formulir3 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR) where username = '$username'");
 	}
 
-	if ($row['status_pmdp'] == 'Lulus' || $row['status_pmdp'] == 'Tidak Lulus') {
+	if ($cek_pengumuman > 0) {
+		$pengumuman_row = mysqli_fetch_assoc($pengumuman);
 		header("location:pmdp/cetak_pengumuman1.php");
 	} else {
 		header("location:pmdp/index.php");
