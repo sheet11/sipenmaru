@@ -93,7 +93,8 @@ $result = mysqli_query($kon, $query);
             </thead>
             <tbody>
                 <?php $i = 1;
-                if (mysqli_num_rows($result) > 0): ?>
+                $dt = mysqli_num_rows($result);
+                if ($dt > 0): ?>
                     <?php while ($row = mysqli_fetch_assoc($result)): ?>
                         <tr>
                             <td><?= $i++ ?></td>
