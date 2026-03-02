@@ -83,7 +83,69 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
-
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Arial MT";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Arial MT",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:3.55pt;
+	margin-right:.85pt;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	text-align:center;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;
+	text-decoration:underline;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0cm;
+	text-autospace:none;
+	font-size:11.5pt;
+	font-family:"Arial MT",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:26.4pt;
+	text-indent:-21.3pt;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Arial MT",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{text-autospace:none;}
+@page WordSection1
+	{size:612.5pt 936.5pt;
+	margin:67.0pt 65.0pt 14.0pt 80.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+@page WordSection2
+	{size:936.5pt 612.5pt;
+	margin:3.0pt 69.0pt 0cm 65.0pt;}
+div.WordSection2
+	{page:WordSection2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
 
 </head>
 
@@ -609,4 +671,3 @@ div {text-align: center;}
 <?php }else { ?>
     <a href="index.php" class="btn btn-md btn-success">Kembali</a>
 <?php } ?>
-<div style="break-after:page"></div>
