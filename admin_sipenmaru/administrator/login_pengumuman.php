@@ -5,6 +5,7 @@ include_once '01_nav.php'; // Include navigation or header file
 
 // Fetch data from the 'periode' table
 $result = mysqli_query($kon, "SELECT * FROM periode where status = 'Pengumuman' ORDER BY id_periode DESC");
+$dt = mysqli_num_rows($result);
 ?>
 <aside class="right-side">
     <section class="content-header">
@@ -91,8 +92,7 @@ $result = mysqli_query($kon, "SELECT * FROM periode where status = 'Pengumuman' 
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1;
-                $dt = mysqli_num_rows($result);
+                <?php $i = 1;                
                 if ($dt > 0): ?>
                     <?php while ($row = mysqli_fetch_assoc($result)): ?>
                         <tr>
