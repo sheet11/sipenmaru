@@ -147,7 +147,6 @@ ul
 
 <body lang=EN-ID link=blue vlink=purple >
 
-<div class=WordSection1>
 
 <p class=MsoTitle><span lang=id style='letter-spacing:-.1pt'>PENGUMUMAN</span></p>
 
