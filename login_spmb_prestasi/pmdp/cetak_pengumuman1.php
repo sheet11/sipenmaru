@@ -161,7 +161,7 @@ LULUS Seleksi Administrasi SPMB Jalur Prestasi </span></b><b><span lang=id
 style='font-size:12.0pt;font-family:"Arial",sans-serif'>Tahap I </span></b><b><span
 lang=IN style='font-size:12.0pt;font-family:"Arial",sans-serif'>diwajibkan
 mengikuti tahapan:</span></b></p>
-
+<br>
 <p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
 12.0pt;margin-left:21.3pt;text-align:justify;line-height:115%;text-autospace:
 ideograph-numeric ideograph-other'><span lang=IN style='font-size:12.0pt;
