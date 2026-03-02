@@ -309,7 +309,8 @@ color:#EE0000'> </span><span lang=id style='font-size:12.0pt;line-height:115%;
 font-family:"Arial",sans-serif'>pada tanggal</span><b><span lang=id
 style='font-size:12.0pt;line-height:115%;font-family:"Arial",sans-serif'> 17
 Maret 2026.</span></b></p>
-
+<br>
+<br>
 <p class=MsoNormal style='margin-right:5.75pt;text-align:justify;line-height:
 115%'><span lang=IN style='font-size:12.0pt;line-height:115%;font-family:"Arial",sans-serif'>Bagi
 peserta yang <b>TIDAK LULUS</b></span><b><span lang=IN style='font-size:12.0pt;
@@ -324,8 +325,8 @@ href="https://spmb-polkeslu.cloud/"><b><span style='font-size:12.0pt;
 line-height:115%;color:windowtext'>https://spmb-polkeslu.cloud/</span></b></a>
 (Klik Menu Pendaftaran,</span><span lang=id style='font-size:12.0pt;line-height:
 115%;font-family:"Arial",sans-serif'> Pilih SPMB Bersama)<span
-style='color:#EE0000'> </span>atau </span><b><span lang=id style='font-size:
-12.0pt;line-height:115%'>https://spmb-poltekkes.kemkes.go.id/</span></b><span
+style='color:#EE0000'> </span>atau </span><a href="https://spmb-poltekkes.kemkes.go.id/"><b><span lang=id style='font-size:
+12.0pt;line-height:115%'>https://spmb-poltekkes.kemkes.go.id/</span></b></a><span
 lang=id style='font-size:12.0pt;line-height:115%;font-family:"Arial",sans-serif'>
 yang dimulai tanggal </span></p>
 
