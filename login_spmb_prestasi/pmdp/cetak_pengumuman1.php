@@ -66,6 +66,7 @@
 </table>
 <br>
 <br>
+<head>
 <?php if($a['status_pmdp'] == "Lulus") {?>
 <table align="center">
     <tr>
@@ -141,6 +142,8 @@ div.WordSection2
 ul
 	{margin-bottom:0cm;}
 </style>
+
+</head>
 
 <body lang=EN-ID link=blue vlink=purple >
 
