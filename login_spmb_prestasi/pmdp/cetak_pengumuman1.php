@@ -236,8 +236,7 @@ asli semester I-V</span></p>
 text-indent:-14.15pt;line-height:115%;text-autospace:ideograph-numeric ideograph-other'><span
 lang=IN style='font-size:12.0pt;line-height:115%;font-family:"Arial",sans-serif'>e.<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=id
-style='font-size:12.0pt;line-height:115%;font-family:"Arial",sans-serif'>Fotocopy
-Akreditasi Sekolah </span></p>
+style='font-size:12.0pt;line-height:115%;font-family:"Arial",sans-serif'>Fotocopy Sertifikat/surat keterangan Akreditasi Sekolah </span></p>
 
 <p class=MsoListParagraph style='margin-left:35.45pt;text-align:justify;
 text-indent:-14.15pt;line-height:115%;text-autospace:ideograph-numeric ideograph-other'><span
