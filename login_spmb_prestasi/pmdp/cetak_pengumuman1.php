@@ -650,10 +650,7 @@ style='font-size:12.0pt;line-height:115%;font-family:"Arial",sans-serif'>
 h1 {text-align: center;}
 p {text-align: center;}
 div {text-align: center;}
-.page-break {
-    page-break-before: always; /* Untuk browser lama */
-    break-before: page; /* Untuk browser modern */
-}
+
 
 </style>
 
