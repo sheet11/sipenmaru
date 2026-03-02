@@ -4,8 +4,7 @@ include_once '../config/koneksi.php';
 include_once '01_nav.php'; // Include navigation or header file
 
 // Fetch data from the 'periode' table
-$query = "SELECT * FROM periode where status = 'Pengumuman' ORDER BY id_periode DESC";
-$result = mysqli_query($kon, $query);
+$result = mysqli_query($kon, "SELECT * FROM periode where status = 'Pengumuman' ORDER BY id_periode DESC");
 ?>
 <aside class="right-side">
     <section class="content-header">
