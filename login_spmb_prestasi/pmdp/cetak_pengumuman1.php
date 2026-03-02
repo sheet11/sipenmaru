@@ -64,6 +64,8 @@
           <!--  <td colspan="4"><?php echo date('l, d-m-Y  H:i:s'); ?></td>-->
           <!--</tr>-->
 </table>
+<br>
+<br>
 <?php if($a['status_pmdp'] == "Lulus") {?>
 <table align="center">
     <tr>
@@ -77,7 +79,7 @@
         </td>
     </tr>
 </table>
-
+<table>
 <head>
 <style>
 /* Font Definitions */
