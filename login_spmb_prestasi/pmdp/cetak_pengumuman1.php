@@ -342,10 +342,6 @@ style='font-size:12.0pt;line-height:115%;font-family:"Arial",sans-serif'>
 
 </div>
 
-<span lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Arial MT",sans-serif'><br
-clear=all style='page-break-before:always'>
-</span>
-
 <div class=WordSection2>
 
 <p class=MsoBodyText><span lang=id>&nbsp;</span></p>
