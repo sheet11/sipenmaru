@@ -64,8 +64,6 @@
           <!--  <td colspan="4"><?php echo date('l, d-m-Y  H:i:s'); ?></td>-->
           <!--</tr>-->
 </table>
-<br>
-<br>
 <?php if($a['status_pmdp'] == "Lulus") {?>
 <table align="center">
     <tr>
@@ -82,8 +80,7 @@
 
 <head>
 <style>
-<!--
- /* Font Definitions */
+/* Font Definitions */
  @font-face
 	{font-family:"Cambria Math";
 	panose-1:2 4 5 3 5 4 6 3 2 4;}
@@ -142,7 +139,6 @@ div.WordSection2
 	{margin-bottom:0cm;}
 ul
 	{margin-bottom:0cm;}
--->
 </style>
 
 </head>
