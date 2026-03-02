@@ -149,7 +149,7 @@ ul
 
 </head>
 
-<body lang=EN-ID link=blue vlink=purple style='word-wrap:break-word'>
+<body lang=EN-ID link=blue vlink=purple >
 
 <div class=WordSection1>
 
