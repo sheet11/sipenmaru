@@ -78,6 +78,8 @@
                 <th>Tgl Daftar</th>
                 <th>Tgl Login</th>
                 <th>Status</th>
+                <th>Status Lulus T1</th>
+                <th>Status Lulus T2</th>
 		</tr>
         <tr>
         <?php           
@@ -129,7 +131,9 @@
                <td><a href="https://spmb-polkeslu.cloud/login_spmb_prestasi/assets/img/<?=$a['photo5']?>">Semester 5</a></td>
                <td><?=$a['tanggal_daftar']?></td>
                <td><?=$a['tanggal_login']?></td>
-               <td><?=$a['status']?></td>        
+               <td><?=$a['status']?></td>   
+               <td><?=$a['status_pmdp']?></td>     
+               <td><?=$a['status_pmdp_2']?></td>     
            </tr>
            <?php } ?>
 	</table>
