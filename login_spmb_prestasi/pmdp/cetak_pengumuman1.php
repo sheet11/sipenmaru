@@ -79,8 +79,7 @@
         </td>
     </tr>
 </table>
-<table>
-<head>
+
 <style>
 /* Font Definitions */
  @font-face
@@ -142,8 +141,6 @@ div.WordSection2
 ul
 	{margin-bottom:0cm;}
 </style>
-
-</head>
 
 <body lang=EN-ID link=blue vlink=purple >
 
