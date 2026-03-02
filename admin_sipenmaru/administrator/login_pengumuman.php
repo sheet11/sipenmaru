@@ -15,7 +15,7 @@ $dt = mysqli_num_rows($result);
             Tambah Data
         </button>
         <span> | </span>
-        <a href="../../login_spmb_prestasi/alter_login.php" type="button" class="btn btn-primary">
+        <a href="../../login_spmb_prestasi/tes_login.php" type="button" class="btn btn-primary">
             Login Pengumuman (Link uji coba)
         </a>
         <br>
