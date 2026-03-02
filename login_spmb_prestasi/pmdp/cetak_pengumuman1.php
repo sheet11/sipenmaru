@@ -176,7 +176,7 @@ line-height:115%;font-family:"Arial",sans-serif'> </span><b><span lang=IN
 style='font-size:12.0pt;line-height:115%;font-family:"Arial",sans-serif'>Uji
 Kesehatan</span></b><span lang=IN style='font-size:12.0pt;line-height:115%;
 font-family:"Arial",sans-serif'> di Rumah Sakit Pemerintah dengan pemeriksaan
-sesuai Form Uji Kesehatan berikut -> <a href="file/FORM UJI KESEHATAN MABA 2026.pdf">Form Uji Kesehatan Maba 2026</a> atau bisa juga di download di halaman utama <a href="spmb-polkeslu.cloud">Klik Disini</a> </span></p>
+sesuai Form Uji Kesehatan berikut -> <a href="file/FORM UJI KESEHATAN MABA 2026.pdf">Form Uji Kesehatan Maba 2026</a> atau bisa juga di download di halaman utama <a href=" . $_SERVER['HTTP_REFERER'] . ">Klik Disini</a> </span></p>
 
 <p class=MsoListParagraph style='margin-left:21.3pt;text-align:justify;
 text-indent:0cm;line-height:115%;text-autospace:ideograph-numeric ideograph-other'><span
