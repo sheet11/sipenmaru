@@ -25,7 +25,7 @@
 
 		  </tr>
 		</table>
-
+<a align="left" href="index.php">->Kembali ke Halaman Utama<-</a>
         <table align="center">
           <!--<tr>-->
           <!--    <td rowspan=18 width=164 valign="top"><a href="../assets/img/<?php echo $a['nama_foto'];?>" class="fancy">-->
