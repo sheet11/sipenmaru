@@ -30,7 +30,7 @@
 	<body>
 		<table class="table">
 			<tr >
-		    	<td><img src="../assets/img_app/logo-kemenkes.png"/></td>
+		    	<td><img src="../assets/img_app/logo-kemenkes.png" width="150" height="100"/></td>
 		    	<td align="center"><strong>Seleksi Penerimaan Mahasiswa Baru (SPMB)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun <?php echo date('Y') . '/' . (date('Y') + 1); ?></strong></td>
 		  	</tr>
 		  	
