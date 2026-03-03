@@ -68,12 +68,12 @@
 			</tr>
 			<tr>
 				<?php
-					$satu=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_GET[username]' AND semester = '1'"));
-					$dua=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_GET[username]' AND semester = '2'"));
-					$tiga=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_GET[username]' AND semester = '3'"));
-					$empat=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_GET[username]' AND semester = '4'"));
-					$lima=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_GET[username]' AND semester = '5'"));
-					$enam=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_GET[username]' AND semester = '6'"));
+					$satu=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_SESSION[username]' AND semester = '1'"));
+					$dua=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_SESSION[username]' AND semester = '2'"));
+					$tiga=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_SESSION[username]' AND semester = '3'"));
+					$empat=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_SESSION[username]' AND semester = '4'"));
+					$lima=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_SESSION[username]' AND semester = '5'"));
+					$enam=mysqli_fetch_array(mysqli_query($kon,"select * from tb_nilai where username='$_SESSION[username]' AND semester = '6'"));
 					
 					// Semester 1
 					if(!empty($satu['peng_agama'])){ $peng1a = 1;}else{ $peng1a = 0;}
