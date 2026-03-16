@@ -10,7 +10,9 @@ $password = ($_POST['password']); // variable password, dan nilainya sesuai yang
 
 // menyesuaikan dengan data di database
 $pengumuman = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='Pengumuman Prestasi Tahap 1' AND status_periode='Buka'");
+$pengumuman2 = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='Pengumuman Prestasi Tahap 2' AND status_periode='Buka'");
 $cek_pengumuman = mysqli_num_rows($pengumuman);
+$cek_pengumuman2 = mysqli_num_rows($pengumuman2);
 $perintah = "select * from tb_formulir3 WHERE username = '$username' AND password = '$password'";
 $hasil = mysqli_query($kon, $perintah);
 $row = mysqli_fetch_array($hasil);
@@ -31,6 +33,9 @@ if ($row && $row['level'] == "Prestasi") {
 	if ($cek_pengumuman > 0) {
 		$pengumuman_row = mysqli_fetch_assoc($pengumuman);
 		header("location:pmdp/cetak_pengumuman1.php");
+	}elseif ($cek_pengumuman2 > 0) {
+		$pengumuman_row = mysqli_fetch_assoc($pengumuman2);
+		header("location:pmdp/cetak_pengumuman2.php");		
 	} else {
 		header("location:pmdp/index.php");
 	}
