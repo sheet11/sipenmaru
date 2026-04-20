@@ -100,7 +100,7 @@ if (!$ambil) {
 $date = date("Y-m-d");
 $date = date('Y-m-d', strtotime($date));
 //echo $paymentDate; // echos today! 
-$query = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='SPMB Prestasi'");
+$query = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='SPMB 1 Pilihan'");
 
 if ($query) {
   $a = mysqli_fetch_array($query);
@@ -120,7 +120,7 @@ if ($status == "Buka") {
             <form action="proses_daftar.php" method="post" enctype="multipart/form-data" class="f1">
               <input type="hidden" name="id" value="<?php echo $ambil['id_formulir']; ?>">
               <input type="hidden" name="username" value="<?php echo $ambil['username']; ?>">
-              <h3>Pendaftaran SPMB Jalur Prestasi</h3>
+              <h3>Pendaftaran SPMB Jalur Mandiri 1 Pilihan</h3>
               <p>Poltekkes Kemenkes Bengkulu</p>
               <div class="f1-steps">
                 <div class="f1-progress">
