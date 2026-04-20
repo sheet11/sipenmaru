@@ -1,170 +1,814 @@
-    <script src="assets/js/jquery-1.11.0.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
-    <!-- Bootstrap Core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- BOOTSTRAP STYLES-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLES-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- MORRIS CHART STYLES-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPMB Jalur Mandiri 1 Pilihan</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="stylesheet" href="wizard.css">
+</head>
 
+<?php
+include "koneksi.php";
 
-    <?php
-	include "koneksi.php";
-	$ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT username, password, id_formulir FROM tb_formulir5 WHERE status='Belum Lengkap' ORDER BY id_formulir ASC LIMIT 1"));
-	?>
-    <div id="wrapper">
-    	<nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-    		<div class="navbar-header">
-    			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-    				<span class="sr-only">Toggle navigation</span>
-    				<span class="icon-bar"></span>
-    				<span class="icon-bar"></span>
-    				<span class="icon-bar"></span>
-    			</button>
-    			<a class="navbar-brand" href="index.php">Seleksi Penerimaan Mahasiswa Baru Jalur Mandiri Program Profesi/Alih Jenjang (1 Pilihan) <br><i style="color: red;">Minimal lulusan D3/D4/S1</i></a>
-    		</div>
-    		<div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">Poltekkes Kemenkes Bengkulu </div>
-    	</nav>
+// Pastikan tabel reservasi ada (idempotent)
+$reservation_table_check = mysqli_query($kon, "SHOW TABLES LIKE 'tb_form_reservation'");
+if (!$reservation_table_check || mysqli_num_rows($reservation_table_check) == 0) {
+  $create_table_sql = "
+        CREATE TABLE IF NOT EXISTS tb_form_reservation (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            id_formulir INT NOT NULL UNIQUE,
+            reservation_token VARCHAR(64) NOT NULL UNIQUE,
+            reserved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            expires_at TIMESTAMP NOT NULL,
+            client_ip VARCHAR(45),
+            user_agent VARCHAR(255),
+            attempts INT DEFAULT 0,
+            status ENUM('active', 'used', 'expired') DEFAULT 'active',
+            INDEX idx_token (reservation_token),
+            INDEX idx_expires (expires_at),
+            INDEX idx_id_formulir (id_formulir),
+            FOREIGN KEY (id_formulir) REFERENCES tb_formulir5(id_formulir) ON DELETE CASCADE
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+    ";
+  @mysqli_query($kon, $create_table_sql);
+}
 
+// Cleanup expired reservations (lightweight)
+@mysqli_query($kon, "DELETE FROM tb_form_reservation WHERE expires_at < NOW()");
 
-    	<?php
-		$date = date("Y-m-d");
-		$date = date('Y-m-d', strtotime($date));
-		//echo $paymentDate; // echos today! 
-		$query = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='SPMB 1 Pilihan'");
+// Buat token
+try {
+  $token = bin2hex(random_bytes(32));
+} catch (Exception $e) {
+  $token = bin2hex(openssl_random_pseudo_bytes(32));
+}
+$expires_at = date('Y-m-d H:i:s', time() + 15 * 60); // 15 menit
+$client_ip = $_SERVER['REMOTE_ADDR'] ?? null;
+$user_agent = $_SERVER['HTTP_USER_AGENT'] ?? null;
+$ambil = null;
 
-		if ($query) {
-			$a = mysqli_fetch_array($query);
-		}
-		$id_periode = $a['id_periode'];
-		$nama_periode = $a['nama_periode'];
-		$buka = $a['tanggal_buka'];
-		$tutup = $a['tanggal_tutup'];
-		$status = $a['status_periode'];
-		if ($status == "Buka") {
-			if (($date >= $buka) && ($date <= $tutup)) { ?>
-    			<div id="page-wrapper">
-    				<div id="page-inner">
-    					<div class="container-fluid" style="margin:30px;">
-    						<form method="post" action="" enctype="multipart/form-data" autocomplete="off">
-    							<table style="width:100%" class="table table-basic">
-    								<tr>
-    									<!-- <td colspan="2"><b>Identitas Diri (ID)</b></td> -->
-    									<input type="hidden" name="id" value="<?php echo $ambil['id_formulir']; ?>">
-    									<input type="hidden" name="username" value="<?php echo $ambil['username']; ?>">
-    								</tr>
-    								<tr>
+try {
+  mysqli_begin_transaction($kon, MYSQLI_TRANS_START_READ_WRITE);
 
-    									<td colspan="2"><input type="hidden" name="username" value="<?php echo $ambil['username']; ?>" class="form-control" disabled> </td>
-    								</tr>
+  // Ambil formulir yg belum dipesan (tidak punya active reservation)
+  $sel_sql = "SELECT f.id_formulir, f.username, f.password
+                FROM tb_formulir5 f
+                LEFT JOIN tb_form_reservation r ON f.id_formulir = r.id_formulir AND r.status = 'active' AND r.expires_at > NOW()
+                WHERE f.status = 'Belum Lengkap' AND r.id IS NULL
+                ORDER BY f.id_formulir ASC
+                LIMIT 1 FOR UPDATE";
 
-									<tr>
-										<td colspan="" style="color: red;">Pendaftaran dan Pembayaran akan di tutup hari ini jam 00.00 WIB 14-06-2025</td>
-									</tr>
-									
-    								<tr>
-    									<td colspan="2"><b>Nama Lengkap</b></td>
-    								</tr>
+  $sel = mysqli_query($kon, $sel_sql);
+  if ($sel && mysqli_num_rows($sel) > 0) {
+    $row = mysqli_fetch_assoc($sel);
+    $id_formulir = $row['id_formulir'];
 
-    								<tr>
-    									<td colspan="2"><input type="text" name="nama_lengkap" class="form-control" required=""> </td>
-    								</tr>
+    // Buat reservasi baru
+    $stmt = mysqli_prepare($kon, "INSERT INTO tb_form_reservation (id_formulir, reservation_token, expires_at, client_ip, user_agent) VALUES (?, ?, ?, ?, ?)");
+    if (!$stmt) {
+      mysqli_rollback($kon);
+      throw new Exception('Gagal menyiapkan reservasi: ' . mysqli_error($kon));
+    }
 
-    								<tr>
-    									<td colspan="2"><b>No Handphone</b></td>
-    								</tr>
+    mysqli_stmt_bind_param($stmt, "issss", $id_formulir, $token, $expires_at, $client_ip, $user_agent);
+    if (mysqli_stmt_execute($stmt)) {
+      mysqli_commit($kon);
+      $row['reservation_token'] = $token;
+      $row['reservation_expires'] = $expires_at;
+      $ambil = $row;
+    } else {
+      mysqli_rollback($kon);
+    }
+  } else {
+    mysqli_rollback($kon);
+  }
+} catch (Exception $e) {
+  mysqli_rollback($kon);
+}
 
-    								<tr>
-    									<td colspan="2"><input type="number" name="no_hp" class="form-control" required=""> </td>
-    								</tr>
+// Fallback (jika tidak berhasil membuat reservasi) — ambil formulir tanpa reservasi
+if (!$ambil) {
+  $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT id_formulir, username, password FROM tb_formulir5 WHERE status='Belum Lengkap' ORDER BY id_formulir ASC LIMIT 1"));
+}
+?>
+<?php
+$date = date("Y-m-d");
+$date = date('Y-m-d', strtotime($date));
+//echo $paymentDate; // echos today! 
+$query = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='SPMB Prestasi'");
 
-    								<tr>
-    									<td colspan="2"><b>Pilihan Prodi</b>
-    										<select name='pilihan_prodi' class='form-control' required>";
-    											<option value="">---- Pilih ----</option>
-    											<?php include "koneksi.php";
-												$query = mysqli_query($kon, "SELECT * FROM tb_prodi where aktif=3 order by nama_prodi desc");
-												while ($row = mysqli_fetch_array($query)) {
-													echo "<option value='$row[nama_prodi]'>$row[nama_prodi]</option>";
-												}
-												?>
-    											echo"
-    										</select>
-    									</td>
-    								</tr>
+if ($query) {
+  $a = mysqli_fetch_array($query);
+}
+$id_periode = $a['id_periode'];
+$nama_periode = $a['nama_periode'];
+$buka = $a['tanggal_buka'];
+$tutup = $a['tanggal_tutup'];
+$status = $a['status_periode'];
+if ($status == "Buka") {
+  if (($date >= $buka) && ($date <= $tutup)) { ?>
 
-    								<tr>
-    									<td colspan="4">
-    										<small>NB: <br>
-    											<b>1. Sebelum mendaftar harap klik tombol Refresh terlebih dahulu.</b><br>
-    											<b>2. Klik Tombol Cetak untuk Mencetak Hasil Pendaftaran</b><br>
-    											<b>3. Cetak Rangkap 2 (Satu Untuk Arsip dan satu Rangkap Lagi Untuk Dibawah Pada Saat Pembayaran Ke Bank) </b>
-    										</small>
-    									</td>
+    <body style="text-align: center;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <form action="proses_daftar.php" method="post" enctype="multipart/form-data" class="f1">
+              <input type="hidden" name="id" value="<?php echo $ambil['id_formulir']; ?>">
+              <input type="hidden" name="username" value="<?php echo $ambil['username']; ?>">
+              <h3>Pendaftaran SPMB Jalur Prestasi</h3>
+              <p>Poltekkes Kemenkes Bengkulu</p>
+              <div class="f1-steps">
+                <div class="f1-progress">
+                  <div class="f1-progress-line" data-now-value="25" data-number-of-steps="4" style="width: 25%;"></div>
+                </div>
+                <div class="f1-step active">
+                  <div class="f1-step-icon"><i class="fa fa-graduation-cap"></i></div>
+                  <p>Program Studi</p>
+                </div>
+                <div class="f1-step">
+                  <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                  <p>Biodata</p>
+                </div>
+                <div class="f1-step">
+                  <div class="f1-step-icon"><i class="fa fa-home"></i></div>
+                  <p>Alamat</p>
+                </div>
+                <div class="f1-step">
+                  <div class="f1-step-icon"><i class="fa fa-address-book"></i></div>
+                  <p>Sosial</p>
+                </div>
+              </div>
+              <!-- step 1: Program Studi -->
+              <fieldset>
+                <h4>Pilih Program Studi</h4>
+                <div class="form-group">
+                  <label>Nama Sekolah</label>
+                  <input type="text" name="nama_sekolah" placeholder="Masukan asal perguruan tinggi" class="form-control required" autocomplete="off">
+                  <span class="help-block">Contoh: Universitas Bengkulu, Politeknik Kesehatan Kemenkes Bengkulu, dll.</span>
+                </div>
+                <div class="form-group">
+                  <label>Akreditasi Perguruan Tinggi</label>
+                  <select name="akreditasi" class="form-control required">
+                    <option value="">-- Pilih Akreditasi Perguruan Tinggi --</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Keterangan Perguruan Tinggi</label>
+                  <select name="keterangan_sekolah" class="form-control required">
+                    <option value="">-- Pilih Keterangan Perguruan Tinggi --</option>
+                    <option value="Dalam Kota Bengkulu">Dalam Kota Bengkulu</option>
+                    <option value="Luar Kota Bengkulu">Luar Kota Bengkulu</option>
+                    <option value="Luar Provinsi Bengkulu">Luar Provinsi Bengkulu</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Program Studi</label>
+                  <select id="program_studi" name="program_studi" class="form-control">
+                    <option value="">-- Pilih Program Studi --</option>
+                  </select>
+                </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
+                </div>
+              </fieldset>
+              <!-- step 2: Biodata -->
+              <fieldset>
+                <h4>Identitas Pribadi</h4>
+                <div class="form-group">
+                  <label>Nama Lengkap<span class="text-danger" style="font-size: large;">*</span></label>
+                  <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" class="form-control">
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Jenis Kelamin <span class="text-danger" style="font-size: large;">*</span></label>
+                      <select name="jenis_kelamin" class="form-control">
+                        <option value="">-- Pilih Jenis Kelamin --</option>
+                        <option value="laki-laki">Laki-laki</option>
+                        <option value="perempuan">Perempuan</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Agama <span class="text-danger" style="font-size: large;">*</span></label>
+                      <select name="agama" id="" class="form-control">
+                        <option value="">-- Pilih Agama --</option>
+                        <option value="islam">Islam</option>
+                        <option value="kristen">Kristen</option>
+                        <option value="katolik">Katolik</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="budha">Budha</option>
+                        <option value="konghucu">Konghucu</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Tempat Lahir <span class="text-danger" style="font-size: large;">*</span></label>
+                      <input type="text" name="tempat_lahir" placeholder="Input Tempat Lahir" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Tanggal Lahir <span class="text-danger" style="font-size: large;">*</span></label>
+                      <input type="date" name="tanggal_lahir" placeholder="Input Tanggal Lahir" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Berat Badan <span class="text-danger" style="font-size: large;">*</span></label>
+                      <input type="number" name="berat_badan" placeholder="Input Berat Badan" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Tinggi Badan <span class="text-danger" style="font-size: large;">*</span></label>
+                      <input type="number" name="tinggi_badan" placeholder="Input Tinggi Badan" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Golongan Darah <span class="text-danger" style="font-size: large;">*</span></label>
+                  <select name="golongan_darah" id="" class="form-control">
+                    <option value="">-- Pilih Golongan Darah --</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="AB">AB</option>
+                    <option value="O">O</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Nomor Induk Keluarga(NIK) <span class="text-danger" style="font-size: large;">*</span></label>
+                  <input type="text" name="nik" placeholder="NIK Harus 16 Digit angka" maxlength="16" class="form-control" required>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Nama Ayah</label>
+                      <input type="text" name="nama_orang_tua" placeholder="Input Nama Orang Tua" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Pekerjaan Ayah <span class="text-danger" style="font-size: large;">*</span></label>
+                      <select name="pekerjaan_orang_tua" class="form-control">
+                        <option value="">-- Pilih Pekerjaan Orang Tua --</option>
+                        <option value="PNS">PNS</option>
+                        <option value="TNI/Polri">TNI/Polri</option>
+                        <option value="Swasta">Swasta</option>
+                        <option value="Wiraswasta">Wiraswasta</option>
+                        <option value="Petani">Petani</option>
+                        <option value="Buruh">Buruh</option>
+                        <option value="Nelayan">Nelayan</option>
+                        <option value="Pensiunan">Pensiunan</option>
+                        <option value="Lainnya">Lainnya</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Nama Ibu</label>
+                      <input type="text" name="nama_orang_tua_ibu" placeholder="Input Nama Orang Tua" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Pekerjaan Ibu <span class="text-danger" style="font-size: large;">*</span></label>
+                      <select name="pekerjaan_orang_tua_ibu" class="form-control">
+                        <option value="">-- Pilih Pekerjaan Orang Tua --</option>
+                        <option value="PNS">PNS</option>
+                        <option value="TNI/Polri">TNI/Polri</option>
+                        <option value="Swasta">Swasta</option>
+                        <option value="Wiraswasta">Wiraswasta</option>
+                        <option value="Petani">Petani</option>
+                        <option value="Buruh">Buruh</option>
+                        <option value="Nelayan">Nelayan</option>
+                        <option value="Pensiunan">Pensiunan</option>
+                        <option value="Lainnya">Lainnya</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Penghasilan Orang Tua Ayah + Ibu (per bulan) <span class="text-danger" style="font-size: large;">*</span></label>
+                  <select name='penghasilan_orang_tua' class='form-control'>
+                    <option>-- Pilih Penghasilan Orang Tua --</option>
+                    <?php include "koneksi.php";
+                    $query = mysqli_query($kon, "SELECT * FROM tb_penghasilan_orangtua");
+                    while ($row = mysqli_fetch_array($query)) {
+                    ?>
+                      <option value='<?php echo $row["jumlah_penghasilan_orangtua"]; ?>'><?php echo $row["keterangan"]; ?></option>
+                    <?php
+                    }
+                    ?>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Nomor Kartu BPJS</label>
+                  <input type="number" name="kartu_bpjs" placeholder="Input Nomor Kartu BPJS" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Pas Foto<span class="text-danger" style="font-size: large;">*</span></label>
+                  <input type="file" name="pas_foto" accept="image/*" class="form-control" required>
+                  <span class="help-block">Format: JPG, PNG. Ukuran maksimal: 1 MB. Pas Foto Formal Dengan Ukuran 3x4</span>
+                </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
+                  <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
+                </div>
+              </fieldset>
+              <!-- step 3: Alamat -->
+              <fieldset>
+                <!-- 1. Asal daerah: dalam / luar Bengkulu -->
+                <div class="form-group">
+                  <label for="asal">Asal daerah</label>
+                  <select id="asal" name="asal" class="form-control">
+                    <option value="">-- Pilih Asal Daerah --</option>
+                    <option value="dalam">Dalam Provinsi Bengkulu</option>
+                    <option value="luar">Luar Provinsi Bengkulu</option>
+                  </select>
+                </div>
 
-    								<tr>
-    									<td colspan="4">
-    										<input type="submit" name="submit" value="Cetak" class="btn btn-primary">
-    										<input type="submit" value="Refresh" onclick='window.location.reload();' class="btn btn-primary">
-    									</td>
-    								</tr>
-    							</table>
-    						</form>
-    					</div>
-    				</div>
-    			</div>
-    		<?php } else {
-				echo "<h1>Maaf pendaftaran sudah di tutup, silahkan mendaftar di periode selanjutnya</h1>";
-			}
-		} else { ?>
-    		<h1>Maaf pendaftaran sudah di tutup, silahkan mendaftar di periode selanjutnya</h1>
-    	<?php } ?>
+                <!-- 2a. Jika DALAM Bengkulu -->
+                <div id="group-dalam" class="group" style="display:none;">
+                  <h4>Alamat dalam Provinsi Bengkulu</h4>
 
-    	<?php
-		include "koneksi.php";
+                  <div class="form-group">
+                    <label for="kab_bkl">Kabupaten / Kota</label>
+                    <select id="kab_bkl" name="kab_bkl" class="form-control">
+                      <option value="">-- Pilih Kab/Kota --</option>
+                    </select>
+                  </div>
 
-		if (isset($_POST['submit'])) {
-			$date = date("Y-m-d");
-			$username = addslashes($_POST['username']);
-			$ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE username='$username' AND status='Terdaftar'"));
-			if ($ambil > 0) {
-				echo "<script>alert('ID $username sudah terdaftar, silahkan ulangi pendaftaran. Mohon klik tombol Refresh terlebih dahulu sebelum mendaftar.');window.location='index.php'</script>";
-			} else {
-				$dapat = mysqli_query($kon, "UPDATE tb_formulir5 SET nama_lengkap = '$_POST[nama_lengkap]',
-														no_hp = '$_POST[no_hp]',
-														pilihan_prodi = '$_POST[pilihan_prodi]',
-														tanggal_daftar = '$date',
-														status='Terdaftar' 
-													WHERE id_formulir='$_POST[id]'");
-				if ($dapat) {
-					echo "<script>alert('Anda Berhasil Terdaftar, Cetak Hasil Pendaftaran dan Silahkan Lakukan Pembayaran Ke Bank ');window.location='sukses.php?id=$username'</script>";
-				} else {
-					echo "<script>alert('Anda Gagal Terdaftar');window.location='../../'</script>";
-				}
-			}
-		}
-		?>
+                  <div class="form-group">
+                    <label for="kec_bkl">Kecamatan</label>
+                    <select id="kec_bkl" name="kec_bkl" class="form-control">
+                      <option value="">-- Pilih Kecamatan --</option>
+                    </select>
+                  </div>
+                </div>
 
-    	</body>
+                <!-- 2b. Jika LUAR Bengkulu -->
+                <div id="group-luar" class="group" style="display:none;">
+                  <h4>Alamat di Luar Provinsi Bengkulu</h4>
 
-    	</html>
+                  <div class="form-group">
+                    <label for="prov_luar">Provinsi</label>
+                    <select id="prov_luar" name="prov_luar" class="form-control">
+                      <option value="">-- Pilih Provinsi --</option>
+                    </select>
+                  </div>
 
-    	<style>
-    		/* Chrome, Safari, Edge, Opera */
-    		input::-webkit-outer-spin-button,
-    		input::-webkit-inner-spin-button {
-    			-webkit-appearance: none;
-    			margin: 0;
-    		}
+                  <div class="form-group">
+                    <label for="kab_luar">Kabupaten / Kota</label>
+                    <select id="kab_luar" name="kab_luar" class="form-control" disabled>
+                      <option value="">-- Pilih Kab/Kota --</option>
+                    </select>
+                  </div>
 
-    		/* Firefox */
-    		input[type=number] {
-    			-moz-appearance: textfield;
-    		}
-    	</style>
+                  <div class="form-group">
+                    <label for="kec_luar">Kecamatan</label>
+                    <select id="kec_luar" name="kec_luar" class="form-control" disabled>
+                      <option value="">-- Pilih Kecamatan --</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Alamat Rumah</label>
+                  <input type="text" name="alamat_rumah" placeholder="Alamat Rumah" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Daerah Asal</label>
+                  <input type="text" id="daerah_asal" name="daerah_asal" placeholder="Nama Daerah/Kelurahan Asal" class="form-control" readonly>
+                  <span class="help-block">Nilai ini akan otomatis diisi berdasarkan pilihan wilayah (kabupaten/kecamatan).</span>
+                </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
+                  <button type="button" class="btn btn-primary btn-next">Selanjutnya <i class="fa fa-arrow-right"></i></button>
+                </div>
+              </fieldset>
+              <!-- Akun step removed -->
+              <!-- step 5: Sosial -->
+              <fieldset>
+                <h4>Info Kontak</h4>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" name="email" placeholder="Input Email Aktif anda" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Nomor HP Aktif(WA)</label>
+                  <input type="text" name="no_hp" placeholder="Input Nomor HP anda" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Nomor HP Orang Tua/Wali yang bisa dihubungi</label>
+                  <input type="text" name="no_hp_ortu" placeholder="Input Nomor HP Orang Tua anda" class="form-control">
+                </div>
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-warning btn-previous"><i class="fa fa-arrow-left"></i> Sebelumnya</button>
+                  <button type="submit" class="btn btn-primary btn-submit"><i class="fa fa-save"></i> Submit</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    <?php } else { ?>
+      <div class="container" style="max-width:720px; margin-top:40px;">
+        <div class="panel panel-default" style="border-radius:10px; overflow:hidden;">
+          <div class="panel-heading" style="padding:18px 20px;">
+            <h3 class="panel-title" style="font-size:18px; font-weight:600;">
+              Pendaftaran Belum Dibuka
+            </h3>
+          </div>
+
+          <div class="panel-body" style="padding:20px;">
+            <p style="margin:0 0 10px;">
+              Saat ini <strong>periode pendaftaran belum dibuka</strong>.
+            </p>
+
+            <div class="alert alert-info" style="margin:15px 0;">
+              <strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan diumumkan melalui kanal institusi.
+            </div>
+
+            <p style="margin:0;">
+              Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
+            </p>
+
+            <hr style="margin:18px 0;">
+
+            <a href="/" class="btn btn-default">Kembali ke Beranda</a>
+            <!-- <a href="/pengumuman" class="btn btn-primary">Lihat Pengumuman</a> -->
+          </div>
+        </div>
+      </div>
+
+    <?php }
+} else { ?>
+    <div class="container" style="max-width:720px; margin-top:40px;">
+      <div class="panel panel-default" style="border-radius:10px; overflow:hidden;">
+        <div class="panel-heading" style="padding:18px 20px;">
+          <h3 class="panel-title" style="font-size:18px; font-weight:600;">
+            Pendaftaran SUdah ditutup
+          </h3>
+        </div>
+
+        <div class="panel-body" style="padding:20px;">
+          <p style="margin:0 0 10px;">
+            Saat ini <strong>periode pendaftaran sudah ditutup</strong>.
+          </p>
+
+          <div class="alert alert-info" style="margin:15px 0;">
+            <strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan diumumkan melalui kanal institusi.
+          </div>
+
+          <p style="margin:0;">
+            Jika Anda memerlukan bantuan, hubungi panitia/Helpdesk.
+          </p>
+
+          <hr style="margin:18px 0;">
+
+          <a href="/" class="btn btn-default">Kembali ke Beranda</a>
+          <!-- <a href="/pengumuman" class="btn btn-primary">Lihat Pengumuman</a> -->
+        </div>
+      </div>
+    </div>
+
+  <?php } ?>
+  <!-- Javascript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="wizard.js"></script>
+  <script>
+    // ========================================
+    // PROGRAM STUDI SELECTION LOGIC
+    // ========================================
+    const asalSekolahSelect = document.getElementById('asal_sekolah');
+    const programStudiSelect = document.getElementById('program_studi');
+
+    // Daftar program studi berdasarkan jenis sekolah / jurusan SMK
+    const programStudiList = {
+      'sma': [{
+          value: 'RPL Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners',
+          text: 'RPL Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners'
+        },
+        {
+          value: 'RPL Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan',
+          text: 'RPL Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan'
+        },
+        {
+          value: 'RPL Sarjana Terapan Gizi',
+          text: 'RPL Sarjana Terapan Gizi'
+        },
+        {
+          value: 'Pendidikan Profesi Ners',
+          text: 'Pendidikan Profesi Ners'
+        },
+        {
+          value: 'Pendidikan Profesi Bidan',
+          text: 'Pendidikan Profesi Bidan'
+        },
+      ]
+    };
+
+    // Isi dropdown program studi saat halaman dimuat
+    function populateProgramStudi() {
+      resetSelect(programStudiSelect, '-- Pilih Program Studi --');
+      const list = programStudiList['sma'];
+      if (list) {
+        list.forEach(prog => {
+          const opt = document.createElement('option');
+          opt.value = prog.value;
+          opt.textContent = prog.text;
+          programStudiSelect.appendChild(opt);
+        });
+      }
+    }
+    // Panggil saat halaman selesai dimuat
+    document.addEventListener('DOMContentLoaded', populateProgramStudi);
+    //batas pilih prodi
+    // ========================================
+
+    const API_URL = '../proxy_province.php'; // path ke PHP proxy
+    const BENGKULU_CODE = '17'; // kode provinsi Bengkulu (di data wilayah.id)
+
+    // Element form
+    const asalSelect = document.getElementById('asal');
+
+    const groupDalam = document.getElementById('group-dalam');
+    const kabBklSelect = document.getElementById('kab_bkl');
+    const kecBklSelect = document.getElementById('kec_bkl');
+
+    const groupLuar = document.getElementById('group-luar');
+    const provLuarSelect = document.getElementById('prov_luar');
+    const kabLuarSelect = document.getElementById('kab_luar');
+    const kecLuarSelect = document.getElementById('kec_luar');
+
+    // Helper: kosongkan dropdown & isi opsi default
+    function resetSelect(select, placeholder) {
+      select.innerHTML = '';
+      const opt = document.createElement('option');
+      opt.value = '';
+      opt.textContent = placeholder || '-- Pilih --';
+      select.appendChild(opt);
+    }
+
+    // Helper: fetch JSON dari proxy wilayah.php
+    function fetchWilayah(params) {
+      const url = API_URL + '?' + new URLSearchParams(params).toString();
+      return fetch(url).then(res => {
+        if (!res.ok) {
+          throw new Error('HTTP ' + res.status);
+        }
+        return res.json();
+      });
+    }
+
+    // Event: asal daerah diubah
+    asalSelect.addEventListener('change', () => {
+      const value = asalSelect.value;
+
+      if (value === 'dalam') {
+        groupDalam.style.display = 'block';
+        groupLuar.style.display = 'none';
+
+        loadKabupatenBengkulu();
+      } else if (value === 'luar') {
+        groupDalam.style.display = 'none';
+        groupLuar.style.display = 'block';
+
+        loadProvincesLuarBengkulu();
+      } else {
+        groupDalam.style.display = 'none';
+        groupLuar.style.display = 'none';
+      }
+    });
+
+    // ======================
+    // D A L A M  B E N G K U L U
+    // ======================
+
+    function loadKabupatenBengkulu() {
+      resetSelect(kabBklSelect, '-- Pilih Kab/Kota --');
+      resetSelect(kecBklSelect, '-- Pilih Kecamatan --');
+
+      fetchWilayah({
+          type: 'regencies',
+          code: BENGKULU_CODE
+        })
+        .then(json => {
+          if (!json.data) return;
+          json.data.forEach(reg => {
+            const opt = document.createElement('option');
+            opt.value = reg.code; // misal "17.01"
+            opt.textContent = reg.name;
+            kabBklSelect.appendChild(opt);
+          });
+        })
+        .catch(err => {
+          console.error('Error load kabupaten Bengkulu:', err);
+        });
+    }
+
+    kabBklSelect.addEventListener('change', () => {
+      const regencyCode = kabBklSelect.value;
+      resetSelect(kecBklSelect, '-- Pilih Kecamatan --');
+
+      if (!regencyCode) return;
+
+      fetchWilayah({
+          type: 'districts',
+          code: regencyCode
+        })
+        .then(json => {
+          if (!json.data) return;
+          json.data.forEach(dist => {
+            const opt = document.createElement('option');
+            opt.value = dist.code; // misal "17.01.01"
+            opt.textContent = dist.name;
+            kecBklSelect.appendChild(opt);
+          });
+        })
+        .catch(err => {
+          console.error('Error load kecamatan Bengkulu:', err);
+        });
+    });
+
+    // ======================
+    // L U A R  B E N G K U L U
+    // ======================
+
+    function loadProvincesLuarBengkulu() {
+      resetSelect(provLuarSelect, '-- Pilih Provinsi --');
+      resetSelect(kabLuarSelect, '-- Pilih Kab/Kota --');
+      resetSelect(kecLuarSelect, '-- Pilih Kecamatan --');
+      kabLuarSelect.disabled = true;
+      kecLuarSelect.disabled = true;
+
+      fetchWilayah({
+          type: 'provinces'
+        })
+        .then(json => {
+          if (!json.data) return;
+
+          json.data
+            .filter(p => p.code !== BENGKULU_CODE) // exclude Bengkulu
+            .forEach(prov => {
+              const opt = document.createElement('option');
+              opt.value = prov.code; // misal "32"
+              opt.textContent = prov.name;
+              provLuarSelect.appendChild(opt);
+            });
+        })
+        .catch(err => {
+          console.error('Error load provinsi luar Bengkulu:', err);
+        });
+    }
+
+    // Provinsi luar dipilih → load kab/kota
+    provLuarSelect.addEventListener('change', () => {
+      const provCode = provLuarSelect.value;
+      resetSelect(kabLuarSelect, '-- Pilih Kab/Kota --');
+      resetSelect(kecLuarSelect, '-- Pilih Kecamatan --');
+      kabLuarSelect.disabled = true;
+      kecLuarSelect.disabled = true;
+
+      if (!provCode) return;
+
+      fetchWilayah({
+          type: 'regencies',
+          code: provCode
+        })
+        .then(json => {
+          if (!json.data) return;
+          json.data.forEach(reg => {
+            const opt = document.createElement('option');
+            opt.value = reg.code; // misal "32.01"
+            opt.textContent = reg.name;
+            kabLuarSelect.appendChild(opt);
+          });
+          kabLuarSelect.disabled = false;
+        })
+        .catch(err => {
+          console.error('Error load kabupaten luar:', err);
+        });
+    });
+
+    // Kab/kota luar dipilih → load kecamatan
+    kabLuarSelect.addEventListener('change', () => {
+      const regencyCode = kabLuarSelect.value;
+      resetSelect(kecLuarSelect, '-- Pilih Kecamatan --');
+      kecLuarSelect.disabled = true;
+
+      if (!regencyCode) return;
+
+      fetchWilayah({
+          type: 'districts',
+          code: regencyCode
+        })
+        .then(json => {
+          if (!json.data) return;
+          json.data.forEach(dist => {
+            const opt = document.createElement('option');
+            opt.value = dist.code;
+            opt.textContent = dist.name;
+            kecLuarSelect.appendChild(opt);
+          });
+          kecLuarSelect.disabled = false;
+        })
+        .catch(err => {
+          console.error('Error load kecamatan luar:', err);
+        });
+    });
+
+    // -----------------------------------------------------------------
+    // Gabungkan pilihan wilayah ke `daerah_asal` (read-only) sesuai
+    // - jika 'dalam' : gabungkan kec + kab + "- Bengkulu"
+    // - jika 'luar'   : gabungkan kec + kab + prov
+    // -----------------------------------------------------------------
+    const daerahAsalInput = document.getElementById('daerah_asal');
+
+    function setDaerahAsal(text) {
+      if (daerahAsalInput) daerahAsalInput.value = text || '';
+    }
+
+    function updateDaerahDalam() {
+      const kabText = kabBklSelect.options[kabBklSelect.selectedIndex] ?
+        kabBklSelect.options[kabBklSelect.selectedIndex].text :
+        '';
+      const kecText = kecBklSelect.options[kecBklSelect.selectedIndex] ?
+        kecBklSelect.options[kecBklSelect.selectedIndex].text :
+        '';
+
+      if (kecText && kabText) {
+        setDaerahAsal(kecText + ', ' + kabText + ' - Bengkulu');
+      } else if (kabText) {
+        setDaerahAsal(kabText + ' - Bengkulu');
+      } else {
+        setDaerahAsal('');
+      }
+    }
+
+    function updateDaerahLuar() {
+      const provText = provLuarSelect.options[provLuarSelect.selectedIndex] ?
+        provLuarSelect.options[provLuarSelect.selectedIndex].text :
+        '';
+      const kabText = kabLuarSelect.options[kabLuarSelect.selectedIndex] ?
+        kabLuarSelect.options[kabLuarSelect.selectedIndex].text :
+        '';
+      const kecText = kecLuarSelect.options[kecLuarSelect.selectedIndex] ?
+        kecLuarSelect.options[kecLuarSelect.selectedIndex].text :
+        '';
+
+      if (kecText && kabText && provText) {
+        setDaerahAsal(kecText + ', ' + kabText + ', ' + provText);
+      } else if (kabText && provText) {
+        setDaerahAsal(kabText + ', ' + provText);
+      } else if (provText) {
+        setDaerahAsal(provText);
+      } else {
+        setDaerahAsal('');
+      }
+    }
+
+    // Wire listeners
+    kabBklSelect.addEventListener('change', () => {
+      updateDaerahDalam();
+    });
+    kecBklSelect.addEventListener('change', () => {
+      updateDaerahDalam();
+    });
+
+    provLuarSelect.addEventListener('change', () => {
+      // reset dependent selects when province changes
+      updateDaerahLuar();
+    });
+    kabLuarSelect.addEventListener('change', () => {
+      updateDaerahLuar();
+    });
+    kecLuarSelect.addEventListener('change', () => {
+      updateDaerahLuar();
+    });
+
+    // Clear daerah_asal when asal selection changes
+    asalSelect.addEventListener('change', () => {
+      setDaerahAsal('');
+    });
+  </script>
+    </body>
+
+</html>
