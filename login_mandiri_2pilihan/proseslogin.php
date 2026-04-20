@@ -10,17 +10,15 @@ $password = ($_POST['password']); // variable password, dan nilainya sesuai yang
 
 // menyesuaikan dengan data di database
 $perintah = "select * from tb_formulir4 WHERE username = '$username' AND password = '$password'";
-$hasil = mysqli_query($kon,$perintah);
+$hasil = mysqli_query($kon, $perintah);
 $row = mysqli_fetch_array($hasil);
-if($row && $row['level'] == "MANDIRI 2 PILIHAN")
-	{
-		session_start(); // memulai fungsi session
-		$_SESSION['username'] = $username;
-		$_SESSION['nama_lengkap'] = $row['nama_lengkap'];
-		$_SESSION['level'] = $row['level'];
+if ($row && $row['level'] == "MANDIRI 2 PILIHAN") {
+	session_start(); // memulai fungsi session
+	$_SESSION['username'] = $username;
+	$_SESSION['nama_lengkap'] = $row['nama_lengkap'];
+	$_SESSION['level'] = $row['level'];
 
-		header("location:mandiri_2_pilihan/lulus2.php"); // jika berhasil login, maka masuk ke file home.php
-	}else
-		{
-			echo "ID atau Pin salah, coba ulangi lagi...";
-		}	
+	header("location:mandiri_2_pilihan/"); // jika berhasil login, maka masuk ke file home.php
+} else {
+	echo "ID atau Pin salah, coba ulangi lagi...";
+}
