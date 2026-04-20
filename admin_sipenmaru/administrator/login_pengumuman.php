@@ -4,8 +4,8 @@ include_once '../config/koneksi.php';
 include_once '01_nav.php'; // Include navigation or header file
 
 // Fetch data from the 'periode' table
-$query = "SELECT * FROM periode where status = 'Pengumuman' ORDER BY id_periode DESC";
-$result = mysqli_query($kon, $query);
+$result = mysqli_query($kon, "SELECT * FROM periode where status = 'Pengumuman' ORDER BY id_periode DESC");
+$dt = mysqli_num_rows($result);
 ?>
 <aside class="right-side">
     <section class="content-header">
@@ -15,7 +15,7 @@ $result = mysqli_query($kon, $query);
             Tambah Data
         </button>
         <span> | </span>
-        <a href="../../login_spmb_prestasi/alter_login.php" type="button" class="btn btn-primary">
+        <a href="../../login_spmb_prestasi/tes_login.php" type="button" class="btn btn-primary">
             Login Pengumuman (Link uji coba)
         </a>
         <br>
@@ -92,8 +92,8 @@ $result = mysqli_query($kon, $query);
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1;
-                if (mysqli_num_rows($result) > 0): ?>
+                <?php $i = 1;                
+                if ($dt > 0): ?>
                     <?php while ($row = mysqli_fetch_assoc($result)): ?>
                         <tr>
                             <td><?= $i++ ?></td>
