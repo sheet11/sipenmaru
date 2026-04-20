@@ -100,7 +100,7 @@ if (!$ambil) {
 $date = date("Y-m-d");
 $date = date('Y-m-d', strtotime($date));
 //echo $paymentDate; // echos today! 
-$query = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='SPMB Prestasi'");
+$query = mysqli_query($kon, "SELECT * FROM periode WHERE nama_periode='SPMB 2 Pilihan'");
 
 if ($query) {
 	$a = mysqli_fetch_array($query);
