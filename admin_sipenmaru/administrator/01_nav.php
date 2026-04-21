@@ -160,7 +160,7 @@ include "session.php";
                   <li><a href="09_daftar_nilai_pmdp.php"><i class="fa fa-circle-o"></i>Daftar Nilai PMDP</a></li>
                 </ul>
               </li>
-              <!-- <li class="treeview">
+              <li class="treeview">
                 <a href="01_laporan_pmdp.php"><i class="fa fa-circle-o"></i>Laporan Keseluruhan<span
                     class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                 <ul class="treeview-menu">
@@ -182,7 +182,7 @@ include "session.php";
 
                   <li><a href="09_daftar_nilai_pmdp.php"><i class="fa fa-circle-o"></i>Daftar Nilai PMDP</a></li>
                 </ul>
-              </li> -->
+              </li>
             </ul>
           </li>
 
