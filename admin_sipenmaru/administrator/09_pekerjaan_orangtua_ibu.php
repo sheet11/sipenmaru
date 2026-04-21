@@ -172,11 +172,6 @@
                                                          ?><?php echo $jumlah; ?></td>
                     <td><?php
                                                          require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Kebidanan Curup' and pekerjaan_orang_tua_ibu= 'Nelayan' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                    <td><?php
-                                                         require_once("../config/koneksi.php");
                                                          $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Kebidanan Curup' and pekerjaan_orang_tua_ibu= 'Lainnya' ");
                                                          $jumlah= mysqli_num_rows ($query);
                                                          ?><?php echo $jumlah; ?></td>
@@ -219,11 +214,6 @@
                     <td><?php
                                                          require_once("../config/koneksi.php");
                                                          $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Keperawatan Bengkulu' and pekerjaan_orang_tua_ibu= 'Pensiunan' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                    <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Keperawatan Bengkulu' and pekerjaan_orang_tua_ibu= 'Nelayan' ");
                                                          $jumlah= mysqli_num_rows ($query);
                                                          ?><?php echo $jumlah; ?></td>
                     <td><?php
