@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                     <h2> Halaman Admin</h2>
                     <h5>Welcome <?php echo $_SESSION['nama_lengkap'];?></h5><br>
-                    <a href="09_cetak_laporan_pmdp.php" class="btn btn-primary">Cetak Laporan Excel </a>
+                    <a href="09_cetak_excel_keseluruhan.php" class="btn btn-primary">Cetak Laporan Excel </a>
                 </div>
             </div>
             <!-- /. ROW  -->
