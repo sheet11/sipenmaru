@@ -87,7 +87,7 @@
                      </li>
                      <?php }else{ ?>
                      <?php 
-                                if($_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan"){ ?>
+                                if($_SESSION['prodi'] == "a"){ ?>
                      <li>
                          <a href="02_lihat_nilai.php"><i class="fa fa-desktop fa-2x"></i> From Asesmen </a>
                      </li>
