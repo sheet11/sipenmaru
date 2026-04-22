@@ -629,6 +629,54 @@
                 </tr>
 
                 <tr>
+                    <td>11</td>
+                    <td>Sarjana Terapan Keperawatan dan Ners(Kelas Internasional)</td>
+                    <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' and pekerjaan_orang_tua= 'PNS' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+
+                    <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' and pekerjaan_orang_tua= 'Swasta' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+
+                    <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' and pekerjaan_orang_tua= 'Tani' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+
+                    <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' and pekerjaan_orang_tua= 'Buruh' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+                    <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' and pekerjaan_orang_tua= 'Wiraswasta' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+                    <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' and pekerjaan_orang_tua= 'Pensiunan' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+                    <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' and pekerjaan_orang_tua= 'Nelayan' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+                    <td><?php
+                                                         require_once("../config/koneksi.php");
+                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)' and pekerjaan_orang_tua= 'Lainnya' ");
+                                                         $jumlah= mysqli_num_rows ($query);
+                                                         ?><?php echo $jumlah; ?></td>
+                </tr>
+
+                <tr>
                     <td>12</td>
                     <td>Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan</td>
                     <td><?php
