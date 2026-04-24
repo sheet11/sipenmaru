@@ -767,9 +767,58 @@ if ($status == "Buka") {
 
 			// Sekolah Menengah Analis Kesehatan: pilihan TLM / analis
 			smk_analis: [{
-				value: 'D3 Teknologi Laboratorium Medis',
-				text: 'D3 Teknologi Laboratorium Medis (TLM)'
-			}],
+					value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)',
+					text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners(Kelas Internasional)'
+				},
+				{
+					value: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners',
+					text: 'Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners'
+				},
+				{
+					value: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan',
+					text: 'Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan'
+				},
+				{
+					value: 'Sarjana Terapan promosi Kesehatan',
+					text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
+				},
+				{
+					value: 'Sarjana Terapan Gizi',
+					text: 'Sarjana Terapan Gizi'
+				},
+				{
+					value: 'D3 keperawatan Curup',
+					text: 'D3 Keperawatan Curup'
+				},
+				{
+					value: 'D3 kebidanan Curup',
+					text: 'D3 Kebidanan Curup'
+				},
+				{
+					value: 'D3 Keperawatan Bengkulu',
+					text: 'D3 Keperawatan Bengkulu'
+				},
+				{
+					value: 'D3 kebidanan Bengkulu',
+					text: 'D3 Kebidanan Bengkulu'
+				},
+				{
+					value: 'D3 Farmasi',
+					text: 'D3 Farmasi'
+				},
+				{
+					value: 'D3 Teknologi Laboratorium Medis',
+					text: 'D3 Teknologi Laboratorium Medis (TLM)'
+				},
+				{
+					value: 'D3 Sanitasi',
+					text: 'D3 Sanitasi'
+				},
+				{
+					value: 'D3 Gizi',
+					text: 'D3 Gizi'
+				}
+			],
 
 			// SMK Teknik / Teknik Industri: beberapa program teknis seperti TLM atau Kesling
 			smk_teknik: [{
@@ -815,12 +864,18 @@ if ($status == "Buka") {
 			smk_semua: [{
 				value: 'Sarjana Terapan promosi Kesehatan',
 				text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
+			}, {
+				value: 'D3 Sanitasi',
+				text: 'D3 Sanitasi'
 			}],
 
 			// Fallback untuk SMK jenis lain
 			smk_lainnya: [{
 				value: 'Sarjana Terapan promosi Kesehatan',
 				text: 'Sarjana Terapan Promosi Kesehatan (Promkes)'
+			}, {
+				value: 'D3 Sanitasi',
+				text: 'D3 Sanitasi'
 			}]
 		};
 

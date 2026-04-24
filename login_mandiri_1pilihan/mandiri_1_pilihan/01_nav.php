@@ -74,9 +74,7 @@
                      <li>
                          <a href="03_upload_berkas.php"><i class="fa fa-upload fa-2x"></i> Upload Berkas </a>
                      </li>
-                     <li>
-                         <a href="05_download.php"><i class="fa fa-file-text fa-2x"></i> Pernyataan </a>
-                     </li>
+
                      <?php
                             include "../config/koneksi.php";
                             $query = mysqli_query($kon,"Select 'username' from tb_rpl where username='$_SESSION[username]'");
@@ -91,7 +89,7 @@
                      <li>
                          <a href="02_lihat_nilai.php"><i class="fa fa-desktop fa-2x"></i> From Asesmen </a>
                      </li>
-                     <?php }elseif($_SESSION['prodi'] == "RPL Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners") { ?>
+                     <?php }elseif($_SESSION['prodi'] == "a") { ?>
                      <li>
                          <a href="02_lihat_nilai2.php"><i class="fa fa-desktop fa-2x"></i> From Asesmen </a>
                      </li>
@@ -100,7 +98,7 @@
 
                      <!-- form asesmen dan evaluasi -->
                      <?php 
-                                if ($_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)" || $_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (Khusus TPMB)" || $_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan") { ?>
+                                if ($_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)" || $_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan (Khusus TPMB)" || $_SESSION['prodi'] == "a") { ?>
                      <li>
                          <a href="07_asesmen.php"><i class="fa fa-check-square fa-2x"></i> Asesmen</a>
                      </li>
@@ -146,13 +144,20 @@
                          <a href="06_status.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
                      </li>
                      <?php }elseif($_SESSION['prodi'] == "RPL Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan"){ ?>
-
+                     <li>
+                         <a href="05_download.php"><i class="fa fa-file-text fa-2x"></i> Pernyataan </a>
+                     </li>
                      <li>
                          <a href="06_status_rpl.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
                      </li>
-                     <?php }elseif($_SESSION['prodi'] == "RPL sarjana terapan keperawatan dan Pendidikan profesi ners"){ ?>
+                     <?php }elseif($_SESSION['prodi'] == "RPL Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners"){ ?>
                      <li>
-                         <a href="06_status_reguler.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
+                     <li>
+                         <a href="05_download.php"><i class="fa fa-file-text fa-2x"></i> Pernyataan </a>
+                     </li>
+                     <a href="rpl_str_ners_pengalaman.php"><i class="fa fa-book fa-2x"></i>Pengalaman Kerja
+                         (opsional)</a>
+                     <a href="06_status_reguler.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
                      </li>
                      <?php }elseif($_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)"){ ?>
                      <li>
