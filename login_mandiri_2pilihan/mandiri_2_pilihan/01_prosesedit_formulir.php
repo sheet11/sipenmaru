@@ -62,50 +62,54 @@ $jumlah9 = mysqli_num_rows($query9_4) + mysqli_num_rows($query9_5);
 
 if ($jumlah1 < 120) {
 	$sesi = 'Sesi 1 Pukul 08.00 - 09.30 WIB';
-	$tgl_ujian = '2025-06-17';
+	$tgl_ujian = '2026-06-09';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
 } elseif ($jumlah2 < 120) {
 	$sesi = 'Sesi 2 Pukul 10.00 - 11.30 WIB';
-	$tgl_ujian = '2025-06-17';
+	$tgl_ujian = '2026-06-09';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
 } elseif ($jumlah3 < 120) {
 	$sesi = 'Sesi 3 Pukul 13.00 - 14.30 WIB';
-	$tgl_ujian = '2025-06-17';
+	$tgl_ujian = '2026-06-09';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
 } elseif ($jumlah4 < 120) {
 	$sesi = 'Sesi 4 Pukul 08.00 - 09.30 WIB';
-	$tgl_ujian = '2025-06-18';
+	$tgl_ujian = '2026-06-10';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
 } elseif ($jumlah5 < 120) {
 	$sesi = 'Sesi 5 Pukul 10.00 - 11.30 WIB';
-	$tgl_ujian = '2025-06-18';
+	$tgl_ujian = '2026-06-10';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
 } elseif ($jumlah6 < 120) {
 	$sesi = 'Sesi 6 Pukul 13.00 - 14.30 WIB';
-	$tgl_ujian = '2025-06-18';
+	$tgl_ujian = '2026-06-10';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
 } elseif ($jumlah7 < 120) {
 	$sesi = 'Sesi 7 Pukul 08.00 - 09.30 WIB';
-	$tgl_ujian = '2025-06-19';
+	$tgl_ujian = '2026-06-11';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
 } elseif ($jumlah8 < 120) {
 	$sesi = 'Sesi 8 Pukul 10.00 - 11.30 WIB';
-	$tgl_ujian = '2025-06-19';
+	$tgl_ujian = '2026-06-11';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
 } elseif ($jumlah9 < 120) {
 	$sesi = 'Sesi 9 Pukul 13.00 - 14.30 WIB';
-	$tgl_ujian = '2025-06-19';
+	$tgl_ujian = '2026-06-11';
 	$tempat_ujian = 'Kampus A Poltekkes Bengkulu';
 	$ruang_ujian = 'Laboratorium Komputer';
 } else {
+	$sesi = 'Silahkan menghubungi panitia untuk penjadwalan ujian';
+	$tgl_ujian = 'Silahkan menghubungi panitia untuk penjadwalan ujian';
+	$tempat_ujian = 'Silahkan menghubungi panitia untuk penjadwalan ujian';
+	$ruang_ujian = 'Silahkan menghubungi panitia untuk penjadwalan ujian';
 }
 
 $data = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE id_formulir='$_POST[id_formulir]'");
@@ -201,4 +205,4 @@ if (empty($nama_file)) {
 		echo "<script>alert('Mohon maaf, type gambar yang diperbolehkan .jpg , .jpeg , .png');window.location='01_formulir.php'</script>";
 	}
 }
-?>	
+?>

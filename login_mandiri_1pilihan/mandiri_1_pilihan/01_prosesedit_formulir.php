@@ -15,48 +15,48 @@
 		// Folder tempat menyimpan gambarnya
 		$path = "../assets/img/$nama-".$nama_file;
 		
-$query1_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 1 Pukul 08.00 - 09.30 WIB'");
-$query1_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 1 Pukul 08.00 - 09.30 WIB'");
+$query1_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 1 Pukul 08.00 - 09.30 WIB' AND tahun_daftar='" . date('Y') . "'");
+$query1_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 1 Pukul 08.00 - 09.30 WIB' AND tahun_daftar='" . date('Y') . "'");
 $jumlah1 = mysqli_num_rows($query1_4) + mysqli_num_rows($query1_5);
 
 // Sesi 2
-$query2_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 2 Pukul 10.00 - 11.30 WIB'");
-$query2_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 2 Pukul 10.00 - 11.30 WIB'");
+$query2_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 2 Pukul 10.00 - 11.30 WIB' AND tahun_daftar='" . date('Y') . "'");
+$query2_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 2 Pukul 10.00 - 11.30 WIB' AND tahun_daftar='" . date('Y') . "'");
 $jumlah2 = mysqli_num_rows($query2_4) + mysqli_num_rows($query2_5);
 
 // Sesi 3
-$query3_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 3 Pukul 13.00 - 14.30 WIB'");
-$query3_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 3 Pukul 13.00 - 14.30 WIB'");
+$query3_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 3 Pukul 13.00 - 14.30 WIB' AND tahun_daftar='" . date('Y') . "'");
+$query3_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 3 Pukul 13.00 - 14.30 WIB' AND tahun_daftar='" . date('Y') . "'");
 $jumlah3 = mysqli_num_rows($query3_4) + mysqli_num_rows($query3_5);
 
 // Sesi 4
-$query4_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 4 Pukul 08.00 - 09.30 WIB'");
-$query4_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 4 Pukul 08.00 - 09.30 WIB'");
+$query4_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 4 Pukul 08.00 - 09.30 WIB' AND tahun_daftar='" . date('Y') . "'");
+$query4_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 4 Pukul 08.00 - 09.30 WIB' AND tahun_daftar='" . date('Y') . "'");
 $jumlah4 = mysqli_num_rows($query4_4) + mysqli_num_rows($query4_5);
 
 // Sesi 5
-$query5_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 5 Pukul 10.00 - 11.30 WIB'");
-$query5_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 5 Pukul 10.00 - 11.30 WIB'");
+$query5_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 5 Pukul 10.00 - 11.30 WIB' AND tahun_daftar='" . date('Y') . "'");
+$query5_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 5 Pukul 10.00 - 11.30 WIB' AND tahun_daftar='" . date('Y') . "'");
 $jumlah5 = mysqli_num_rows($query5_4) + mysqli_num_rows($query5_5);
 
 // Sesi 6
-$query6_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 6 Pukul 13.00 - 14.30 WIB'");
-$query6_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 6 Pukul 13.00 - 14.30 WIB'");
+$query6_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 6 Pukul 13.00 - 14.30 WIB' AND tahun_daftar='" . date('Y') . "'");
+$query6_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 6 Pukul 13.00 - 14.30 WIB' AND tahun_daftar='" . date('Y') . "'");
 $jumlah6 = mysqli_num_rows($query6_4) + mysqli_num_rows($query6_5);
 
 // Sesi 7
-$query7_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 7 Pukul 08.00 - 09.30 WIB'");
-$query7_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 7 Pukul 08.00 - 09.30 WIB'");
+$query7_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 7 Pukul 08.00 - 09.30 WIB' AND tahun_daftar='" . date('Y') . "'");
+$query7_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 7 Pukul 08.00 - 09.30 WIB' AND tahun_daftar='" . date('Y') . "'");
 $jumlah7 = mysqli_num_rows($query7_4) + mysqli_num_rows($query7_5);
 
 // Sesi 8
-$query8_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 8 Pukul 10.00 - 11.30 WIB'");
-$query8_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 8 Pukul 10.00 - 11.30 WIB'");
+$query8_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 8 Pukul 10.00 - 11.30 WIB' AND tahun_daftar='" . date('Y') . "'");
+$query8_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 8 Pukul 10.00 - 11.30 WIB' AND tahun_daftar='" . date('Y') . "'");
 $jumlah8 = mysqli_num_rows($query8_4) + mysqli_num_rows($query8_5);
 
 // Sesi 9
-$query9_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 9 Pukul 13.00 - 14.30 WIB'");
-$query9_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 9 Pukul 13.00 - 14.30 WIB'");
+$query9_4 = mysqli_query($kon, "SELECT * FROM tb_formulir4 WHERE sesi_ujian='Sesi 9 Pukul 13.00 - 14.30 WIB' AND tahun_daftar='" . date('Y') . "'");
+$query9_5 = mysqli_query($kon, "SELECT * FROM tb_formulir5 WHERE sesi_ujian='Sesi 9 Pukul 13.00 - 14.30 WIB' AND tahun_daftar='" . date('Y') . "'");
 $jumlah9 = mysqli_num_rows($query9_4) + mysqli_num_rows($query9_5);
 
 
@@ -220,4 +220,4 @@ if (empty($a['sesi_ujian'])) {
 			echo "<script>alert('Mohon maaf, type gambar yang diperbolehkan .jpg , .jpeg , .png');window.location='01_formulir.php'</script>";
 		}
 	}
-?>	
+?>

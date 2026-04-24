@@ -5,15 +5,18 @@
 
 <aside class="right-side">
     <section class="content-header">
-        <div class="container-fluid" style="margin:10px;">  
-        <table style="width:100%;">
-            <tr class="info">
-            <td align="left" colspan="6"><b><h4>Daftar Calon Mahasiswa Baru 2 Pilihan Mandiri</b></h4></td>   
-    
-        </tr>
-            <tr>
-                <td width="20%"><label>Pencarian Berdasarkan</label></td>               
-                    <form method="post" action="" enctype="multipart/form-data">                    
+        <div class="container-fluid" style="margin:10px;">
+            <table style="width:100%;">
+                <tr class="info">
+                    <td align="left" colspan="6"><b>
+                            <h4>Daftar Calon Mahasiswa Baru 2 Pilihan Mandiri
+                        </b></h4>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td width="20%"><label>Pencarian Berdasarkan</label></td>
+                    <form method="post" action="" enctype="multipart/form-data">
                         <td width="25%">
                             <select name="cariid" class="form-control">
                                 <option value="username">ID </option>
@@ -29,53 +32,59 @@
                         <td width="15%"></td>
                         <td>
                             <div class="form-group input-group" style="margin-top:15px;">
-                            <span class="input-group-btn">
-                                <input type="text" name="cari" placeholder="Input ID/Scanner Barcode" class="form-control">
-                                <button class="btn btn-default" type="submit" name="submit"><i class="fa fa-search"></i></button>
-                            </span>
-                            </div>  
+                                <span class="input-group-btn">
+                                    <input type="text" name="cari" placeholder="Input ID/Scanner Barcode"
+                                        class="form-control">
+                                    <button class="btn btn-default" type="submit" name="submit"><i
+                                            class="fa fa-search"></i></button>
+                                </span>
+                            </div>
                         </td>
                         <td width="5%">
-                        </td>   
+                        </td>
                     </form>
-                
-	                <td>
-	                    <a href="081_sesi.php" class="btn btn-primary">ALL</a>
-	                </td>                   
-            </tr>
-            <tr>
-                
-                <td>
-                    <?php
+
+                    <td>
+                        <a href="081_sesi.php" class="btn btn-primary">ALL</a>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <?php
                     if(isset($_POST['submit']))
                     {
                         $cariid = $_POST['cariid'];
                         $cari = $_POST['cari'];
                     ?>
-                        <a class="btn btn-success" href="081_cetak_excel_calon_mahasiswa.php?cariid=<?php echo $cariid; ?>&cari=<?php echo $cari; ?>">Cetak Excel</a>
-                    <?php
+                        <a class="btn btn-success"
+                            href="081_cetak_excel_calon_mahasiswa.php?cariid=<?php echo $cariid; ?>&cari=<?php echo $cari; ?>">Cetak
+                            Excel</a>
+                        <?php
                     }
                     elseif(!empty($_GET['username']))
                     {
                     ?>
-                        <a class="btn btn-success" href="081_cetak_excel_calon_mahasiswa.php?username=<?php echo $_GET['username']; ?>">Cetak Excel</a>
-                    <?php
+                        <a class="btn btn-success"
+                            href="081_cetak_excel_calon_mahasiswa.php?username=<?php echo $_GET['username']; ?>">Cetak
+                            Excel</a>
+                        <?php
                     }
                     else
                     {
                     ?>
                         <a class="btn btn-success" href="081_cetak_excel_calon_mahasiswa.php">Cetak Excel</a>
-                    <?php
+                        <?php
                     }
                     ?>
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
 
-        <?php
+            <?php
         // Daftar sesi ujian
         $sesi_list = [
             'Sesi 1 Pukul 08.00 - 09.30 WIB',
@@ -95,12 +104,12 @@
 
         foreach ($sesi_list as $label) {
             // Hitung jumlah di tb_formulir4
-            $query4 = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir4 WHERE sesi_ujian='$label'");
+            $query4 = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir4 WHERE sesi_ujian='$label' and tahun_daftar='" . date('Y') . "'");
             $row4 = mysqli_fetch_assoc($query4);
             $jumlah4 = $row4['jumlah'];
 
             // Hitung jumlah di tb_formulir5
-            $query5 = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE sesi_ujian='$label'");
+            $query5 = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE sesi_ujian='$label' and tahun_daftar='" . date('Y') . "'");
             $row5 = mysqli_fetch_assoc($query5);
             $jumlah5 = $row5['jumlah'];
 
@@ -111,27 +120,27 @@
                 '</a> ';
         }
         ?>
-        
-        <br>
-        <table style="width:100%;" class="table table-bordered">    
-            <tr class="info">
-                <th>No.</th>
-                <th>ID </th>
-                <th>Password</th>
-                <th>Nama</th>
-                <th>Prodi 1</th>
-                <th>Prodi 2</th>
-                <th>No HP</th>
-                <th>Tgl Daftar</th>
-                <th>Tgl Login</th>
-                <th>Tgl Ujian</th>
-                <th>Tempat Ujian</th>
-                <th>Ruang Ujian</th>
-                <th>Sesi Ujian</th>
-                <th>Status</th>
-                <th width="150">Aksi</th>
-            </tr>
-            <?php 
+
+            <br>
+            <table style="width:100%;" class="table table-bordered">
+                <tr class="info">
+                    <th>No.</th>
+                    <th>ID </th>
+                    <th>Password</th>
+                    <th>Nama</th>
+                    <th>Prodi 1</th>
+                    <th>Prodi 2</th>
+                    <th>No HP</th>
+                    <th>Tgl Daftar</th>
+                    <th>Tgl Login</th>
+                    <th>Tgl Ujian</th>
+                    <th>Tempat Ujian</th>
+                    <th>Ruang Ujian</th>
+                    <th>Sesi Ujian</th>
+                    <th>Status</th>
+                    <th width="150">Aksi</th>
+                </tr>
+                <?php 
             include "../config/koneksi.php";
             error_reporting(E_ALL);
 ini_set('display_errors', 0);
@@ -295,12 +304,7 @@ ini_set('display_errors', 0);
     echo "</table><div class=\"paginationw\">$linkHalaman</div>";
     }
             ?>
-        
-     
-    </div>
-</div>          
 
 
-
-
-
+        </div>
+        </div>
