@@ -16,7 +16,7 @@
 include "koneksi.php";
 // Fallback (jika tidak berhasil membuat reservasi) — ambil formulir tanpa reservasi
 if (!$ambil) {
-  $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT id_formulir, username, password FROM tb_formulir5 WHERE status='Belum Lengkap' ORDER BY id_formulir ASC LIMIT 1"));
+  $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT id_formulir, username, password FROM tb_formulir5 WHERE status='Belum Lengkap' and tahun_pendaftaran = YEAR(CURDATE()) ORDER BY id_formulir ASC LIMIT 1"));
 }
 ?>
 <?php
