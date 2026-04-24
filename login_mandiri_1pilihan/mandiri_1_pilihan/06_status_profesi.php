@@ -28,43 +28,47 @@ include "../config/koneksi.php";
 				$i =  +1;
 				while ($a = mysqli_fetch_array($query)) {
 				?>
-					<tr>
-						<td><?= $i ?></td>
-						<td><?= $a["nama_lengkap"] ?></td>
-						<td><?= $a["pilihan_prodi"] ?></td>
-						<td><?php
+				<tr>
+					<td><?= $i ?></td>
+					<td><?= $a["nama_lengkap"] ?></td>
+					<td><?= $a["pilihan_prodi"] ?></td>
+					<td><?php
 							if ($a['nama_foto'] == null) { ?>
-								<a class='btn btn-sm btn-danger'><b>Belum Lengkap</b></a>
-							<?php } else { ?>
-								<a alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
-								<?php } ?>
-						</td>
-						<td><?php
-							if ($a['photo1'] == null || $a['photo2'] == null || $a['photo3'] == null) { ?>
-								<a class='btn btn-sm btn-danger'><b>Belum Lengkap</b></a>
-							<?php } else { ?>
-								<a alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
-								<?php } ?>
-						</td>
-						<td>
-							<?php if ($a['nama_foto'] == null || $a['photo1'] == null || $a['photo2'] == null || $a['photo3'] == null) { ?>
-								<a class='btn btn-sm btn-danger'><b>Lengkapi Berkas untuk mencetak Kartu</b></a>
-							<?php } else { ?>
-								<a href='01_cetak_formulir.php?id_formulir=<?= $a["id_formulir"] ?>' class='btn btn-info'><b>Cetak</b></a>
+						<a class='btn btn-sm btn-danger'><b>Belum Lengkap</b></a>
+						<?php } else { ?>
+						<a alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
 							<?php } ?>
-						</td>
-					</tr>
+					</td>
+					<td><?php
+							if ($a['photo1'] == null || $a['photo2'] == null || $a['photo3'] == null) { ?>
+						<a class='btn btn-sm btn-danger'><b>Belum Lengkap</b></a>
+						<?php } else { ?>
+						<a alt='Image description' class='btn btn-sm btn-success'><b>Sudah Lengkap</b>
+							<?php } ?>
+					</td>
+					<td>
+						<?php if ($a['nama_foto'] == null || $a['photo1'] == null || $a['photo2'] == null || $a['photo3'] == null) { ?>
+						<a class='btn btn-sm btn-danger'><b>Lengkapi Berkas untuk mencetak Kartu</b></a>
+						<?php }elseif($a['sesi_ujian'] == '') { ?>
+						<a class="btn btn-sm btn-primary"
+							href="01_validasi_formulir.php?id_formulir=<?=$a['id_formulir']?>">Validasi Formulir</a>
+						<?php }else{?>
+						<a href='01_cetak_formulir.php?id_formulir=<?= $a["id_formulir"] ?>'
+							class='btn btn-info'><b>Cetak</b></a>
+						<?php } ?>
+					</td>
+				</tr>
 			</table>
 
-		<?php }
+			<?php }
 		?>
-		<tr>
-			<td><b>Catatan</b><br>
-				1. Lengkapi dahulu form-form yang tertera untuk mencetak kartu pendaftaran</br>
-				2. Pastikan kembali berkas-berkas yang sudah d upload</br>
-			</td>
-		</tr>
-		</table>
+			<tr>
+				<td><b>Catatan</b><br>
+					1. Lengkapi dahulu form-form yang tertera untuk mencetak kartu pendaftaran</br>
+					2. Pastikan kembali berkas-berkas yang sudah d upload</br>
+				</td>
+			</tr>
+			</table>
 
 
 		</div>

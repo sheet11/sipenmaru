@@ -155,9 +155,10 @@
                      <li>
                          <a href="05_download.php"><i class="fa fa-file-text fa-2x"></i> Pernyataan </a>
                      </li>
-                     <a href="rpl_str_ners_pengalaman.php"><i class="fa fa-book fa-2x"></i>Pengalaman Kerja
-                         (opsional)</a>
-                     <a href="06_status_reguler.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
+                     <li><a href="rpl_str_ners_pengalaman.php"><i class="fa fa-book fa-2x"></i>Pengalaman
+                             Kerja(opsional)</a><br>
+                         <a href="06_status_reguler.php"><i class="fa fa-qrcode fa-2x"></i> Cetak Kartu</a>
+                     </li>
                      </li>
                      <?php }elseif($_SESSION['prodi'] == "RPL profesi bidan (khusus TPMB)"){ ?>
                      <li>

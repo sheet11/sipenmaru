@@ -49,7 +49,10 @@
                     <td>
                         <?php if($a['nama_foto'] == null || $a['photo5'] == null || $a['photo4'] == null ){?>
                         <a class='btn btn-sm btn-danger'><b>Lengkapi Berkas untuk mencetak Kartu</b></a>
-                        <?php }else{ ?>
+                        <?php }elseif($a['sesi_ujian'] == '') { ?>
+                        <a class="btn btn-sm btn-primary"
+                            href="01_validasi_formulir.php?id_formulir=<?=$a['id_formulir']?>">Validasi Formulir</a>
+                        <?php }else{?>
                         <a href='01_cetak_formulir.php?id_formulir=<?=$a["id_formulir"]?>'
                             class='btn btn-info'><b>Cetak</b></a>
                         <?php } ?>
