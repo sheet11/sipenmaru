@@ -19,6 +19,11 @@ if ($row && $row['level'] == "MANDIRI 1 PILIHAN") {
 	$_SESSION['level'] = $row['level'];
 	$_SESSION['prodi'] = $row['pilihan_prodi'];
 
+	if ($row['status'] == 'Terdaftar') {
+		mysqli_query($kon, "update tb_formulir5 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR), status = 'Sudah Membayar' where username = '$username'");
+	} else {
+		mysqli_query($kon, "update tb_formulir5 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR) where username = '$username'");
+	}
 	header("location:mandiri_1_pilihan/"); // jika berhasil login, maka masuk ke file home.php
 
 } else {

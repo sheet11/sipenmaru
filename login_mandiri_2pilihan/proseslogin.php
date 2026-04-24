@@ -18,6 +18,12 @@ if ($row && $row['level'] == "MANDIRI 2 PILIHAN") {
 	$_SESSION['nama_lengkap'] = $row['nama_lengkap'];
 	$_SESSION['level'] = $row['level'];
 
+	if ($row['status'] == 'Terdaftar') {
+		mysqli_query($kon, "update tb_formulir4 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR), status = 'Sudah Membayar' where username = '$username'");
+	} else {
+		mysqli_query($kon, "update tb_formulir4 set tanggal_login = DATE_ADD(NOW(), INTERVAL 7 HOUR) where username = '$username'");
+	}
+	
 	header("location:mandiri_2_pilihan/"); // jika berhasil login, maka masuk ke file home.php
 } else {
 	echo "ID atau Pin salah, coba ulangi lagi...";

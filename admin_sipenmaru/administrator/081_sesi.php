@@ -104,12 +104,12 @@
 
         foreach ($sesi_list as $label) {
             // Hitung jumlah di tb_formulir4
-            $query4 = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir4 WHERE sesi_ujian='$label' and tahun_daftar='" . date('Y') . "'");
+            $query4 = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir4 WHERE sesi_ujian='$label' AND tahun_pendaftaran = YEAR(CURDATE())");
             $row4 = mysqli_fetch_assoc($query4);
             $jumlah4 = $row4['jumlah'];
 
             // Hitung jumlah di tb_formulir5
-            $query5 = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE sesi_ujian='$label' and tahun_daftar='" . date('Y') . "'");
+            $query5 = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE sesi_ujian='$label' AND tahun_pendaftaran = YEAR(CURDATE())");
             $row5 = mysqli_fetch_assoc($query5);
             $jumlah5 = $row5['jumlah'];
 
@@ -147,7 +147,7 @@ ini_set('display_errors', 0);
                 if(isset($_POST['submit'])){
                     $cariid = $_POST['cariid'];
                     $cari = $_POST['cari'];
-                    $query=mysqli_query($kon,"select * from tb_formulir4 where status='Sudah Membayar' and $cariid = '$cari' or $cariid = '0' "); 
+                    $query=mysqli_query($kon,"select * from tb_formulir4 where status='Sudah Membayar' and $cariid = '$cari' or $cariid = '0' and tahun_pendaftaran = YEAR(CURDATE())"); 
                     $i = $posisi+1;      
                 while($a=mysqli_fetch_array($query)){
             echo"
@@ -196,7 +196,7 @@ ini_set('display_errors', 0);
             }
                 }
                 elseif(!empty($_GET['username'])){
-                    $query=mysqli_query($kon,"select * from tb_formulir4 where status='Sudah Membayar' and username='$_GET[username]'"); 
+                    $query=mysqli_query($kon,"select * from tb_formulir4 where status='Sudah Membayar' and username='$_GET[username]' and tahun_pendaftaran = YEAR(CURDATE()) order by username asc"); 
                     $i = $posisi+1;      
                 while($a=mysqli_fetch_array($query)){
             echo"
