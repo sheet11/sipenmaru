@@ -30,8 +30,10 @@ error_reporting(0);
                         <td>
                             <div class="form-group input-group" style="margin-top:15px;">
                                 <span class="input-group-btn">
-                                    <input type="text" name="cari" placeholder="Input ID/Scanner Barcode" class="form-control">
-                                    <button class="btn btn-default" type="submit" name="submit"><i class="fa fa-search"></i></button>
+                                    <input type="text" name="cari" placeholder="Input ID/Scanner Barcode"
+                                        class="form-control">
+                                    <button class="btn btn-default" type="submit" name="submit"><i
+                                            class="fa fa-search"></i></button>
                                 </span>
                             </div>
                         </td>
@@ -46,7 +48,7 @@ error_reporting(0);
                 <tr>
                     <td><a class="btn btn-info"> Jumlah Jalur Umum: <?php
                                                                     require_once("../config/koneksi.php");
-                                                                    $query = mysqli_query($kon, "SELECT * from tb_formulir5 where status='Sudah Membayar' ");
+                                                                    $query = mysqli_query($kon, "SELECT * from tb_formulir5 where status='Sudah Membayar' and tahun_pendaftaran = YEAR(CURDATE())");
                                                                     $jumlah = mysqli_num_rows($query); ?>
                             <?php echo $jumlah; ?> </a></td>
                     <td>
@@ -85,7 +87,7 @@ error_reporting(0);
                 if (isset($_POST['submit'])) {
                     $cariid = $_POST['cariid'];
                     $cari = $_POST['cari'];
-                    $query = mysqli_query($kon, "select * from tb_formulir5 where status='Sudah Membayar' and $cariid = '$cari' or $cariid = '0' ");
+                    $query = mysqli_query($kon, "select * from tb_formulir5 where status='Sudah Membayar' and $cariid = '$cari' or $cariid = '0' and tahun_pendaftaran = YEAR(CURDATE())");
                     $i = $posisi + 1;
                     while ($a = mysqli_fetch_array($query)) {
                         echo "
@@ -133,7 +135,7 @@ error_reporting(0);
                         $i++;
                     }
                 } elseif (!empty($_GET['username'])) {
-                    $query = mysqli_query($kon, "select * from tb_formulir5  where status='Sudah Membayar' and username='$_GET[username]'");
+                    $query = mysqli_query($kon, "select * from tb_formulir5  where status='Sudah Membayar' and username='$_GET[username]' and tahun_pendaftaran = YEAR(CURDATE())");
                     $i = $posisi + 1;
                     while ($a = mysqli_fetch_array($query)) {
                         echo "
@@ -184,7 +186,7 @@ error_reporting(0);
                     $p      = new Paging;
                     $batas  = 10;
                     $posisi = $p->cariPosisi($batas);
-                    $query = mysqli_query($kon, "select * from tb_formulir5  where status='Sudah Membayar' order by username asc  LIMIT $posisi,$batas");
+                    $query = mysqli_query($kon, "select * from tb_formulir5  where status='Sudah Membayar' and tahun_pendaftaran = YEAR(CURDATE()) order by username asc  LIMIT $posisi,$batas");
 
                     $i = $posisi + 1;
                     while ($a = mysqli_fetch_array($query)) {
@@ -235,7 +237,7 @@ error_reporting(0);
                     }
 
 
-                    $jmldata = mysqli_num_rows(mysqli_query($kon, "SELECT * FROM tb_formulir5  where status='Sudah Membayar' "));
+                    $jmldata = mysqli_num_rows(mysqli_query($kon, "SELECT * FROM tb_formulir5  where status='Sudah Membayar' and tahun_pendaftaran = YEAR(CURDATE())"));
 
                     $jmlhalaman  = $p->jumlahHalaman($jmldata, $batas);
                     $linkHalaman = $p->navHalaman($_GET['halaman'], $jmlhalaman);

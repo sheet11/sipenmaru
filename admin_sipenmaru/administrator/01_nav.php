@@ -204,13 +204,13 @@ include "session.php";
                   </li>
                   <li><a href="082_daftar_calon_mahasiswa_belum_mendaftar.php"><i class="fa fa-circle-o"></i>Belum
                       Mendaftar</a></li>
-                  <li><a href="09_daftar_nilai_assesment.php"><i class="fa fa-circle-o"></i>Daftar Nilai Assesment</a>
+                  <!-- <li><a href="09_daftar_nilai_assesment.php"><i class="fa fa-circle-o"></i>Daftar Nilai Assesment</a>
                   </li>
                   <li><a href="91_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 1</a></li>
                   <li><a href="92_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 2</a></li>
                   <li><a href="93_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 3</a></li>
                   <li><a href="94_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 4</a></li>
-                  <li><a href="95_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 5</a></li>
+                  <li><a href="95_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 5</a></li> -->
 
                 </ul>
               </li>
@@ -227,11 +227,11 @@ include "session.php";
                   <li><a href="081_daftar_calon_mahasiswa_belum_mendaftar.php"><i class="fa fa-circle-o"></i>Belum
                       Mendaftar</a></li>
                   <li><a href="081_sesi.php"><i class="fa fa-circle-o"></i>Sesi Ujian</a></li>
-                  <li><a href="83_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 2</a></li>
+                  <!-- <li><a href="83_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 2</a></li>
                   <li><a href="84_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 3</a></li>
                   <li><a href="85_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 4</a></li>
                   <li><a href="86_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 5</a></li>
-                  <li><a href="87_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 6</a></li>
+                  <li><a href="87_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 6</a></li> -->
                 </ul>
               </li>
 
