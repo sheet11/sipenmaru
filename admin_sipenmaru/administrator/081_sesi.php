@@ -250,7 +250,7 @@ ini_set('display_errors', 0);
                     $p      = new Paging;
                     $batas  = 10;
                     $posisi = $p->cariPosisi($batas);               
-                    $query=mysqli_query($kon,"select * from tb_formulir4 where status='Sudah Membayar' order by username asc  LIMIT $posisi,$batas");
+                    $query=mysqli_query($kon,"select * from tb_formulir4 where status='Sudah Membayar' and tahun_pendaftaran = YEAR(CURDATE()) order by username asc  LIMIT $posisi,$batas");
                 
                     $i = $posisi+1;     
                 while($a=mysqli_fetch_array($query)){
@@ -296,7 +296,7 @@ ini_set('display_errors', 0);
             }
             
 
-    $jmldata = mysqli_num_rows(mysqli_query($kon,"SELECT * FROM tb_formulir4 where status='Sudah Membayar'"));
+    $jmldata = mysqli_num_rows(mysqli_query($kon,"SELECT * FROM tb_formulir4 where status='Sudah Membayar' and tahun_pendaftaran = YEAR(CURDATE())"));
       
     $jmlhalaman  = $p->jumlahHalaman($jmldata, $batas);
     $linkHalaman = $p->navHalaman($_GET['halaman'], $jmlhalaman);
