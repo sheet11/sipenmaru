@@ -1,25 +1,29 @@
 <?php include "../config/koneksi.php"; ?>
+
 <body>
     <style type="text/css">
-    body{
-        font-family: sans-serif;
-    }
-    table{
-        margin: 20px auto;
-        border-collapse: collapse;
-    }
-    table th,
-    table td{
-        border: 1px solid #3c3c3c;
-        padding: 3px 8px;
-    }
-    a{
-        background: blue;
-        color: #fff;
-        padding: 8px 10px;
-        text-decoration: none;
-        border-radius: 2px;
-    }
+        body {
+            font-family: sans-serif;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #3c3c3c;
+            padding: 3px 8px;
+        }
+
+        a {
+            background: blue;
+            color: #fff;
+            padding: 8px 10px;
+            text-decoration: none;
+            border-radius: 2px;
+        }
     </style>
 
     <?php
@@ -50,7 +54,7 @@
         $i = 1;
 
         // Ambil dari tb_formulir4
-        $query4 = mysqli_query($kon, "SELECT *, 'tb_formulir4' as sumber FROM tb_formulir4 WHERE sesi_ujian='$sesi' AND status='Sudah Membayar'");
+        $query4 = mysqli_query($kon, "SELECT *, 'tb_formulir4' as sumber FROM tb_formulir4 WHERE sesi_ujian='$sesi' AND status='Sudah Membayar' AND tahun_pendaftaran = YEAR(CURDATE())");
         while ($a = mysqli_fetch_assoc($query4)) {
             echo "<tr>
                 <td>".$i++."</td>
@@ -68,7 +72,7 @@
         }
 
         // Ambil dari tb_formulir5
-        $query5 = mysqli_query($kon, "SELECT *, 'tb_formulir5' as sumber FROM tb_formulir5 WHERE sesi_ujian='$sesi' AND status='Sudah Membayar'");
+        $query5 = mysqli_query($kon, "SELECT *, 'tb_formulir5' as sumber FROM tb_formulir5 WHERE sesi_ujian='$sesi' AND status='Sudah Membayar' AND tahun_pendaftaran = YEAR(CURDATE())");
         while ($a = mysqli_fetch_assoc($query5)) {
             echo "<tr>
                 <td>".$i++."</td>
