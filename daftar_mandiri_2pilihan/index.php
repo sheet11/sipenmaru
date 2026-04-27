@@ -208,12 +208,16 @@ if ($status == "Buka") {
 								<option value="smk_farmasi">SMK Farmasi</option>
 								<option value="smk_kimia">SMK Kimia</option>
 								<option value="smk_analis">Sekolah Menengah Analis Kesehatan</option>
-								<option value="smk_teknik">SMK Teknik / Teknik Industri</option>
+								<option value="smk_teknik">SMA Teknik / Teknik Industri</option>
 								<option value="smk_tataboga">SMK Tataboga</option>
 								<option value="smk_pariwisata">SMK Pariwisata</option>
 								<option value="smk_pertanian">SMK Pertanian</option>
 								<option value="smk_semua">SMK (Semua Jurusan / Lainnya)</option>
 							</select>
+						</div>
+						<div class="form-group" id="smk-jurusan-lainnya-group" style="display:none;">
+							<label>Sebutkan Jurusan SMK Anda <span class="text-danger" style="font-size: large;">*</span></label>
+							<input type="text" id="smk_jurusan_lainnya" name="smk_jurusan_lainnya" placeholder="Masukkan Jurusan SMK Anda" class="form-control">
 						</div>
 						<div class="form-group">
 							<label>Program Studi 1</label>
@@ -321,7 +325,7 @@ if ($status == "Buka") {
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<label>Nama Ayah</label>
+									<label>Nama Ayah<span class="text-danger" style="font-size: large;">*</span></label>
 									<input type="text" name="nama_orang_tua" placeholder="Input Nama Orang Tua"
 										class="form-control">
 								</div>
@@ -348,7 +352,7 @@ if ($status == "Buka") {
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<label>Nama Ibu</label>
+									<label>Nama Ibu<span class="text-danger" style="font-size: large;">*</span></label>
 									<input type="text" name="nama_orang_tua_ibu" placeholder="Input Nama Orang Tua"
 										class="form-control">
 								</div>
@@ -410,7 +414,7 @@ if ($status == "Buka") {
 					<fieldset>
 						<!-- 1. Asal daerah: dalam / luar Bengkulu -->
 						<div class="form-group">
-							<label for="asal">Asal daerah</label>
+							<label for="asal">Asal daerah<span class="text-danger" style="font-size: large;">*</span></label>
 							<select id="asal" name="asal" class="form-control">
 								<option value="">-- Pilih Asal Daerah --</option>
 								<option value="dalam">Dalam Provinsi Bengkulu</option>
@@ -467,7 +471,7 @@ if ($status == "Buka") {
 							<input type="text" name="alamat_rumah" placeholder="Alamat Rumah" class="form-control">
 						</div>
 						<div class="form-group">
-							<label>Daerah Asal</label>
+							<label>Daerah Asal<span class="text-danger" style="font-size: large;">*</span></label>
 							<input type="text" id="daerah_asal" name="daerah_asal"
 								placeholder="Nama Daerah/Kelurahan Asal" class="form-control" readonly>
 							<span class="help-block">Nilai ini akan otomatis diisi berdasarkan pilihan wilayah
@@ -485,15 +489,15 @@ if ($status == "Buka") {
 					<fieldset>
 						<h4>Info Kontak</h4>
 						<div class="form-group">
-							<label>Email</label>
+							<label>Email<span class="text-danger" style="font-size: large;">*</span></label>
 							<input type="text" name="email" placeholder="Input Email Aktif anda" class="form-control">
 						</div>
 						<div class="form-group">
-							<label>Nomor HP Aktif(WA)</label>
+							<label>Nomor HP Aktif(WA)<span class="text-danger" style="font-size: large;">*</span></label>
 							<input type="text" name="no_hp" placeholder="Input Nomor HP anda" class="form-control">
 						</div>
 						<div class="form-group">
-							<label>Nomor HP Orang Tua/Wali yang bisa dihubungi</label>
+							<label>Nomor HP Orang Tua/Wali yang bisa dihubungi<span class="text-danger" style="font-size: large;">*</span></label>
 							<input type="text" name="no_hp_ortu" placeholder="Input Nomor HP Orang Tua anda"
 								class="form-control">
 						</div>
@@ -918,6 +922,14 @@ if ($status == "Buka") {
 			smkJenisSelect.value = '';
 			smaJenisGroup.value = '';
 
+			const smkJurusanLainnyaGroup = document.getElementById('smk-jurusan-lainnya-group');
+			const smkJurusanLainnyaInput = document.getElementById('smk_jurusan_lainnya');
+			if (smkJurusanLainnyaGroup) smkJurusanLainnyaGroup.style.display = 'none';
+			if (smkJurusanLainnyaInput) {
+				smkJurusanLainnyaInput.removeAttribute('required');
+				smkJurusanLainnyaInput.value = '';
+			}
+
 			if (selectedValue === 'sma') {
 				smkJenisGroup.style.display = 'none';
 				smaJenisGroup.style.display = 'block';
@@ -938,6 +950,19 @@ if ($status == "Buka") {
 			const selectedValue = this.value;
 			const list = programStudiList[selectedValue] || null;
 			updateProgramStudiDouble(list);
+
+			const smkJurusanLainnyaGroup = document.getElementById('smk-jurusan-lainnya-group');
+			const smkJurusanLainnyaInput = document.getElementById('smk_jurusan_lainnya');
+			if (selectedValue === 'smk_semua') {
+				if (smkJurusanLainnyaGroup) smkJurusanLainnyaGroup.style.display = 'block';
+				if (smkJurusanLainnyaInput) smkJurusanLainnyaInput.setAttribute('required', 'required');
+			} else {
+				if (smkJurusanLainnyaGroup) smkJurusanLainnyaGroup.style.display = 'none';
+				if (smkJurusanLainnyaInput) {
+					smkJurusanLainnyaInput.removeAttribute('required');
+					smkJurusanLainnyaInput.value = '';
+				}
+			}
 		});
 
 		// Logic agar Program Studi 2 tidak bisa sama dengan Program Studi 1

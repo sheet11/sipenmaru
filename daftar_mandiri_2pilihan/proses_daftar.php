@@ -89,7 +89,10 @@ try {
     $asal_sekolah = mysqli_real_escape_string($kon, $_POST['asal_sekolah']);
     $tahun_lulus = mysqli_real_escape_string($kon, $_POST['tahun_lulus']);
     $smk_jenis = isset($_POST['smk_jenis']) ? mysqli_real_escape_string($kon, $_POST['smk_jenis']) : '';
-    $jurusan_sekolah = isset($_POST['jurusan_sekolah']) ? mysqli_real_escape_string($kon, $_POST['jurusan_sekolah']) : $jurusan_sekolah;
+    $jurusan_sekolah = isset($_POST['jurusan_sekolah']) ? mysqli_real_escape_string($kon, $_POST['jurusan_sekolah']) : '';
+    if ($smk_jenis === 'smk_semua' && !empty($_POST['smk_jurusan_lainnya'])) {
+        $jurusan_sekolah = mysqli_real_escape_string($kon, $_POST['smk_jurusan_lainnya']);
+    }
     $program_studi = isset($_POST['program_studi']) ? mysqli_real_escape_string($kon, $_POST['program_studi']) : '';
     $program_studi2 = isset($_POST['program_studi2']) ? mysqli_real_escape_string($kon, $_POST['program_studi2']) : '';
 
