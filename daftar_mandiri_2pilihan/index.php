@@ -11,7 +11,13 @@
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 	<link rel="stylesheet" href="wizard.css">
 </head>
-
+<style>
+	.custom-badge {
+		background-color: #E1306C;
+		/* warna Instagram */
+		color: white;
+	}
+</style>
 <?php
 include "koneksi.php";
 
@@ -528,7 +534,7 @@ if ($status == "Buka") {
 
 						<div class="alert alert-info" style="margin:15px 0;">
 							<strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan
-							diumumkan melalui kanal institusi atau instagram poltekkes <a href="https://www.instagram.com/polkesbengkulu/" target="_blank"><i class="fab fa-instagram">polkesbengkulu</i></a>.
+							diumumkan melalui kanal institusi atau instagram poltekkes <a href="https://www.instagram.com/polkesbengkulu/" target="_blank"><i class="fab fa-instagram badge custom-badge">polkesbengkulu</i></a>.
 						</div>
 
 						<p style="margin:0;">
@@ -560,7 +566,7 @@ if ($status == "Buka") {
 
 					<div class="alert alert-info" style="margin:15px 0;">
 						<strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan
-						diumumkan melalui kanal institusi atau instagram poltekkes <a href="https://www.instagram.com/polkesbengkulu/" target="_blank"><i class="fab fa-instagram"></i></a>.
+						diumumkan melalui kanal institusi atau instagram poltekkes <a href="https://www.instagram.com/polkesbengkulu/" target="_blank"><i class="fab fa-instagram badge custom-badge">polkesbengkulu</i></a>.
 					</div>
 
 					<p style="margin:0;">
