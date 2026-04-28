@@ -534,7 +534,7 @@ if ($status == "Buka") {
 
 						<div class="alert alert-info" style="margin:15px 0;">
 							<strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan
-							diumumkan melalui kanal institusi atau instagram poltekkes <a href="https://www.instagram.com/polkesbengkulu/" target="_blank"><i class="fab fa-instagram badge custom-badge">polkesbengkulu</i></a>.
+							diumumkan melalui kanal institusi atau instagram poltekkes <a href="https://www.instagram.com/polkesbengkulu/" target="_blank"><i class="fab fa-instagram badge badge-danger">polkesbengkulu</i></a>.
 						</div>
 
 						<p style="margin:0;">
@@ -555,7 +555,7 @@ if ($status == "Buka") {
 			<div class="panel panel-default" style="border-radius:10px; overflow:hidden;">
 				<div class="panel-heading" style="padding:18px 20px;">
 					<h3 class="panel-title" style="font-size:18px; font-weight:600;">
-						Pendaftaran SUdah ditutup
+						Pendaftaran Sudah ditutup
 					</h3>
 				</div>
 
@@ -566,7 +566,7 @@ if ($status == "Buka") {
 
 					<div class="alert alert-info" style="margin:15px 0;">
 						<strong>Catatan:</strong> Silakan cek kembali pada jadwal yang ditetapkan. Informasi resmi akan
-						diumumkan melalui kanal institusi atau instagram poltekkes <a href="https://www.instagram.com/polkesbengkulu/" target="_blank"><i class="fab fa-instagram badge custom-badge">polkesbengkulu</i></a>.
+						diumumkan melalui kanal institusi atau instagram poltekkes <a href="https://www.instagram.com/polkesbengkulu/" target="_blank"><i class="fab fa-instagram badge badge-danger">polkesbengkulu</i></a>.
 					</div>
 
 					<p style="margin:0;">
