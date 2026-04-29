@@ -1,6 +1,7 @@
 <?php
     include"01_nav.php";
     error_reporting(0); 
+    require_once("../config/koneksi.php");
 ?>
 
 <aside class="right-side">
@@ -20,268 +21,43 @@
                             <th>SMA/MA/MA</th><th>SMK/MAK/MAK</th><th>Paket C</th>
                         </tr>
 
-                         <tr>
-                            <td>1 </td><td>Pendaftar</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where  status='Sudah Membayar' and asal_sekolah='SMA/MA'");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
+                        <?php
+                        $prodi_list = [
+                            "Pendaftar",
+                            "D3 Kebidanan Bengkulu",
+                            "D3 Kebidanan Curup",
+                            "D3 Keperawatan Bengkulu",
+                            "D3 Keperawatan Curup",
+                            "D3 Teknologi Laboratorium Medis",
+                            "D3 Sanitasi",
+                            "D3 Gizi",
+                            "D3 Farmasi",
+                            "Sarjana Terapan Gizi",
+                            "Sarjana Terapan Promosi Kesehatan",
+                            "Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners",
+                            "Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)",
+                            "Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan"
+                        ];
 
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where status='Sudah Membayar'  and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
+                        $sekolah_list = ["sma", "smk"];
+                        $no_prodi = 1;
 
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where status='Sudah Membayar' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
+                        foreach ($prodi_list as $prodi) {
+                            $no_tampil = ($prodi === "Pendaftar") ? 1 : $no_prodi++;
+                            echo "<tr>";
+                            echo "<td>{$no_tampil}</td><td>{$prodi}</td>";
 
-                        <tr>
-                            <td>1 </td><td>D3 Kebidanan Bengkulu</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where  pilihan_prodi='D3 Kebidanan Bengkulu' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Kebidanan Bengkulu' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Kebidanan Bengkulu' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td><td>D3 Kebidanan Curup</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Kebidanan Curup' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Kebidanan Curup' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Kebidanan Curup' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td><td>D3 Keperawatan Bengkulu</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Keperawatan Bengkulu' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Keperawatan Bengkulu' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Keperawatan Bengkulu' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>4</td><td>D3 Keperawatan Curup</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Keperawatan Curup' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Keperawatan Curup' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Keperawatan Curup' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>5</td><td>D3 Teknologi Laboratorium Medis</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Teknologi Laboratorium Medis' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Teknologi Laboratorium Medis' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Teknologi Laboratorium Medis' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>6</td><td>D3 Sanitasi</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Sanitasi' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Sanitasi' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Sanitasi' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>7</td><td>D3 Gizi</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Gizi' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Gizi' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Gizi' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>8</td><td>D3 Farmasi</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Farmasi' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Farmasi' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='D3 Farmasi' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>9</td><td>Sarjana Terapan Gizi</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Gizi' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Gizi' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Gizi' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>10</td><td>Sarjana Terapan Promosi Kesehatan</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Promosi Kesehatan' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Promosi Kesehatan' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Promosi Kesehatan' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>10</td><td>Sarjana Terapan Keperawatan dan Ners</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Ners' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Ners' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Keperawatan dan Ners' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-                         <tr>
-                            <td>10</td><td>Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan</td><td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan' and asal_sekolah='SMA/MA' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan' and asal_sekolah='SMK/MAK' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-
-                                                         <td><?php
-                                                         require_once("../config/koneksi.php");
-                                                         $query = mysqli_query ($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan' and asal_sekolah='Paket C' ");
-                                                         $jumlah= mysqli_num_rows ($query);
-                                                         ?><?php echo $jumlah; ?></td>
-                        </tr>
-
-
-                       
+                            foreach ($sekolah_list as $sekolah) {
+                                if ($prodi === "Pendaftar") {
+                                    $query = mysqli_query($kon,"SELECT * FROM tb_formulir3 where status='Sudah Membayar' and asal_sekolah='{$sekolah}'");
+                                } else {
+                                    $query = mysqli_query($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='{$prodi}' and asal_sekolah='{$sekolah}'");
+                                }
+                                echo "<td>" . mysqli_num_rows($query) . "</td>";
+                            }
+                            echo "</tr>";
+                        }
+                        ?>
                     </table>
         </div>   
 
