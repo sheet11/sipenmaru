@@ -20,7 +20,7 @@ $mhs = mysqli_fetch_array($query);
     <tr>
         <td width='150' height='80'></td>
         <td width='600' align='center'>
-            <h2>Seleksi Penerimaan Mahasiswa Baru (SPMB)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun 2025/2026</h2>
+            <h2>Seleksi Penerimaan Mahasiswa Baru (SPMB)</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun <?php echo date('Y') . "/" . (date('Y') + 1); ?></h2>
         </td>
         <td width='100' align='center'></td>
     </tr>
