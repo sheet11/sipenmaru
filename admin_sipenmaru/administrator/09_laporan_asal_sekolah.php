@@ -18,7 +18,7 @@
                         </tr>
 
                         <tr>
-                            <th>SMA/MA/MA</th><th>SMK/MAK/MAK</th><th>Paket C</th>
+                            <th>SMA/MA</th><th>SMK</th>
                         </tr>
 
                         <?php
