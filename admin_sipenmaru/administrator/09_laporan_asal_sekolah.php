@@ -49,7 +49,7 @@
 
                             foreach ($sekolah_list as $sekolah) {
                                 if ($prodi === "Pendaftar") {
-                                    $query = mysqli_query($kon,"SELECT * FROM tb_formulir3 where status='Sudah Membayar' and asal_sekolah='{$sekolah}'");
+                                    $query = mysqli_query($kon,"SELECT * FROM tb_formulir3 where asal_sekolah='{$sekolah}'");
                                 } else {
                                     $query = mysqli_query($kon,"SELECT * FROM tb_formulir3 where pilihan_prodi='{$prodi}' and asal_sekolah='{$sekolah}'");
                                 }
