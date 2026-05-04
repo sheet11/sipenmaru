@@ -45,6 +45,7 @@ if ($status == "Buka") {
               <input type="hidden" name="username" value="<?php echo $ambil['username']; ?>">
               <h3>Pendaftaran SPMB Jalur Mandiri 1 Pilihan</h3>
               <p>Poltekkes Kemenkes Bengkulu</p>
+              <h4 class="text-danger"><b>*Pendaftar minimal lulusan D3/D4/S1</b></h4>
               <div class="f1-steps">
                 <div class="f1-progress">
                   <div class="f1-progress-line" data-now-value="25" data-number-of-steps="4" style="width: 25%;"></div>
@@ -68,9 +69,9 @@ if ($status == "Buka") {
               </div>
               <!-- step 1: Program Studi -->
               <fieldset>
-                <h4>Pilih Program Studi</h4>
+                <!--<h4>Pilih Program Studi</h4>-->
                 <div class="form-group">
-                  <label>Nama Perguruan Tinggi</label>
+                  <label>Nama Perguruan Tinggi Sebelumnya</label>
                   <input type="text" name="nama_sekolah" placeholder="Masukan asal perguruan tinggi"
                     class="form-control required" autocomplete="off">
                   <span class="help-block">Contoh: Universitas Bengkulu, Politeknik Kesehatan Kemenkes Bengkulu, dll.</span>

@@ -128,6 +128,7 @@ if ($status == "Buka") {
 							<input type="hidden" name="username" value="<?php echo $ambil['username']; ?>">
 							<h3>Pendaftaran SPMB Jalur Mandiri 2 Pilihan</h3>
 							<p>Poltekkes Kemenkes Bengkulu</p>
+							<h4 class="text-danger"><b>*Pendaftar minimal lulusan SMA/MA/SMK/Sederajat</b></h4>
 							<div class="f1-steps">
 								<div class="f1-progress">
 									<div class="f1-progress-line" data-now-value="25" data-number-of-steps="4"
@@ -172,10 +173,13 @@ if ($status == "Buka") {
 									<label>Tahun Lulus</label>
 									<select name="tahun_lulus" id="" class="form-control required">
 										<option value="">-- Pilih Tahun Lulus --</option>
-										<?php
-										$year = date("Y");
-										echo "<option value='$year'>$year</option>";
-										?>
+										    <?php
+                                                $year = date("Y");
+                                                for ($i = 0; $i <= 7; $i++) {
+                                                $tahun = $year - $i;
+                                                echo "<option value='$tahun'>$tahun</option>";
+                                                }
+                                                ?>
 
 									</select>
 								</div>
@@ -277,7 +281,7 @@ if ($status == "Buka") {
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-group">
 											<label>Tempat Lahir <span class="text-danger"
 													style="font-size: large;">*</span></label>
@@ -285,14 +289,21 @@ if ($status == "Buka") {
 												class="form-control">
 										</div>
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-group">
 											<label>Tanggal Lahir <span class="text-danger"
 													style="font-size: large;">*</span></label>
-											<input type="date" name="tanggal_lahir" placeholder="Input Tanggal Lahir"
+											<input type="date" id="tanggal_lahir" name="tanggal_lahir" placeholder="Input Tanggal Lahir"
 												class="form-control">
 										</div>
 									</div>
+									    <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Umur</label>
+                                                <input type="text" id="umur" name="umur" class="form-control" readonly>
+                                                <span class="help-block">maksimal 25 Tahun</span>
+                                            </div>
+                                        </div>
 								</div>
 								<div class="row">
 									<div class="col-md-6">
@@ -1269,6 +1280,22 @@ if ($status == "Buka") {
 		asalSelect.addEventListener('change', () => {
 			setDaerahAsal('');
 		});
+		
+		//umur otomatis tanggal_lahir
+		document.getElementById('tanggal_lahir').addEventListener('change', function() {
+        let tglLahir = new Date(this.value);
+        let today = new Date();
+    
+        let umur = today.getFullYear() - tglLahir.getFullYear();
+        let m = today.getMonth() - tglLahir.getMonth();
+
+        // Koreksi kalau belum ulang tahun tahun ini
+        if (m < 0 || (m === 0 && today.getDate() < tglLahir.getDate())) {
+            umur--;
+        }
+    
+        document.getElementById('umur').value = umur + " tahun";
+    });
 	</script>
 		</body>
 

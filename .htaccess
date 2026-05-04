@@ -1,3 +1,4 @@
+php_value date.timezone 'Asia/Jakarta'
 <IfModule mod_security.c>
   SecRuleEngine Off
   SecFilterInheritance Off
