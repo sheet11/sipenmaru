@@ -31,13 +31,13 @@ include "01_nav.php";
                     $uang_pmdp = $pmdp_bayar * 50000;
 
                     // SIMAMI 1 Pilihan
-                    $simami1_total = mysqli_num_rows(mysqli_query($kon, "SELECT id_formulir FROM tb_formulir5 WHERE status='Terdaftar' or status='Sudah Membayar' AND tahun_pendaftaran='2026'"));
+                    $simami1_total = mysqli_num_rows(mysqli_query($kon, "SELECT id_formulir FROM tb_formulir5 WHERE (status='Terdaftar' or status='Sudah Membayar') AND tahun_pendaftaran='2026'"));
                     $simami1_bayar = mysqli_num_rows(mysqli_query($kon, "SELECT id_formulir FROM tb_formulir5 WHERE status='Sudah Membayar' AND tahun_pendaftaran='2026'"));
                     $simami1_daftar = mysqli_num_rows(mysqli_query($kon, "SELECT id_formulir FROM tb_formulir5 WHERE status='Terdaftar' AND tahun_pendaftaran='2026'"));
                     $uang_simami1 = $simami1_bayar * 500000;
 
                     // SIMAMI 2 Pilihan
-                    $simami2_all_total = mysqli_num_rows(mysqli_query($kon, "SELECT id_formulir FROM tb_formulir4 WHERE status='Terdaftar' or status='Sudah Membayar' AND tahun_pendaftaran='2026'"));
+                    $simami2_all_total = mysqli_num_rows(mysqli_query($kon, "SELECT id_formulir FROM tb_formulir4 WHERE (status='Terdaftar' or status='Sudah Membayar') AND tahun_pendaftaran='2026'"));
                     $simami2_all_bayar = mysqli_num_rows(mysqli_query($kon, "SELECT id_formulir FROM tb_formulir4 WHERE status='Sudah Membayar' AND tahun_pendaftaran='2026'"));
                     $simami2_bayar = mysqli_num_rows(mysqli_query($kon, "SELECT id_formulir FROM tb_formulir4 WHERE level='MANDIRI 2 PILIHAN' AND status='Sudah Membayar' AND tahun_pendaftaran='2026'"));
                     $simami2_daftar = mysqli_num_rows(mysqli_query($kon, "SELECT id_formulir FROM tb_formulir4 WHERE level='MANDIRI 2 PILIHAN' AND status='Terdaftar' AND tahun_pendaftaran='2026'"));
