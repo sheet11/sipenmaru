@@ -102,6 +102,7 @@ if (!$ambil) {
 	$ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT id_formulir, username, password FROM tb_formulir4 WHERE status='Belum Lengkap' and tahun_pendaftaran = YEAR(CURDATE()) ORDER BY id_formulir ASC LIMIT 1"));
 }
 ?>
+<style></style>
 <?php
 $date = date("Y-m-d");
 $date = date('Y-m-d', strtotime($date));

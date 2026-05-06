@@ -19,6 +19,21 @@ if (!$ambil) {
   $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT id_formulir, username, password FROM tb_formulir5 WHERE status='Belum Lengkap' and tahun_pendaftaran = YEAR(CURDATE()) ORDER BY id_formulir ASC LIMIT 1"));
 }
 ?>
+<style>
+.divider {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.divider::before, .divider::after {
+  flex: 1;
+  content: '';
+  padding: 1px;
+  background-color: gray;
+  margin: 2px;
+}
+</style>
 <?php
 $date = date("Y-m-d");
 $date = date('Y-m-d', strtotime($date));
@@ -69,9 +84,11 @@ if ($status == "Buka") {
               </div>
               <!-- step 1: Program Studi -->
               <fieldset>
+                <br>
                 <!--<h4>Pilih Program Studi</h4>-->
+                <div class="divider">Informasi Perguruan Tinggi Sebelumnya</div>
                 <div class="form-group">
-                  <label>Nama Perguruan Tinggi Sebelumnya</label>
+                  <label>Nama Perguruan Tinggi</label>
                   <input type="text" name="nama_sekolah" placeholder="Masukan asal perguruan tinggi"
                     class="form-control required" autocomplete="off">
                   <span class="help-block">Contoh: Universitas Bengkulu, Politeknik Kesehatan Kemenkes Bengkulu, dll.</span>
@@ -94,8 +111,9 @@ if ($status == "Buka") {
                     <option value="Luar Provinsi Bengkulu">Luar Provinsi Bengkulu</option>
                   </select>
                 </div>
+                <div class="divider">Program Studi yang akan diambil</div>
                 <div class="form-group">
-                  <label>Program Studi</label>
+                  <label>Program Studi yang akan diambil</label>
                   <select id="program_studi" name="program_studi" class="form-control">
                     <option value="">-- Pilih Program Studi --</option>
                   </select>
