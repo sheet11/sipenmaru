@@ -64,7 +64,7 @@
 			?>
 				<tr>
 					<td><b>Catatan</b><br>
-						1. Klik Tombol Edit Untuk Melengkapi Data</br>
+						1. Klik Tombol Validasi Formulir dahulu untuk mencetak kartu</br>
 					</td>
 				</tr>
 			</table>
