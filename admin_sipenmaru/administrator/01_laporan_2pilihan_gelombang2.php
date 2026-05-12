@@ -14,7 +14,7 @@
     // Helper function
     function get_count($where) {
         global $kon;
-        $sql = "SELECT COUNT(*) as jumlah FROM tb_formulir4 WHERE $where";
+        $sql = "SELECT COUNT(*) as jumlah FROM tb_formulir4 WHERE $where AND tahun_pendaftaran = '2026'";
         $res = mysqli_query($kon, $sql);
         $row = mysqli_fetch_assoc($res);
         return $row['jumlah'];

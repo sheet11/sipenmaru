@@ -226,13 +226,13 @@ include "session.php";
                   </li>
                   <li><a href="081_daftar_calon_mahasiswa_belum_mendaftar.php"><i class="fa fa-circle-o"></i>Belum
                       Mendaftar</a></li>
-                  <li><a href="081_sesi.php"><i class="fa fa-circle-o"></i>Sesi Ujian</a></li>
-                  <!-- <li><a href="83_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 2</a></li>
-                  <li><a href="84_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 3</a></li>
-                  <li><a href="85_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 4</a></li>
-                  <li><a href="86_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 5</a></li>
-                  <li><a href="87_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 6</a></li> -->
-                </ul>
+                      <!-- <li><a href="83_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 2</a></li>
+                      <li><a href="84_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 3</a></li>
+                      <li><a href="85_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 4</a></li>
+                      <li><a href="86_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 5</a></li>
+                      <li><a href="87_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 6</a></li> -->
+                    </ul>
+                    <li><a href="081_sesi.php"><i class="fa fa-circle-o"></i>Sesi Ujian</a></li>
               </li>
 
             </ul>
@@ -250,12 +250,11 @@ include "session.php";
                     class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="01_laporan_1pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a>
-                  </li>
-                  <li><a href="01_laporan_1pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Umum</a></li>
-                  <li><a href="01_laporan_tingkatpoltekkes_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
+                  <li><a href="01_laporan_1pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a></li>
+                  <li><a href="01_laporan_1pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
+                  <!-- <li><a href="01_laporan_tingkatpoltekkes_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
                       Poltekkes</a></li>
-                  <li><a href="01_tingkat_prodi_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Prodi</a></li>
+                  <li><a href="01_tingkat_prodi_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Prodi</a></li> -->
                   <li><a href="01_jenis_kelamin_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
 
                   <li><a href="01_laporan_asal_sekolah_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Asal Sekolah</a>
@@ -273,11 +272,11 @@ include "session.php";
                     class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="01_laporan_2pilihan_gelombang2_seluruh.php">Keseluruhan</a></li>
-                  <li><a href="01_laporan_2pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Umum</a></li>
-                  <li><a href="01_laporan_tingkatpoltekkes_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
+                  <li><a href="01_laporan_2pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a></li>
+                  <li><a href="01_laporan_2pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
+                  <!-- <li><a href="01_laporan_tingkatpoltekkes_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
                       Poltekkes</a></li>
-                  <li><a href="01_tingkat_prodi_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Prodi</a></li>
+                  <li><a href="01_tingkat_prodi_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Prodi</a></li> -->
                   <li><a href="01_jenis_kelamin_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
                   <li><a href="01_laporan_asal_sekolah_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Asal Sekolah</a>
                   </li>
