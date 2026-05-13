@@ -61,7 +61,7 @@
 		</tr>
         <?php           
             $i=1; 
-            $query=mysqli_query($kon,"select * from tb_formulir5 where status='Sudah Membayar'");       
+            $query=mysqli_query($kon,"select * from tb_formulir5 where (status='Sudah Membayar' or status='Terdaftar') and tahun_pendaftaran='2026'");       
             while ($a=mysqli_fetch_array($query)) { 
             ?>
            <tr>
