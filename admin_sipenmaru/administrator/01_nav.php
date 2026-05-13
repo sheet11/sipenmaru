@@ -298,6 +298,18 @@ include "session.php";
           <li class="treeview">
             <a href="#">
               <i class="fa fa-circle-o"></i>
+              <span>Jalur Internasional</span>
+              <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="10_daftar_calon_mahasiswa_internasional.php"><i class="fa fa-circle-o"></i>Pendaftar</a></li>
+              <li><a href="10_jumlah_pendaftar_internasional.php"><i class="fa fa-circle-o"></i>Jumlah Pendaftar</a></li>
+            </ul>
+          </li>
+
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-circle-o"></i>
               <span>Data Master</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>

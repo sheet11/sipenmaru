@@ -26,7 +26,7 @@ require_once("../config/koneksi.php");
                     <td> :</td>
                     <td>
                         <?php
-                        $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE status IN ('Sudah Membayar', 'Terdaftar')");
+                        $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE tahun_pendaftaran='2026' AND status IN ('Sudah Membayar', 'Terdaftar')");
                         $jumlah = mysqli_fetch_assoc($query)['jumlah'];
                         echo $jumlah;
                         ?>
@@ -43,7 +43,7 @@ require_once("../config/koneksi.php");
                     $prodis[] = $row['nama_prodi'];
                 }
                 foreach ($prodis as $prodi) {
-                    $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE pilihan_prodi='$prodi' AND status IN ('Sudah Membayar', 'Terdaftar')");
+                    $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE pilihan_prodi='$prodi' AND tahun_pendaftaran='2026' AND status IN ('Sudah Membayar', 'Terdaftar')");
                     $jumlah = mysqli_fetch_assoc($query)['jumlah'];
                     echo "<tr>
                         <td>Jumlah Pendaftar Prodi $prodi</td> <td> :</td> <td>$jumlah</td>
@@ -59,7 +59,7 @@ require_once("../config/koneksi.php");
                 $genders = ["Laki-Laki", "Perempuan"];
                 // Total per gender
                 foreach ($genders as $gender) {
-                    $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE jenis_kelamin='$gender' AND status IN ('Sudah Membayar', 'Terdaftar')");
+                    $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE jenis_kelamin='$gender' AND tahun_pendaftaran='2026' AND status IN ('Sudah Membayar', 'Terdaftar')");
                     $jumlah = mysqli_fetch_assoc($query)['jumlah'];
                     echo "<tr>
                         <td>$gender</td> <td> :</td> <td>$jumlah</td>
@@ -68,7 +68,7 @@ require_once("../config/koneksi.php");
                 // Per prodi per gender
                 foreach ($genders as $gender) {
                     foreach ($prodis as $prodi) {
-                        $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE pilihan_prodi='$prodi' AND jenis_kelamin='$gender' AND status IN ('Sudah Membayar', 'Terdaftar')");
+                        $query = mysqli_query($kon, "SELECT COUNT(*) as jumlah FROM tb_formulir5 WHERE pilihan_prodi='$prodi' AND jenis_kelamin='$gender' AND tahun_pendaftaran='2026' AND status IN ('Sudah Membayar', 'Terdaftar')");
                         $jumlah = mysqli_fetch_assoc($query)['jumlah'];
                         echo "<tr>
                             <td>Jenis Kelamin $gender Prodi $prodi</td> <td> :</td> <td>$jumlah</td>
