@@ -50,7 +50,7 @@ try {
     // Proses upload file pas_foto
     $foto_path = '';
     if (isset($_FILES['pas_foto']) && $_FILES['pas_foto']['error'] == 0) {
-        $upload_dir = '../login_spmb_prestasi/assets/img/';
+        $upload_dir = '../login_mandiri_2pilihan/assets/img/';
         if (!is_dir($upload_dir)) {
             mkdir($upload_dir, 0755, true);
         }
