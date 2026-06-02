@@ -77,7 +77,7 @@
         </tr>
         <?php           
             $i=1; 
-            $query=mysqli_query($kon,"select * from tb_formulir5 where (status='Sudah Membayar' or status='Terdaftar') and tahun_pendaftaran='2026'");       
+            $query=mysqli_query($kon,"select * from tb_formulir4 where (status='Sudah Membayar' or status='Terdaftar') and tahun_pendaftaran='2026'");       
             while ($a=mysqli_fetch_array($query)) { 
             ?>
         <tr>
@@ -115,7 +115,7 @@
             <td><?=$a['tanggal_login']?></td>
             <td><?=$a['status']?></td>
             <td><?=$a['status_lulus']?></td>
-            <td><?=$a['status_lulus_2']?></td>
+            <td><?=$a['status_kelulusan_2']?></td>
             <td><?=$a['prodi_lulus']?></td>
         </tr>
         <?php } ?>
