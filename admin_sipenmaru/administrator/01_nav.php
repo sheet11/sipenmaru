@@ -226,124 +226,126 @@ include "session.php";
                   </li>
                   <li><a href="081_daftar_calon_mahasiswa_belum_mendaftar.php"><i class="fa fa-circle-o"></i>Belum
                       Mendaftar</a></li>
-                      <!-- <li><a href="83_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 2</a></li>
+                  <!-- <li><a href="83_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 2</a></li>
                       <li><a href="84_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 3</a></li>
                       <li><a href="85_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 4</a></li>
                       <li><a href="86_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 5</a></li>
                       <li><a href="87_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>Labkom 6</a></li> -->
-                    </ul>
-                    <li><a href="081_sesi.php"><i class="fa fa-circle-o"></i>Sesi Ujian</a></li>
-              </li>
-
-            </ul>
+                </ul>
+              <li><a href="081_sesi.php"><i class="fa fa-circle-o"></i>Sesi Ujian</a></li>
           </li>
 
+        </ul>
+        </li>
 
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-circle-o"></i>
-              <span>Laporan Jalur Mandiri</span>
-              <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i>1 Pilihan<span
-                    class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="01_laporan_1pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a></li>
-                  <li><a href="01_laporan_1pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
-                  <!-- <li><a href="01_laporan_tingkatpoltekkes_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-circle-o"></i>
+            <span>Laporan Jalur Mandiri</span>
+            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i>1 Pilihan<span
+                  class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="01_laporan_1pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a>
+                </li>
+                <li><a href="01_laporan_1pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
+                <!-- <li><a href="01_laporan_tingkatpoltekkes_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
                       Poltekkes</a></li>
                   <li><a href="01_tingkat_prodi_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Prodi</a></li> -->
-                  <li><a href="01_jenis_kelamin_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
+                <li><a href="01_jenis_kelamin_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
 
-                  <li><a href="01_laporan_asal_sekolah_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Asal Sekolah</a>
-                  </li>
-                  <li><a href="01_laporan_keterangan_sekolah_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Keterangan
-                      Sekolah</a></li>
+                <li><a href="01_laporan_asal_sekolah_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Asal Sekolah</a>
+                </li>
+                <li><a href="01_laporan_keterangan_sekolah_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Keterangan
+                    Sekolah</a></li>
 
-                  <li><a href="importmandiri.php"><i class="fa fa-upload"></i> Import Tahap 1</a></li>
-                  <li><a href="importmandiri_tahap2.php"><i class="fa fa-upload"></i> Import Tahap 2</a></li>
+                <li><a href="importmandiri.php"><i class="fa fa-upload"></i> Import Tahap 1</a></li>
+                <li><a href="importmandiri_tahap2.php"><i class="fa fa-upload"></i> Import Tahap 2</a></li>
 
-                </ul>
-              </li>
+              </ul>
+            </li>
 
-              <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i>2 Pilihan<span
-                    class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="01_laporan_2pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a></li>
-                  <li><a href="01_laporan_2pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
-                  <!-- <li><a href="01_laporan_tingkatpoltekkes_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
+            <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i>2 Pilihan<span
+                  class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="01_laporan_2pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a>
+                </li>
+                <li><a href="01_laporan_2pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
+                <!-- <li><a href="01_laporan_tingkatpoltekkes_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
                       Poltekkes</a></li>
                   <li><a href="01_tingkat_prodi_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Prodi</a></li> -->
-                  <li><a href="01_jenis_kelamin_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
-                  <li><a href="01_laporan_asal_sekolah_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Asal Sekolah</a>
-                  </li>
-                  <li><a href="01_laporan_keterangan_sekolah_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Keterangan
-                      Sekolah</a></li>
-                  <li><a href="cetak_lulus_tahap2.php"><i class="fa fa-circle-o"></i>Cetak Excel kelulusan tahap II</a>
-                  </li>
+                <li><a href="01_jenis_kelamin_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
+                <li><a href="01_laporan_asal_sekolah_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Asal Sekolah</a>
+                </li>
+                <li><a href="01_laporan_keterangan_sekolah_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Keterangan
+                    Sekolah</a></li>
+                <li><a href="cetak_lulus_tahap2.php"><i class="fa fa-circle-o"></i>Cetak Excel kelulusan tahap II</a>
+                </li>
 
-                  <li><a href="importmandiri2pilihan.php"><i class="fa fa-upload"></i> Import Tahap 1</a></li>
+                <li><a href="importmandiri2pilihan.php"><i class="fa fa-upload"></i> Import Tahap 1</a></li>
 
-                  <li><a href="importmandiri_2pilihan_tahap2.php"><i class="fa fa-upload"></i> Import Tahap 2</a></li>
+                <li><a href="importmandiri_2pilihan_tahap2.php"><i class="fa fa-upload"></i> Import Tahap 2</a></li>
 
-                </ul>
-              </li>
+              </ul>
+            </li>
 
-            </ul>
-          </li>
+          </ul>
+        </li>
 
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-circle-o"></i>
-              <span>Jalur Internasional</span>
-              <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="10_daftar_calon_mahasiswa_internasional.php"><i class="fa fa-circle-o"></i>Pendaftar</a></li>
-              <li><a href="10_jumlah_pendaftar_internasional.php"><i class="fa fa-circle-o"></i>Jumlah Pendaftar</a></li>
-            </ul>
-          </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-circle-o"></i>
+            <span>Jalur Internasional</span>
+            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="10_daftar_calon_mahasiswa_internasional.php"><i class="fa fa-circle-o"></i>Pendaftar</a></li>
+            <li><a href="10_jumlah_pendaftar_internasional.php"><i class="fa fa-circle-o"></i>Jumlah Pendaftar</a></li>
+          </ul>
+        </li>
 
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-circle-o"></i>
-              <span>Data Master</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="88_asesmen.php"><i class="fa fa-circle-o"></i>List Asesmen</a></li>
-              <li><a href="88_daftar_asesmen.php"><i class="fa fa-circle-o"></i>Daftar Asesmen</a></li>
-              <li><a href="03_daftar_agama.php"><i class="fa fa-circle-o"></i>Agama</a></li>
-              <li><a href="05_daftar_prodi.php"><i class="fa fa-circle-o"></i>Prodi</a></li>
-              <li><a href="07_daftar_tempat_ujian.php"><i class="fa fa-circle-o"></i>Tempat Ujian</a></li>
-              <li><a href="12_daftar_jenis_kelamin.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
-              <li><a href="04_daftar_user.php"><i class="fa fa-circle-o"></i>User</a></li>
-              <li><a href="04_daftar_tanggal_ujian.php"><i class="fa fa-circle-o"></i>Tanggal Ujian</a></li>
-              <li><a href="04_daftar_tempat_ujian.php"><i class="fa fa-circle-o"></i>Tempat Ujian</a></li>
-              <li><a href="04_daftar_ruang_ujian.php"><i class="fa fa-circle-o"></i>Ruang Ujian</a></li>
-              <li><a href="04_daftar_sesi_ujian.php"><i class="fa fa-circle-o"></i>Sesi Ujian</a></li>
-            </ul>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-circle-o"></i>
+            <span>Data Master</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="88_asesmen.php"><i class="fa fa-circle-o"></i>List Asesmen</a></li>
+            <li><a href="88_daftar_asesmen.php"><i class="fa fa-circle-o"></i>Daftar Asesmen</a></li>
+            <li><a href="03_daftar_agama.php"><i class="fa fa-circle-o"></i>Agama</a></li>
+            <li><a href="05_daftar_prodi.php"><i class="fa fa-circle-o"></i>Prodi</a></li>
+            <li><a href="07_daftar_tempat_ujian.php"><i class="fa fa-circle-o"></i>Tempat Ujian</a></li>
+            <li><a href="12_daftar_jenis_kelamin.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
+            <li><a href="04_daftar_user.php"><i class="fa fa-circle-o"></i>User</a></li>
+            <li><a href="04_daftar_tanggal_ujian.php"><i class="fa fa-circle-o"></i>Tanggal Ujian</a></li>
+            <li><a href="04_daftar_tempat_ujian.php"><i class="fa fa-circle-o"></i>Tempat Ujian</a></li>
+            <li><a href="04_daftar_ruang_ujian.php"><i class="fa fa-circle-o"></i>Ruang Ujian</a></li>
+            <li><a href="04_daftar_sesi_ujian.php"><i class="fa fa-circle-o"></i>Sesi Ujian</a></li>
+          </ul>
 
-          </li>
+        </li>
 
-          <li class="treeview">
-            <a href="periode.php">
-              <i class="fa fa-calendar"></i>
-              <span>periode dan pengumuman</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="periode.php"><i class="fa fa-list"></i> Daftar Periode</a></li>
-              <li><a href="login_pengumuman.php"><i class="fa fa-bullhorn"></i> Daftar Pengumuman</a></li>
-            </ul>
-          </li>
+        <li class="treeview">
+          <a href="periode.php">
+            <i class="fa fa-calendar"></i>
+            <span>periode dan pengumuman</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="periode.php"><i class="fa fa-list"></i> Daftar Periode</a></li>
+            <li><a href="login_pengumuman.php"><i class="fa fa-bullhorn"></i> Daftar Pengumuman</a></li>
+          </ul>
+        </li>
 
       </section>
       <!-- /.sidebar -->

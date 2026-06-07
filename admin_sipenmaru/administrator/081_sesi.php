@@ -74,6 +74,7 @@
                     {
                     ?>
                         <a class="btn btn-success" href="081_cetak_excel_calon_mahasiswa.php">Cetak Excel</a>
+                        <a class="btn btn-info" href="081_sesi_absen.php?">Absensi dan User/Pass</a>
                         <?php
                     }
                     ?>

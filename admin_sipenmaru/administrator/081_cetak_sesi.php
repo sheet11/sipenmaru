@@ -32,7 +32,7 @@
     ?>
 
     <center>
-        <h1>Data Calon Mahasiswa Jalur Mandiri (SIMAMI) <?=$_GET['sesi'];?></h1>
+        <h1>Data Calon Mahasiswa Jalur Mandiri <?=$_GET['sesi'];?></h1>
     </center>
 
     <table border="1">
