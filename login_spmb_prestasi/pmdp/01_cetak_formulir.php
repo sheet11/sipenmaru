@@ -16,20 +16,24 @@ $tanggal = tgl_indo($a['tanggal_lahir']);
 
 <body>
 
-  <table width="100%" border="0" align="center">
-    <tr>
-      <td><img src="../assets/img_app/logo3.png" width="180" height="100" /></td>
-      <td width="601" align="center"><strong>
-          <h4>Seleksi Penerimaan Mahasiswa Baru (SPMB) Jalur Prestasi</br>PENDIDIKAN TENAGA KESEHATAN <br>Poltekkes Kemenkes Bengkulu Tahun 2026/2027</h4>
-        </strong></td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <hr>
-        </hr>
-      </td>
-    </tr>
-  </table>
+  <div style="display:flex; align-items:center;">
+    <div style="width:200px;">
+      <img src="../assets/img_kop/ptk-bkl.png" width="200" height="100">
+    </div>
+
+    <div style="flex:1; text-align:center;">
+      <h4 style="margin:0;">
+        SELEKSI PENERIMAAN MAHASISWA BARU (SPMB)<br>
+        PENDIDIKAN TENAGA KESEHATAN<br>
+        POLTEKKES KEMENKES BENGKULU TAHUN
+        <?php echo date('Y') ?>/<?php echo date('Y') + 1 ?>
+      </h4>
+    </div>
+
+    <div style="width:200px;"></div>
+  </div>
+
+  <hr>
 
   <table>
     <tr>
