@@ -48,6 +48,7 @@ include "01_nav.php";
                 . htmlspecialchars($label) . ': ' . $jumtot .
                  '</a>'
                 . '<a href="081_cetak_sesi_credentials.php?sesi='.urlencode($label).'" target="_blank" class="btn btn-warning" style="margin-left:5px;">Cetak User/Pass</a>'
+                . '<a href="081_cetak_sesi_moodle.php?sesi='.urlencode($label).'" target="_blank" class="btn btn-success" style="margin-left:5px;">Export Moodle</a>'
                 . '</div>';
         }
         ?>
