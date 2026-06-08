@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_assoc($query4)) {
     fputcsv($output, [
         $row['username'],
         $row['nama_lengkap'],
-        $lastname,
+        $row['username'],
         $row['username'] . '@gmail.com',
         $row['username'] . 'Spmb-bkl',
         $row['sesi_ujian'],
@@ -52,7 +52,7 @@ while ($row = mysqli_fetch_assoc($query5)) {
     fputcsv($output, [
         $row['username'],
         $row['nama_lengkap'],
-        $lastname,
+        $row['username'],
         $row['username'] . '@gmail.com',
         $row['username'] . 'Spmb-bkl',
         $row['sesi_ujian'],
