@@ -32,6 +32,9 @@ fputcsv($output, ['username', 'firstname', 'lastname', 'email', 'password', 'coh
 
 while ($row = mysqli_fetch_assoc($query4)) {
     $lastname = trim($row['pilihan_prodi']);
+    if (!empty($row['pilihan_prodi2'])) {
+        $lastname .= ' & ' . trim($row['pilihan_prodi2']);
+    }
 
     fputcsv($output, [
         $row['username'],
@@ -45,9 +48,6 @@ while ($row = mysqli_fetch_assoc($query4)) {
 
 while ($row = mysqli_fetch_assoc($query5)) {
     $lastname = trim($row['pilihan_prodi']);
-    if (!empty($row['pilihan_prodi2'])) {
-        $lastname .= ' & ' . trim($row['pilihan_prodi2']);
-    }
 
     fputcsv($output, [
         $row['username'],
