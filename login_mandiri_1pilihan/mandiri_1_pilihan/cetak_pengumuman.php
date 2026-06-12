@@ -103,7 +103,7 @@
     <li>Peserta WAJIB melaksanakan Uji Kesehatan mulai tanggal <b>15, 17, 18 dan 19 Juni 2026</b> di Rumah Sakit
       Bhayangkara Jl. Veteran No.2, Ps. Jitra, Kec. Tlk. Segara Kota Bengkulu (jadwal terlampir).</li>
 
-    <li>Pada saat pelaksanaan kegiatan Uji Kesehatan, peserta wajib membawa berkas yang meliputi :
+    <li>Pada saat pelaksanaan kegiatan Uji Kesehatan, peserta wajib membawa berkas yang meliputi:
       <ol type="a">
         <li>Bukti Kelulusan Tahap 1 di print (1 lembar).</li>
         <li>Bukti Pembayaran Uji Kesehatan sebesar <b>Rp 295.000</b> (dua ratus sembilan puluh lima ribu rupiah) yang
@@ -124,14 +124,14 @@
     <li>Wawancara WAJIB dihadiri oleh calon mahasiswa yang didampingi oleh salah satu Orang Tua/Wali.</li>
   </ol>
 
-  <h3>III.</h3>
   <p>
+    <b>III.</b>
     Peserta wajib melaksanakan <b>UJI KESEHATAN</b> dan <b>WAWANCARA</b> sesuai jadwal dan lokasi kelulusan yang telah
     ditentukan.
   </p>
 
-  <h3>IV.</h3>
   <p>
+    <b>IV.</b>
     Apabila sampai dengan tanggal yang ditentukan pada Point I (satu) dan Point II (dua) calon mahasiswa tidak mengikuti
     tahapan Uji Kesehatan dan Wawancara maka peserta dinyatakan <b>GUGUR</b>.
   </p>
