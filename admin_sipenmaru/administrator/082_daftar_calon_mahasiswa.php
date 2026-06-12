@@ -46,11 +46,19 @@ error_reporting(0);
                     </td>
                 </tr>
                 <tr>
-                    <td><a class="btn btn-info"> Jumlah Jalur Umum: <?php
-                                                                    require_once("../config/koneksi.php");
-                                                                    $query = mysqli_query($kon, "SELECT * from tb_formulir5 where status='Sudah Membayar' and tahun_pendaftaran = YEAR(CURDATE())");
-                                                                    $jumlah = mysqli_num_rows($query); ?>
-                            <?php echo $jumlah; ?> </a></td>
+                    <td>
+                        <a class="btn btn-info"> Jumlah Jalur Umum: <?php
+                            require_once("../config/koneksi.php");
+                            $query = mysqli_query($kon, "SELECT * from tb_formulir5 where status='Sudah Membayar' and tahun_pendaftaran = YEAR(CURDATE())");
+                            $jumlah = mysqli_num_rows($query); ?>
+                            <?php echo $jumlah; ?>
+                        </a>
+                        <a class="btn btn-success"> Jumlah Lulus: <?php
+                            $queryLulus = mysqli_query($kon, "SELECT * from tb_formulir5 where status='Sudah Membayar' and status_lulus = 'Lulus' and tahun_pendaftaran = YEAR(CURDATE())");
+                            $jumlahLulus = mysqli_num_rows($queryLulus); ?>
+                            <?php echo $jumlahLulus; ?>
+                        </a>
+                    </td>
                     <td>
 
                         <a class="btn btn-success" href="082_cetak_excel.php">Cetak Excel</a>

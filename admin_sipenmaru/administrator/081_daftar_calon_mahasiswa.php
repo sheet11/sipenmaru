@@ -49,13 +49,21 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><a class="btn btn-info"> Jumlah: <?php
-                                                                    require_once("../config/koneksi.php");
-                                                                    error_reporting(E_ALL);
-ini_set('display_errors', 0);
-                                                                    $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where status='Sudah Membayar' and tahun_pendaftaran = YEAR(CURDATE())");
-                                                                    $jumlah = mysqli_num_rows ($query); ?>
-                            <?php echo $jumlah; ?> </a></td>
+                    <td>
+                        <a class="btn btn-info"> Jumlah: <?php
+                            require_once("../config/koneksi.php");
+                            error_reporting(E_ALL);
+                            ini_set('display_errors', 0);
+                            $query = mysqli_query ($kon,"SELECT * from tb_formulir4 where status='Sudah Membayar' and tahun_pendaftaran = YEAR(CURDATE())");
+                            $jumlah = mysqli_num_rows ($query); ?>
+                            <?php echo $jumlah; ?>
+                        </a>
+                        <a class="btn btn-success">Lulus: <?php
+                            $queryLulus = mysqli_query($kon, "SELECT * from tb_formulir4 where status='Sudah Membayar' AND status_lulus = 'Lulus' and tahun_pendaftaran = YEAR(CURDATE())");
+                            $jumlahLulus = mysqli_num_rows($queryLulus); ?>
+                            <?php echo $jumlahLulus; ?>
+                        </a>
+                    </td>
                     <td>
                         <?php
                     if(isset($_POST['submit']))
