@@ -16,7 +16,13 @@ $dt = mysqli_num_rows($result);
         </button>
         <span> | </span>
         <a href="../../login_spmb_prestasi/tes_login.php" type="button" class="btn btn-primary">
-            Login Pengumuman (Link uji coba)
+            Login Pengumuman Prestasi (Link uji coba)
+        </a>
+        <a href="../../login_mandiri_1pilihan/tes_login.php" type="button" class="btn btn-primary">
+            Login Pengumuman Mandiri 1 Pilihan (Link uji coba)
+        </a>
+        <a href="../../login_mandiri_2pilihan/tes_login.php" type="button" class="btn btn-primary">
+            Login Pengumuman Mandiri 2 Pilihan (Link uji coba)
         </a>
         <br>
         <br>
@@ -49,7 +55,8 @@ $dt = mysqli_num_rows($result);
             }
         }
         ?>
-        <div class="modal fade" id="addPeriodeModal" tabindex="-1" role="dialog" aria-labelledby="addPeriodeModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addPeriodeModal" tabindex="-1" role="dialog" aria-labelledby="addPeriodeModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <form action="" method="POST">
@@ -71,7 +78,8 @@ $dt = mysqli_num_rows($result);
                             </div>
                             <div class="form-group">
                                 <label for="tanggal_tutup">Tanggal Selesai</label>
-                                <input type="date" class="form-control" id="tanggal_tutup" name="tanggal_tutup" required>
+                                <input type="date" class="form-control" id="tanggal_tutup" name="tanggal_tutup"
+                                    required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -94,17 +102,18 @@ $dt = mysqli_num_rows($result);
             <tbody>
                 <?php $i = 1;                
                 if ($dt > 0): ?>
-                    <?php while ($row = mysqli_fetch_assoc($result)): ?>
-                        <tr>
-                            <td><?= $i++ ?></td>
-                            <td><?php echo $row['nama_periode']; ?></td>
-                            <td><?php echo $row['status_periode']; ?></td>
-                            <td>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                <tr>
+                    <td><?= $i++ ?></td>
+                    <td><?php echo $row['nama_periode']; ?></td>
+                    <td><?php echo $row['status_periode']; ?></td>
+                    <td>
 
-                                <!-- Modal for editing status periode -->
-                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#editStatusModal<?php echo $row['id_periode']; ?>">Edit Status</button>
+                        <!-- Modal for editing status periode -->
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                            data-target="#editStatusModal<?php echo $row['id_periode']; ?>">Edit Status</button>
 
-                                <?php
+                        <?php
                                 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['status_periode'])) {
                                     $id_periode = mysqli_real_escape_string($kon, $_POST['id_periode']);
                                     $status_periode = mysqli_real_escape_string($kon, $_POST['status_periode']);
@@ -118,42 +127,57 @@ $dt = mysqli_num_rows($result);
                                     }
                                 }
                                 ?>
-                                <div class="modal fade" id="editStatusModal<?php echo $row['id_periode']; ?>" tabindex="-1" role="dialog" aria-labelledby="editStatusModalLabel<?php echo $row['id_periode']; ?>" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <form action="" method="POST">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="editStatusModalLabel<?php echo $row['id_periode']; ?>">Edit Status Periode</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <input type="hidden" name="id_periode" value="<?php echo $row['id_periode']; ?>">
-                                                    <div class="form-group">
-                                                        <label for="status_periode<?php echo $row['id_periode']; ?>">Status Periode</label>
-                                                        <select class="form-control" id="status_periode<?php echo $row['id_periode']; ?>" name="status_periode" required>
-                                                            <option value="Buka" <?php echo ($row['status_periode'] == 'Buka') ? 'selected' : ''; ?>>Buka</option>
-                                                            <option value="Tutup" <?php echo ($row['status_periode'] == 'Tutup') ? 'selected' : ''; ?>>Tutup</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                                                </div>
-                                            </form>
+                        <div class="modal fade" id="editStatusModal<?php echo $row['id_periode']; ?>" tabindex="-1"
+                            role="dialog" aria-labelledby="editStatusModalLabel<?php echo $row['id_periode']; ?>"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <form action="" method="POST">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title"
+                                                id="editStatusModalLabel<?php echo $row['id_periode']; ?>">Edit Status
+                                                Periode</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
-                                    </div>
+                                        <div class="modal-body">
+                                            <input type="hidden" name="id_periode"
+                                                value="<?php echo $row['id_periode']; ?>">
+                                            <div class="form-group">
+                                                <label for="status_periode<?php echo $row['id_periode']; ?>">Status
+                                                    Periode</label>
+                                                <select class="form-control"
+                                                    id="status_periode<?php echo $row['id_periode']; ?>"
+                                                    name="status_periode" required>
+                                                    <option value="Buka"
+                                                        <?php echo ($row['status_periode'] == 'Buka') ? 'selected' : ''; ?>>
+                                                        Buka</option>
+                                                    <option value="Tutup"
+                                                        <?php echo ($row['status_periode'] == 'Tutup') ? 'selected' : ''; ?>>
+                                                        Tutup</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <button type="button" class="btn btn-danger btn-sm"><a href="login_pengumuman_delete.php?id_periode=<?php echo $row['id_periode']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?');">Hapus</a></button>
-                            </td>
-                        </tr>
-                    <?php endwhile; ?>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-danger btn-sm"><a
+                                href="login_pengumuman_delete.php?id_periode=<?php echo $row['id_periode']; ?>"
+                                onclick="return confirm('Yakin ingin menghapus data ini?');">Hapus</a></button>
+                    </td>
+                </tr>
+                <?php endwhile; ?>
                 <?php else: ?>
-                    <tr>
-                        <td colspan="5">Tidak ada data.</td>
-                    </tr>
+                <tr>
+                    <td colspan="5">Tidak ada data.</td>
+                </tr>
                 <?php endif; ?>
             </tbody>
         </table>
