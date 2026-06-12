@@ -16,9 +16,10 @@ function getYearCondition($kon, $table, $year)
     return "YEAR(tanggal_daftar) = '$year'";
 }
 
-function getCount($kon, $table, $year)
+function getCount($kon, $table, $field, $year)
 {
     $where = getYearCondition($kon, $table, $year);
+    $where .= " AND status='Sudah Membayar' AND `$field` != 'Lulus'";
     $query = mysqli_query($kon, "SELECT COUNT(*) AS jumlah FROM `$table` WHERE $where");
     $row = mysqli_fetch_assoc($query);
     return $row ? intval($row['jumlah']) : 0;
@@ -48,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['action'])) {
     if (isset($actions[$action])) {
         $target = $actions[$action];
         $where = getYearCondition($GLOBALS['kon'], $target['table'], $year);
+        $where .= " AND status='Sudah Membayar' AND `{$target['field']}` != 'Lulus'";
         $sql = "UPDATE `{$target['table']}` SET `{$target['field']}` = 'Tidak Lulus' WHERE $where";
         $result = mysqli_query($GLOBALS['kon'], $sql);
 
@@ -62,9 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['action'])) {
     }
 }
 
-$prestasiCount = getCount($GLOBALS['kon'], 'tb_formulir3', $year);
-$mandiri1Count = getCount($GLOBALS['kon'], 'tb_formulir5', $year);
-$mandiri2Count = getCount($GLOBALS['kon'], 'tb_formulir4', $year);
+$prestasiCount = getCount($GLOBALS['kon'], 'tb_formulir3', 'status_pmdp', $year);
+$mandiri1Count = getCount($GLOBALS['kon'], 'tb_formulir5', 'status_lulus', $year);
+$mandiri2Count = getCount($GLOBALS['kon'], 'tb_formulir4', 'status_lulus', $year);
 ?>
 
 <aside class="right-side">
