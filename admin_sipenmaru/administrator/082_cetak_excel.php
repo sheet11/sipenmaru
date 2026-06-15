@@ -54,6 +54,15 @@
             <th>Email</th>
             <th>Penghasilan Orang Tua</th>
             <th>Pekerjaan Orang Tua</th>
+            <th>Surat Pernyataan</th>
+            <th>Daftar Riwayat Hidup</th>
+            <th>Transkrip Nilai</th>
+            <th>Ijazah</th>
+            <th>Akreditasi</th>
+            <th>Konversi Nilai</th>
+            <th>Form asesmen Alih Kredit</th>
+            <th>Form Pendaftaran</th>
+            <th>Form Evaluasi diri</th>
             <th>Tgl Daftar</th>
             <th>Tgl Login</th>
             <th>Tgl Ujian</th>
@@ -86,6 +95,24 @@
             <td><?=$a['email']?></td>
             <td><?=$a['penghasilan_orang_tua']?></td>
             <td><?=$a['pekerjaan_orang_tua']?></td>
+            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo5']?>"
+                    target="_blank">Surat Pernyataan</a></td>
+            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo4']?>"
+                    target="_blank">Daftar Riwayat Hidup</a></td>
+            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo3']?>"
+                    target="_blank">Transkrip Nilai</a></td>
+            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo2']?>"
+                    target="_blank">Ijazah</a></td>
+            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo1']?>"
+                    target="_blank">Akreditasi</a></td>
+            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_1']?>"
+                    target="_blank">Konversi Nilai</a></td>
+            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_2']?>"
+                    target="_blank">Form Asesmen Alih Kredit</a></td>
+            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_3']?>"
+                    target="_blank">Form Pendaftaran</a></td>
+            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_4']?>"
+                    target="_blank">Form Evaluasi Diri</a></td>
             <td><?=$a['tanggal_daftar']?></td>
             <td><?=$a['tanggal_login']?></td>
             <td><?=$a['tanggal_ujian']?></td>
