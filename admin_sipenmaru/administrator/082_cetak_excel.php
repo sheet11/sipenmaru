@@ -95,24 +95,42 @@
             <td><?=$a['email']?></td>
             <td><?=$a['penghasilan_orang_tua']?></td>
             <td><?=$a['pekerjaan_orang_tua']?></td>
-            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo5']?>"
-                    target="_blank">Surat Pernyataan</a></td>
-            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo4']?>"
-                    target="_blank">Daftar Riwayat Hidup</a></td>
-            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo3']?>"
-                    target="_blank">Transkrip Nilai</a></td>
-            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo2']?>"
-                    target="_blank">Ijazah</a></td>
-            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo1']?>"
-                    target="_blank">Akreditasi</a></td>
-            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_1']?>"
-                    target="_blank">Konversi Nilai</a></td>
-            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_2']?>"
-                    target="_blank">Form Asesmen Alih Kredit</a></td>
-            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_3']?>"
-                    target="_blank">Form Pendaftaran</a></td>
-            <td><a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_4']?>"
-                    target="_blank">Form Evaluasi Diri</a></td>
+            <td><?php if(!empty($a['photo5'])){ ?>
+                <a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo5']?>"
+                    target="_blank">Surat Pernyataan</a>
+                <?php } ?></td>
+            <td><?php if(!empty($a['photo4'])){ ?>
+                <a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo4']?>"
+                    target="_blank">Daftar Riwayat Hidup</a>
+                <?php } ?></td>
+            <td><?php if(!empty($a['photo3'])){ ?>
+                <a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo3']?>"
+                    target="_blank">Transkrip Nilai</a>
+                <?php } ?></td>
+            <td><?php if(!empty($a['photo2'])){ ?>
+                <a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo2']?>"
+                    target="_blank">Ijazah</a>
+                <?php } ?></td>
+            <td><?php if(!empty($a['photo1'])){ ?>
+                <a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['photo1']?>"
+                    target="_blank">Akreditasi</a>
+                <?php } ?></td>
+            <td><?php if(!empty($a['file_1'])){ ?>
+                <a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_1']?>"
+                    target="_blank">Konversi Nilai</a>
+                <?php } ?></td>
+            <td><?php if(!empty($a['file_2'])){ ?>
+                <a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_2']?>"
+                    target="_blank">Form Asesmen Alih Kredit</a>
+                <?php } ?></td>
+            <td><?php if(!empty($a['file_3'])){ ?>
+                <a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_3']?>"
+                    target="_blank">Form Pendaftaran</a>
+                <?php } ?></td>
+            <td><?php if(!empty($a['file_4'])){ ?>
+                <a href="https://spmb-polkeslu.cloud/login_mandiri_1pilihan/assets/berkas/<?=$a['file_4']?>"
+                    target="_blank">Form Evaluasi Diri</a>
+                <?php } ?></td>
             <td><?=$a['tanggal_daftar']?></td>
             <td><?=$a['tanggal_login']?></td>
             <td><?=$a['tanggal_ujian']?></td>
