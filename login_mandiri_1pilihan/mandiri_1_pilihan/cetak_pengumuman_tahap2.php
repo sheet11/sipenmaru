@@ -110,7 +110,7 @@
 
                     Daftar UKT dapat diakses melalui:
                     <br>
-                    https://spmb-polkeslu.cloud/wp-content/uploads/2026/03/POLA-TARIF-UKT-2026.pdf
+                      <a href="https://spmb-polkeslu.cloud/wp-content/uploads/2026/03/POLA-TARIF-UKT-2026.pdf">Daftar UKT</a>
                 </li>
 
                 <li>
@@ -136,7 +136,7 @@
                     Calon Mahasiswa Baru dan diketahui oleh Orang Tua di atas Materai Rp10.000.
                     <br>
                     Link:
-                    https://spmb-polkeslu.cloud/wp-content/uploads/2026/03/Surat-Pernyataan-Tidak-Menuntut-Pengembalian-Dana.pdf
+                    <a href="https://spmb-polkeslu.cloud/wp-content/uploads/2026/03/Surat-Pernyataan-Tidak-Menuntut-Pengembalian-Dana.pdf">Surat Pernyataan</a>
                 </li>
 
                 <li>
