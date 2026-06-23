@@ -6,6 +6,12 @@ error_reporting(0);
 $year = date('Y');
 $message = '';
 
+$field = [
+    'prestasi' => 'status_pmdp',
+    'mandiri1' => 'status_lulus_2',
+    'mandiri2' => 'status_kelulusan_2'
+];
+
 function getYearCondition($kon, $table, $year)
 {
     $check = mysqli_query($kon, "SHOW COLUMNS FROM `$table` LIKE 'tahun_pendaftaran'");
@@ -29,17 +35,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['action'])) {
     $actions = [
         'prestasi' => [
             'table' => 'tb_formulir3',
-            'field' => 'status_pmdp',
+            'field' => $field['prestasi'],
             'label' => 'SPMB Prestasi',
         ],
         'mandiri1' => [
             'table' => 'tb_formulir5',
-            'field' => 'status_kelulusan_2',
+            'field' => $field['mandiri1'],
             'label' => 'SPMB Mandiri 1 Pilihan',
         ],
         'mandiri2' => [
             'table' => 'tb_formulir4',
-            'field' => 'status_lulus_2',
+            'field' => $field['mandiri2'],
             'label' => 'SPMB Mandiri 2 Pilihan',
         ],
     ];
@@ -64,9 +70,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['action'])) {
     }
 }
 
-$prestasiCount = getCount($GLOBALS['kon'], 'tb_formulir3', 'status_pmdp', $year);
-$mandiri1Count = getCount($GLOBALS['kon'], 'tb_formulir5', 'status_lulus', $year);
-$mandiri2Count = getCount($GLOBALS['kon'], 'tb_formulir4', 'status_lulus', $year);
+$prestasiCount = getCount($GLOBALS['kon'], 'tb_formulir3', $field['prestasi'], $year);
+$mandiri1Count = getCount($GLOBALS['kon'], 'tb_formulir5', $field['mandiri1'], $year);
+$mandiri2Count = getCount($GLOBALS['kon'], 'tb_formulir4', $field['mandiri2'], $year);
 ?>
 
 <aside class="right-side">
@@ -131,9 +137,10 @@ $mandiri2Count = getCount($GLOBALS['kon'], 'tb_formulir4', 'status_lulus', $year
         <div class="alert alert-info">
             <strong>Catatan:</strong> Status yang diperbarui:
             <ul>
-                <li>SPMB Prestasi =&gt; <code>tb_formulir3.status_pmdp</code></li>
-                <li>SPMB Mandiri 1 Pilihan =&gt; <code>tb_formulir5.status_lulus</code></li>
-                <li>SPMB Mandiri 2 Pilihan =&gt; <code>tb_formulir4.status_lulus</code></li>
+                <li>SPMB Prestasi =&gt; <code>tb_formulir3.<?= $field['prestasi'] ?></code></li>
+                <li>SPMB Mandiri 1 Pilihan =&gt; <code>tb_formulir5.<?= $field['mandiri1'] ?></code>
+                </li>
+                <li>SPMB Mandiri 2 Pilihan =&gt; <code>tb_formulir4.<?= $field['mandiri2'] ?></code></li>
             </ul>
             Kondisi tahun menggunakan kolom <code>tahun_pendaftaran</code> jika ada, atau <code>tanggal_daftar</code>
             untuk fallback.
