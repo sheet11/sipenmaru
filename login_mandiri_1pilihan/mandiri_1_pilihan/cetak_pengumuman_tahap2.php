@@ -109,7 +109,6 @@
                     <br><br>
 
                     Daftar UKT dapat diakses melalui:
-                    <br>
                       <a href="https://spmb-polkeslu.cloud/wp-content/uploads/2026/03/POLA-TARIF-UKT-2026.pdf">Daftar UKT</a>
                 </li>
 
