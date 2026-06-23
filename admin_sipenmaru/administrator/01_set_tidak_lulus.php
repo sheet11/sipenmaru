@@ -34,12 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['action'])) {
         ],
         'mandiri1' => [
             'table' => 'tb_formulir5',
-            'field' => 'status_lulus',
+            'field' => 'status_kelulusan_2',
             'label' => 'SPMB Mandiri 1 Pilihan',
         ],
         'mandiri2' => [
             'table' => 'tb_formulir4',
-            'field' => 'status_lulus',
+            'field' => 'status_lulus_2',
             'label' => 'SPMB Mandiri 2 Pilihan',
         ],
     ];
