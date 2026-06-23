@@ -39,7 +39,7 @@
           <tr>
             <td valign="top">Jalur</td>
             <td valign="top">:</td>
-            <td>MANDIRI 2 PILIHAN GEL II</td>
+            <td>MANDIRI 2 PILIHAN</td>
           </tr>
 
           <tr>
@@ -73,499 +73,158 @@
 <table align="center">
     <tr>
         <td>
-            <h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Selamat anda dinyatakan:</h3>
+            <h3 style="text-align: center;">Selamat Anda Dinyatakan:</h3>
         </td>
     </tr>
     <tr>
         <td>
-            <h1>LULUS SIMAMI GELOMBANG II TAHAP II</h1>
+            <h1 style="text-align: center;">LULUS SPMB MANDIRI TAHAP II</h1>
         </td>
     </tr>
 </table>
-<br>
-<p class="MsoNormal" align="center" style="margin-bottom:6.0pt;text-align:center;
-line-height:150%"><b style="mso-bidi-font-weight:normal"><u><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">INFORMASI
-PERSYARATAN REGISTRASI SIMAMI POLTEKKES BENGKULU<o:p></o:p></span></u></b></p>
+<h3 style="text-align: center;"><u>Pengumuman</u></h3>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">
+    <tr>
+        <td>
+            <p align="justify">
+                Peserta yang dinyatakan <b>LULUS Seleksi Penerimaan Mahasiswa Baru (SPMB) Tahap II (Tahap Akhir) Jalur Mandiri</b>
+                diwajibkan untuk melakukan <b>REGISTRASI (PEMBAYARAN DAN PENGUMPULAN BERKAS)</b>
+                pada tanggal <b>25, 26 dan 29 Juni 2026 pukul 08.00 s.d 15.00 WIB</b>
+                dengan melengkapi persyaratan administrasi sebagai berikut:
+            </p>
 
-<p class="MsoNormal" style="margin-bottom:6.0pt;text-align:justify;text-justify:
-inter-ideograph;line-height:150%"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">Peserta
-yang dinyatakan LULUS Sipenmaru Tahap II Jalur Seleksi </span><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif"><span style="mso-spacerun:yes">&nbsp;</span>Mandiri </span><span lang="IN" style="font-size:
-11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">(SIMAM</span><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">I</span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">) diwajibkan untuk melakukan <b style="mso-bidi-font-weight:
-normal">REGISTRASI</b></span><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">
-(PEMBAYARAN DAN PENGUMPULAN BERKAS)</span></b><b style="mso-bidi-font-weight:
-normal"><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:
-&quot;Arial&quot;,sans-serif;mso-ansi-language:IN"> </span></b><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">pada tanggal <b style="mso-bidi-font-weight:normal">5 s.d
-8</b></span><b><span lang="IN" style="font-size:11.0pt;line-height:150%;
-font-family:&quot;Arial&quot;,sans-serif"> </span></b><b><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">Juli
-202</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">4<span style="mso-bidi-font-weight:bold"> </span></span></b><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">dengan melengkapi persyaratan administrasi sebagai
-berikut :<o:p></o:p></span></p>
+            <h3>A. Persyaratan Administrasi Keuangan</h3>
 
-<p class="MsoListParagraphCxSpFirst" style="margin-left:21.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-21.3pt;
-line-height:150%;mso-list:l1 level1 lfo1"><!--[if !supportLists]--><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:Arial;
-mso-ansi-language:IN"><span style="mso-list:Ignore">A.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span></b><!--[endif]--><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">Persyaratan Administrasi Keuangan <o:p></o:p></span></b></p>
+            <ol>
+                <li>
+                    Pembayaran Biaya Pendidikan Uang Kuliah Tunggal (UKT) yang jumlahnya sesuai
+                    dengan Program Studi melalui Rekening Bank MANDIRI
+                    <b>No. Rekening 1790063215300</b>
+                    a.n. <b>RPL 016 BLU POLTEKKES BKL UTK OPS P</b>.
+                    <br><br>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-18.0pt;
-line-height:150%;mso-list:l0 level1 lfo2"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN"><span style="mso-list:Ignore">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><!--[endif]--><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">Pembayaran
-Biaya Pendidikan Uang Kuliah Tunggal (UKT) yang jumlahnya sesuai dengan</span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">
-</span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">Program Studi melalui <b style="mso-bidi-font-weight:
-normal">Rekening Bank MUAMALAT No. Rekening 4320666666 an. RPL 016 BLU POLTEKKES
-UNTUK OPS </b>(</span><span lang="EN-US" style="font-size:11.0pt;line-height:
-150%;font-family:&quot;Arial&quot;,sans-serif">dapat diakses melalui link</span><span lang="EN-US"> <a href="http://bit.ly/UKT_Mahasiswa"><span style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;color:red">http://bit.ly/UKT_Mahasiswa</span></a></span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-color:red;mso-ansi-language:IN">)</span><span lang="EN-US" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;color:red">.</span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-color:red;mso-ansi-language:IN"><o:p></o:p></span></p>
+                    Peserta yang akan melakukan pembayaran UKT secara Tunai, dapat difasilitasi
+                    Teller Bank Mandiri pada saat Registrasi
+                    (Lokasi Poltekkes Kemenkes Bengkulu).
+                    <br><br>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-18.0pt;
-line-height:150%;mso-list:l0 level1 lfo2"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN"><span style="mso-list:Ignore">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><!--[endif]--><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">Pembayaran
-Biaya Seragam </span><span lang="EN-US" style="font-size:11.0pt;line-height:150%;
-font-family:&quot;Arial&quot;,sans-serif">dan Alat Kesehatan </span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">yang jumlahnya sesuai dengan Program Studi melalui <b style="mso-bidi-font-weight:normal">Bank Syariah Indonesia (BSI) Cabang
-Bengkulu No. Rekening 7776655830 an. KPN POLITEKNIK KESEHATAN.</b></span><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif"> </span></b><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">(</span><span lang="EN-US" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif">dapat diakses melalui link </span><span lang="EN-US"><a href="http://bit.ly/biaya_seragam_dan_alatkes"><span style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-color:red">http://bit.ly/biaya_seragam_dan_alatkes</span></a></span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-color:red;mso-ansi-language:IN">)</span><span lang="EN-US" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;color:red">.</span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-color:red;mso-ansi-language:IN"><o:p></o:p></span></p>
+                    Daftar UKT dapat diakses melalui:
+                    <br>
+                    <a href="https://spmb-polkeslu.cloud/wp-content/uploads/2026/03/POLA-TARIF-UKT-2026.pdf">https://spmb-polkeslu.cloud/wp-content/uploads/2026/03/POLA-TARIF-UKT-2026.pdf</a>
+                </li>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-18.0pt;
-line-height:150%;mso-list:l0 level1 lfo2"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN"><span style="mso-list:Ignore">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><!--[endif]--><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">Pembayaran
-Sumbangan Sukarela Pembangunan Masjid Tarbiyatush Shihhah melalui Rekening <b style="mso-bidi-font-weight:normal">Bank Syariah Indonesia (BSI) Cabang
-Bengkulu No. Rekening 4362324040 an. MASJID TARBIYATUSH SHIHHAH. </b><span style="color:red"><o:p></o:p></span></span></p>
+                <li>
+                    <b>UANG YANG TELAH DISETOR TIDAK DAPAT DITARIK / DIKEMBALIKAN.</b>
+                </li>
+            </ol>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-18.0pt;
-line-height:150%;mso-list:l0 level1 lfo2"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN"><span style="mso-list:Ignore">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><!--[endif]--><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">Pembayaran
-Iuran Kegiatan Organisasi Mahasiswa Poltekkes Kemenkes Bengkulu dengan rincian
-Diploma Tiga sebesar <b>Rp 300.000,</b>- (tiga ratus ribu rupiah) dan Sarjana
-Terapan sebesar <b>Rp 400.000</b>,- (empat ratus ribu rupiah), Sarjana Terapan
-+ Pendidikan Profesi Ners dan Profesi Bidan sebesar <b>Rp 500.000</b>,- (lima
-ratus ribu rupiah), dana<span style="mso-spacerun:yes">&nbsp; </span>dibayarkan 1
-kali selama menempuh pendidikan melalui <b style="mso-bidi-font-weight:normal">Bank
-Tabungan Negara (BTN) No. Rekening 00037-01-50-050725-4 an. ORMAWA POLTEKKES
-KEMENKES BENGKULU.</b><o:p></o:p></span></p>
+            <h3>B. Persyaratan Administrasi</h3>
 
-<p class="MsoListParagraph" style="margin-top:0cm;margin-right:0cm;margin-bottom:
-6.0pt;margin-left:39.1pt;text-align:justify;text-justify:inter-ideograph;
-text-indent:-17.85pt;line-height:150%;mso-list:l0 level1 lfo2"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN"><span style="mso-list:Ignore">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">UANG YANG TELAH DISETOR TIDAK DAPAT DITARIK/DIKEMBALIKAN.</span></b><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN"><o:p></o:p></span></p>
+            <ol>
+                <li>
+                    Kelengkapan Administrasi Meliputi:
+                    <ol type="a">
+                        <li>Bukti Kelulusan Tahap II SPMB Jalur Mandiri sebanyak 1 lembar.</li>
+                        <li>Foto Copy Legalisir Ijazah atau Asli Surat Keterangan Lulus dari Kepala Sekolah sebanyak 1 lembar.</li>
+                        <li>Foto Copy Legalisir Ijazah dan Transkrip Nilai untuk mahasiswa RPL dan Profesi sebanyak 1 lembar.</li>
+                        <li>Bukti Setor Uang Kuliah Tunggal (UKT).</li>
+                    </ol>
+                </li>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:21.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-21.3pt;
-line-height:150%;mso-list:l1 level1 lfo1"><!--[if !supportLists]--><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:Arial;
-mso-ansi-language:IN"><span style="mso-list:Ignore">B.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span></b><!--[endif]--><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">Persyaratan Administrasi<o:p></o:p></span></b></p>
+                <li>
+                    Surat Pernyataan Tidak Menuntut Pengembalian Dana Pendidikan ditandatangani
+                    Calon Mahasiswa Baru dan diketahui oleh Orang Tua di atas Materai Rp10.000.
+                    <br>
+                    Link:
+                    <a href="https://spmb-polkeslu.cloud/wp-content/uploads/2026/03/Surat-Pernyataan-Tidak-Menuntut-Pengembalian-Dana.pdf">https://spmb-polkeslu.cloud/wp-content/uploads/2026/03/Surat-Pernyataan-Tidak-Menuntut-Pengembalian-Dana.pdf</a>
+                </li>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-18.0pt;
-line-height:150%;mso-list:l2 level1 lfo3"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN;mso-bidi-font-weight:bold"><span style="mso-list:Ignore">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">Bukti Kelulusan Tahap II Sipenmaru </span><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">Mandiri
-(SIMAMI) sebanyak</span><span lang="IN" style="font-size:11.0pt;line-height:150%;
-font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN"> 1 lembar.<o:p></o:p></span></p>
+                <li>
+                    Calon Mahasiswa Baru wajib menjadi Peserta BPJS dan memindahkan
+                    kepesertaan ke Fasilitas Kesehatan (Faskes)
+                    <b>Klinik Hygea Poltekkes Kemenkes Bengkulu</b>
+                    dengan mengumpulkan fotokopi Kartu Kepesertaan BPJS.
+                </li>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-18.0pt;
-line-height:150%;mso-list:l2 level1 lfo3"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN;mso-bidi-font-weight:bold;mso-bidi-font-style:italic"><span style="mso-list:Ignore">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><!--[endif]--><i style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">Foto
-Copy </span></i><span lang="EN-US" style="font-size:11.0pt;line-height:150%;
-font-family:&quot;Arial&quot;,sans-serif;mso-bidi-font-style:italic">Legalisir Ijazah
-atau Asli Surat Keterangan Lulus dari Kepala Sekolah sebanyak 1 Lembar.</span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN;mso-bidi-font-style:italic"><o:p></o:p></span></p>
+                <li>
+                    Semua Berkas Persyaratan Administrasi dimasukkan dalam map kertas bertulang
+                    dengan ketentuan:
+                </li>
+            </ol>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-18.0pt;
-line-height:150%;mso-list:l2 level1 lfo3"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN;mso-bidi-font-weight:bold"><span style="mso-list:Ignore">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">Bukti Setor Asli meliputi:<o:p></o:p></span></p>
+            <table border="1" width="100%" cellpadding="4" cellspacing="0">
+                <tr bgcolor="#dddddd">
+                    <th width="10%">No</th>
+                    <th>Jurusan / Prodi</th>
+                    <th width="25%">Warna Map</th>
+                </tr>
+                <tr>
+                    <td align="center">1</td>
+                    <td>KEPERAWATAN</td>
+                    <td>COKLAT</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td>KEBIDANAN</td>
+                    <td>BIRU MUDA</td>
+                </tr>
+                <tr>
+                    <td align="center">3</td>
+                    <td>GIZI</td>
+                    <td>HIJAU TUA</td>
+                </tr>
+                <tr>
+                    <td align="center">4</td>
+                    <td>TEKNOLOGI LABORATORIUM MEDIS</td>
+                    <td>KUNING</td>
+                </tr>
+                <tr>
+                    <td align="center">5</td>
+                    <td>FARMASI</td>
+                    <td>HIJAU MUDA</td>
+                </tr>
+                <tr>
+                    <td align="center">6</td>
+                    <td>KESEHATAN LINGKUNGAN</td>
+                    <td>BIRU TUA</td>
+                </tr>
+                <tr>
+                    <td align="center">7</td>
+                    <td>PROMOSI KESEHATAN</td>
+                    <td>MERAH MUDA</td>
+                </tr>
+            </table>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:2.0cm;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-14.15pt;
-line-height:150%;mso-list:l3 level1 lfo4"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;mso-ansi-language:IN"><span style="mso-list:Ignore">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span></span></span><!--[endif]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">Uang Kuliah Tunggal (UKT)<o:p></o:p></span></p>
+            <br>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:2.0cm;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-14.15pt;
-line-height:150%;mso-list:l3 level1 lfo4"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;mso-ansi-language:IN"><span style="mso-list:Ignore">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span></span></span><!--[endif]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">Uang Seragam</span><span lang="EN-US" style="font-size:
-11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif"> dan Alat Kesehatan</span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN"><o:p></o:p></span></p>
+            <p align="justify">
+                Seluruh persyaratan diserahkan langsung pada saat registrasi tanggal
+                <b>25, 26 dan 29 Juni 2026 pukul 08.00 s.d 15.00 WIB</b>
+                dengan alamat:
+            </p>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:2.0cm;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-14.15pt;
-line-height:150%;mso-list:l3 level1 lfo4"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;mso-ansi-language:IN"><span style="mso-list:Ignore">c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">Uang Pembangunan Masjid<o:p></o:p></span></p>
+            <p align="center">
+                <b>
+                    Poltekkes Kemenkes Bengkulu<br>
+                    Gedung Auditorium<br>
+                    Jl. Indragiri No. 03 Padang Harapan Bengkulu
+                </b>
+            </p>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:2.0cm;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-14.15pt;
-line-height:150%;mso-list:l3 level1 lfo4"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;mso-ansi-language:IN"><span style="mso-list:Ignore">d.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span></span></span><!--[endif]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">Uang Iuran Kegiatan Organisasi Mahasiswa<o:p></o:p></span></p>
+            <p align="justify">
+                Untuk informasi lebih lanjut dapat menghubungi admin:
+                <b>081370216550</b>.
+            </p>
 
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-18.0pt;
-line-height:150%;mso-list:l2 level1 lfo3"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN;mso-bidi-font-weight:bold"><span style="mso-list:Ignore">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">Surat
-Pernyataan Tidak menuntut Pengembalian Dana Pendidikan </span></b><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">ditandatangani Calon Mahasiswa Baru dan diketahui oleh
-Orang Tua di atas Materai 10.000</span><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif"> </span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">(</span><span lang="EN-US" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif">dapat diakses melalui link</span><span lang="EN-US" style="font-family:&quot;Arial&quot;,sans-serif"> </span><span lang="EN-US"><a href="http://bit.ly/surat_pernyataan_tidak_pengembalianDana"><span style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">http://bit.ly/surat_pernyataan_tidak_pengembalianDana</span></a></span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">)</span><span lang="EN-US" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif">.</span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-color:red;mso-ansi-language:IN"><o:p></o:p></span></p>
-
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-18.0pt;
-line-height:150%;mso-list:l2 level1 lfo3"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN;mso-bidi-font-weight:bold"><span style="mso-list:Ignore">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">Calon
-Mahasiswa Baru wajib menjadi Peserta BPJS dan memindahkan kepesertaan ke
-Fasilitas Kesehatan (Faskes) Klinik Hygea Poltekkes Kemenkes Bengkul</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif">u </span></b><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">(</span><span lang="EN-US" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif">dengan mengumpulkan <i style="mso-bidi-font-style:normal">foto copy</i> Kartu Kepesertaan BPJS</span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN"><o:p></o:p></span></p>
-<br><br>
-<p class="MsoListParagraphCxSpMiddle" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:justify;text-justify:inter-ideograph;text-indent:-18.0pt;
-line-height:150%;mso-list:l2 level1 lfo3"><!--[if !supportLists]--><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:Arial;color:black;mso-themecolor:text1;mso-ansi-language:
-IN;mso-bidi-font-weight:bold"><span style="mso-list:Ignore">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">Semua
-Berkas Persyaratan Administrasi dimasukkan dalam map </span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif">kertas bertulang </span></b><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">dengan
-ketentuan <o:p></o:p></span></b></p>
-
-<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="margin-left:47.95pt;border-collapse:collapse;border:none;mso-border-alt:
- solid black .5pt;mso-border-themecolor:text1;mso-yfti-tbllook:1184;mso-padding-alt:
- 0cm 5.4pt 0cm 5.4pt">
- <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
-  <td width="53" valign="top" style="width:39.65pt;border:solid black 1.0pt;
-  mso-border-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpMiddle" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:
-  IN">NO<o:p></o:p></span></b></p>
-  </td>
-  <td width="303" valign="top" style="width:227.15pt;border:solid black 1.0pt;
-  mso-border-themecolor:text1;border-left:none;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpMiddle" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:
-  IN">JURUSAN/PRODI<o:p></o:p></span></b></p>
-  </td>
-  <td width="164" valign="top" style="width:123.0pt;border:solid black 1.0pt;
-  mso-border-themecolor:text1;border-left:none;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpLast" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:
-  IN">WARNA MAP<o:p></o:p></span></b></p>
-  </td>
- </tr>
- <tr style="mso-yfti-irow:1">
-  <td width="53" valign="top" style="width:39.65pt;border:solid black 1.0pt;
-  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
-  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpFirst" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">1<o:p></o:p></span></p>
-  </td>
-  <td width="303" valign="top" style="width:227.15pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpMiddle" style="margin-left:0cm;mso-add-space:
-  auto"><span lang="IN" style="font-size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;
-  mso-ansi-language:IN">KEPERAWATAN<o:p></o:p></span></p>
-  </td>
-  <td width="164" valign="top" style="width:123.0pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpLast" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">COKLAT<o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style="mso-yfti-irow:2">
-  <td width="53" valign="top" style="width:39.65pt;border:solid black 1.0pt;
-  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
-  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpFirst" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">2<o:p></o:p></span></p>
-  </td>
-  <td width="303" valign="top" style="width:227.15pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpMiddle" style="margin-left:0cm;mso-add-space:
-  auto"><span lang="IN" style="font-size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;
-  mso-ansi-language:IN">KEBIDANAN<o:p></o:p></span></p>
-  </td>
-  <td width="164" valign="top" style="width:123.0pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpLast" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">BIRU MUDA<o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style="mso-yfti-irow:3">
-  <td width="53" valign="top" style="width:39.65pt;border:solid black 1.0pt;
-  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
-  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpFirst" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">3<o:p></o:p></span></p>
-  </td>
-  <td width="303" valign="top" style="width:227.15pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpMiddle" style="margin-left:0cm;mso-add-space:
-  auto"><span lang="IN" style="font-size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;
-  mso-ansi-language:IN">GIZI<o:p></o:p></span></p>
-  </td>
-  <td width="164" valign="top" style="width:123.0pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpLast" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">HIJAU TUA<o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style="mso-yfti-irow:4">
-  <td width="53" valign="top" style="width:39.65pt;border:solid black 1.0pt;
-  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
-  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpFirst" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">4<o:p></o:p></span></p>
-  </td>
-  <td width="303" valign="top" style="width:227.15pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpMiddle" style="margin-left:0cm;mso-add-space:
-  auto"><span lang="IN" style="font-size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;
-  mso-ansi-language:IN">TEKNOLOGI LABORATORIUM MEDIS<o:p></o:p></span></p>
-  </td>
-  <td width="164" valign="top" style="width:123.0pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpLast" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">KUNING<o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style="mso-yfti-irow:5">
-  <td width="53" valign="top" style="width:39.65pt;border:solid black 1.0pt;
-  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
-  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpFirst" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">5<o:p></o:p></span></p>
-  </td>
-  <td width="303" valign="top" style="width:227.15pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpMiddle" style="margin-left:0cm;mso-add-space:
-  auto"><span lang="IN" style="font-size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;
-  mso-ansi-language:IN">FARMASI<o:p></o:p></span></p>
-  </td>
-  <td width="164" valign="top" style="width:123.0pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpLast" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">HIJAU MUDA<o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style="mso-yfti-irow:6">
-  <td width="53" valign="top" style="width:39.65pt;border:solid black 1.0pt;
-  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
-  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpFirst" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">6<o:p></o:p></span></p>
-  </td>
-  <td width="303" valign="top" style="width:227.15pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpMiddle" style="margin-left:0cm;mso-add-space:
-  auto"><span lang="IN" style="font-size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;
-  mso-ansi-language:IN">KESEHATAN LINGKUNGAN<o:p></o:p></span></p>
-  </td>
-  <td width="164" valign="top" style="width:123.0pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpLast" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">BIRU TUA<o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style="mso-yfti-irow:7;mso-yfti-lastrow:yes">
-  <td width="53" valign="top" style="width:39.65pt;border:solid black 1.0pt;
-  mso-border-themecolor:text1;border-top:none;mso-border-top-alt:solid black .5pt;
-  mso-border-top-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpFirst" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="IN" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">7<o:p></o:p></span></p>
-  </td>
-  <td width="303" valign="top" style="width:227.15pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpMiddle" style="margin-left:0cm;mso-add-space:
-  auto"><span lang="IN" style="font-size:11.0pt;font-family:&quot;Arial&quot;,sans-serif;
-  mso-ansi-language:IN">PROMOSI KESEHATAN<o:p></o:p></span></p>
-  </td>
-  <td width="164" valign="top" style="width:123.0pt;border-top:none;border-left:
-  none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:text1;
-  border-right:solid black 1.0pt;mso-border-right-themecolor:text1;mso-border-top-alt:
-  solid black .5pt;mso-border-top-themecolor:text1;mso-border-left-alt:solid black .5pt;
-  mso-border-left-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:
-  text1;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoListParagraphCxSpLast" align="center" style="margin-left:0cm;
-  mso-add-space:auto;text-align:center"><span lang="EN-US" style="font-size:11.0pt;
-  font-family:&quot;Arial&quot;,sans-serif">MERAH MUDA<o:p></o:p></span></p>
-  </td>
- </tr>
-</tbody></table>
-
-<p class="MsoListParagraph" align="center" style="margin-left:39.3pt;mso-add-space:
-auto;text-align:center;line-height:150%"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN"><o:p>&nbsp;</o:p></span></p>
-
-<p class="MsoNormal" style="margin-left:35.45pt;text-align:justify;text-justify:
-inter-ideograph;line-height:150%"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">Persyaratan
-dapat </span><span lang="EN-US" style="font-size:11.0pt;line-height:150%;
-font-family:&quot;Arial&quot;,sans-serif">diserahkan langsung/dikirimkan<b style="mso-bidi-font-weight:normal"> </b>via Pos/JNE/JNT/Travel paling lambat </span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">diterima pada hari senin tanggal 8 Juli 2024 pukul 16.00
-WIB</span><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:
-&quot;Arial&quot;,sans-serif"> </span><span lang="EN-US" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif">pada alamat </span><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">Direktorat
-Lantai I Gedung A</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">l</span></b><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">-Zahrawi
-Jalan Indragiri Nomor 03 Padang Harapan Bengkulu</span></b><b style="mso-bidi-font-weight:
-normal"><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:
-&quot;Arial&quot;,sans-serif"> (untuk konfirmasi pengiriman berkas dapat menghubungi
-Whatsapp (WA) Admin Sipenmaru/082181624064).<o:p></o:p></span></b></p>
-
-<p class="MsoNormal" style="margin-left:35.45pt;text-align:justify;text-justify:
-inter-ideograph;line-height:150%"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN"><o:p>&nbsp;</o:p></span></p>
-
-<p class="MsoListParagraphCxSpFirst" align="center" style="margin-left:35.45pt;
-mso-add-space:auto;text-align:center;line-height:150%"><b style="mso-bidi-font-weight:
-normal"><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:
-&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">BILA SAMPAI TANGGAL 8 JULI</span></b><b><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">
-202</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">4</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN"> </span></b><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;
-line-height:150%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">BELUM
-MELAKSANAKAN REGISTRASI</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">
-DAN PENGUMPULAN BERKAS</span></b><b style="mso-bidi-font-weight:normal"><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif;
-mso-ansi-language:IN">, </span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></b></p>
-
-<p class="MsoListParagraphCxSpLast" align="center" style="margin-left:35.45pt;
-mso-add-space:auto;text-align:center;line-height:150%"><b style="mso-bidi-font-weight:
-normal"><span lang="IN" style="font-size:11.0pt;line-height:150%;font-family:
-&quot;Arial&quot;,sans-serif;mso-ansi-language:IN">MAKA PESERTA DIANGGAP MENGUNDURKAN
-DIRI</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:11.0pt;line-height:150%;font-family:&quot;Arial&quot;,sans-serif">.<o:p></o:p></span></b></p>
+            <p align="center" style="font-size:14px;">
+                <b>
+                    BILA SAMPAI TANGGAL 29 JUNI 2026 BELUM MELAKSANAKAN REGISTRASI
+                    DAN PENGUMPULAN BERKAS, MAKA PESERTA DIANGGAP MENGUNDURKAN DIRI.
+                </b>
+            </p>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
 <script>
@@ -582,4 +241,5 @@ echo "<br><br><br><h1>Maaf Anda Belum Lulus LULUS SIMAMI GELOMBANG II TAHAP II<b
 h1 {text-align: center;}
 p {text-align: center;}
 div {text-align: center;}
+
 </style>
