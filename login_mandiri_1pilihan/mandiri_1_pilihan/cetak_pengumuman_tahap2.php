@@ -231,9 +231,9 @@
   window.print();
 </script>
 <?php } elseif ($a['status_lulus_2'] == null || $a['status_lulus_2'] == "Tidak Lulus") { 
-echo "<br><br><br><h1 style= text-align:center >MAAF, ANDA BELUM LULUS PADA SPMB JALUR MANDIRI<br>Ucapan terima kasih yang sebesar-besarnya kami sampaikan atas kepercayaan dan partisipasi peserta yang telah mendaftar serta mengikuti seluruh rangkaian seleksi Penerimaan Mahasiswa Baru (SPMB) Jalur Mandiri.</a> </h1><br><a href='../index.php'>Kembali </a>";
+echo "<br><br><br><h1 style= text-align:center >MAAF, ANDA BELUM LULUS PADA SPMB JALUR MANDIRI<br>Ucapan terima kasih yang sebesar-besarnya kami sampaikan atas kepercayaan dan partisipasi peserta yang telah mendaftar serta mengikuti seluruh rangkaian seleksi Penerimaan Mahasiswa Baru (SPMB) Jalur Mandiri.</a> </h1><br><a href='index.php'>Kembali </a>";
  }else{
-echo "<br><br><br><h1 style= text-align:center >MAAF, ANDA BELUM LULUS PADA SPMB JALUR MANDIRI<br>Ucapan terima kasih yang sebesar-besarnya kami sampaikan atas kepercayaan dan partisipasi peserta yang telah mendaftar serta mengikuti seluruh rangkaian seleksi Penerimaan Mahasiswa Baru (SPMB) Jalur Mandiri.</a> </h1><br><a href='../index.php'>Kembali </a>";
+echo "<br><br><br><h1 style= text-align:center >MAAF, ANDA BELUM LULUS PADA SPMB JALUR MANDIRI<br>Ucapan terima kasih yang sebesar-besarnya kami sampaikan atas kepercayaan dan partisipasi peserta yang telah mendaftar serta mengikuti seluruh rangkaian seleksi Penerimaan Mahasiswa Baru (SPMB) Jalur Mandiri.</a> </h1><br><a href='index.php'>Kembali </a>";
  }
  ?>
 
