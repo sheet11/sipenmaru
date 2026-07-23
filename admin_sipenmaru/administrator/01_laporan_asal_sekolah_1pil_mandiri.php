@@ -41,6 +41,7 @@
                     <th>D3</th>
                     <th>D4</th>
                     <th>S1</th>
+                    <th>Kosong</th>
                 </tr>
 
                 <!-- Baris Pendaftar -->
