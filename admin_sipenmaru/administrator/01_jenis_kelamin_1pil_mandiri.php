@@ -14,14 +14,14 @@
         return 0;
     }
 
-    // Daftar Program Studi (mudah untuk ditambah/diubah ke depannya)
-    $prodi_list = [
-        "RPL Sarjana Terapan Gizi",
-        "RPL Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners",
-        "RPL Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan",
-        "Pendidikan Profesi Ners",
-        "Pendidikan Profesi Bidan"
-    ];
+    // Ambil list prodi dari tb_prodi dengan aktif = 3
+    $prodi_list = [];
+    $query_prodi = mysqli_query($kon, "SELECT nama_prodi FROM tb_prodi WHERE aktif='3' ORDER BY id_prodi ASC");
+    if ($query_prodi) {
+        while ($row_prodi = mysqli_fetch_assoc($query_prodi)) {
+            $prodi_list[] = $row_prodi['nama_prodi'];
+        }
+    }
 ?>
 
 <aside class="right-side">
