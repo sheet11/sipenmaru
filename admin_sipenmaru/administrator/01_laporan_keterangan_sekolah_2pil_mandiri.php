@@ -15,10 +15,20 @@
     }
 
     // Daftar Program Studi (mudah untuk ditambah/diubah ke depannya)
-    $keterangan_list = [
-        "Dalam Kota Bengkulu",
-        "Luar Kota Bengkulu",
-        "Luar Provinsi Bengkulu"
+    $prodi_list = [
+        "D3 Kebidanan Bengkulu",
+        "D3 Kebidanan Curup",
+        "D3 Keperawatan Bengkulu",
+        "D3 Keperawatan Curup",
+        "D3 Teknologi Laboratorium Medis",
+        "D3 Sanitasi",
+        "D3 Gizi",
+        "D3 Farmasi",
+        "Sarjana Terapan Gizi",
+        "Sarjana Terapan Promosi Kesehatan",
+        "Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners",
+        "Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan",
+        "Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)"
     ];
 ?>
 
@@ -54,14 +64,14 @@
                 <!-- Baris untuk masing-masing Program Studi -->
                 <?php 
                 $no = 1;
-                foreach ($keterangan_list as $keterangan): 
+                foreach ($prodi_list as $prodi): 
                 ?>
                 <tr>
                     <td><?php echo $no++; ?></td>
-                    <td><?php echo $keterangan   ; ?></td>
-                    <td><?php echo getCount($kon, "keterangan_sekolah='$keterangan' AND tahun_pendaftaran='2026'"); ?></td>
-                    <td><?php echo getCount($kon, "keterangan_sekolah='$keterangan' AND tahun_pendaftaran='2026'"); ?></td>
-                    <td><?php echo getCount($kon, "keterangan_sekolah='$keterangan' AND tahun_pendaftaran='2026'"); ?></td>   
+                    <td><?php echo $prodi; ?></td>
+                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND keterangan_sekolah='Dalam Kota Bengkulu' AND tahun_pendaftaran='2026'"); ?></td>
+                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND keterangan_sekolah='Luar Kota Bengkulu' AND tahun_pendaftaran='2026'"); ?></td>
+                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND keterangan_sekolah='Luar Provinsi Bengkulu' AND tahun_pendaftaran='2026'"); ?></td>   
                 </tr>
                 <?php endforeach; ?>
             </table>
