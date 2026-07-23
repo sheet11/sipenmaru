@@ -3,10 +3,12 @@
     error_reporting(0); 
     require_once("../config/koneksi.php");
 
+    // Value = daftar isian di DB yang dianggap masuk kategori ini.
+    // Data kosong / placeholder "-- Pilih Penghasilan Orang Tua --" dianggap masuk kategori "< 2.000.000,-"
     $penghasilan_list = [
-        "2000000" => "< 2.000.000,-",
-        "5000000" => "2.000.000,- - 5.000.000,-",
-        "7000000" => "> 5.000.000,-"
+        "< 2.000.000,-" => ["2000000", "", "-- Pilih Penghasilan Orang Tua --"],
+        "2.000.000,- - 5.000.000,-" => ["5000000"],
+        "> 5.000.000,-" => ["7000000"],
     ];
 
     $chart_data = [];
@@ -34,7 +36,7 @@
         <div class="container-fluid" style="margin:10px;">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Penghasilan Orang Tua</h1>
+                    <h1>Penghasilan Orang Tua (Formulir 4)</h1>
                 </div>
             </div>
             <table class="table table-bordered">
@@ -44,8 +46,8 @@
                     <th colspan="<?= count($penghasilan_list) ?>">Penghasilan Orang Tua</th>
                 </tr>
                 <tr style="text-align:center">
-                    <?php foreach ($penghasilan_list as $label): ?>
-                        <th><?= $label ?></th>
+                    <?php foreach ($penghasilan_list as $header_label => $nilai_values): ?>
+                        <th><?= $header_label ?></th>
                     <?php endforeach; ?>
                 </tr>
                 <?php 
@@ -54,11 +56,16 @@
                 <tr>
                     <td><?= $no++ ?></td>
                     <td><?= $label ?></td>
-                    <?php foreach ($penghasilan_list as $nilai => $header_label): 
+                    <?php foreach ($penghasilan_list as $header_label => $nilai_values): 
+                        $in_values = "'" . implode("','", array_map(function($v) use ($kon) {
+                            return mysqli_real_escape_string($kon, $v);
+                        }, $nilai_values)) . "'";
+                        $kondisi_penghasilan = "(penghasilan_orang_tua IN ($in_values)" . (in_array("", $nilai_values) ? " OR penghasilan_orang_tua IS NULL" : "") . ")";
+
                         if ($prodi_value === "") {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE penghasilan_orang_tua = $nilai AND tahun_pendaftaran='2026'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE $kondisi_penghasilan AND tahun_pendaftaran='2026'");
                         } else {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE pilihan_prodi = '$prodi_value' AND penghasilan_orang_tua = $nilai AND tahun_pendaftaran='2026'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE pilihan_prodi = '$prodi_value' AND $kondisi_penghasilan AND tahun_pendaftaran='2026'");
                         }
                         $jumlah = mysqli_num_rows($query);
 
