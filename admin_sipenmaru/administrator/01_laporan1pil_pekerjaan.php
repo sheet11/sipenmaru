@@ -3,6 +3,7 @@
     error_reporting(0); 
     require_once("../config/koneksi.php");
 
+    // Key = label yang ditampilkan, Value = daftar nilai di database yang digabung ke label tsb
     $pekerjaan_list = [
         "PNS"        => ["PNS", "PNS/TNI/POLRI"],
         "TNI/Polri"  => ["TNI/POLRI", "TNI/Polri"],
@@ -40,8 +41,8 @@
                     <th colspan="<?= count($pekerjaan_list) ?>">Pekerjaan Ayah</th>
                 </tr>
                 <tr style="text-align:center">
-                    <?php foreach ($pekerjaan_list as $pekerjaan): ?>
-                        <th><?= strtoupper($pekerjaan) ?></th>
+                    <?php foreach ($pekerjaan_list as $pekerjaan_label => $pekerjaan_values): ?>
+                        <th><?= strtoupper($pekerjaan_label) ?></th>
                     <?php endforeach; ?>
                 </tr>
                 <?php 
@@ -50,11 +51,15 @@
                 <tr>
                     <td><?= $no++ ?></td>
                     <td><?= $label ?></td>
-                    <?php foreach ($pekerjaan_list as $pekerjaan): 
+                    <?php foreach ($pekerjaan_list as $pekerjaan_label => $pekerjaan_values): 
+                        $in_values = "'" . implode("','", array_map(function($v) use ($kon) {
+                            return mysqli_real_escape_string($kon, $v);
+                        }, $pekerjaan_values)) . "'";
+
                         if ($prodi_value === "") {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua = '$pekerjaan' AND tahun_pendaftaran='2026'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua IN ($in_values) AND tahun_pendaftaran='2026'");
                         } else {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua = '$pekerjaan' AND tahun_pendaftaran='2026'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua IN ($in_values) AND tahun_pendaftaran='2026'");
                         }
                         $jumlah = mysqli_num_rows($query);
                     ?>
@@ -65,9 +70,8 @@
             </table>
         </div>
 
+        <br>
 <br>
-<br>
-
     <section class="content-header">
         <div class="container-fluid" style="margin:10px;">
             <div class="row">
@@ -82,8 +86,8 @@
                     <th colspan="<?= count($pekerjaan_list) ?>">Pekerjaan Ayah</th>
                 </tr>
                 <tr style="text-align:center">
-                    <?php foreach ($pekerjaan_list as $pekerjaan): ?>
-                        <th><?= strtoupper($pekerjaan) ?></th>
+                    <?php foreach ($pekerjaan_list as $pekerjaan_label => $pekerjaan_values): ?>
+                        <th><?= strtoupper($pekerjaan_label) ?></th>
                     <?php endforeach; ?>
                 </tr>
                 <?php 
@@ -92,11 +96,15 @@
                 <tr>
                     <td><?= $no++ ?></td>
                     <td><?= $label ?></td>
-                    <?php foreach ($pekerjaan_list as $pekerjaan): 
+                    <?php foreach ($pekerjaan_list as $pekerjaan_label => $pekerjaan_values): 
+                        $in_values = "'" . implode("','", array_map(function($v) use ($kon) {
+                            return mysqli_real_escape_string($kon, $v);
+                        }, $pekerjaan_values)) . "'";
+
                         if ($prodi_value === "") {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua_ibu = '$pekerjaan' AND tahun_pendaftaran='2026'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua_ibu IN ($in_values) AND tahun_pendaftaran='2026'");
                         } else {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua_ibu = '$pekerjaan' AND tahun_pendaftaran='2026'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua_ibu IN ($in_values) AND tahun_pendaftaran='2026'");
                         }
                         $jumlah = mysqli_num_rows($query);
                     ?>
