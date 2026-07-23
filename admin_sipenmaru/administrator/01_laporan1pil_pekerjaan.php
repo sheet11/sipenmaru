@@ -58,7 +58,6 @@
 <br>
 <br>
 
-<aside class="right-side">
     <section class="content-header">
         <div class="container-fluid" style="margin:10px;">
             <div class="row">
@@ -85,9 +84,9 @@
                     <td><?= $label ?></td>
                     <?php foreach ($pekerjaan_list as $pekerjaan): 
                         if ($prodi_value === "") {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pekerjaan_orang_tua_ibu = '$pekerjaan'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pekerjaan_orang_tua_ibu = '$pekerjaan' AND tahun_pendaftaran='2026'");
                         } else {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND pekerjaan_orang_tua_ibu = '$pekerjaan'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND pekerjaan_orang_tua_ibu = '$pekerjaan' AND tahun_pendaftaran='2026'");
                         }
                         $jumlah = mysqli_num_rows($query);
                     ?>
