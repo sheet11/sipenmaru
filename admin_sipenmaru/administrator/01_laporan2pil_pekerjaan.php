@@ -13,7 +13,7 @@
         "Wiraswasta" => ["Wiraswasta"],
         "Pensiunan"  => ["Pensiunan"],
         "Nelayan"    => ["Nelayan"],
-        "Lainnya"    => ["Lainnya"],
+        "Lainnya"    => ["Lainnya", ""],
     ];
 
     $prodi_list = [
