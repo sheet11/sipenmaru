@@ -55,8 +55,8 @@
                 <tr>
                     <td>-</td>
                     <td><b>Pendaftar</b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND asal_sekolah='sma' AND tahun_pendaftaran='2026'"); ?></b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND asal_sekolah='smk' AND tahun_pendaftaran='2026'"); ?></b></td>
+                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND (asal_sekolah='sma' OR asal_sekolah='SMA/MA') AND tahun_pendaftaran='2026'"); ?></b></td>
+                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND (asal_sekolah='smk' OR asal_sekolah='SMK/MAK') AND tahun_pendaftaran='2026'"); ?></b></td>
                 </tr>
 
                 <!-- Baris untuk masing-masing Program Studi -->
@@ -67,8 +67,8 @@
                 <tr>
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $prodi; ?></td>
-                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND asal_sekolah='sma' AND tahun_pendaftaran='2026'"); ?></td>
-                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND asal_sekolah='smk' AND tahun_pendaftaran='2026'"); ?></td>
+                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND (asal_sekolah='sma' OR asal_sekolah='SMA/MA') AND tahun_pendaftaran='2026'"); ?></td>
+                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND (asal_sekolah='smk' OR asal_sekolah='SMK/MAK') AND tahun_pendaftaran='2026'"); ?></td>
                 </tr>
                 <?php endforeach; ?>
             </table>
