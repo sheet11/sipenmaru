@@ -285,6 +285,7 @@ include "session.php";
                 <li><a href="01_laporan_keterangan_sekolah_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Keterangan
                     Sekolah</a></li>
                 <li><a href="01_laporan2pil_pekerjaan.php"><i class="fa fa-circle-o"></i>Pekerjaan Orang Tua</a></li>
+                <li><a href="01_laporan2pil_penghasilan_ortu.php"><i class="fa fa-circle-o"></i>Penghasilan Orang Tua</a></li>
                 <li><a href="cetak_lulus_tahap2.php"><i class="fa fa-circle-o"></i>Cetak Excel kelulusan tahap II</a>
                 </li>
 
