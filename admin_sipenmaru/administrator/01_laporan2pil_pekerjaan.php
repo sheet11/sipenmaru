@@ -112,7 +112,7 @@
                         if ($prodi_value === "") {
                             $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua_ibu IN ($in_values) AND tahun_pendaftaran='2026'");
                         } else {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE pilihan_prodi = '$prodi_value' AND pekerjaan_orang_tua_ibu IN ($in_values) AND tahun_pendaftaran='2026'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE pilihan_prodi = '$prodi_value' AND (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua_ibu IN ($in_values) AND tahun_pendaftaran='2026'");
                         }
                         $jumlah = mysqli_num_rows($query);
                     ?>
