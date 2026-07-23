@@ -36,7 +36,6 @@
                     <th rowspan="2" width="2%">No</th>
                     <th rowspan="2">Program Studi</th>
                     <th colspan="4">Asal Sekolah</th>
-                    <th colspan="2">Jenis Kelamin</th>
                 </tr>
                 <tr style="text-align:center">
                     <th>D3</th>
