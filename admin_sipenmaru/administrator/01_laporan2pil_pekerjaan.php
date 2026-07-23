@@ -65,9 +65,9 @@
                         }, $pekerjaan_values)) . "'";
 
                         if ($prodi_value === "") {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE pekerjaan_orang_tua IN ($in_values) AND tahun_pendaftaran='2026'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua IN ($in_values) AND tahun_pendaftaran='2026'");
                         } else {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE pilihan_prodi = '$prodi_value' AND pekerjaan_orang_tua IN ($in_values) AND tahun_pendaftaran='2026'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE pilihan_prodi = '$prodi_value' AND (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua IN ($in_values) AND tahun_pendaftaran='2026'");
                         }
                         $jumlah = mysqli_num_rows($query);
                     ?>
