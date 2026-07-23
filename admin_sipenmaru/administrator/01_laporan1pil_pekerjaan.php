@@ -16,6 +16,7 @@
         "Lainnya"    => ["Lainnya", ""],
     ];
 
+    $chart_data_ayah = [];
     $chart_data_ibu = [];
 
     $prodi_list = [
@@ -64,13 +65,57 @@
                             $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND (status='Sudah Membayar' OR status='Terdaftar') AND pekerjaan_orang_tua IN ($in_values) AND tahun_pendaftaran='2026'");
                         }
                         $jumlah = mysqli_num_rows($query);
+
+                        // Simpan total baris "Keseluruhan" untuk data grafik di bawah tabel
+                        if ($prodi_value === "") {
+                            $chart_data_ayah[$pekerjaan_label] = $jumlah;
+                        }
                     ?>
                         <td><?= $jumlah ?></td>
                     <?php endforeach; ?>
                 </tr>
                 <?php endforeach; ?>
             </table>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <canvas id="chartPekerjaanAyah" height="120"></canvas>
+                </div>
+            </div>
         </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctxPekerjaanAyah = document.getElementById('chartPekerjaanAyah').getContext('2d');
+    new Chart(ctxPekerjaanAyah, {
+        type: 'bar',
+        data: {
+            labels: <?= json_encode(array_keys($chart_data_ayah)) ?>,
+            datasets: [{
+                label: 'Jumlah Pendaftar',
+                data: <?= json_encode(array_values($chart_data_ayah)) ?>,
+                backgroundColor: '#3c8dbc',
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Grafik Pekerjaan Ayah'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { precision: 0 }
+                }
+            }
+        }
+    });
+</script>
 
         <br>
 <br>
@@ -128,7 +173,6 @@
             </div>
         </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     var ctxPekerjaanIbu = document.getElementById('chartPekerjaanIbu').getContext('2d');
     new Chart(ctxPekerjaanIbu, {
