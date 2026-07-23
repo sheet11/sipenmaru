@@ -42,9 +42,9 @@
                     <td><?= $label ?></td>
                     <?php foreach ($pekerjaan_list as $pekerjaan): 
                         if ($prodi_value === "") {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pekerjaan_orang_tua = '$pekerjaan'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pekerjaan_orang_tua = '$pekerjaan' AND tahun_pendaftaran='2026'");
                         } else {
-                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND pekerjaan_orang_tua = '$pekerjaan'");
+                            $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND pekerjaan_orang_tua = '$pekerjaan' AND tahun_pendaftaran='2026'");
                         }
                         $jumlah = mysqli_num_rows($query);
                     ?>
