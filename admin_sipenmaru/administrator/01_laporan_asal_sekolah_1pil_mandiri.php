@@ -39,24 +39,18 @@
                     <th colspan="2">Jenis Kelamin</th>
                 </tr>
                 <tr style="text-align:center">
-                    <th>SMA/MA</th>
-                    <th>SMK/MAK</th>
                     <th>D3</th>
                     <th>D4</th>
-                    <th>Laki-Laki</th>
-                    <th>Perempuan</th>
+                    <th>S1</th>
                 </tr>
 
                 <!-- Baris Pendaftar -->
                 <tr>
                     <td>-</td>
                     <td><b>Pendaftar</b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND (asal_sekolah='sma' OR asal_sekolah='SMA/MA')"); ?></b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND (asal_sekolah='smk' OR asal_sekolah='SMK/MAK')"); ?></b></td>
                     <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND asal_sekolah='D3'"); ?></b></td>
                     <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND asal_sekolah='D4'"); ?></b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND jenis_kelamin='Laki-Laki'"); ?></b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND jenis_kelamin='Perempuan'"); ?></b></td>
+                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND asal_sekolah='S1'"); ?></b></td>
                 </tr>
 
                 <!-- Baris untuk masing-masing Program Studi -->
@@ -67,12 +61,9 @@
                 <tr>
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $prodi; ?></td>
-                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND (asal_sekolah='sma' OR asal_sekolah='SMA/MA')"); ?></td>
-                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND (asal_sekolah='smk' OR asal_sekolah='SMK/MAK')"); ?></td>
                     <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND asal_sekolah='D3'"); ?></td>
                     <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND asal_sekolah='D4'"); ?></td>
-                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND jenis_kelamin='Laki-Laki'"); ?></td>
-                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND jenis_kelamin='Perempuan'"); ?></td>
+                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND asal_sekolah='S1'"); ?></td>
                 </tr>
                 <?php endforeach; ?>
             </table>
