@@ -46,9 +46,9 @@
                 <tr>
                     <td>-</td>
                     <td><b>Pendaftar</b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND asal_sekolah = 'Dalam Kota Bengkulu' AND tahun_pendaftaran='2026'"); ?></b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND asal_sekolah = 'Luar Kota Bengkulu' AND tahun_pendaftaran='2026'"); ?></b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND asal_sekolah = 'Luar Provinsi Bengkulu' AND tahun_pendaftaran='2026'"); ?></b></td>
+                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND keterangan_sekolah = 'Dalam Kota Bengkulu' AND tahun_pendaftaran='2026'"); ?></b></td>
+                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND keterangan_sekolah = 'Luar Kota Bengkulu' AND tahun_pendaftaran='2026'"); ?></b></td>
+                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND keterangan_sekolah = 'Luar Provinsi Bengkulu' AND tahun_pendaftaran='2026'"); ?></b></td>
                 </tr>
 
                 <!-- Baris untuk masing-masing Program Studi -->
@@ -59,9 +59,9 @@
                 <tr>
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $keterangan   ; ?></td>
-                    <td><?php echo getCount($kon, "asal_sekolah='$keterangan' AND tahun_pendaftaran='2026'"); ?></td>
-                    <td><?php echo getCount($kon, "asal_sekolah='$keterangan' AND tahun_pendaftaran='2026'"); ?></td>
-                    <td><?php echo getCount($kon, "asal_sekolah='$keterangan' AND tahun_pendaftaran='2026'"); ?></td>   
+                    <td><?php echo getCount($kon, "keterangan_sekolah='$keterangan' AND tahun_pendaftaran='2026'"); ?></td>
+                    <td><?php echo getCount($kon, "keterangan_sekolah='$keterangan' AND tahun_pendaftaran='2026'"); ?></td>
+                    <td><?php echo getCount($kon, "keterangan_sekolah='$keterangan' AND tahun_pendaftaran='2026'"); ?></td>   
                 </tr>
                 <?php endforeach; ?>
             </table>
