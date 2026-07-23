@@ -262,7 +262,7 @@ include "session.php";
                 </li>
                 <li><a href="01_laporan_keterangan_sekolah_1pil_mandiri.php"><i class="fa fa-circle-o"></i>Keterangan
                     Sekolah</a></li>
-
+                <li><a href="01_laporan1pil_pekerjaan.php"><i class="fa fa-circle-o"></i>Pekerjaan Orang Tua</a></li>
                 <li><a href="importmandiri.php"><i class="fa fa-upload"></i> Import Tahap 1</a></li>
                 <li><a href="importmandiri_tahap2.php"><i class="fa fa-upload"></i> Import Tahap 2</a></li>
 
@@ -284,6 +284,7 @@ include "session.php";
                 </li>
                 <li><a href="01_laporan_keterangan_sekolah_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Keterangan
                     Sekolah</a></li>
+                <li><a href="01_laporan2pil_pekerjaan.php"><i class="fa fa-circle-o"></i>Pekerjaan Orang Tua</a></li>
                 <li><a href="cetak_lulus_tahap2.php"><i class="fa fa-circle-o"></i>Cetak Excel kelulusan tahap II</a>
                 </li>
 
