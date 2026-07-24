@@ -1,6 +1,6 @@
 <?php
     include "../01_nav.php";
-    error_reporting(0); 
+    error_reporting(1); 
     require_once("../../config/koneksi.php");
 
     // Fungsi pembantu untuk menghitung jumlah berdasarkan kondisi
