@@ -1,12 +1,12 @@
 <?php
-    include "01_nav.php";
+    include "../01_nav.php";
     error_reporting(0); 
-    require_once("../config/koneksi.php");
+    require_once("../../config/koneksi.php");
 
     // Fungsi pembantu untuk menghitung jumlah berdasarkan kondisi
     // Menggunakan COUNT(*) lebih cepat dari pada mysqli_num_rows
     function getCount($kon, $kondisi) {
-        $query = mysqli_query($kon, "SELECT COUNT(*) as total FROM tb_formulir5 WHERE $kondisi");
+        $query = mysqli_query($kon, "SELECT COUNT(*) as total FROM tb_formulir1 WHERE $kondisi");
         if($query) {
             $data = mysqli_fetch_assoc($query);
             return $data['total'];
