@@ -1,7 +1,7 @@
 <?php
-    include "../01_nav.php";
+    include "01_nav.php";
     error_reporting(0); 
-    require_once("../../config/koneksi.php");
+    require_once("../config/koneksi.php");
 
     // Fungsi pembantu untuk menghitung jumlah berdasarkan kondisi
     function getCount($kon, $kondisi) {

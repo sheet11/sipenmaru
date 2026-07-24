@@ -1,6 +1,7 @@
 <?php
-    include "../../01_nav.php";
-    require_once("../../config/koneksi.php");
+    include "01_nav.php";
+    error_reporting(0); 
+    require_once("../config/koneksi.php");
 
     // Fungsi pembantu untuk menghitung jumlah berdasarkan kondisi
     // Menggunakan COUNT(*) lebih cepat dari pada mysqli_num_rows
@@ -13,7 +14,7 @@
         return 0;
     }
 
-    // Ambil list prodi dari tb_prodi dengan aktif = 3
+    // Daftar Program Studi (mudah untuk ditambah/diubah ke depannya)
     $prodi_list = [];
     $query_prodi = mysqli_query($kon, "SELECT nama_prodi FROM tb_prodi WHERE aktif='3' ORDER BY id_prodi ASC");
     if ($query_prodi) {
@@ -28,26 +29,28 @@
         <div class="container-fluid" style="margin:10px;">  
             <div class="row">
                 <div class="col-md-12">  
-                    <h2>Jenis Kelamin</h2>
+                    <h5>Keterangan Asal Sekolah</h5>
                 </div>
             </div>              
             <table class="table table-bordered">
                 <tr style="text-align:center">
                     <th rowspan="2" width="2%">No</th>
-                    <th rowspan="2">Program Studi</th>
-                    <th colspan="2">Jenis Kelamin</th>
+                    <th rowspan="2">Keterangan Asal Sekolah</th>
+                    <th colspan="2">Pendaftar</th>
                 </tr>
-                <tr>
-                    <th>Laki-Laki</th>
-                    <th>Perempuan</th>
+                <tr style="text-align:center">
+                    <th>Dalam Kota Bengkulu</th>
+                    <th>Luar Kota Bengkulu</th>
+                    <th>Luar Provinsi Bengkulu</th>
                 </tr>
 
                 <!-- Baris Pendaftar -->
                 <tr>
                     <td>-</td>
                     <td><b>Pendaftar</b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND jenis_kelamin='Laki-Laki' AND tahun_pendaftaran='2026'"); ?></b></td>
-                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND jenis_kelamin='Perempuan' AND tahun_pendaftaran='2026'"); ?></b></td>
+                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND keterangan_sekolah = 'Dalam Kota Bengkulu' AND tahun_pendaftaran='2026'"); ?></b></td>
+                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND keterangan_sekolah = 'Luar Kota Bengkulu' AND tahun_pendaftaran='2026'"); ?></b></td>
+                    <td><b><?php echo getCount($kon, "(status='Sudah Membayar' OR status='Terdaftar') AND keterangan_sekolah = 'Luar Provinsi Bengkulu' AND tahun_pendaftaran='2026'"); ?></b></td>
                 </tr>
 
                 <!-- Baris untuk masing-masing Program Studi -->
@@ -58,8 +61,9 @@
                 <tr>
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $prodi; ?></td>
-                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND jenis_kelamin='Laki-Laki' AND tahun_pendaftaran='2026'"); ?></td>
-                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND jenis_kelamin='Perempuan' AND tahun_pendaftaran='2026'"); ?></td>
+                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND keterangan_sekolah='Dalam Kota Bengkulu' AND tahun_pendaftaran='2026'"); ?></td>
+                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND keterangan_sekolah='Luar Kota Bengkulu' AND tahun_pendaftaran='2026'"); ?></td>
+                    <td><?php echo getCount($kon, "pilihan_prodi='$prodi' AND keterangan_sekolah='Luar Provinsi Bengkulu' AND tahun_pendaftaran='2026'"); ?></td>   
                 </tr>
                 <?php endforeach; ?>
             </table>

@@ -1,7 +1,7 @@
 <?php
-    include "../01_nav.php";
+    include "01_nav.php";
     error_reporting(0); 
-    require_once("../../config/koneksi.php");
+    require_once("../config/koneksi.php");
 
     // Value = daftar isian di DB yang dianggap masuk kategori ini.
     // Data kosong / placeholder "-- Pilih Penghasilan Orang Tua --" dianggap masuk kategori "< 2.000.000,-"
