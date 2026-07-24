@@ -1,5 +1,5 @@
 <?php
-    include "../01_nav.php";
+    include "../../01_nav.php";
     require_once("../../config/koneksi.php");
 
     // Fungsi pembantu untuk menghitung jumlah berdasarkan kondisi
