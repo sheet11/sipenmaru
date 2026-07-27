@@ -53,16 +53,11 @@ include "session.php";
       </a>
       <div class="navbar-right">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-
-          <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <span>Seleksi Pendaftaran Mahasiswa Baru Poltekkes Kemenkes Bengkulu</span>
             </a>
-
-        </ul>
-        </li>
+          </li>
         </ul>
       </div>
     </nav>
@@ -79,10 +74,7 @@ include "session.php";
           </li>
 
         </div>
-        <!-- search form -->
-
-        </form>
-        <!-- /.search form -->
+        <!-- search form (none) -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li>
@@ -379,7 +371,7 @@ include "session.php";
     <!-- Bootstrap -->
     <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- Morris.js charts -->
-    <script src="../assets///cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="../assets/js/plugins/morris/morris.min.js" type="text/javascript"></script>
     <!-- Sparkline -->
     <script src="../assets/js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
