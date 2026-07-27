@@ -205,12 +205,7 @@ include "session.php";
                   <li><a href="082_daftar_calon_mahasiswa_belum_mendaftar.php"><i class="fa fa-circle-o"></i>Belum
                       Mendaftar</a></li>
                   <!-- <li><a href="09_daftar_nilai_assesment.php"><i class="fa fa-circle-o"></i>Daftar Nilai Assesment</a>
-                  </li>
-                  <li><a href="91_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 1</a></li>
-                  <li><a href="92_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 2</a></li>
-                  <li><a href="93_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 3</a></li>
-                  <li><a href="94_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 4</a></li>
-                  <li><a href="95_daftar_calon_mahasiswa.php"><i class="fa fa-circle-o"></i>L.Bahasa 5</a></li> -->
+                  </li> -->
 
                 </ul>
               </li>
@@ -250,6 +245,7 @@ include "session.php";
                   class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
               </a>
               <ul class="treeview-menu">
+                <ul class="treeview-menu">Keseluruhan
                 <li><a href="01_laporan_1pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a>
                 </li>
                 <li><a href="01_laporan_1pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
@@ -266,7 +262,10 @@ include "session.php";
                 <li><a href="01_laporan1pil_penghasilan_ortu.php"><i class="fa fa-circle-o"></i>Penghasilan Orang Tua</a></li>
                 <li><a href="importmandiri.php"><i class="fa fa-upload"></i> Import Tahap 1</a></li>
                 <li><a href="importmandiri_tahap2.php"><i class="fa fa-upload"></i> Import Tahap 2</a></li>
-
+                </ul>
+                <ul class="treeview-menu">Umum
+                  <li><a href="01_laporan_1pilihan_gelombang2.php">Sudah Membayar</a>
+                </ul> 
               </ul>
             </li>
 
