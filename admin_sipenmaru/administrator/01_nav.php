@@ -245,7 +245,7 @@ include "session.php";
                   class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
               </a>
               <ul class="treeview-menu">
-                <li class="treeview"><i class="fa fa-circle-o"></i>Keseluruhan
+                <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i>1 Pilihan<span
                   class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
               </a>
                 <li><a href="01_laporan_1pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a>
