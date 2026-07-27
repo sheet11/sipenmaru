@@ -245,9 +245,10 @@ include "session.php";
                   class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
               </a>
               <ul class="treeview-menu">
-                <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i>1 Pilihan<span
+                <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i>Keseluruhan<span
                   class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
               </a>
+                <ul class="treeview-menu">
                 <li><a href="01_laporan_1pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a>
                 </li>
                 <li><a href="01_laporan_1pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
@@ -265,6 +266,7 @@ include "session.php";
                 <li><a href="importmandiri.php"><i class="fa fa-upload"></i> Import Tahap 1</a></li>
                 <li><a href="importmandiri_tahap2.php"><i class="fa fa-upload"></i> Import Tahap 2</a></li>
                 </li>
+                </ul>
                 <li class="treeview-menu">Umum
                   <li><a href="01_laporan_1pilihan_gelombang2.php">Sudah Membayar</a>
                 </li> 
