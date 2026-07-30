@@ -93,8 +93,8 @@
         }
 
         var ctxPenghasilanOrtu = canvas.getContext('2d');
-        var labels = < ? = json_encode(array_keys($chart_data)) ? > ;
-        var values = < ? = json_encode(array_values($chart_data)) ? > ;
+        var labels = <?= json_encode(array_keys($chart_data)) ?>;
+        var values = <?= json_encode(array_values($chart_data)) ?>;
 
         if (!labels.length || !values.length) {
             return;

@@ -90,10 +90,10 @@
             new Chart(ctxPekerjaanAyah, {
                 type: 'bar',
                 data: {
-                    labels: < ? = json_encode(array_keys($chart_data_ayah)) ? > ,
+                    labels: <?= json_encode(array_keys($chart_data_ayah)) ?>,
                     datasets: [{
                         label: 'Jumlah Pendaftar',
-                        data: < ? = json_encode(array_values($chart_data_ayah)) ? > ,
+                        data: <?= json_encode(array_values($chart_data_ayah)) ?>,
                         backgroundColor: '#3c8dbc',
                         borderWidth: 0
                     }]
@@ -182,10 +182,10 @@
                 new Chart(ctxPekerjaanIbu, {
                     type: 'bar',
                     data: {
-                        labels: < ? = json_encode(array_keys($chart_data_ibu)) ? > ,
+                        labels: <?= json_encode(array_keys($chart_data_ibu)) ?>,
                         datasets: [{
                             label: 'Jumlah Pendaftar',
-                            data: < ? = json_encode(array_values($chart_data_ibu)) ? > ,
+                            data: <?= json_encode(array_values($chart_data_ibu)) ?>,
                             backgroundColor: '#00a65a',
                             borderWidth: 0
                         }]
