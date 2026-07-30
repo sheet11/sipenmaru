@@ -83,37 +83,54 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    var ctxPenghasilanOrtu = document.getElementById('chartPenghasilanOrtu').getContext('2d');
-    new Chart(ctxPenghasilanOrtu, {
-        type: 'bar',
-        data: {
-            labels: < ? = json_encode(array_keys($chart_data)) ? > ,
-            datasets: [{
-                label: 'Jumlah Pendaftar',
-                data: < ? = json_encode(array_values($chart_data)) ? > ,
-                backgroundColor: ['#3c8dbc', '#00a65a', '#f39c12'],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: true,
-                    text: 'Grafik Penghasilan Orang Tua'
-                }
+    document.addEventListener('DOMContentLoaded', function () {
+        var canvas = document.getElementById('chartPenghasilanOrtu');
+        if (!canvas) return;
+
+        if (typeof Chart === 'undefined') {
+            console.error('Chart.js tidak tersedia');
+            return;
+        }
+
+        var ctxPenghasilanOrtu = canvas.getContext('2d');
+        var labels = < ? = json_encode(array_keys($chart_data)) ? > ;
+        var values = < ? = json_encode(array_values($chart_data)) ? > ;
+
+        if (!labels.length || !values.length) {
+            return;
+        }
+
+        new Chart(ctxPenghasilanOrtu, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Jumlah Pendaftar',
+                    data: values,
+                    backgroundColor: ['#3c8dbc', '#00a65a', '#f39c12'],
+                    borderWidth: 0
+                }]
             },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        precision: 0
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Grafik Penghasilan Orang Tua'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0
+                        }
                     }
                 }
             }
-        }
+        });
     });
 </script>
