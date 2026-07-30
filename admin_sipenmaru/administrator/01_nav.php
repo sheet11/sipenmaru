@@ -318,16 +318,17 @@ include "session.php";
                 class="fa fa-angle-left pull-right"></i></span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="01_laporan_1pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a>
+            <li><a href="01_laporan_2pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
+            <!-- <li><a href="01_laporan_tingkatpoltekkes_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
+                      Poltekkes</a></li>
+                  <li><a href="01_tingkat_prodi_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Prodi</a></li> -->
+            <li><a href="01_jenis_kelamin_2pil_mandiri_sb.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
+            <li><a href="01_laporan_asal_sekolah_2pil_mandiri_sb.php"><i class="fa fa-circle-o"></i>Asal Sekolah</a>
             </li>
-            <li><a href="01_jenis_kelamin_1pil_mandiri_sb.php"><i class="fa fa-circle-o"></i>Jenis Kelamin</a></li>
-            <li><a href="01_laporan_asal_sekolah_1pil_mandiri_sb.php"><i class="fa fa-circle-o"></i>Asal Sekolah</a>
-            </li>
-            <li><a href="01_laporan_keterangan_sekolah_1pil_mandiri_sb.php"><i class="fa fa-circle-o"></i>Keterangan
+            <li><a href="01_laporan_keterangan_sekolah_2pil_mandiri_sb.php"><i class="fa fa-circle-o"></i>Keterangan
                 Sekolah</a></li>
-            <li><a href="01_laporan1pil_pekerjaan_sb.php"><i class="fa fa-circle-o"></i>Pekerjaan Orang Tua</a>
-            </li>
-            <li><a href="01_laporan1pil_penghasilan_ortu_sb.php"><i class="fa fa-circle-o"></i>Penghasilan Orang
+            <li><a href="01_laporan2pil_pekerjaan.php"><i class="fa fa-circle-o"></i>Pekerjaan Orang Tua</a></li>
+            <li><a href="01_laporan2pil_penghasilan_ortu.php"><i class="fa fa-circle-o"></i>Penghasilan Orang
                 Tua</a>
             </li>
           </ul>
