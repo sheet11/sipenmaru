@@ -55,9 +55,9 @@ $prodi_list = [
                             }, $golongan_darah_values)) . "'";
 
                             if ($prodi_value === "") {
-                                $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE (status='Sudah Membayar' OR status='Terdaftar') AND golongan_darah IN ($in_values) AND tahun_pendaftaran='2026'");
+                                $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE status='Sudah Membayar' AND golongan_darah IN ($in_values) AND tahun_pendaftaran='2026'");
                             } else {
-                                $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND (status='Sudah Membayar' OR status='Terdaftar') AND golongan_darah IN ($in_values) AND tahun_pendaftaran='2026'");
+                                $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND status='Sudah Membayar' AND golongan_darah IN ($in_values) AND tahun_pendaftaran='2026'");
                             }
                             $jumlah = mysqli_num_rows($query);
 

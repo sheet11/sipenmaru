@@ -16,11 +16,19 @@ $chart_data_ibu = [];
 
 $prodi_list = [
     "Keseluruhan" => "",
-    "RPL Sarjana Terapan Gizi" => "RPL Sarjana Terapan Gizi",
-    "RPL Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners" => "RPL Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners",
-    "RPL Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan" => "RPL Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan",
-    "Pendidikan Profesi Ners" => "Pendidikan Profesi Ners",
-    "Pendidikan Profesi Bidan" => "Pendidikan Profesi Bidan"
+    "D3 Kebidanan Bengkulu" => "D3 Kebidanan Bengkulu",
+    "D3 Kebidanan Curup" => "D3 Kebidanan Curup",
+    "D3 Keperawatan Bengkulu" => "D3 Keperawatan Bengkulu",
+    "D3 Keperawatan Curup" => "D3 Keperawatan Curup",
+    "D3 Teknologi Laboratorium Medis" => "D3 Teknologi Laboratorium Medis",
+    "D3 Sanitasi" => "D3 Sanitasi",
+    "D3 Gizi" => "D3 Gizi",
+    "D3 Farmasi" => "D3 Farmasi",
+    "Sarjana Terapan Gizi" => "Sarjana Terapan Gizi",
+    "Sarjana Terapan Promosi Kesehatan" => "Sarjana Terapan Promosi Kesehatan",
+    "Sarjana Terapan Keperawatan dan Ners" => "Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners",
+    "Sarjana Terapan Keperawatan dan Ners (Kelas Internasional)" => "Sarjana Terapan Keperawatan dan Pendidikan Profesi Ners (Kelas Internasional)",
+    "Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan" => "Sarjana Terapan Kebidanan dan Pendidikan Profesi Bidan"
 ];
 ?>
 
@@ -55,9 +63,9 @@ $prodi_list = [
                             }, $golongan_darah_values)) . "'";
 
                             if ($prodi_value === "") {
-                                $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE (status='Sudah Membayar' OR status='Terdaftar') AND golongan_darah IN ($in_values) AND tahun_pendaftaran='2026'");
+                                $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE status='Sudah Membayar' AND golongan_darah IN ($in_values) AND tahun_pendaftaran='2026'");
                             } else {
-                                $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir5 WHERE pilihan_prodi = '$prodi_value' AND (status='Sudah Membayar' OR status='Terdaftar') AND golongan_darah IN ($in_values) AND tahun_pendaftaran='2026'");
+                                $query = mysqli_query($kon, "SELECT 1 FROM tb_formulir4 WHERE pilihan_prodi = '$prodi_value' AND status='Sudah Membayar' AND golongan_darah IN ($in_values) AND tahun_pendaftaran='2026'");
                             }
                             $jumlah = mysqli_num_rows($query);
 

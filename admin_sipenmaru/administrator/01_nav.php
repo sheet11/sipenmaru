@@ -275,6 +275,8 @@ include "session.php";
                 </li>
                 <li><a href="01_laporan_keterangan_sekolah_1pil_mandiri_sb.php"><i class="fa fa-circle-o"></i>Keterangan
                     Sekolah</a></li>
+                <li><a href="01_laporan1pil_golongan_darah_sb.php"><i
+                      class="fa fa-circle-o"></i>Golongan Darah</a></li>
                 <li><a href="01_laporan1pil_pekerjaan_sb.php"><i class="fa fa-circle-o"></i>Pekerjaan Orang Tua</a>
                 </li>
                 <li><a href="01_laporan1pil_penghasilan_ortu_sb.php"><i class="fa fa-circle-o"></i>Penghasilan Orang
@@ -303,6 +305,8 @@ include "session.php";
                 </li>
                 <li><a href="01_laporan_keterangan_sekolah_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Keterangan
                     Sekolah</a></li>
+                <li><a href="01_laporan2pil_golongan_darah.php"><i
+                      class="fa fa-circle-o"></i>Golongan Darah</a></li>
                 <li><a href="01_laporan2pil_pekerjaan.php"><i class="fa fa-circle-o"></i>Pekerjaan Orang Tua</a></li>
                 <li><a href="01_laporan2pil_penghasilan_ortu.php"><i class="fa fa-circle-o"></i>Penghasilan Orang
                     Tua</a>
@@ -328,6 +332,8 @@ include "session.php";
             </li>
             <li><a href="01_laporan_keterangan_sekolah_2pil_mandiri_sb.php"><i class="fa fa-circle-o"></i>Keterangan
                 Sekolah</a></li>
+            <li><a href="01_laporan2pil_golongan_darah_sb.php"><i
+                  class="fa fa-circle-o"></i>Golongan Darah</a></li>
             <li><a href="01_laporan2pil_pekerjaan_sb.php"><i class="fa fa-circle-o"></i>Pekerjaan Orang Tua</a></li>
             <li><a href="01_laporan2pil_penghasilan_ortu_sb.php"><i class="fa fa-circle-o"></i>Penghasilan Orang
                 Tua</a>
