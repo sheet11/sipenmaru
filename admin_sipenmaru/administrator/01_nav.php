@@ -293,7 +293,6 @@ include "session.php";
               <ul class="treeview-menu">
                 <li><a href="01_laporan_2pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>All</a>
                 </li>
-                <li><a href="01_laporan_2pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
                 <!-- <li><a href="01_laporan_tingkatpoltekkes_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
                       Poltekkes</a></li>
                   <li><a href="01_tingkat_prodi_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat Prodi</a></li> -->
