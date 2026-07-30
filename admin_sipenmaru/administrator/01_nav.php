@@ -311,6 +311,7 @@ include "session.php";
 
             <li><a href="importmandiri_2pilihan_tahap2.php"><i class="fa fa-upload"></i> Import Tahap 2</a></li>
         </li>
+        </ul>
         <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i>Umum<span class="pull-right-container"><i
                 class="fa fa-angle-left pull-right"></i></span>
           </a>
