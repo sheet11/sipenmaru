@@ -254,6 +254,8 @@ include "session.php";
                     <li><a href="01_laporan_keterangan_sekolah_1pil_mandiri.php"><i
                           class="fa fa-circle-o"></i>Keterangan
                         Sekolah</a></li>
+                    <li><a href="01_laporan1pil_golongan_darah.php"><i
+                          class="fa fa-circle-o"></i>Golongan Darah</a></li>
                     <li><a href="01_laporan1pil_pekerjaan.php"><i class="fa fa-circle-o"></i>Pekerjaan Orang Tua</a>
                     </li>
                     <li><a href="01_laporan1pil_penghasilan_ortu.php"><i class="fa fa-circle-o"></i>Penghasilan Orang
@@ -438,7 +440,7 @@ include "session.php";
       }
     </style>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", function() {
         const links = document.querySelectorAll(".sidebar-menu a");
         const currentPage = location.pathname.split("/").pop();
 
