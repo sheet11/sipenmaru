@@ -287,7 +287,10 @@ include "session.php";
                 class="fa fa-angle-left pull-right"></i></span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="01_laporan_2pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>Keseluruhan</a>
+            <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i>Keseluruhan<span
+                  class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+              </a>
+            <li><a href="01_laporan_2pilihan_gelombang2_seluruh.php"><i class="fa fa-circle-o"></i>All</a>
             </li>
             <li><a href="01_laporan_2pilihan_gelombang2.php"><i class="fa fa-circle-o"></i>Sudah Membayar</a></li>
             <!-- <li><a href="01_laporan_tingkatpoltekkes_2pil_mandiri.php"><i class="fa fa-circle-o"></i>Tingkat
