@@ -271,7 +271,6 @@ include "session.php";
                   </a>
                 <li><a href="01_laporan_1pilihan_gelombang2.php">Sudah Membayar</a>
                 </li>
-                </ul>
               </ul>
           </ul>
         </li>
